@@ -5,11 +5,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HomePage } from './home/home';
 import { ListPage } from './list/list';
 import { LoginPageComponent } from './login/login';
+import { WelcomePageComponent } from './welcome/welcome';
 
 const components = [
   HomePage,
   ListPage,
-  LoginPageComponent
+  LoginPageComponent,
+  WelcomePageComponent
 ];
 
 @NgModule({
@@ -21,4 +23,5 @@ const components = [
   entryComponents: components,
   providers: []
 })
+
 export class PageModule {}

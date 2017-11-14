@@ -1,5 +1,11 @@
 {
   "LOGIN_PAGE": {
     "TITLE": "Hallo, schon, dass du wi"
+  },
+  "WELCOME_PAGE": {
+    "SLIDE_title": '"Das neue Lieblings-Workout von Lena Gercke"',
+    "SLIDE_desc": '- InStyle uber Breakletis',
+    "REGISTER_BTN": "Loslegen!",
+    "LOGIN_BTN": "Login"
   }
 }
