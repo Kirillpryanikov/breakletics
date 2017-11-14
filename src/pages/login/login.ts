@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'page-login',
@@ -8,7 +9,9 @@ import { NavController } from 'ionic-angular';
 })
 export class LoginPageComponent {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) {}
 
+  login(form: NgForm){
+    console.log(form.value);
   }
 }

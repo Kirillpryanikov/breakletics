@@ -1,10 +1,81 @@
 @import "../../theme/main";
 
+$height-navbar-login: 56px;
+$height-form: calc(100% - 56px);
+$padding-input-field: 30px 15px 12px 0;
+$padding-block-password-forgotten: 20px 15px 5px 15px;
+$padding-block-handler-submit: 20px 15px 15px 15px;
+
 page-login {
 
-  ion-header {
-    background-color: transparent;
+  ion-content {
+    .header {
+      @include setFlexStyles(flex-start);
+      //position: fixed;
+      height: $height-navbar-login;
+      font-size: $font-size-em-md;
+    }
 
+    form {
+      @include setFlexStyles();
+      height: $height-form;
+
+      .title-login-1 {
+        width: 100%;
+        font-size: $font-size-em-lg;
+      }
+      .title-login-2{
+        width: 100%;
+
+        font-size: $font-size-em-md;
+        margin-bottom: 7%;
+      }
+
+      .container-input {
+        width: 100%;
+        input {
+          width: 90%;
+          border: none;
+          border-bottom: 1px solid gray;
+          padding: $padding-input-field;
+        }
+      }
+
+      .password-forgotten {
+        @include setFlexStyles(flex-end, flex-end);
+        width: 100%;
+        padding: $padding-block-password-forgotten;
+        font-weight: bold;
+      }
+
+      .handler-login {
+        @include setFlexStyles();
+        width: 100%;
+        padding: $padding-block-handler-submit;
+
+        button {
+          width: 100%;
+          padding: 20px 0;
+          font-size: $font-size-em-sm;
+          letter-spacing: 2px;
+        }
+      }
+
+      .title-under-btn {
+        width: 100%;
+        @include setFlexStyles();
+        font-size: $font-size-em-xss;
+      }
+
+      .tooter-login {
+        @include setFlexStyles();
+        margin-top: 18%;
+        font-size: 20px;
+        text-decoration: underline;
+        span {
+          width: 80%;
+        }
+      }
+    }
   }
-
 }

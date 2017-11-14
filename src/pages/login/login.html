@@ -1,8 +1,52 @@
-<ion-header>
-  <ion-navbar>
-  </ion-navbar>
-</ion-header>
-
 <ion-content text-center>
-  Auth
+  <div class="header" padding>
+    <ion-icon name="ios-arrow-round-back"></ion-icon>
+  </div>
+
+  <form #f="ngForm" (ngSubmit)="login(f)">
+    <ion-grid>
+      <ion-row>
+        <span class="title-login-1">{{'LOGIN_PAGE.TITLE1' | translate }}</span>
+      </ion-row>
+      <ion-row>
+        <span class="title-login-2">{{'LOGIN_PAGE.TITLE2' | translate }}</span>
+      </ion-row>
+      <ion-row>
+        <div class="container-input">
+          <div>
+            <input type="text" ngModel name="email" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_EMAIL' | translate }}" required>
+          </div>
+          <div>
+            <input type="text" ngModel name="password" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_PASSWORD' | translate }}" required>
+          </div>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="password-forgotten">
+          <span>{{'LOGIN_PAGE.BUTTON_PASSWORD_FORGOTTEN' | translate}}</span>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="handler-login">
+          <button type="submit">{{'LOGIN_PAGE.BUTTON_LOGIN' | translate}}</button>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="title-under-btn">
+          <span>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON' | translate}}</span>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="tooter-login">
+          <span>{{'LOGIN_PAGE.FOOTER_LOGIN' | translate}}</span>
+        </div>
+      </ion-row>
+    </ion-grid>
+
+    <!--<div class="form-group">-->
+      <!--<label for="username">{{'LOGIN_PAGE.TITLE1' | translate }}</label>-->
+      <!--<input type="text" ngModel name="username" class="form-control" id="username" required>-->
+    <!--</div>-->
+  </form>
+
 </ion-content>
