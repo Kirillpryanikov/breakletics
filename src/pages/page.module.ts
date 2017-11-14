@@ -6,12 +6,14 @@ import { HomePage } from './home/home';
 import { ListPage } from './list/list';
 import { LoginPageComponent } from './login/login';
 import { WelcomePageComponent } from './welcome/welcome';
+import { RegisterPageComponent } from './register/register';
 
 const components = [
   HomePage,
   ListPage,
   LoginPageComponent,
-  WelcomePageComponent
+  WelcomePageComponent,
+  RegisterPageComponent
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 <ion-content text-center>
   <div class="header" padding>
-    <ion-icon name="ios-arrow-round-back"></ion-icon>
+    <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
   </div>
 
   <form #f="ngForm" (ngSubmit)="login(f)">

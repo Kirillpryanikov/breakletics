@@ -9,6 +9,13 @@
     "TITLE_UNDER_BUTTON": "Ich akzeptiere die AGB von Breakletics",
     "FOOTER_LOGIN": "Ich habe keinen Account und möchte mich registrieren"
   },
+  "REGISTER": {
+    "PAGE_1": {
+      "TITLE": "Dein Geschlecht?",
+      "BUTTON_WOMAN": "WEIBLICH",
+      "BUTTON_MAN": "Männer"
+    }
+  },
   "WELCOME_PAGE": {
     "SLIDE_title": "Das neue Lieblings-Workout von Lena Gercke",
     "SLIDE_desc": "- InStyle uber Breakletis",
