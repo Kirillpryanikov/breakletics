@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { HomePage } from './home/home';
 import { ListPage } from './list/list';
-import { AuthorizationPageComponent } from './authorization/authorization';
+import { LoginPageComponent } from './login/login';
 
 const components = [
   HomePage,
   ListPage,
-  AuthorizationPageComponent
+  LoginPageComponent
 ];
 
 @NgModule({
   declarations: components,
   imports: [
-    IonicModule
+    IonicModule,
+    TranslateModule.forChild()
   ],
   entryComponents: components,
   providers: []

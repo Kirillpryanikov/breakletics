@@ -3,10 +3,10 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-auth',
-  templateUrl: 'authorization.html',
-  styleUrls: ['/authorization.scss']
+  templateUrl: 'login.html',
+  styleUrls: ['/login.scss']
 })
-export class AuthorizationPageComponent {
+export class LoginPageComponent {
 
   constructor(public navCtrl: NavController) {
 
