@@ -1,0 +1,19 @@
+@import "../../theme/main";
+
+$margin-button: 18% 5px 0 5px;
+
+page-register{
+  .page-one {
+    .handler-gender {
+      width: 100%;
+      flex-direction: row;
+
+      input, button {
+        text-transform: uppercase;
+        padding: 15px;
+        margin: $margin-button;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}

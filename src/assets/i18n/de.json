@@ -14,13 +14,42 @@
       "TITLE": "Dein Geschlecht?",
       "BUTTON_WOMAN": "WEIBLICH",
       "BUTTON_MAN": "Männer"
+    },
+    "PAGE_2": {
+      "TITLE": "Und wie heißen du?",
+      "FIRSTNAME": "Vorname",
+      "LASTNAME": "Nachname",
+      "MORE": "WEITER"
+    },
+    "PAGE_3": {
+      "TITLE": "Fast geschafft!",
+      "EMAIL": "E-Mail Adresse",
+      "PASSWORD": "Passwort",
+      "REGISTRATION": "MIT E-MAIL ANMELDEN",
+      "FOOTER_LOGIN": "Ich akzeptiere die AGB von Breakletics"
     }
   },
   "WELCOME_PAGE": {
     "SLIDE_TITLE": "Das neue Lieblings-Workout von Lena Gercke",
     "SLIDE_DESC": "- InStyle uber Breakletis",
     "REGISTER_BTN": "Loslegen!",
+<<<<<<< HEAD
     "LOGIN_BTN": "Login",
     "PARTNER": "proud partner of"
+=======
+    "LOGIN_BTN": "Login"
+  },
+  "GUIDE_PAGE": {
+    "PAGE_GREETING": {
+      "TITLE": "Hey Max,",
+      "SUBTITLE": "bevor es losgeht eine gaaaaanz kurze Erkärung zu den Grundfunktionen der App!",
+      "BUTTON": "OKAY, SCHIESS LOS!"
+    },
+    "PAGE_1": {
+      "TITLE": "Jede Worche gibt es hier ein brandneues (kostenloses) \"Workout der Woche\".",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführu abbrechen"
+    }
+>>>>>>> c5df68726c5ffe8bc62edb3701dad47c98b1ea4a
   }
 }

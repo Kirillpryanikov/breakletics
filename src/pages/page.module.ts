@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { HomePage } from './home/home';
-import { ListPage } from './list/list';
 import { LoginPageComponent } from './login/login';
 import { WelcomePageComponent } from './welcome/welcome';
 import { RegisterPageComponent } from './register/register';
+import { GuideComponent } from './guide/guide.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { RegisterService } from './register/register.service';
+import { LoginService } from './login/login.service';
 
 const components = [
-  HomePage,
-  ListPage,
+  DashboardComponent,
   LoginPageComponent,
   WelcomePageComponent,
-  RegisterPageComponent
+  RegisterPageComponent,
+  GuideComponent
 ];
 
 @NgModule({
@@ -23,7 +26,10 @@ const components = [
     TranslateModule.forChild()
   ],
   entryComponents: components,
-  providers: []
+  providers: [
+    LoginService,
+    RegisterService
+  ]
 })
 
 export class PageModule {}
