@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPageComponent } from '../pages/login/login';
 import { WelcomePageComponent } from '../pages/welcome/welcome';
+import { RegisterPageComponent } from '../pages/register/register';
 
 @Component({
   templateUrl: 'app.html'

@@ -1,0 +1,6 @@
+
+@mixin setFlexStyles($param1: center, $param2: center){
+  display: flex;
+  justify-content: $param1;
+  align-items: $param2;
+}
