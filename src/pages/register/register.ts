@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
+import { RegisterService } from './register.service';
 
 @Component({
   selector: 'page-register',
@@ -10,13 +11,13 @@ import { NgForm } from '@angular/forms';
 export class RegisterPageComponent {
   @ViewChild('slider') slider: Slides;
 
-  constructor(public navCtrl: NavController) {}
-
+  constructor(public navCtrl: NavController,
+              private service: RegisterService) {}
   goNext(){
     this.slider.slideNext();
   }
 
-  submitForm(f: NgForm) {
+  submit(f: NgForm) {
     console.log(f.value)
   }
 }

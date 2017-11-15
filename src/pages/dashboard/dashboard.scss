@@ -1,0 +1,15 @@
+@import "../../theme/main";
+
+page-dashboard {
+
+  ion-content {
+    div{
+      @include setFlexStyles();
+      width: 100%;
+      height: 100%;
+      color: white;
+      background-image: url("../../assets/imgs/welcome-bg.jpg");
+      font-size: 1.7em;
+    }
+  }
+}

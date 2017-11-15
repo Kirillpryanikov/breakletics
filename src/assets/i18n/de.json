@@ -34,5 +34,17 @@
     "SLIDE_desc": "- InStyle uber Breakletis",
     "REGISTER_BTN": "Loslegen!",
     "LOGIN_BTN": "Login"
+  },
+  "GUIDE_PAGE": {
+    "PAGE_GREETING": {
+      "TITLE": "Hey Max,",
+      "SUBTITLE": "bevor es losgeht eine gaaaaanz kurze Erkärung zu den Grundfunktionen der App!",
+      "BUTTON": "OKAY, SCHIESS LOS!"
+    },
+    "PAGE_1": {
+      "TITLE": "Jede Worche gibt es hier ein brandneues (kostenloses) \"Workout der Woche\".",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführu abbrechen"
+    }
   }
 }

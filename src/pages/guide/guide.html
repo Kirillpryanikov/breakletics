@@ -1,0 +1,35 @@
+<div class="container-guide">
+  <ion-slides #slider>
+    <ion-slide>
+      <div class="page-greeting">
+        <div class="title">
+          <div>{{"GUIDE_PAGE.PAGE_GREETING.TITLE" | translate}}</div>
+          <div>{{"GUIDE_PAGE.PAGE_GREETING.SUBTITLE" | translate}}</div>
+          <div>
+            <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_GREETING.BUTTON" | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="page-guide-1">
+        <div class="image-header">
+          <img src="../../assets/imgs/welcome-bg.jpg"/></div>
+        <div class="content">
+          <div class="number-page">
+            [ 1/5 ]
+          </div>
+          <div class="title">
+            <div>{{"GUIDE_PAGE.PAGE_1.TITLE" | translate}}</div>
+          </div>
+          <div class="next-guide">
+            <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_1.BUTTON" | translate}}</button>
+          </div>
+          <div padding class="footer-title">
+            {{"GUIDE_PAGE.PAGE_1.FOOTER_TITLE" | translate}}
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</div>
