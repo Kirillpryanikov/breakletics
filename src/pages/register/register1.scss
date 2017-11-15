@@ -8,7 +8,7 @@ page-register{
       width: 100%;
       flex-direction: row;
 
-      input {
+      input, button {
         text-transform: uppercase;
         padding: 15px;
         margin: $margin-button;
