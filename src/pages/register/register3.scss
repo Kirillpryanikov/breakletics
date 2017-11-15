@@ -1,0 +1,33 @@
+@import "../../theme/main";
+
+$padding-input-field: 20px 15px 10px 0;
+$margin-top-container: 8%;
+$margin-top-button: 9%;
+$font-size-footer: 0.625em;
+
+page-register {
+  .page-third {
+    .container-fullname {
+      margin-top: $margin-top-container;
+      input {
+        width: 90%;
+        border: none;
+        border-bottom: 1px solid gray;
+        padding: $padding-input-field;
+      }
+    }
+
+    .handler {
+      width: 100%;
+      margin-top: $margin-top-button;
+      input{
+        letter-spacing: 2px;
+      }
+    }
+
+    .footer-reg {
+      width: 100%;
+      font-size: $font-size-footer;
+    }
+  }
+}

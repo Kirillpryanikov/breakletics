@@ -14,6 +14,19 @@
       "TITLE": "Dein Geschlecht?",
       "BUTTON_WOMAN": "WEIBLICH",
       "BUTTON_MAN": "Männer"
+    },
+    "PAGE_2": {
+      "TITLE": "Und wie heißen du?",
+      "FIRSTNAME": "Vorname",
+      "LASTNAME": "Nachname",
+      "MORE": "WEITER"
+    },
+    "PAGE_3": {
+      "TITLE": "Fast geschafft!",
+      "EMAIL": "E-Mail Adresse",
+      "PASSWORD": "Passwort",
+      "REGISTRATION": "MIT E-MAIL ANMELDEN",
+      "FOOTER_LOGIN": "Ich akzeptiere die AGB von Breakletics"
     }
   },
   "WELCOME_PAGE": {
