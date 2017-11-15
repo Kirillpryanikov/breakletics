@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPageComponent } from '../pages/login/login';
+import { WelcomePageComponent } from '../pages/welcome/welcome';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +16,7 @@ import { LoginPageComponent } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPageComponent;
+  rootPage: any = WelcomePageComponent;
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform,
