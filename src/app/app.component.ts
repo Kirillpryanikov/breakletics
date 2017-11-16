@@ -16,7 +16,7 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = DashboardComponent;
+  rootPage: any = LoginPageComponent;
 
   pages: Array<{title: string, component: any}>;
 

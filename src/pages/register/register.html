@@ -12,8 +12,10 @@
             <div>{{"REGISTER.PAGE_1.TITLE" | translate}}</div>
           </div>
           <div class="handler-gender" padding>
-            <input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">
-            <input type="button" ngModel name="gender" (click)="f.value.gender = 'man'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">
+            <!--<input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">-->
+            <!--<input type="button" ngModel name="gender" (click)="f.value.gender = 'man'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">-->
+            <button type="button" name="gender" col-5 (click)="f.value.gender = 'woman'; goNext()">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</button>
+            <button type="button" name="gender" col-5 (click)="f.value.gender = 'man'; goNext()">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</button>
           </div>
         </div>
       </ion-slide>
