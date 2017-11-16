@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import { LoginPageComponent } from '../pages/login/login';
+import { WelcomePageComponent } from '../pages/welcome/welcome';
 import { RegisterPageComponent } from '../pages/register/register';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
@@ -15,7 +16,7 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = DashboardComponent;
+  rootPage: any = WelcomePageComponent;
 
   pages: Array<{title: string, component: any}>;
 

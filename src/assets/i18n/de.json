@@ -30,10 +30,11 @@
     }
   },
   "WELCOME_PAGE": {
-    "SLIDE_title": "Das neue Lieblings-Workout von Lena Gercke",
-    "SLIDE_desc": "- InStyle uber Breakletis",
+    "SLIDE_TITLE": "Das neue Lieblings-Workout von Lena Gercke",
+    "SLIDE_DESC": "- InStyle uber Breakletis",
     "REGISTER_BTN": "Loslegen!",
-    "LOGIN_BTN": "Login"
+    "LOGIN_BTN": "Login",
+    "PARTNER": "proud partner of"
   },
   "GUIDE_PAGE": {
     "PAGE_GREETING": {

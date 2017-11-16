@@ -1,3 +1,37 @@
 <ion-content text-center>
-  page welcome
+  <div id="header">
+    <div class="partner-text">{{'WELCOME_PAGE.PARTNER' | translate }}</div>
+    <img src="../../assets/imgs/adidas-logo.png" id="adidas"/>
+  </div>
+
+  <div id="main">
+    <img src="../../assets/imgs/logo.png" id="logo"/>
+    <div class="slider">
+      <ion-slides pager>
+
+        <ion-slide >
+          <h2 style="margin: 0 8%">"{{'WELCOME_PAGE.SLIDE_TITLE' | translate }}"</h2>
+          <span>{{'WELCOME_PAGE.SLIDE_DESC' | translate }}</span>
+        </ion-slide>
+        <ion-slide >
+          <h2 style="margin: 0 8%">"{{'WELCOME_PAGE.SLIDE_TITLE' | translate }}"</h2>
+          <span>{{'WELCOME_PAGE.SLIDE_DESC' | translate }}</span>
+        </ion-slide>
+        <ion-slide >
+          <h2 style="margin: 0 8%">"{{'WELCOME_PAGE.SLIDE_TITLE' | translate }}"</h2>
+          <span>{{'WELCOME_PAGE.SLIDE_DESC' | translate }}</span>
+        </ion-slide>
+
+      </ion-slides>
+    </div>
+    <div id="footer">
+      <div class="button active" id="signin">
+        <span>{{'WELCOME_PAGE.REGISTER_BTN' | translate }}</span>
+      </div>
+      <div class="button" id="login">
+        <span>{{'WELCOME_PAGE.LOGIN_BTN' | translate }}</span>
+      </div>
+    </div>
+  </div>
+
 </ion-content>
