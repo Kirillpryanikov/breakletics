@@ -19,7 +19,7 @@ export class RegisterPageComponent {
   }
 
   submit(f: NgForm) {
-    console.log(f.value)
+    console.log(f.value);
   }
 
   goToWelcome() {
