@@ -30,10 +30,12 @@ page-guide {
       }
 
       .title {
+        width: 80%;
         @include title();
       }
 
       .next-guide {
+        width: 90%;
         @include nextGuide();
       }
 

@@ -51,6 +51,23 @@
       "TITLE": "Hier findest du unsere ganzen Workouts - das Herzstück der App!",
       "BUTTON": "OKAY, VERSTANDEN!",
       "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_3": {
+      "TITLE": "Natürlich nicht ohne dich vorher warm zu machen!",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_4": {
+      "TITLE": "Fortgeschrittene können unter \"Exercises\" einzelne Übungen trainieren und sich so ihr eigenes Workout zusammenstellen!",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_5": {
+      "TITLE": "Genug gelabert!",
+      "SUBTITLE":"Mach JETZT dein erstes Breakletics Workout.",
+      "BUTTON_1": "WARM UP + WORKOUT",
+      "BUTTON_2": "NUR WORKOUT",
+      "FOOTER_TITLE": "Einführung abbrechen"
     }
   }
 }

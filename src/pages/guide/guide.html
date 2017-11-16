@@ -48,17 +48,53 @@
       <div class="page-guide-3">
         <div class="header-block"></div>
         <div class="guide-block">
-
+          <div class="namber-page">[ 3/5 ]</div>
+          <div class="title">{{"GUIDE_PAGE.PAGE_3.TITLE" | translate}}</div>
+          <div class="next-guide">
+            <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_3.BUTTON" | translate}}</button>
+          </div>
+          <div class="footer-guide">
+            {{"GUIDE_PAGE.PAGE_3.FOOTER_TITLE" | translate}}
+          </div>
         </div>
-        <!--<div class="block-1"></div>-->
-        <!--<div class="block-2"></div>-->
-        <div>
-          <div class="" col-6>
-            Block 3.1
+        <div class="block-3">
+          <div class="item-block-3" col-6></div>
+        </div>
+        <div class="footer-block"></div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="page-guide-4">
+        <div class="header-block"></div>
+        <div class="guide-block">
+          <div class="namber-page">[ 4/5 ]</div>
+          <div class="title">{{"GUIDE_PAGE.PAGE_4.TITLE" | translate}}</div>
+          <div class="next-guide">
+            <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_4.BUTTON" | translate}}</button>
           </div>
-          <div class="visible-block" col-6>
-            Block 3.2
+          <div class="footer-guide">
+            {{"GUIDE_PAGE.PAGE_4.FOOTER_TITLE" | translate}}
           </div>
+        </div>
+        <div class="block-3">
+          <div class="item-block-3" col-6></div>
+        </div>
+        <div class="footer-block"></div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="page-guide-5">
+        <div class="namber-page">[ 5/5 ]</div>
+        <div class="title">
+          <div class="title-first">{{"GUIDE_PAGE.PAGE_5.TITLE" | translate}}</div>
+          <div class="title-second">{{"GUIDE_PAGE.PAGE_5.SUBTITLE" | translate}}</div>
+        </div>
+        <div class="button-guide">
+          <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_5.BUTTON_1" | translate}}</button>
+          <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_5.BUTTON_2" | translate}}</button>
+        </div>
+        <div class="footer-guide">
+          {{"GUIDE_PAGE.PAGE_5.FOOTER_TITLE" | translate}}
         </div>
       </div>
     </ion-slide>

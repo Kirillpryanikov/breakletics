@@ -5,7 +5,12 @@ import { NavController, Slides } from 'ionic-angular';
 @Component({
   selector: 'page-guide',
   templateUrl: 'guide.html',
-  styleUrls: ['/guide.scss', '/guide1.scss', '/guide2.scss', '/guide3.scss']
+  styleUrls: ['/guide.scss',
+              '/guide1.scss',
+              '/guide2.scss',
+              '/guide3.scss',
+              '/guide4.scss',
+              '/guide5.scss' ]
 })
 export class GuideComponent {
   @ViewChild('slider') slider: Slides;
