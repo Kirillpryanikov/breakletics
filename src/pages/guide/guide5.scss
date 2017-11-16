@@ -1,0 +1,40 @@
+@import "../../theme/main";
+@import "./guide";
+
+page-guide {
+  .page-guide-5 {
+    @include setFlexStyles();
+    flex-direction: column;
+    height: 100vh;
+    background-color: $guide-background;
+
+    .namber-page {
+      @include numberPage();
+    }
+
+    .title {
+      color: $guide-color-text;
+      width: 90%;
+      margin-bottom: 10%;
+
+      .title-first {
+        font-size: $font-size-em-md;
+      }
+      .title-second {
+        margin-top: 6%;
+      }
+    }
+
+    .button-guide {
+      width: 100%!important;
+      @include nextGuide();
+      button {
+        margin: 2% 0;
+      }
+    }
+
+    .footer-guide {
+      @include footerGuide();
+    }
+  }
+}

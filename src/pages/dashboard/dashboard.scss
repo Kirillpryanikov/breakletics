@@ -34,12 +34,11 @@ page-dashboard {
           float: left;
         }
 
-        .item-block-3:nth-child(1){
-          background-color: gray;
+        .item-block-3:nth-child(1) {
+          background-color: darkcyan;
         }
-
         .item-block-3:nth-child(2) {
-          background-color: yellowgreen;
+          background-color: chocolate;
         }
       }
 
@@ -47,8 +46,6 @@ page-dashboard {
         height: $height-block-footer;
         background-color: blueviolet;
       }
-
     }
-
   }
 }
