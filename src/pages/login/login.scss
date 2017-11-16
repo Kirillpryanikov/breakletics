@@ -1,6 +1,5 @@
 @import "../../theme/main";
 
-$height-navbar-login: 56px;
 $height-form: calc(100% - 56px);
 $padding-input-field: 30px 15px 12px 0;
 $padding-block-password-forgotten: 20px 15px 5px 15px;
@@ -16,9 +15,9 @@ page-login {
     background-size: cover;
     .header {
       @include setFlexStyles(flex-start);
-      height: $height-navbar-login;
+      height: $height-header;
       font-size: $font-size-em-md;
-      color: #c2c2c2;
+      color: $header-back-color;
     }
 
     form {
@@ -68,7 +67,7 @@ page-login {
           font-size: $font-size-em-sm;
           letter-spacing: 2px;
           background-color: #fff;
-          color: #012850;
+          color: $btn-text-color;
         }
       }
 

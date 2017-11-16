@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
+import { WelcomePageComponent } from '../welcome/welcome';
 
 @Component({
   selector: 'page-register',
@@ -19,5 +20,9 @@ export class RegisterPageComponent {
 
   submit(f: NgForm) {
     console.log(f.value)
+  }
+
+  goToWelcome() {
+    this.navCtrl.push(WelcomePageComponent);
   }
 }

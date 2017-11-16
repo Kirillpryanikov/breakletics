@@ -1,8 +1,7 @@
-<div class="header" padding>
-  <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
-</div>
-
 <ion-content>
+  <div class="header" padding>
+    <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
+  </div>
   <form #f="ngForm" (ngSubmit)="submit(f)">
     <ion-slides pager="true" #slider>
       <ion-slide>
@@ -12,7 +11,7 @@
             <div>{{"REGISTER.PAGE_1.TITLE" | translate}}</div>
           </div>
           <div class="handler-gender" padding>
-            <input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">
+            <input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 git value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">
             <input type="button" ngModel name="gender" (click)="f.value.gender = 'man'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">
           </div>
         </div>

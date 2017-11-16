@@ -8,11 +8,12 @@ page-register{
       width: 100%;
       flex-direction: row;
 
-      input, button {
+      input, input[type=button] button {
         text-transform: uppercase;
         padding: 15px;
         margin: $margin-button;
         letter-spacing: 2px;
+        color: $btn-text-color;
       }
     }
   }
