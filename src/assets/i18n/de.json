@@ -45,7 +45,12 @@
     "PAGE_1": {
       "TITLE": "Jede Worche gibt es hier ein brandneues (kostenloses) \"Workout der Woche\".",
       "BUTTON": "OKAY, VERSTANDEN!",
-      "FOOTER_TITLE": "Einführu abbrechen"
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_2": {
+      "TITLE": "Hier findest du unsere ganzen Workouts - das Herzstück der App!",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
     }
   }
 }
