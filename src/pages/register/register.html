@@ -1,7 +1,6 @@
-<ion-header no-border>
-  <ion-navbar transparent>
-  </ion-navbar>
-</ion-header>
+<div class="header" padding>
+  <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
+</div>
 
 <ion-content>
   <form #f="ngForm" (ngSubmit)="submit(f)">

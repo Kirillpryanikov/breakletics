@@ -25,10 +25,10 @@
       </ion-slides>
     </div>
     <div id="footer">
-      <div class="button active" id="signin">
+      <div class="button active" id="signin" (click)="goToPage('signin')">
         <span>{{'WELCOME_PAGE.REGISTER_BTN' | translate }}</span>
       </div>
-      <div class="button" id="login">
+      <div class="button" id="login" (click)="goToPage('login')">
         <span>{{'WELCOME_PAGE.LOGIN_BTN' | translate }}</span>
       </div>
     </div>
