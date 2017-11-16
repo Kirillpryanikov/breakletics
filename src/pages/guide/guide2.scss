@@ -1,0 +1,49 @@
+@import "../../theme/main";
+@import "./guide";
+
+page-guide {
+  .page-guide-2 {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: calc(100vh - 56px);
+
+    .header-block{
+      height: $height-header;
+      background-color: $guide-background;
+    }
+    .block-1{
+      height: $height-block-1;
+      background-color: $guide-background;
+    }
+
+    .visible-block {
+      height: $height-block-2;
+    }
+
+    .guide-block {
+      @include setFlexStyles(flex-start, center);
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      background-color: $guide-background;
+
+      .namber-page {
+        margin-top: 11%;
+        @include numberPage();
+      }
+
+      .title {
+        @include title();
+      }
+
+      .next-guide {
+        @include nextGuide();
+      }
+
+      .footer-guide{
+        @include footerGuide();
+      }
+    }
+  }
+}

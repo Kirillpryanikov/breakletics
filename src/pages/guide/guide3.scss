@@ -1,0 +1,50 @@
+@import "../../theme/main";
+@import "./guide";
+
+page-guide {
+
+  .page-guide-3 {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: calc(100vh - 56px);
+
+    .header-block {
+      height: $height-header;
+      background-color: $guide-background;
+    }
+
+    .guide-block{
+      height: $height-block-1 + $height-block-2;
+      background-color: $guide-background;
+    }
+
+    .visible-block {
+      height: $height-block-1;
+    }
+
+    .guide-block {
+      //@include setFlexStyles(center, center);
+      //flex-direction: column;
+      //height: 100% - $height-block-1;
+      //width: 100%;
+      //background-color: $guide-background;
+      //
+      //.namber-page {
+      //  @include numberPage();
+      //}
+      //
+      //.title {
+      //  @include title();
+      //}
+      //
+      //.next-guide {
+      //  @include nextGuide();
+      //}
+      //
+      //.footer-guide {
+      //  @include footerGuide();
+      //}
+    }
+  }
+}

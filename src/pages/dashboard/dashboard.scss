@@ -3,13 +3,52 @@
 page-dashboard {
 
   ion-content {
-    div{
-      @include setFlexStyles();
-      width: 100%;
+    .container-dashboard{
+      background-color: $dashboard-background;
       height: 100%;
-      color: white;
-      background-image: url("../../assets/imgs/welcome-bg.jpg");
-      font-size: 1.7em;
+
+      .block {
+        // NEED REMOVE
+        @include setFlexStyles();
+        color: white;
+        font-size: 1.2em;
+        text-transform: uppercase;
+      }
+
+      .block-1 {
+        height: $height-block-1;
+        background-color: #32db64;
+      }
+
+      .block-2 {
+        height: $height-block-2;
+        background-color: #488aff;
+      }
+
+      .block-3 {
+        height: $height-block-3;
+        background-color: white;
+
+        .item-block-3 {
+          height: 100%;
+          float: left;
+        }
+
+        .item-block-3:nth-child(1){
+          background-color: gray;
+        }
+
+        .item-block-3:nth-child(2) {
+          background-color: yellowgreen;
+        }
+      }
+
+      .block-footer {
+        height: $height-block-footer;
+        background-color: blueviolet;
+      }
+
     }
+
   }
 }
