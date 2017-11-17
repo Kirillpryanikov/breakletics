@@ -35,7 +35,6 @@ export class DashboardComponent implements OnInit {
         this.loading.dismiss();
       })
       .catch(err => {
-        console.log('Dashboard component ERR --> ', err);
         this.loading.dismiss();
       })
   }

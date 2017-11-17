@@ -29,20 +29,25 @@ export class LoginPageComponent implements OnDestroy {
     this.presentLoading();
     let data = form.value;
     data.username = form.value.email;
-
+    if(!data.email || !data.password) {
+      /**
+       * If someone field is empty
+       */
+      this.presentToast(400);
+      this.dismissLoading();
+      return false;
+    }
     this.loginObservable = this.service.login(data)
       .subscribe(responce => {
         if(responce.token) {
           this.nativeStorage.setItem('token', responce.token);
           this.navCtrl.push(DashboardComponent);
-        } else {
-          this.presentToast();
         }
         this.dismissLoading();
 
       }, err => {
         this.dismissLoading();
-        this.presentToast();
+        this.presentToast(err.status);
       })
   }
 
@@ -69,10 +74,17 @@ export class LoginPageComponent implements OnDestroy {
     }
   }
 
-  presentToast() {
+  presentToast(status) {
+    let msg: string;
+
+    if(status === 400) {
+      msg = 'Check fields';
+    } else {
+      msg = 'Not found user'
+    }
     if (this.toast) this.toast.dismiss();
     this.toast = this.toastCtrl.create({
-      message: 'Not found user',
+      message: msg,
       duration: 3500,
       position: 'bottom',
       showCloseButton: true

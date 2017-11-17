@@ -10,9 +10,6 @@ export class LoginService {
   constructor(public http: HttpClient) {}
 
   login(data): Observable<any> {
-    console.log('*************** 2 ',ConfigService.CONFIG.url);
-
     return this.http.post(`${ConfigService.CONFIG.url}jwt-auth/v1/token`, data)
-      .catch(err =>  Observable.throw(err.json() || 'Server error'))
   }
 }
