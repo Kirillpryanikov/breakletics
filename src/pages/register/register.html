@@ -11,8 +11,10 @@
             <div>{{"REGISTER.PAGE_1.TITLE" | translate}}</div>
           </div>
           <div class="handler-gender" padding>
-            <input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 git value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">
-            <input type="button" ngModel name="gender" (click)="f.value.gender = 'man'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">
+            <!--<input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">-->
+            <!--<input type="button" ngModel name="gender" (click)="f.value.gender = 'man'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">-->
+            <button type="button" name="gender" col-5 (click)="f.value.gender = 'woman'; goNext()">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</button>
+            <button type="button" name="gender" col-5 (click)="f.value.gender = 'man'; goNext()">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</button>
           </div>
         </div>
       </ion-slide>
@@ -27,7 +29,8 @@
             <input type="text" ngModel name="lastname" placeholder="{{'REGISTER.PAGE_2.LASTNAME' | translate}}" required>
           </div>
           <div class="handler" padding>
-            <input type="button" padding col-12 (click)="goNext()" value="{{'REGISTER.PAGE_2.MORE' | translate}}">
+            <button type="button" padding col-12 (click)="goNext()">{{'REGISTER.PAGE_2.MORE' | translate}}</button>
+
           </div>
         </div>
       </ion-slide>
@@ -42,7 +45,7 @@
             <input type="password" ngModel name="password" placeholder="{{'REGISTER.PAGE_3.PASSWORD' | translate}}" required>
           </div>
           <div class="handler" padding>
-            <input type="submit" padding col-12 value="{{'REGISTER.PAGE_3.REGISTRATION' | translate}}">
+            <button type="submit" padding col-12 >{{'REGISTER.PAGE_3.REGISTRATION' | translate}}</button>
           </div>
           <div class="footer-reg">
             <span>{{'REGISTER.PAGE_3.FOOTER_LOGIN' | translate}}</span>
