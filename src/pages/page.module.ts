@@ -11,6 +11,8 @@ import { ExtraQuestionsComponent } from './extra.questions/extra.questions';
 
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
+import { ExtraQuestionsService } from './extra.questions/extra.qustetions.service';
+import { ConfigService } from './config.service';
 
 const components = [
   DashboardComponent,
@@ -30,7 +32,9 @@ const components = [
   entryComponents: components,
   providers: [
     LoginService,
-    RegisterService
+    RegisterService,
+    ExtraQuestionsService,
+    ConfigService
   ]
 })
 

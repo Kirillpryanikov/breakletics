@@ -24,7 +24,6 @@ export class GuideComponent implements OnInit{
 
   ngOnInit(){
     this.user = this.navParams.get('data');
-    console.log('user step 4: ', this.user);
   }
 
   ionViewDidEnter() {
