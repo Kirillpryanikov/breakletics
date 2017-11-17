@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'page-extra-questions',
@@ -20,7 +21,8 @@ export class ExtraQuestionsComponent implements OnInit {
     console.log('extra component data --> ', this.user);
   }
 
-  goToDashboard() {
+  submit(f: NgForm) {
+
     this.navCtrl.setRoot(DashboardComponent, {user: this.user})
   }
 }
