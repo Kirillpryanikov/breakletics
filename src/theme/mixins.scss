@@ -9,7 +9,7 @@
 @mixin guideButtonStyle() {
   border: none;
   letter-spacing: 2px;
-  padding: 19px 0;
+  padding: 5% 0;
   background-color: $background-white;
   font-weight: 600;
   width: 60%;
@@ -20,7 +20,7 @@
 @mixin fullSizeBtn() {
   border: none;
   letter-spacing: 2px;
-  padding: 19px 0;
+  padding: 5% 0;
   background-color: $background-white;
   font-weight: 600;
   width: 100%;
