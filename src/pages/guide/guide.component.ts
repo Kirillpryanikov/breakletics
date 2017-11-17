@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, Slides, ViewController } from 'ionic-angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { NavController, Slides, ViewController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
@@ -12,12 +12,20 @@ import { NativeStorage } from '@ionic-native/native-storage';
               '/guide4.scss',
               '/guide5.scss' ]
 })
-export class GuideComponent {
+export class GuideComponent implements OnInit{
   @ViewChild('slider') slider: Slides;
 
   constructor(private navCtrl: NavController,
               private nativeStorage: NativeStorage,
-              private viewCtrl: ViewController) {}
+              private viewCtrl: ViewController,
+              private navParams: NavParams) {}
+
+  public user: object;
+
+  ngOnInit(){
+    this.user = this.navParams.get('data');
+    console.log('user step 4: ', this.user);
+  }
 
   ionViewDidEnter() {
     this.slider.lockSwipes(true);

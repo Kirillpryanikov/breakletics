@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, LoadingController } from 'ionic-angular';
+import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import { GuideComponent } from '../guide/guide.component';
@@ -16,12 +16,15 @@ export class DashboardComponent implements OnInit {
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController) {
+              private loadingCtrl: LoadingController,
+              private navParams: NavParams) {
     this.loading = this.loadingCtrl.create({});
   }
 
   ngOnInit(){
-    this.presentGuideModal();
+    let user = this.navParams.get('user');
+    console.log('user step 2: ', user);
+    this.presentGuideModal(user);
   }
 
   logout() {
@@ -38,16 +41,17 @@ export class DashboardComponent implements OnInit {
       })
   }
 
-  presentGuideModal() {
+  presentGuideModal(user) {
+    console.log('user step 3: ', user);
     this.nativeStorage.getItem('guide')
       .then(res => {
         if(!res){
-          this.modalCtrl.create(GuideComponent).present();
+          this.modalCtrl.create(GuideComponent, {data: user}).present();
         }
       })
       .catch(err => {
         console.log('ERRR ---> ', err);
-        this.modalCtrl.create(GuideComponent).present();
+        this.modalCtrl.create(GuideComponent,{data: user}).present();
       })
   }
 }

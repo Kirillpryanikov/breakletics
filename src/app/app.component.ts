@@ -9,6 +9,7 @@ import { LoginPageComponent } from '../pages/login/login';
 import { WelcomePageComponent } from '../pages/welcome/welcome';
 import { RegisterPageComponent } from '../pages/register/register';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
+import { ExtraQuestionsComponent } from '../pages/extra.questions/extra.questions';
 
 @Component({
   templateUrl: 'app.html'
@@ -57,13 +58,15 @@ export class MyApp implements OnInit{
       .then(res => {
         if(!res){
           // this.rootPage = RegisterPageComponent;
-          this.rootPage = WelcomePageComponent;
+          // this.rootPage = WelcomePageComponent;
+          this.rootPage = ExtraQuestionsComponent;
         } else {
           this.rootPage = DashboardComponent;
         }
       })
       .catch(err => {
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = ExtraQuestionsComponent;
+        // this.rootPage = WelcomePageComponent;
         // this.rootPage = RegisterPageComponent;
         console.log('ERR in app.component ', err);
       })

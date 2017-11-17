@@ -3,7 +3,7 @@
     <ion-slide>
       <div class="page-greeting">
         <div class="title">
-          <div>{{"GUIDE_PAGE.PAGE_GREETING.TITLE" | translate}}</div>
+          <div>{{"GUIDE_PAGE.PAGE_GREETING.TITLE" | translate}} {{user['first_name']}},</div>
           <div>{{"GUIDE_PAGE.PAGE_GREETING.SUBTITLE" | translate}}</div>
           <div>
             <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_GREETING.BUTTON" | translate}}</button>

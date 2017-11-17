@@ -1,0 +1,22 @@
+@import "../../theme/main";
+
+page-extra-questions {
+  ion-content {
+    color: #fff;
+    background: url("assets/imgs/login-bg.jpg");
+    background-position: center;
+    background-size: cover;
+
+    .title {
+      @include setFlexStyles();
+      flex-direction: column;
+      width: 100%;
+      color: #fff;
+      div {
+        width: inherit;
+      }
+    }
+  }
+
+
+}

@@ -7,6 +7,7 @@ import { WelcomePageComponent } from './welcome/welcome';
 import { RegisterPageComponent } from './register/register';
 import { GuideComponent } from './guide/guide.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ExtraQuestionsComponent } from './extra.questions/extra.questions';
 
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
@@ -16,7 +17,8 @@ const components = [
   LoginPageComponent,
   WelcomePageComponent,
   RegisterPageComponent,
-  GuideComponent
+  GuideComponent,
+  ExtraQuestionsComponent
 ];
 
 @NgModule({

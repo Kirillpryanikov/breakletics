@@ -11,6 +11,5 @@ export class RegisterService {
 
   registration(data): Observable<any> {
       return this.http.post('http://bl-members-dev.yelpix.work/members/wp-json/wp/v2/users/register', data)
-        .catch(err =>  Observable.throw(err.json() || 'Server error'))
   }
 }

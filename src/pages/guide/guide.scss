@@ -32,6 +32,9 @@ $padding-subtitle: 20px;
 }
 
 @mixin footerGuide() {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   color: $guide-color-text;
   font-size: 1.28rem;
   text-decoration: underline;
