@@ -1,22 +1,63 @@
 @import "../../theme/main";
-
+$height-form: calc(100% - 56px);
+$padding-input-field: 30px 15px 12px 0;
 page-extra-questions {
   ion-content {
     color: #fff;
-    background: url("assets/imgs/login-bg.jpg");
+    background: url("../../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
-
-    .title {
+    .page {
+      width: 87%;
       @include setFlexStyles();
       flex-direction: column;
-      width: 100%;
-      color: #fff;
-      div {
-        width: inherit;
+      margin: auto;
+      .title {
+        width: 100%;
+        div:first-child {
+          color: $guide-color-text;
+          font-size: $font-size-onboarding-lg;
+          margin-bottom: 2%;
+        }
+        div:nth-child(2) {
+          color: $guide-color-text;
+          font-size: $font-size-em-sm;
+          margin-bottom: 9%;
+        }
+        button {
+          @include fullSizeBtn();
+        }
+      }
+
+      form {
+        width: 100%;
+        margin-top: 8.7%;
+        .item-block:first-child,
+        .item-block:last-child
+        {
+          border-top: 0;
+          //border-bottom: 0;
+        }
+        ion-item {
+          background: transparent;
+          //border-bottom: 0.55px solid #c8c7cc;
+        }
+        input {
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid $white-opacity;
+          padding: $padding-input-field;
+          background: rgba(1,1,1,0);
+          color: $white-opacity;
+        }
+        ion-label {
+          color: $white-opacity;
+          font-weight: normal;
+        }
+        button[type=submit] {
+          @include fullSizeBtn();
+        }
       }
     }
   }
-
-
 }

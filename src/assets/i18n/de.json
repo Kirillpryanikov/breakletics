@@ -71,5 +71,18 @@
       "BUTTON_2": "NUR WORKOUT",
       "FOOTER_TITLE": "Einführung abbrechen"
     }
+  },
+  "PAGE_EXTRA": {
+    "TITLE": "Du musst nicht!",
+    "SUBTITLE":"Gründe geben warum der mehr Informatoinen geben soll.",
+    "BUTTON_1": "Nee, möchte ich jetzt loslegen!",
+    "FORM_Q": {
+      "AGE": "Dein Alter",
+      "LOCATION": "Woher kommst du?",
+      "MISSION": "Was ist dein Ziel?",
+      "HEAR": "Wie hast du von Breakletics erfahren?",
+      "FIT": "Wie fit bist du?",
+      "GO": "So, jetzt aber!"
+    }
   }
 }

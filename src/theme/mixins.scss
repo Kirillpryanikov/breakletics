@@ -17,4 +17,14 @@
   color: $btn-text-color;
 
 }
+@mixin fullSizeBtn() {
+  border: none;
+  letter-spacing: 2px;
+  padding: 19px 0;
+  background-color: $background-white;
+  font-weight: 600;
+  width: 100%;
+  font-size: 1.6rem;
+  color: $btn-text-color;
+}
 
