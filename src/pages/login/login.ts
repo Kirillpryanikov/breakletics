@@ -15,19 +15,18 @@ import { Subscription } from "rxjs/Subscription";
 })
 export class LoginPageComponent implements OnDestroy {
   private loading: any;
+  private toast: any;
+
   private loginObservable: Subscription;
 
   constructor(private navCtrl: NavController,
               private service: LoginService,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
-              private toastCtrl: ToastController) {
-      this.loading = this.loadingCtrl.create({});
-  }
+              private toastCtrl: ToastController) {}
 
   login(form: NgForm) {
-    this.loading.present();
-
+    this.presentLoading();
     let data = form.value;
     data.username = form.value.email;
 
@@ -39,9 +38,10 @@ export class LoginPageComponent implements OnDestroy {
         } else {
           this.presentToast();
         }
-        this.loading.dismiss();
+        this.dismissLoading();
+
       }, err => {
-        this.loading.dismiss();
+        this.dismissLoading();
         this.presentToast();
       })
   }
@@ -50,13 +50,34 @@ export class LoginPageComponent implements OnDestroy {
     this.navCtrl.setRoot(WelcomePageComponent);
   }
 
+  dismissLoading() {
+    if (this.loading) {
+      try {
+        this.loading.dismiss();
+      }
+      catch (exception) {
+        console.log(exception)
+      }
+      this.loading = null;
+    }
+  }
+
+  presentLoading(){
+    if(!this.loading){
+      this.loading = this.loadingCtrl.create({});
+      this.loading.present();
+    }
+  }
+
   presentToast() {
-    let toast = this.toastCtrl.create({
+    if (this.toast) this.toast.dismiss();
+    this.toast = this.toastCtrl.create({
       message: 'Not found user',
-      duration: 4000,
-      position: 'bottom'
+      duration: 3500,
+      position: 'bottom',
+      showCloseButton: true
     });
-    toast.present();
+    this.toast.present();
   }
 
   ngOnDestroy() {

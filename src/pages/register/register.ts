@@ -12,44 +12,66 @@ import { Subscription } from "rxjs/Subscription";
 })
 export class RegisterPageComponent implements OnDestroy{
   @ViewChild('slider') slider: Slides;
-  private loading: any;
 
+  private toast: any;
+  private loading: any;
   private regObservable: Subscription;
 
   constructor(public navCtrl: NavController,
               private service: RegisterService,
               private loadingCtrl: LoadingController,
-              private toastCtrl: ToastController) {
-    this.loading = this.loadingCtrl.create({});
-  }
+              private toastCtrl: ToastController) {}
 
   goNext() {
     this.slider.slideNext();
   }
 
   submit(f: NgForm) {
-    this.loading.present();
+    this.presentLoading();
     let data = f.value;
+    /**
+     * This is necessary. From WORDPERSS
+     */
     data.username = f.value.email;
 
     this.regObservable = this.service.registration(data)
       .subscribe(responce => {
         this.navCtrl.push(WelcomePageComponent);
-        this.loading.dismiss();
+        this.dismissLoading();
       }, err => {
         this.slider.slideTo(0);
         this.presentToast();
-        this.loading.dismiss();
+        this.dismissLoading();
       })
   }
 
+  dismissLoading() {
+    if (this.loading) {
+      try {
+        this.loading.dismiss();
+      }
+      catch (exception) {
+        console.log(exception)
+      }
+      this.loading = null;
+    }
+  }
+
+  presentLoading(){
+    if(!this.loading){
+      this.loading = this.loadingCtrl.create({});
+      this.loading.present();
+    }
+  }
+
   presentToast() {
-    let toast = this.toastCtrl.create({
+    if (this.toast) this.toast.dismiss();
+    this.toast = this.toastCtrl.create({
       message: 'Fill in all the fields\n',
-      duration: 4000,
+      duration: 3500,
       position: 'bottom'
     });
-    toast.present();
+    this.toast.present();
   }
 
   ngOnDestroy() {
