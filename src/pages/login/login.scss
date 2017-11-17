@@ -71,10 +71,7 @@ page-login {
       }
 
       .title-under-btn {
-        width: 100%;
-        @include setFlexStyles();
-        font-size: $font-size-em-xss;
-        margin-top: 8px;
+        @include footerGuide();
       }
 
       .tooter-login {
