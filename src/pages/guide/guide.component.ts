@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, Slides } from 'ionic-angular';
-
+import { NavController, Slides, ViewController } from 'ionic-angular';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-guide',
@@ -15,7 +15,9 @@ import { NavController, Slides } from 'ionic-angular';
 export class GuideComponent {
   @ViewChild('slider') slider: Slides;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(private navCtrl: NavController,
+              private nativeStorage: NativeStorage,
+              private viewCtrl: ViewController) {}
 
   ionViewDidEnter() {
     this.slider.lockSwipes(true);
@@ -24,5 +26,16 @@ export class GuideComponent {
   goNextSlide(){
     this.slider.lockSwipes(false);
     this.slider.slideNext();
+  }
+
+  guideFinish() {
+    this.nativeStorage.setItem('guide', true)
+      .then(res => {
+        this.viewCtrl.dismiss();
+      })
+      .catch(err => {
+        console.log('Error Guide component --> ', err);
+        this.viewCtrl.dismiss();
+      })
   }
 }

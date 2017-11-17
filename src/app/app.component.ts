@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,10 +13,9 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp implements OnInit{
   @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = LoginPageComponent;
+  rootPage: any;
 
   pages: Array<{title: string, component: any}>;
 
@@ -28,12 +27,15 @@ export class MyApp {
     this.initializeApp();
   }
 
+  ngOnInit(){
+    this.isAuth();
+  }
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.initTranslate();
-      this.isAuth();
     });
   }
 
@@ -49,5 +51,18 @@ export class MyApp {
     this.translate.use('de');
   }
 
-  isAuth() {}
+  isAuth() {
+    this.nativeStorage.getItem('token')
+      .then(res => {
+        if(!res){
+          this.rootPage = WelcomePageComponent;
+        } else {
+          this.rootPage = DashboardComponent;
+        }
+      })
+      .catch(err => {
+        this.rootPage = WelcomePageComponent;
+        console.log('ERR in app.component ', err);
+      })
+  }
 }
