@@ -1,18 +1,20 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnDestroy } from '@angular/core';
 import { NavController, Slides, LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
-
-import { LoginPageComponent } from '../login/login';
+import { WelcomePageComponent } from '../welcome/welcome';
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
   styleUrls: ['/register.scss', '/register1.scss', '/register2.scss', '/register3.scss'],
 })
-export class RegisterPageComponent {
+export class RegisterPageComponent implements OnDestroy{
   @ViewChild('slider') slider: Slides;
   private loading: any;
+
+  private regObservable: Subscription;
 
   constructor(public navCtrl: NavController,
               private service: RegisterService,
@@ -20,7 +22,7 @@ export class RegisterPageComponent {
     this.loading = this.loadingCtrl.create({});
   }
 
-  goNext(){
+  goNext() {
     this.slider.slideNext();
   }
 
@@ -28,10 +30,19 @@ export class RegisterPageComponent {
     this.loading.present();
     let data = f.value;
     data.username = f.value.email;
-    this.service.registration(data)
+
+    this.regObservable = this.service.registration(data)
       .subscribe(responce => {
-        this.navCtrl.push(LoginPageComponent);
+        this.navCtrl.push(WelcomePageComponent);
+        this.loading.dismiss();
+      }, err => {
         this.loading.dismiss();
       })
+  }
+
+  ngOnDestroy() {
+    if(this.regObservable) {
+      this.regObservable.unsubscribe();
+    }
   }
 }

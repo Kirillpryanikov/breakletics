@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage';
@@ -6,14 +6,16 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { WelcomePageComponent } from '../welcome/welcome';
 import { LoginService } from './login.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
   styleUrls: ['/login.scss']
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnDestroy {
   private loading: any;
+  private loginObservable: Subscription;
 
   constructor(private navCtrl: NavController,
               private service: LoginService,
@@ -28,9 +30,8 @@ export class LoginPageComponent {
     let data = form.value;
     data.username = form.value.email;
 
-    this.service.login(data)
+    this.loginObservable = this.service.login(data)
       .subscribe(responce => {
-        console.log('auth --> ', responce);
         if(responce.token) {
           this.nativeStorage.setItem('token', responce.token);
           this.navCtrl.push(DashboardComponent);
@@ -41,5 +42,11 @@ export class LoginPageComponent {
 
   goToWelcome() {
     this.navCtrl.setRoot(WelcomePageComponent);
+  }
+
+  ngOnDestroy() {
+    if(this.loginObservable) {
+      this.loginObservable.unsubscribe();
+    }
   }
 }

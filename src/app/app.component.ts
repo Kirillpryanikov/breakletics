@@ -56,15 +56,15 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('token')
       .then(res => {
         if(!res){
-          this.rootPage = DashboardComponent;
-          // this.rootPage = WelcomePageComponent;
+          // this.rootPage = RegisterPageComponent;
+          this.rootPage = WelcomePageComponent;
         } else {
           this.rootPage = DashboardComponent;
         }
       })
       .catch(err => {
-        // this.rootPage = WelcomePageComponent;
-        this.rootPage = DashboardComponent;
+        this.rootPage = WelcomePageComponent;
+        // this.rootPage = RegisterPageComponent;
         console.log('ERR in app.component ', err);
       })
   }
