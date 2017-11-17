@@ -33,12 +33,14 @@ $padding-subtitle: 20px;
 
 @mixin footerGuide() {
   color: $guide-color-text;
-  font-size: $font-size-em-xss;
+  font-size: 1.28rem;
   text-decoration: underline;
   margin-bottom: 14%;
 }
 
 page-guide {
+  font-family: "RobotoCondensesBold";
+
   .container-guide {
     height: 100%;
     overflow: hidden;
@@ -62,12 +64,13 @@ page-guide {
   .page-greeting > .title {
     div:first-child {
       color: $guide-color-text;
-      font-size: $font-size-em-md;
+      font-size: $font-size-onboarding-lg;
     }
 
     div:nth-child(2) {
       color: $guide-color-text;
       padding: $padding-subtitle;
+      font-size: $font-size-onboarding-md;
     }
 
     div:nth-child(3) {

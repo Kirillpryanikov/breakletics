@@ -7,11 +7,11 @@ page-guide {
     position: absolute;
     top:0;
     width: 100%;
-    height: calc(100vh - 56px);
+    height: calc(100vh - 44px);
     flex-direction: column;
 
     .header-block {
-      height: $height-header;
+      height: $height-header-dashboard;
       background-color: $guide-background;
     }
 

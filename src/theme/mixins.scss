@@ -9,8 +9,12 @@
 @mixin guideButtonStyle() {
   border: none;
   letter-spacing: 2px;
-  padding: 15px 0;
+  padding: 19px 0;
   background-color: $background-white;
   font-weight: 600;
   width: 60%;
+  font-size: 1.6rem;
+  color: $btn-text-color;
+
 }
+

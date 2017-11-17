@@ -2,11 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Slides, LoadingController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
-<<<<<<< HEAD
-import { WelcomePageComponent } from '../welcome/welcome';
-=======
+
 import { LoginPageComponent } from '../login/login';
->>>>>>> 609559fbe6ebb7f863c565f9b823b10a5242c81a
 
 @Component({
   selector: 'page-register',
@@ -28,13 +25,6 @@ export class RegisterPageComponent {
   }
 
   submit(f: NgForm) {
-<<<<<<< HEAD
-    console.log(f.value);
-  }
-
-  goToWelcome() {
-    this.navCtrl.push(WelcomePageComponent);
-=======
     this.loading.present();
     let data = f.value;
     data.username = f.value.email;
@@ -43,6 +33,5 @@ export class RegisterPageComponent {
         this.navCtrl.push(LoginPageComponent);
         this.loading.dismiss();
       })
->>>>>>> 609559fbe6ebb7f863c565f9b823b10a5242c81a
   }
 }
