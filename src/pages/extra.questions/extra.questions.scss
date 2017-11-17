@@ -1,6 +1,4 @@
 @import "../../theme/main";
-$height-form: calc(100% - 56px);
-$padding-input-field: 30px 15px 12px 0;
 page-extra-questions {
   ion-content {
     color: #fff;
@@ -32,6 +30,11 @@ page-extra-questions {
       form {
         width: 100%;
         margin-top: 8.7%;
+        @media (max-width: 320px) {
+          margin-top: 0;
+        }
+
+        height: 57%;
         .item-block:first-child,
         .item-block:last-child
         {
@@ -40,26 +43,28 @@ page-extra-questions {
         }
         ion-item {
           background: transparent;
-          //border-bottom: 0.55px solid #c8c7cc;
+          padding-left: 0;
+        }
+        ion-list {
+          margin-bottom: 0;
+        }
+        .item-block .item-inner {
+          padding-right: 0px !important;
+          margin-top: 4%;
         }
         .item-block:last-child .item-inner,
-        .item-wrapper:last-child .item-block .item-inner {
-          border-bottom: 0.55px solid #c8c7cc;
+        .item-wrapper:last-child .item-block .item-inner:last-child {
+          border-bottom: 0.55px solid #c8c7cc !important;
         }
-        input {
-          width: 100%;
-          border: none;
-          border-bottom: 1px solid $white-opacity;
-          padding: $padding-input-field;
-          background: rgba(1,1,1,0);
-          color: $white-opacity;
-        }
+
         ion-label {
           color: $white-opacity;
           font-weight: normal;
         }
         button[type=submit] {
           @include fullSizeBtn();
+          margin-top: 13.2%;
+
         }
       }
     }
