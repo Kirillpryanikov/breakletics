@@ -1,7 +1,11 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
 <ion-content>
-  <div class="header" padding>
-    <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
-  </div>
+  <!--<div class="header" padding>-->
+    <!--<ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>-->
+  <!--</div>-->
   <form #f="ngForm" (ngSubmit)="submit(f)">
     <ion-slides pager="true" #slider>
       <ion-slide>
@@ -48,7 +52,10 @@
             <button type="submit" padding col-12 >{{'REGISTER.PAGE_3.REGISTRATION' | translate}}</button>
           </div>
           <div class="footer-reg">
-            <span>{{'REGISTER.PAGE_3.FOOTER_LOGIN' | translate}}</span>
+            <span>
+              {{'LOGIN_PAGE.TITLE_UNDER_BUTTON1' | translate}}
+            <u>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON2' | translate}}</u>
+            {{'LOGIN_PAGE.TITLE_UNDER_BUTTON3' | translate}}</span>
           </div>
         </div>
       </ion-slide>
