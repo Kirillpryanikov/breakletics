@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnDestroy } from '@angular/core';
-import { NavController, Slides, LoadingController } from 'ionic-angular';
+import { NavController, Slides, LoadingController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { WelcomePageComponent } from '../welcome/welcome';
@@ -18,7 +18,8 @@ export class RegisterPageComponent implements OnDestroy{
 
   constructor(public navCtrl: NavController,
               private service: RegisterService,
-              private loadingCtrl: LoadingController) {
+              private loadingCtrl: LoadingController,
+              private toastCtrl: ToastController) {
     this.loading = this.loadingCtrl.create({});
   }
 
@@ -36,8 +37,19 @@ export class RegisterPageComponent implements OnDestroy{
         this.navCtrl.push(WelcomePageComponent);
         this.loading.dismiss();
       }, err => {
+        this.slider.slideTo(0);
+        this.presentToast();
         this.loading.dismiss();
       })
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Fill in all the fields\n',
+      duration: 4000,
+      position: 'bottom'
+    });
+    toast.present();
   }
 
   ngOnDestroy() {

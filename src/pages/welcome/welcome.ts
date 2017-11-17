@@ -13,7 +13,7 @@ export class WelcomePageComponent {
   constructor(public navCtrl: NavController) {}
   goToPage(pageName) {
     console.log(pageName);
-    const page = (pageName === 'login')? LoginPageComponent : RegisterPageComponent;
+    const page = (pageName === 'login') ? LoginPageComponent : RegisterPageComponent;
     this.navCtrl.push(page);
   }
 }

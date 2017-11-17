@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage';
 
@@ -20,7 +20,8 @@ export class LoginPageComponent implements OnDestroy {
   constructor(private navCtrl: NavController,
               private service: LoginService,
               private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController) {
+              private loadingCtrl: LoadingController,
+              private toastCtrl: ToastController) {
       this.loading = this.loadingCtrl.create({});
   }
 
@@ -35,13 +36,27 @@ export class LoginPageComponent implements OnDestroy {
         if(responce.token) {
           this.nativeStorage.setItem('token', responce.token);
           this.navCtrl.push(DashboardComponent);
+        } else {
+          this.presentToast();
         }
         this.loading.dismiss();
+      }, err => {
+        this.loading.dismiss();
+        this.presentToast();
       })
   }
 
   goToWelcome() {
     this.navCtrl.setRoot(WelcomePageComponent);
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Not found user',
+      duration: 4000,
+      position: 'bottom'
+    });
+    toast.present();
   }
 
   ngOnDestroy() {
