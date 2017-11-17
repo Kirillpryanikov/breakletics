@@ -42,13 +42,7 @@ page-register {
     }
 
     .footer-reg {
-      width: 100%;
-      font-size: $font-size-footer;
-      width: 100%;
-      @include setFlexStyles();
-      font-size: $font-size-em-xss;
-      margin-top: 8px;
-      color: #fff;
+      @include footerGuide();
     }
   }
 }
