@@ -23,14 +23,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(){
     let user = this.navParams.get('user');
-    console.log('user step 2: ', user);
     this.presentGuideModal(user);
   }
 
   logout() {
     this.loading.present();
 
-    this.nativeStorage.clear()
+    this.nativeStorage.remove('token')
       .then(res => {
         this.navCtrl.setRoot(WelcomePageComponent);
         this.loading.dismiss();
@@ -42,7 +41,6 @@ export class DashboardComponent implements OnInit {
   }
 
   presentGuideModal(user) {
-    console.log('user step 3: ', user);
     this.nativeStorage.getItem('guide')
       .then(res => {
         if(!res){

@@ -58,15 +58,15 @@ export class MyApp implements OnInit{
       .then(res => {
         if(!res){
           // this.rootPage = RegisterPageComponent;
-          // this.rootPage = WelcomePageComponent;
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = WelcomePageComponent;
+          // this.rootPage = ExtraQuestionsComponent;
         } else {
           this.rootPage = DashboardComponent;
         }
       })
       .catch(err => {
-        this.rootPage = ExtraQuestionsComponent;
-        // this.rootPage = WelcomePageComponent;
+        // this.rootPage = ExtraQuestionsComponent;
+        this.rootPage = WelcomePageComponent;
         // this.rootPage = RegisterPageComponent;
         console.log('ERR in app.component ', err);
       })

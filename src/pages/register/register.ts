@@ -52,7 +52,6 @@ export class RegisterPageComponent implements OnDestroy{
       })
   }
 
-
   /**
    * Authorization user after registration
    * @param username
