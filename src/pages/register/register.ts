@@ -5,6 +5,7 @@ import { RegisterService } from './register.service';
 import { LoginService } from '../login/login.service';
 import { WelcomePageComponent } from '../welcome/welcome';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
@@ -62,7 +63,7 @@ export class RegisterPageComponent implements OnDestroy{
     console.log('user step 1: ', user);
     return this.loginService.login({username, password})
       .subscribe(res =>{
-        this.navCtrl.push(DashboardComponent, { user: user });
+        this.navCtrl.push(ExtraQuestionsComponent, { user: user });
         this.dismissLoading();
       })
   }
