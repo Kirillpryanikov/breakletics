@@ -3,9 +3,10 @@
 page-dashboard {
 
   ion-content {
+
     ion-navbar {
       background: #000;
-      height: 74px;
+      height: $height-header-dashboard;
     }
     ion-title {
       img {
