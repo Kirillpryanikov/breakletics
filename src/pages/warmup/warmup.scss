@@ -1,17 +1,8 @@
 @import "../../theme/main";
 
-page-dashboard {
+page-warmup {
 
   ion-content {
-    ion-navbar {
-      background: #000;
-      height: 74px;
-    }
-    ion-title {
-      img {
-        height: 42px;
-      }
-    }
     .container-dashboard{
       background-color: $dashboard-background;
       height: 100%;
