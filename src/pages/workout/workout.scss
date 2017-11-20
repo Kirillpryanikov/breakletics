@@ -1,0 +1,51 @@
+@import "../../theme/main";
+
+page-workout {
+
+  ion-content {
+    .container-dashboard{
+      background-color: $dashboard-background;
+      height: 100%;
+
+      .block {
+        // NEED REMOVE
+        @include setFlexStyles();
+        color: white;
+        font-size: 1.2em;
+        text-transform: uppercase;
+      }
+
+      .block-1 {
+        height: $height-block-1;
+        background-color: #32db64;
+      }
+
+      .block-2 {
+        height: $height-block-2;
+        background-color: #488aff;
+      }
+
+      .block-3 {
+        height: $height-block-3;
+        background-color: white;
+
+        .item-block-3 {
+          height: 100%;
+          float: left;
+        }
+
+        .item-block-3:nth-child(1) {
+          background-color: darkcyan;
+        }
+        .item-block-3:nth-child(2) {
+          background-color: chocolate;
+        }
+      }
+
+      .block-footer {
+        height: $height-block-footer;
+        background-color: blueviolet;
+      }
+    }
+  }
+}

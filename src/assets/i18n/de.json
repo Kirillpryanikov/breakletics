@@ -84,5 +84,19 @@
       "FIT": "Wie fit bist du?",
       "GO": "So, jetzt aber!"
     }
+  },
+  "TABS": {
+    "TABS_1": "HOME",
+    "TABS_2": "WORKOUTS",
+    "TABS_3": "EXERCISES",
+    "TABS_4": "WARM UP"
+  },
+  "DASHBOARD": {
+    "WORKOUTS": "WORKOUTS",
+    "EXERCISES": "EXERCISES",
+    "WARM_UP": "WARM UP",
+    "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
+    "CRAZY": "Crazy XMAS Deal - 5 Workouts FÜR 5 EUR",
+    "STATIC": "Pluasmember"
   }
 }

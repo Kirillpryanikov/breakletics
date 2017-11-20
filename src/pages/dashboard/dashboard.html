@@ -1,14 +1,26 @@
-<ion-header transparent>
-  <ion-navbar no-border>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="logout()">
-        <ion-icon name="ios-log-out-outline"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
+<ion-menu [content]="content">
+  <ion-content>
+    <ion-list>
+      <p>some menu content, could be list items</p>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-<ion-content>
+
+<ion-content #content>
+  <ion-header transparent>
+    <ion-navbar color="dark">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title><img src="../../assets/imgs/menu-logo.png" alt=""></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only >
+          <div>{{'DASHBOARD.STATIC' | translate }}</div>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
   <div class="container-dashboard">
     <div class="block block-1">
         Block 1

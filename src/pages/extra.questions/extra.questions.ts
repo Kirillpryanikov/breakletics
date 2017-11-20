@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { DashboardComponent } from '../dashboard/dashboard.component';
 import {NgForm} from "@angular/forms";
+import { DashboardComponent  } from '../';
 
 @Component({
   selector: 'page-extra-questions',

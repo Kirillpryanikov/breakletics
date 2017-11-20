@@ -5,11 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { LoginPageComponent } from '../pages/login/login';
-import { WelcomePageComponent } from '../pages/welcome/welcome';
-import { RegisterPageComponent } from '../pages/register/register';
-import { DashboardComponent } from '../pages/dashboard/dashboard.component';
-import { ExtraQuestionsComponent } from '../pages/extra.questions/extra.questions';
+import {
+  LoginPageComponent,
+  WelcomePageComponent,
+  RegisterPageComponent,
+  DashboardComponent,
+  TabsComponent,
+  ExtraQuestionsComponent
+} from '../pages/index'
 
 @Component({
   templateUrl: 'app.html'
@@ -59,15 +62,19 @@ export class MyApp implements OnInit{
         if(!res){
           // this.rootPage = RegisterPageComponent;
           this.rootPage = WelcomePageComponent;
+          // this.rootPage = TabsComponent;
           // this.rootPage = ExtraQuestionsComponent;
         } else {
-          this.rootPage = DashboardComponent;
+          this.rootPage = WelcomePageComponent;
+          // this.rootPage = TabsComponent;
         }
       })
       .catch(err => {
         // this.rootPage = ExtraQuestionsComponent;
+        // this.rootPage = WelcomePageComponent;
+        // this.rootPage = RegisterPageComponent
+        // this.rootPage = TabsComponent;
         this.rootPage = WelcomePageComponent;
-        // this.rootPage = RegisterPageComponent;
         console.log('ERR in app.component ', err);
       })
   }

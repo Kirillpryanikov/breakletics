@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
-
-import { LoginPageComponent } from './login/login';
-import { WelcomePageComponent } from './welcome/welcome';
-import { RegisterPageComponent } from './register/register';
-import { GuideComponent } from './guide/guide.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ExtraQuestionsComponent } from './extra.questions/extra.questions';
+import {
+  LoginPageComponent,
+  DashboardComponent,
+  TabsComponent,
+  RegisterPageComponent,
+  WelcomePageComponent,
+  GuideComponent,
+  WorkoutComponent,
+  ExtraQuestionsComponent,
+  ExercisesComponent,
+  WarmupComponent
+} from './index';
 
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
@@ -20,8 +25,14 @@ const components = [
   WelcomePageComponent,
   RegisterPageComponent,
   GuideComponent,
-  ExtraQuestionsComponent
+  ExtraQuestionsComponent,
+  TabsComponent,
+  WorkoutComponent,
+  ExercisesComponent,
+  WarmupComponent
 ];
+
+console.log('components ', components);
 
 @NgModule({
   declarations: components,
