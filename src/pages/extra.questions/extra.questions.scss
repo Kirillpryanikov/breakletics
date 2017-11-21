@@ -2,7 +2,7 @@
 page-extra-questions {
   ion-content {
     color: #fff;
-    background: url("assets/imgs/login-bg.jpg");
+    background: url("../../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
     .page {
@@ -50,7 +50,7 @@ page-extra-questions {
         }
         .item-block .item-inner {
           padding-right: 0px !important;
-          margin-top: 4%;
+          margin-top: 0;
         }
         .item-block:last-child .item-inner,
         .item-wrapper:last-child .item-block .item-inner:last-child {
@@ -64,7 +64,9 @@ page-extra-questions {
         button[type=submit] {
           @include fullSizeBtn();
           margin-top: 13.2%;
-
+        }
+        .select-text, .datetime-text {
+          color: $white-opacity;
         }
       }
     }

@@ -62,8 +62,6 @@ export class MyApp implements OnInit{
         if(!res){
           // this.rootPage = RegisterPageComponent;
           this.rootPage = WelcomePageComponent;
-          // this.rootPage = TabsComponent;
-          // this.rootPage = ExtraQuestionsComponent;
         } else {
           // this.rootPage = WelcomePageComponent;
           this.rootPage = TabsComponent;
@@ -74,7 +72,7 @@ export class MyApp implements OnInit{
         // this.rootPage = WelcomePageComponent;
         // this.rootPage = RegisterPageComponent
         // this.rootPage = TabsComponent;
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = ExtraQuestionsComponent;
         console.log('ERR in app.component ', err);
       })
   }

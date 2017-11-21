@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(){
     let user = this.navParams.get('user');
     this.presentGuideModal(user);
+    console.log("data: user", user);
   }
 
   logout() {
@@ -42,6 +43,7 @@ export class DashboardComponent implements OnInit {
   presentGuideModal(user) {
     this.nativeStorage.getItem('guide')
       .then(res => {
+        console.log('GET res', res);
         if(!res){
           this.modalCtrl.create(GuideComponent, {data: user}).present();
         }
@@ -50,6 +52,5 @@ export class DashboardComponent implements OnInit {
         console.log('ERRR ---> ', err);
         this.modalCtrl.create(GuideComponent,{data: user}).present();
       })
-    console.log("data: user", user);
   }
 }

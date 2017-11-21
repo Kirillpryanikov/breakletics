@@ -77,11 +77,37 @@
     "SUBTITLE":"Gründe geben warum der mehr Informatoinen geben soll.",
     "BUTTON_1": "Nee, möchte ich jetzt loslegen!",
     "FORM_Q": {
-      "AGE": "Dein Alter",
+      "AGE": "Geburtstag",
       "LOCATION": "Woher kommst du?",
-      "MISSION": "Was ist dein Ziel?",
-      "HEAR": "Wie hast du von Breakletics erfahren?",
-      "FIT": "Wie fit bist du?",
+      "MISSION": {
+        "TITLE": "Warum willst du Breakletics machen?",
+        "OPT_1": "Ich möchte meine Athletik & Mobilität steigern",
+        "OPT_2": "Ich möchte einen tollen Körper",
+        "OPT_3": "Ich möchte an meine Grenzen gehen ",
+        "OPT_4": "Ich möchte Spaß haben",
+        "OPT_5": "Ich möchte Abwechslung & Kreativität im Training",
+        "OPT_6": "Anderes"
+      },
+      "HEAR": {
+        "TITLE": "Wie hast du von Breakletics erfahren?",
+        "OPT_1": "Facebook",
+        "OPT_2": "Instagram",
+        "OPT_3": "Fernsehen",
+        "OPT_4": "Magazin",
+        "OPT_5": "Bekannte/r",
+        "OPT_6": "Messe (FIBO etc.)",
+        "OPT_7": "Fitness Studio",
+        "OPT_8": "App Store / Google Play Store",
+        "OPT_9": "Anders"
+      },
+      "FIT": {
+        "TITLE": "Wie oft machst du Sport pro Woche?",
+        "OPT_1": "5 mal oder mehr",
+        "OPT_2": "4-5 mal",
+        "OPT_3": "2-3 mal",
+        "OPT_4": "1-2 mal",
+        "OPT_5": "weniger"
+      },
       "GO": "So, jetzt aber!"
     }
   },

@@ -36,7 +36,8 @@ export class GuideComponent implements OnInit{
   }
 
   guideFinish() {
-    this.nativeStorage.setItem('guide', true)
+    console.log('user', this.user);
+    this.nativeStorage.setItem('guide', true )
       .then(res => {
         this.viewCtrl.dismiss();
       })
