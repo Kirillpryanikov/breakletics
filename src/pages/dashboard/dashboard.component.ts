@@ -50,5 +50,6 @@ export class DashboardComponent implements OnInit {
         console.log('ERRR ---> ', err);
         this.modalCtrl.create(GuideComponent,{data: user}).present();
       })
+    console.log("data: user", user);
   }
 }

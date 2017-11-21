@@ -65,8 +65,8 @@ export class MyApp implements OnInit{
           // this.rootPage = TabsComponent;
           // this.rootPage = ExtraQuestionsComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
-          // this.rootPage = TabsComponent;
+          // this.rootPage = WelcomePageComponent;
+          this.rootPage = TabsComponent;
         }
       })
       .catch(err => {
