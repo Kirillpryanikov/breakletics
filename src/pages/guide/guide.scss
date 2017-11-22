@@ -21,6 +21,12 @@ $padding-subtitle: 20px;
   color: $guide-color-text;
   font-weight: 600;
   margin-bottom: 14%;
+  @media (max-height: 645px) {
+    margin-bottom: 5%;
+  }
+  @media (max-width: 320px) {
+    margin-bottom: 2%;
+  }
 }
 
 @mixin nextGuide() {
