@@ -1,5 +1,128 @@
 {
-  "AUTH_PAGE": {
-    "TITLE": "HELLO"
+  "LOGIN_PAGE": {
+    "TITLE1": "Hi,",
+    "TITLE2": "great to have you back!",
+    "PLACEHOLDER_EMAIL": "E-Mail address",
+    "PLACEHOLDER_PASSWORD": "Password",
+    "BUTTON_PASSWORD_FORGOTTEN": "Forgot Password?",
+    "BUTTON_LOGIN": "LOG IN VIA EMAIL",
+    "TITLE_UNDER_BUTTON1": "I accept ",
+    "TITLE_UNDER_BUTTON2": "the general terms and conditions of ",
+    "TITLE_UNDER_BUTTON3": "Breakletics",
+    "FOOTER_LOGIN": "I do not have an account and want to sign up"
+  },
+  "REGISTER": {
+    "PAGE_1": {
+      "TITLE": "Your gender?",
+      "BUTTON_WOMAN": "Female",
+      "BUTTON_MAN": "Male"
+    },
+    "PAGE_2": {
+      "TITLE": "And what's your name?",
+      "FIRSTNAME": "First name",
+      "LASTNAME": "Last name",
+      "MORE": "NEXT"
+    },
+    "PAGE_3": {
+      "TITLE": "Almost done!",
+      "EMAIL": "Email address",
+      "PASSWORD": "Password",
+      "REGISTRATION": "SIGN UP VIA E-MAIL",
+      "FOOTER_LOGIN": "I accept the general terms and conditions of Breakletics"
+    }
+  },
+  "WELCOME_PAGE": {
+    "SLIDE_TITLE": "The new favorite workout of Lena Gercke",
+    "SLIDE_DESC": "- InStyle about Breakletis",
+    "REGISTER_BTN": "Let's start!",
+    "LOGIN_BTN": "Login",
+    "PARTNER": "proud partner of"
+  },
+  "GUIDE_PAGE": {
+    "PAGE_GREETING": {
+      "TITLE": "Hi ",
+      "SUBTITLE": "before we get started a reaaally short introduction to the basic functions of this app!",
+      "BUTTON": "OKAY, GOT IT!"
+    },
+    "PAGE_1": {
+      "TITLE": "Every week you can find a brand-new and free ͞Workout of the week͞ here.",
+      "BUTTON": "OKAY, GOT IT!",
+      "FOOTER_TITLE": "Skip introduction"
+    },
+    "PAGE_2": {
+      "TITLE": "Here you can do all our workouts – the most important part of the app!",
+      "BUTTON": "OKAY, GOT IT!",
+      "FOOTER_TITLE": "Skip introduction"
+    },
+    "PAGE_3": {
+      "TITLE": "Obviously not without a proper Warm Up!",
+      "BUTTON": "OKAY, GOT IT!",
+      "FOOTER_TITLE": "Skip introduction"
+    },
+    "PAGE_4": {
+      "TITLE": "Under ͟Exercises͞ advanced users can train single exercises and thus make their own individual workouts!",
+      "BUTTON": "OKAY, GOT IT!",
+      "FOOTER_TITLE": "Skip introduction"
+    },
+    "PAGE_5": {
+      "TITLE": "Enough talking!",
+      "SUBTITLE":"Start NOW with your first Breakletics Workout.",
+      "BUTTON_1": "WARM UP + WORKOUT",
+      "BUTTON_2": "WORKOUT ONLY",
+      "FOOTER_TITLE": "Skip introduction"
+    }
+  },
+  "PAGE_EXTRA": {
+    "TITLE": "You don't need to...",
+    "SUBTITLE":"...but it would be great if you would give us some additional information, so we can make Breakletics better!",
+    "BUTTON_1": "Nope, I want to start right away!",
+    "FORM_Q": {
+      "AGE": "Your age",
+      "LOCATION": "Where are you from?",
+      "MISSION": {
+        "TITLE": "Why do you want to do Breakletics?",
+        "OPT_1": "I want to increase my athletics & mobility",
+        "OPT_2": "I want a great body",
+        "OPT_3": "I want to push myself to new limits",
+        "OPT_4": "I want to have fun",
+        "OPT_5": "I want variety & creativity in my training",
+        "OPT_6": "Other"
+      },
+      "HEAR": {
+        "TITLE": "How did you learn about Breakletics?",
+        "OPT_1": "Facebook",
+        "OPT_2": "Instagram",
+        "OPT_3": "TV",
+        "OPT_4": "Magazine",
+        "OPT_5": "Word of Mouth",
+        "OPT_6": "Exhibition (FIBO etc.)",
+        "OPT_7": "Fitness Studio",
+        "OPT_8": "App Store / Google Play Store",
+        "OPT_9": "Other"
+      },
+      "FIT": {
+        "TITLE": "How often do you train per week?",
+        "OPT_1": "5 times or more",
+        "OPT_2": "4-5 times",
+        "OPT_3": "2-3 times",
+        "OPT_4": "1-2 times",
+        "OPT_5": "less"
+      },
+      "GO": "Okay, now let’s start!"
+    }
+  },
+  "TABS": {
+    "TABS_1": "HOME",
+    "TABS_2": "WORKOUTS",
+    "TABS_3": "EXERCISES",
+    "TABS_4": "WARM UP"
+  },
+  "DASHBOARD": {
+    "WORKOUTS": "WORKOUTS",
+    "EXERCISES": "EXERCISES",
+    "WARM_UP": "WARM UP",
+    "ZUMBA": "Only Pumba still does Zumba.",
+    "CRAZY": "CRAZY XMAS DEAL – 5 WORKOUTS FOR 6 $!",
+    "STATIC": "Plusmember"
   }
 }

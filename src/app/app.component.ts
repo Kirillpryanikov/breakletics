@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { Globalization } from '@ionic-native/globalization';
 
 import {
   LoginPageComponent,
@@ -28,7 +29,8 @@ export class MyApp implements OnInit{
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               private translate: TranslateService,
-              private nativeStorage: NativeStorage) {
+              private nativeStorage: NativeStorage,
+              private globalization: Globalization) {
     this.initializeApp();
   }
 
@@ -48,12 +50,30 @@ export class MyApp implements OnInit{
     this.nav.setRoot(page.component);
   }
 
+  test = {
+    arr: ()=> {
+      console.log('Test 1')
+    },
+    arr2: () => {
+      console.log('TEst 2')
+    }
+  }
+
   /**
    * Set language app
    */
   initTranslate() {
     this.translate.setDefaultLang('de');
-    this.translate.use('de');
+
+    /**
+     * Get language device
+     */
+    this.globalization.getPreferredLanguage()
+      .then(res => {
+        const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
+        this.translate.use(countryCode);
+      })
+      .catch(e => console.log('language app.component err --> ', e));
   }
 
   isAuth() {
