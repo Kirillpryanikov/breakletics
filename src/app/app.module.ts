@@ -6,6 +6,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Globalization } from '@ionic-native/globalization';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NativeStorage } from '@ionic-native/native-storage';
@@ -43,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
     NativeStorage,
     StatusBar,
     SplashScreen,
+    Globalization,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
