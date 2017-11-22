@@ -7,7 +7,8 @@ page-guide {
     position: absolute;
     top:0;
     width: 100%;
-    height: calc(100vh - 56px);
+    // 70 px - header; 56px - tabs
+    height: calc(100vh - 70px - 56px);
     flex-direction: column;
 
     .header-block {
@@ -53,7 +54,7 @@ page-guide {
 
     .footer-block{
       width: 100%;
-      height: $height-block-footer;
+      height: 100%;
       background-color: $guide-background;
     }
   }

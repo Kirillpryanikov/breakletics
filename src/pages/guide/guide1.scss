@@ -6,8 +6,10 @@ page-guide {
   .page-guide-1 {
     position: absolute;
     top:0;
+    bottom: 0;
     width: 100%;
-    height: calc(100vh - 56px);
+    // 70 px - header; 56px - tabs
+    height: calc(100% - 70px - 56px);
 
     .header-block {
       height: $height-header-dashboard;
@@ -21,7 +23,7 @@ page-guide {
     .guide-block {
       @include setFlexStyles(center,center);
       flex-direction: column;
-      height: 100% - $height-block-1;
+      height: 100%;
       width: 100%;
       background-color: $guide-background;
 
