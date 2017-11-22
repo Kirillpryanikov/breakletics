@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NavController, Slides, ViewController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
+import {tryCatch} from "rxjs/util/tryCatch";
 
 @Component({
   selector: 'page-guide',
@@ -23,7 +24,8 @@ export class GuideComponent implements OnInit{
   public user: object;
 
   ngOnInit(){
-    this.user = this.navParams.get('data');
+    this.user = this.navParams.get('user');
+    console.log('this.user[\'id\']', this.user);
   }
 
   ionViewDidEnter() {
@@ -36,8 +38,8 @@ export class GuideComponent implements OnInit{
   }
 
   guideFinish() {
-    console.log('user', this.user);
-    this.nativeStorage.setItem('guide', true )
+    console.log('user', this.user, this.user['id']);
+    this.nativeStorage.setItem('guide', this.user['id'] )
       .then(res => {
         this.viewCtrl.dismiss();
       })

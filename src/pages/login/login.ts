@@ -39,9 +39,10 @@ export class LoginPageComponent implements OnDestroy {
     }
     this.loginObservable = this.service.login(data)
       .subscribe(responce => {
+        console.log('responce', responce);
         if(responce.token) {
-          this.nativeStorage.setItem('token', responce.token);
-          this.navCtrl.push(DashboardComponent);
+          this.nativeStorage.setItem('user', responce);
+          this.navCtrl.push(DashboardComponent,{ user: responce });
         }
         this.dismissLoading();
 

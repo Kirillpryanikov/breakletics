@@ -7,6 +7,7 @@ import { WelcomePageComponent } from '../welcome/welcome';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-register',
@@ -24,6 +25,7 @@ export class RegisterPageComponent implements OnDestroy{
               private service: RegisterService,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
+              private nativeStorage: NativeStorage,
               private loginService: LoginService) {}
 
   goNext() {
@@ -63,6 +65,7 @@ export class RegisterPageComponent implements OnDestroy{
     console.log('user step 1: ', user);
     return this.loginService.login({username, password})
       .subscribe(res =>{
+        this.nativeStorage.setItem('user', res);
         this.navCtrl.push(ExtraQuestionsComponent, { user: user });
         this.dismissLoading();
       })

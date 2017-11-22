@@ -57,14 +57,14 @@ export class MyApp implements OnInit{
   }
 
   isAuth() {
-    this.nativeStorage.getItem('token')
+    this.nativeStorage.getItem('user')
       .then(res => {
         if(!res){
           // this.rootPage = RegisterPageComponent;
           this.rootPage = WelcomePageComponent;
         } else {
-          // this.rootPage = WelcomePageComponent;
-          this.rootPage = TabsComponent;
+          this.rootPage = WelcomePageComponent;
+          // this.rootPage = TabsComponent;
         }
       })
       .catch(err => {
@@ -72,7 +72,7 @@ export class MyApp implements OnInit{
         // this.rootPage = WelcomePageComponent;
         // this.rootPage = RegisterPageComponent
         // this.rootPage = TabsComponent;
-        this.rootPage = ExtraQuestionsComponent;
+        this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
   }

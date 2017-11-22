@@ -21,16 +21,26 @@ export class DashboardComponent implements OnInit {
     this.loading = this.loadingCtrl.create({});
   }
 
+  public user: object;
   ngOnInit(){
-    let user = this.navParams.get('user');
-    this.presentGuideModal(user);
-    console.log("data: user", user);
+    this.user = this.nativeStorage.getItem('user')
+      .then(res => {
+        console.log('GET ngOnInit res', res);
+        this.user = res;
+        this.presentGuideModal(this.user)
+      })
+      .catch(err => {
+        console.log('Error ngOnInit component --> ', err);
+        this.user = this.navParams.get('user');
+        this.presentGuideModal(this.user)
+      });
+
   }
 
   logout() {
     this.loading.present();
 
-    this.nativeStorage.remove('token')
+    this.nativeStorage.remove('user')
       .then(res => {
         this.navCtrl.setRoot(WelcomePageComponent);
         this.loading.dismiss();
@@ -43,14 +53,14 @@ export class DashboardComponent implements OnInit {
   presentGuideModal(user) {
     this.nativeStorage.getItem('guide')
       .then(res => {
-        console.log('GET res', res);
-        if(!res){
-          this.modalCtrl.create(GuideComponent, {data: user}).present();
+        console.log('GET guide res', res);
+        if(!res || res !== this.user['id']){
+          this.modalCtrl.create(GuideComponent, {user: user}).present();
         }
       })
       .catch(err => {
-        console.log('ERRR ---> ', err);
-        this.modalCtrl.create(GuideComponent,{data: user}).present();
+        console.log('ERRR guide---> ', err);
+        this.modalCtrl.create(GuideComponent,{user: user}).present();
       })
   }
 }

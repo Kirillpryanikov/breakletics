@@ -16,18 +16,8 @@ export class ExtraQuestionsComponent implements OnInit {
 
   user: object;
 
-  select: any;
-  options = [
-    { value: 'PAGE_EXTRA.FORM_Q.MISSION.OPT_1' },
-    { value: 'PAGE_EXTRA.FORM_Q.MISSION.OPT_2' },
-    { value: 'PAGE_EXTRA.FORM_Q.MISSION.OPT_3' },
-    { value: 'PAGE_EXTRA.FORM_Q.MISSION.OPT_4' },
-    { value: 'PAGE_EXTRA.FORM_Q.MISSION.OPT_5' },
-    { value: 'PAGE_EXTRA.FORM_Q.MISSION.OPT_6' }
-  ];
-
   ngOnInit() {
-    this.user = this.navParams.get('data');
+    this.user = this.navParams.get('user');
     console.log('extra component data --> ', this.user);
   }
 
@@ -36,7 +26,7 @@ export class ExtraQuestionsComponent implements OnInit {
   }
 
   submit(extra: NgForm) {
-    console.log('NgForm', extra.value);
-    this.navCtrl.setRoot(DashboardComponent, {user: this.user})
+    console.log('NgForm', );
+    this.navCtrl.setRoot(DashboardComponent, {user: this.user});
   }
 }
