@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
+
 import {
   LoginPageComponent,
   DashboardComponent,
@@ -16,6 +17,7 @@ import {
 
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
+import { DashbordService } from './dashboard/dashboard.service';
 import { ExtraQuestionsService } from './extra.questions/extra.qustetions.service';
 import { ConfigService } from './config.service';
 
@@ -45,7 +47,8 @@ console.log('components ', components);
     LoginService,
     RegisterService,
     ExtraQuestionsService,
-    ConfigService
+    ConfigService,
+    DashbordService
   ]
 })
 

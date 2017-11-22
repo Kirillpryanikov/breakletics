@@ -7,11 +7,24 @@ page-dashboard {
     ion-navbar {
       background: #000;
       height: $height-header-dashboard;
+
+      button.plusmember {
+        color: #000000 !important;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        padding: 10px 15px !important;
+        background-color: #fff;
+        border-radius: 0 !important;
+        height: 24px;
+        width: 86px;
+      }
     }
     ion-title {
+
       img {
         height: 38px;
       }
+
     }
     .container-dashboard{
       background-color: $dashboard-background;
@@ -24,7 +37,6 @@ page-dashboard {
         font-size: 1.2em;
         text-transform: uppercase;
       }
-
       .block-1 {
         height: $height-block-1;
         background-color: #32db64;
@@ -56,6 +68,7 @@ page-dashboard {
         height: $height-block-footer;
         background-color: blueviolet;
       }
+
     }
   }
 }

@@ -61,10 +61,10 @@ export class MyApp implements OnInit{
       .then(res => {
         if(!res){
           // this.rootPage = RegisterPageComponent;
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = TabsComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
-          // this.rootPage = TabsComponent;
+          // this.rootPage = WelcomePageComponent;
+          this.rootPage = TabsComponent;
         }
       })
       .catch(err => {
