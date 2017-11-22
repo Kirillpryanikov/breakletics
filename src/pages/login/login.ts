@@ -5,7 +5,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 
 import { WelcomePageComponent } from '../welcome/welcome';
 import { LoginService } from './login.service';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { TabsComponent } from '../index';
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
@@ -42,7 +42,7 @@ export class LoginPageComponent implements OnDestroy {
         console.log('responce', responce);
         if(responce.token) {
           this.nativeStorage.setItem('user', responce);
-          this.navCtrl.push(DashboardComponent,{ user: responce });
+          this.navCtrl.push(TabsComponent,{ user: responce });
         }
         this.dismissLoading();
 

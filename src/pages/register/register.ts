@@ -3,8 +3,7 @@ import { NavController, Slides, LoadingController, ToastController } from 'ionic
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { LoginService } from '../login/login.service';
-import { WelcomePageComponent } from '../welcome/welcome';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { TabsComponent } from '../index';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
 import { NativeStorage } from '@ionic-native/native-storage';

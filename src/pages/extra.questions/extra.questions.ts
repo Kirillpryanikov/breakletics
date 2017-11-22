@@ -1,8 +1,8 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { NgForm } from "@angular/forms";
-import { DashboardComponent  } from '../';
+import { TabsComponent  } from '../index';
 
 @Component({
   selector: 'page-extra-questions',
@@ -11,10 +11,10 @@ import { DashboardComponent  } from '../';
 })
 
 export class ExtraQuestionsComponent implements OnInit {
+  user: object;
+
   constructor(public navCtrl: NavController,
               private navParams: NavParams) {}
-
-  user: object;
 
   ngOnInit() {
     this.user = this.navParams.get('user');
@@ -27,6 +27,6 @@ export class ExtraQuestionsComponent implements OnInit {
 
   submit(extra: NgForm) {
     console.log('NgForm', );
-    this.navCtrl.setRoot(DashboardComponent, {user: this.user});
+    this.navCtrl.setRoot(TabsComponent, {user: this.user});
   }
 }
