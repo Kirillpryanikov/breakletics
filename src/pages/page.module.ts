@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
-import { VideoPlayer } from '@ionic-native/video-player';
 
 import {
   LoginPageComponent,
@@ -49,8 +48,7 @@ console.log('components ', components);
     RegisterService,
     ExtraQuestionsService,
     ConfigService,
-    DashbordService,
-    VideoPlayer
+    DashbordService
   ]
 })
 
