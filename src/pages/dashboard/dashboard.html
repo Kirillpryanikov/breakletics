@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img src="assets/imgs/menu-logo.png" alt=""></ion-title>
+    <ion-title><img src="../assets/imgs/menu-logo.png" alt=""></ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="plusmember">
         <div>{{'DASHBOARD.STATIC' | translate }}</div>
@@ -15,23 +15,27 @@
 
   <div class="container-dashboard">
     <div class="block block-1">
-        <!--Block 1-->
-      <!--<iframe src="https://player.vimeo.com/video/243556536" width="740" height="400"></iframe>-->
-      <!--<iframe src="https://player.vimeo.com/video/243556536" style="border: 0" width="100%" frameborder="0" scrolling="no"></iframe>-->
+      video
     </div>
-    <div class="block block-2">
-        Block 2
+    <div class="block block-2 workouts">
+      {{'DASHBOARD.WORKOUTS' | translate }}
     </div>
-    <div class="block block-3">
-      <div class="block item-block-3" col-6>
-        Block 3.1
+    <div class="block block-3 ">
+      <div class="block item-block-3 exercises" col-6>
+        {{'DASHBOARD.EXERCISES' | translate }}
       </div>
-      <div class="block item-block-3" col-6>
-        Block 3.2
+      <div class="block item-block-3 warm ups" col-6>
+        {{'DASHBOARD.WARM_UP' | translate }}
       </div>
     </div>
     <div class="block block-footer">
-        Block Footer
+      <div class="head">
+        <h3>{{'DASHBOARD.ZUMBA' | translate }}</h3>
+      </div>
+      <div class="footer-item">
+        <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
+        <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
+      </div>
     </div>
   </div>
 

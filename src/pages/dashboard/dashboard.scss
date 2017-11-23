@@ -1,7 +1,21 @@
 @import "../../theme/main";
+$bg-color-dash: #111111;
+$font-size-dash: 2.14rem;
+@mixin shadow() {
 
+}
+@mixin textTitle() {
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: $font-size-dash;
+  letter-spacing: 1.8px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+}
 page-dashboard {
-
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   ion-navbar {
     background: #000;
     height: $height-header-dashboard;
@@ -31,9 +45,8 @@ page-dashboard {
       .block {
         // NEED REMOVE
         @include setFlexStyles();
-        color: white;
-        font-size: 1.2em;
-        text-transform: uppercase;
+        box-sizing: border-box;
+        @include textTitle();
       }
       .block-1 {
         height: $height-block-1;
@@ -42,7 +55,11 @@ page-dashboard {
 
       .block-2 {
         height: $height-block-2;
-        background-color: #488aff;
+        background: url(../assets/imgs/workouts-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-top: 2px solid $bg-color-dash;
+        border-bottom: 2px solid $bg-color-dash;
       }
 
       .block-3 {
@@ -52,19 +69,57 @@ page-dashboard {
         .item-block-3 {
           height: 100%;
           float: left;
+          box-sizing: border-box;
         }
 
         .item-block-3:nth-child(1) {
-          background-color: darkcyan;
+          background: url(../assets/imgs/exercises-bg.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-right: 2px $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
+          background: url(../assets/imgs/warmup.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-left: 2px solid $bg-color-dash;
         }
       }
 
       .block-footer {
+        background-color: $bg-color-dash;
+        flex-direction: column;
+        position: relative;
+        .head {
+          height: 31%;
+          //position: absolute;
+          top: 0;
+          @include setFlexStyles();
+          h3 {
+            font-size: 1.25rem;
+            padding: 5px 0;
+            text-shadow: none !important;
+            color: #7d7d7d;
+          }
+        }
+        .footer-item {
+          height: 69%;
+          background: url(../assets/imgs/foote-bg.jpg);
+          background-size: cover;
+          background-position: center;
+          width: 100%;
+          flex-direction: column;
+          @include setFlexStyles();
+          h2 {
+            margin: 2px;
+            opacity: 0.8;
+            text-align: center;
+            @include textTitle();
+            text-shadow: none !important;
+          }
+        }
         height: $height-block-footer;
-        background-color: blueviolet;
       }
 
     }
