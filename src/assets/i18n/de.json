@@ -124,5 +124,18 @@
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
     "CRAZY": "Crazy XMAS Deal - 5 Workouts FÜR 5 EUR",
     "STATIC": "Pluasmember"
+  },
+  "MENU_SIDE": {
+    "ITEM_1": "NONE TEXT",
+    "ITEM_2": "NONE TEXT",
+    "ITEM_3": "NONE TEXT",
+    "ITEM_4": "NONE TEXT",
+    "ITEM_5": "NONE TEXT",
+    "ITEM_6": "NONE TEXT",
+    "ITEM_7": "NONE TEXT",
+    "ITEM_8": "NONE TEXT",
+    "ITEM_9": "NONE TEXT",
+    "ITEM_10": "NONE TEXT",
+    "ITEM_11": "NONE TEXT"
   }
 }

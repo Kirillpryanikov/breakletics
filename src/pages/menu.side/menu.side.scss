@@ -1,7 +1,32 @@
 @import "../../theme/main";
 
+$margin-icon: 10px;
+
 menu-side-component {
+  z-index: 100;
+
   ion-content {
     height: 100vh;
+
+    .item-menu {
+      padding: 0 15px;
+
+      ion-icon {
+        width: 20px;
+        margin-right: $margin-icon;
+      }
+
+      .item {
+        padding: 10px 0;
+      }
+    }
+
+    .header {
+      @include setFlexStyles();
+      height: $header-image;
+      background-color: lightgray;
+    }
+
+
   }
 }
