@@ -138,5 +138,18 @@
     "TEXT_LI_3_1": "stetig neue Videos (Exercises und mehr)",
     "TEXT_LI_4": "...und vieles mehr!",
     "BTN": "PLUSMEMBER WERDEN"
+  },
+  "MENU_SIDE": {
+    "ITEM_1": "NONE TEXT",
+    "ITEM_2": "NONE TEXT",
+    "ITEM_3": "NONE TEXT",
+    "ITEM_4": "NONE TEXT",
+    "ITEM_5": "NONE TEXT",
+    "ITEM_6": "NONE TEXT",
+    "ITEM_7": "NONE TEXT",
+    "ITEM_8": "NONE TEXT",
+    "ITEM_9": "NONE TEXT",
+    "ITEM_10": "NONE TEXT",
+    "ITEM_11": "NONE TEXT"
   }
 }

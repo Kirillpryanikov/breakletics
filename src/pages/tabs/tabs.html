@@ -1,5 +1,9 @@
-<ion-tabs selectedIndex="0" color="dark">
-  <ion-tab [root]="dashboard" show tabIcon="md-home" tabTitle="{{'TABS.TABS_1' | translate }}"></ion-tab>
+<ion-menu [content]="content">
+  <menu-side-component></menu-side-component>
+</ion-menu>
+
+<ion-tabs selectedIndex="0" color="dark" tabsHideOnSubPages="true">
+  <ion-tab #content [root]="dashboard" show tabIcon="md-home" tabTitle="{{'TABS.TABS_1' | translate }}"></ion-tab>
   <ion-tab [root]="workout" tabIcon="ios-flash" tabTitle="{{'TABS.TABS_2' | translate }}"></ion-tab>
   <ion-tab [root]="exercises" tabIcon="ios-apps" tabTitle="{{'TABS.TABS_3' | translate }}"></ion-tab>
   <ion-tab [root]="warmup" tabIcon="md-flame" tabTitle="{{'TABS.TABS_4' | translate }}"></ion-tab>

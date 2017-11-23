@@ -124,5 +124,18 @@
     "ZUMBA": "Only Pumba still does Zumba.",
     "CRAZY": "CRAZY XMAS DEAL – 5 WORKOUTS FOR 6 $!",
     "STATIC": "Plusmember"
+  },
+  "MENU_SIDE": {
+    "ITEM_1": "XMAS DEAL",
+    "ITEM_2": "PLUSMEMBER WERDEN",
+    "ITEM_3": "WORKOUT DER WOCHE",
+    "ITEM_4": "WORKOUTS",
+    "ITEM_5": "EXERCISES",
+    "ITEM_6": "WARM UPS / COOL DOWNS",
+    "ITEM_7": "MEIN KONTO",
+    "ITEM_8": "BREAKLETICS KURS FINDER",
+    "ITEM_9": "BREAKLETICS SHOP",
+    "ITEM_10": "TRANSFORMATION",
+    "ITEM_11": "AGB"
   }
 }
