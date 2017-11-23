@@ -11,7 +11,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img src="../../assets/imgs/menu-logo.png" alt=""></ion-title>
+    <ion-title><img src="assets/imgs/menu-logo.png" alt=""></ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="plusmember">
         <div>{{'DASHBOARD.STATIC' | translate }}</div>
@@ -40,5 +40,9 @@
         Block Footer
     </div>
   </div>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="getGuide()">Guide</button>
+  </ion-fab>
 
 </ion-content>

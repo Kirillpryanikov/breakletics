@@ -79,6 +79,11 @@ export class DashboardComponent implements OnInit, OnDestroy{
         this.modalCtrl.create(GuideComponent,{user: user}).present();
       })
   }
+
+  getGuide() {
+    this.modalCtrl.create(GuideComponent).present();
+  }
+
   ngOnDestroy() {
     if(this.videoWeekObservable) {
       this.videoWeekObservable.unsubscribe();

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { GuideComponent } from '../guide/guide.component';
 
 @Component({
   selector: 'page-warmup',
@@ -22,4 +23,7 @@ export class WarmupComponent implements OnInit {
     let user = this.navParams.get('user');
   }
 
+  logout() {
+    this.nativeStorage.clear();
+  }
 }
