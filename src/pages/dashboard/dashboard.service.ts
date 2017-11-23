@@ -12,6 +12,7 @@ export class DashbordService {
   videoWeek(): Observable<any> {
     return this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week`)
       .map(res => {
+        console.log('res :::::::  ', res)
         if(res && res["metaData"] && res["metaData"].video_url)
           return {
             ID: res["ID"],

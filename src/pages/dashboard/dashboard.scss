@@ -49,6 +49,7 @@ page-dashboard {
         @include textTitle();
       }
       .block-1 {
+        overflow: hidden;
         height: $height-block-1;
         background-color: #32db64;
       }
