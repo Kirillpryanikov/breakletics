@@ -1,6 +1,8 @@
 @import "../../theme/main";
 
 page-tabs {
+  $tabs-ios-tab-min-height: 56px;
+
   ion-tabs {
     background: #fff;
   }

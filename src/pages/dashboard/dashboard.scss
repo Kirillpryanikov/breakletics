@@ -73,14 +73,14 @@ page-dashboard {
         }
 
         .item-block-3:nth-child(1) {
-          background: url(../../assets/imgs/exercises-bg.jpg);
+          background: url(../assets/imgs/exercises-bg.jpg);
           background-repeat: no-repeat;
           background-size: cover;
           border-right: 2px $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
-          background: url(../../assets/imgs/warmup.jpg);
+          background: url(../assets/imgs/warmup.jpg);
           background-repeat: no-repeat;
           background-size: cover;
           border-left: 2px solid $bg-color-dash;

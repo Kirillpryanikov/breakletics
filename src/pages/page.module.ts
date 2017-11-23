@@ -12,7 +12,8 @@ import {
   WorkoutComponent,
   ExtraQuestionsComponent,
   ExercisesComponent,
-  WarmupComponent
+  WarmupComponent,
+  MenuSideComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -31,7 +32,8 @@ const components = [
   TabsComponent,
   WorkoutComponent,
   ExercisesComponent,
-  WarmupComponent
+  WarmupComponent,
+  MenuSideComponent
 ];
 
 console.log('components ', components);

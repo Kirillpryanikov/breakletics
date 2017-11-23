@@ -16,6 +16,8 @@ import {tryCatch} from "rxjs/util/tryCatch";
 export class GuideComponent implements OnInit{
   @ViewChild('slider') slider: Slides;
 
+  public firstName: string;
+
   constructor(private navCtrl: NavController,
               private nativeStorage: NativeStorage,
               private viewCtrl: ViewController,
@@ -25,7 +27,11 @@ export class GuideComponent implements OnInit{
 
   ngOnInit(){
     this.user = this.navParams.get('user');
-    console.log('this.user[\'id\']', this.user);
+
+    if(this.user) {
+      this.firstName = this.user['user_display_name'].split(' ')[0];
+    }
+    console.log('GuideComponent user --> ', this.user);
   }
 
   ionViewDidEnter() {
