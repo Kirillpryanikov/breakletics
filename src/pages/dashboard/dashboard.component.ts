@@ -6,6 +6,7 @@ import { WelcomePageComponent } from '../welcome/welcome';
 import { DashbordService } from './dashboard.service';
 import { VideoWeekInterface } from '../interfaces/VideoWeekInterface';
 import { Subscription } from "rxjs/Subscription";
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 
 @Component({
   selector: 'page-dashboard',
@@ -17,14 +18,23 @@ export class DashboardComponent implements OnInit, OnDestroy{
   public user: object;
   public video: VideoWeekInterface;
   private videoWeekObservable: Subscription;
+
+  options: StreamingVideoOptions = {
+    successCallback: () => { console.log('Video played') },
+    errorCallback: (e) => { console.log('Error streaming') },
+    orientation: 'landscape'
+  };
+
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
-              private service: DashbordService) {
+              private service: DashbordService,
+              private streamingMedia: StreamingMedia) {
 
     this.loading = this.loadingCtrl.create({});
+
   }
 
   ngOnInit(){
@@ -36,6 +46,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
       console.log('err video', err);
     });
   }
+
+
   /**
    * get user from storage
    */
@@ -65,7 +77,9 @@ export class DashboardComponent implements OnInit, OnDestroy{
         this.loading.dismiss();
       })
   }
-
+  play() {
+    this.streamingMedia.playVideo('https://vimeo.com/lalitalupina/immersion', this.options);
+  }
   presentGuideModal(user) {
     this.nativeStorage.getItem('guide')
       .then(res => {

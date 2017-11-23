@@ -2,12 +2,12 @@
   <menu-side-component></menu-side-component>
 </ion-menu>
 
-<ion-header transparent>
+<ion-header transparent id="dash-header">
   <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img src="../assets/imgs/menu-logo.png" alt=""></ion-title>
+    <ion-title><img src="assets/imgs/menu-logo.png" alt=""></ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="plusmember">
         <div>{{'DASHBOARD.STATIC' | translate }}</div>
@@ -19,7 +19,8 @@
 
   <div class="container-dashboard">
     <div class="block block-1">
-      video
+      <!--<button (click)="play()"></button>-->
+      <iframe src="https://player.vimeo.com/video/243556536" width="100%" height="100%" ></iframe>
     </div>
     <div class="block block-2 workouts">
       {{'DASHBOARD.WORKOUTS' | translate }}
@@ -40,6 +41,18 @@
         <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
         <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
       </div>
+    </div>
+    <div class="pay-block">
+        <div class="cliped-title"><span>{{'DASHBOARD.PAY_TITLE_1' | translate }}</span></div>
+        <div class="title">{{'DASHBOARD.PAY_TITLE_2' | translate }}</div>
+        <div class="title">{{'DASHBOARD.PAY_TITLE_3' | translate }}</div>
+      <ul>
+        <li>{{'DASHBOARD.TEXT_LI_1' | translate }} <strong>{{'DASHBOARD.TEXT_LI_1_1' | translate }}<br>{{'DASHBOARD.TEXT_LI_1_2' | translate }}</strong></li>
+        <li>{{'DASHBOARD.TEXT_LI_2' | translate }} <strong>{{'DASHBOARD.TEXT_LI_2_1' | translate }}</strong> {{'DASHBOARD.TEXT_LI_2_2' | translate }}</li>
+        <li>{{'DASHBOARD.TEXT_LI_3' | translate }} <strong>{{'DASHBOARD.TEXT_LI_3_1' | translate }}</strong>!</li>
+        <li><strong>{{'DASHBOARD.TEXT_LI_4' | translate }}</strong></li>
+      </ul>
+      <button>{{'DASHBOARD.BTN' | translate }}</button>
     </div>
   </div>
 

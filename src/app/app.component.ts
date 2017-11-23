@@ -50,15 +50,6 @@ export class MyApp implements OnInit{
     this.nav.setRoot(page.component);
   }
 
-  test = {
-    arr: ()=> {
-      console.log('Test 1')
-    },
-    arr2: () => {
-      console.log('TEst 2')
-    }
-  }
-
   /**
    * Set language app
    */
