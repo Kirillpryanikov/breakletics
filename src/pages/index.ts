@@ -11,3 +11,4 @@ export * from './guide/guide.component';
 export * from './extra.questions/extra.questions';
 export * from './exercises/exercises.component';
 export * from './warmup/warmup.component';
+export * from './menu.side/menu.side.component';
