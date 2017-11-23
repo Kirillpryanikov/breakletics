@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
   public linkVideo: SafeResourceUrl;
 
   private videoWeekObservable: Subscription;
+
+
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
