@@ -90,7 +90,7 @@ export class MyApp implements OnInit{
       })
       .catch(err => {
         // this.rootPage = ExtraQuestionsComponent;
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = TabsComponent;
         // this.rootPage = RegisterPageComponent
         // this.rootPage = TabsComponent;
         // this.rootPage = TabsComponent;
