@@ -3,13 +3,33 @@
 $margin-icon: 10px;
 
 menu-side-component {
-  z-index: 100;
-
   ion-content {
     height: 100vh;
+    background-color: $dashboard-background;
+
+    .item-red {
+      color: $menu-red-color;
+    }
+    .item-blue {
+      color: $menu-blue-color;
+    }
+
+    div {
+      background: $dashboard-background;
+      font-weight: 500;
+    }
+
+    .dark-text-color {
+      color: #707070
+    }
+
+    .light-text-color {
+      color: $guide-color-text;
+    }
 
     .item-menu {
       padding: 0 15px;
+      background: $dashboard-background;
 
       ion-icon {
         width: 20px;
@@ -19,6 +39,10 @@ menu-side-component {
       .item {
         padding: 10px 0;
       }
+
+      .item:last-child {
+        padding-bottom: 0;
+      }
     }
 
     .header {
@@ -26,7 +50,5 @@ menu-side-component {
       height: $header-image;
       background-color: lightgray;
     }
-
-
   }
 }
