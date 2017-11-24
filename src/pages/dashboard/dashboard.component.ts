@@ -14,14 +14,14 @@ import { Subscription } from "rxjs/Subscription";
   templateUrl: 'dashboard.html',
   styleUrls: ['/dashboard.scss']
 })
-export class DashboardComponent implements OnInit, OnDestroy{
+export class DashboardComponent implements OnInit, OnDestroy {
   private loading: any;
   public user: object;
   public video: VideoWeekInterface;
   public heightDevice: number;
   public weightDevice: number;
 
-  public linkVideo: SafeResourceUrl;
+  public linkVideo: string;
 
   private videoWeekObservable: Subscription;
 
@@ -45,9 +45,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
     this.getUser();
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
-      this.video.video.split('https://vimeo.com/')[1];
-      this.linkVideo = this.getUrlVideo(res.video);
-      console.log('this.linkVideo --> ', this.linkVideo)
+      // this.linkVideo = 'https://player.vimeo.com/video/' + this.video.video.split('https://vimeo.com/')[1];
+      this.linkVideo = 'https://player.vimeo.com/video/242763018';
     }, err => {
       console.log('err video', err);
     });
@@ -58,8 +57,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
   getUser() {
     this.user = this.nativeStorage.getItem('user')
       .then(res => {
-        console.log('GET ngOnInit res', res);
         this.user = res;
+        console.log('this.user ', this.user);
         this.presentGuideModal(this.user)
       })
       .catch(err => {
@@ -67,13 +66,6 @@ export class DashboardComponent implements OnInit, OnDestroy{
         this.user = this.navParams.get('user');
         this.presentGuideModal(this.user)
       });
-  }
-
-  getUrlVideo(video) {
-    const idVideo = video.split('https://vimeo.com/')[1];
-    // return this.sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/" + idVideo);
-    return this.sanitizer.bypassSecurityTrustUrl("https://player.vimeo.com/video/" + idVideo);
-    // return this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, "https://player.vimeo.com/video/" + idVideo);
   }
 
   logout() {
