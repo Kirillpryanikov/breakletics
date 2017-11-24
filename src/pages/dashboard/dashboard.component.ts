@@ -45,7 +45,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
     this.getUser();
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
-      // this.linkVideo = this.getUrlVideo(res.video);
+      this.video.video.split('https://vimeo.com/')[1];
+      this.linkVideo = this.getUrlVideo(res.video);
       console.log('this.linkVideo --> ', this.linkVideo)
     }, err => {
       console.log('err video', err);
@@ -71,7 +72,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
   getUrlVideo(video) {
     const idVideo = video.split('https://vimeo.com/')[1];
     // return this.sanitizer.bypassSecurityTrustResourceUrl("https://player.vimeo.com/video/" + idVideo);
-    return this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, "https://player.vimeo.com/video/" + idVideo);
+    return this.sanitizer.bypassSecurityTrustUrl("https://player.vimeo.com/video/" + idVideo);
+    // return this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, "https://player.vimeo.com/video/" + idVideo);
   }
 
   logout() {

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
-import { StreamingMedia } from '@ionic-native/streaming-media';
 
 import {
   LoginPageComponent,
@@ -52,7 +51,6 @@ console.log('components ', components);
     ExtraQuestionsService,
     ConfigService,
     DashbordService,
-    StreamingMedia
   ]
 })
 

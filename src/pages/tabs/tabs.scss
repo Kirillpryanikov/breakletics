@@ -2,7 +2,55 @@
 
 page-tabs {
   $tabs-ios-tab-min-height: 56px;
-
+  //custom icons
+  .tabs .tab-item .icon.b-home,
+  .ion-ios-b-home, .ion-ios-b-home-outline {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 100%;
+    background-image: url('../assets/imgs/icon-home.png');
+    background-size:contain;
+  }
+  .tabs .tab-item .icon.b-flash,
+  .ion-ios-b-flash, .ion-ios-b-flash-outline {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 100%;
+    background-image: url('../assets/imgs/icon-flesh.png');
+    background-size:contain;
+  }
+  .tabs .tab-item .icon.b-exercises,
+  .ion-ios-b-exercises, .ion-ios-b-exercises-outline{
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 100%;
+    background-image: url('../../assets/imgs/icon-program.png');
+    background-size:contain;
+  }
+  .tabs .tab-item .icon.b-warmup,
+  .ion-ios-b-warmup, .ion-ios-b-warmup-outline {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 100%;
+    background-image: url('../assets/imgs/icon-warmup.png');
+    background-size:contain;
+  }
+  //for outline
+  .ion-ios-b-home-outline,
+  .ion-ios-b-exercises-outline,
+  .ion-ios-b-flash-outline,
+  .ion-ios-b-warmup-outline {
+    opacity: .4;
+  }
+  //custom icons OFF
+  .tabs-ios .tab-button-icon {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    min-width: 35px;
+    height: 22px;
+    font-size: 30px;
+    color: #8c8c8c;
+  }
   ion-tabs {
     background: #fff;
   }
