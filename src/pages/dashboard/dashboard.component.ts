@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
     this.getUser();
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
-      this.linkVideo = this.getUrlVideo(res.video);
+      // this.linkVideo = this.getUrlVideo(res.video);
       console.log('this.linkVideo --> ', this.linkVideo)
     }, err => {
       console.log('err video', err);

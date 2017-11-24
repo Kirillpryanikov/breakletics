@@ -76,12 +76,12 @@ export class MyApp implements OnInit{
           this.rootPage = TabsComponent;
         } else {
           // this.rootPage = WelcomePageComponent;
-          this.rootPage = TabsComponent;
+          this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = ExtraQuestionsComponent;
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = TabsComponent;
         // this.rootPage = TabsComponent;
         // this.rootPage = RegisterPageComponent
         // this.rootPage = TabsComponent;
