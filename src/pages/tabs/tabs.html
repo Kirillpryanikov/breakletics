@@ -4,7 +4,7 @@
 
 <ion-tabs selectedIndex="0" color="dark" tabsHideOnSubPages="true">
   <ion-tab #content [root]="dashboard" show tabIcon="b-home" tabTitle="{{'TABS.TABS_1' | translate }}"></ion-tab>
-  <ion-tab [root]="workout" tabIcon="b-flash" tabTitle="{{'TABS.TABS_2' | translate }}"></ion-tab>
+  <ion-tab [root]="workout" tabIcon="b-flash" tabTitle="{{'TABS.TABS_2' | translate }}" *ngIf=" ['ng-reflect-is-active']"></ion-tab>
   <ion-tab [root]="exercises" tabIcon="b-exercises" tabTitle="{{'TABS.TABS_3' | translate }}"></ion-tab>
   <ion-tab [root]="warmup" tabIcon="b-warmup" tabTitle="{{'TABS.TABS_4' | translate }}"></ion-tab>
 </ion-tabs>
