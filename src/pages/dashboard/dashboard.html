@@ -16,16 +16,21 @@
 <ion-content>
   <div class="container-dashboard">
     <div class="block block-1">
-      <iframe *ngIf="linkVideo"
-              [src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)"
+      <iframe #playerContainer
+              [src]="'https://player.vimeo.com/video/239159367'"
+              width="340" height="360"
+              frameborder="0"
               width="{{weightDevice}}"
               height="{{heightDevice}}"
-              frameborder="0"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowfullscreen
-      >
-      </iframe>
+      ></iframe>
+      <!--<iframe #playerContainer-->
+              <!--src="https://player.vimeo.com/video/239159367"-->
+              <!--width="{{weightDevice}}"-->
+              <!--height="{{heightDevice}}"-->
+              <!--frameborder="0"-->
+      <!--&gt;-->
+        <!--[src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)"-->
+      <!--</iframe>-->
       <!--<video width="{{weightDevice}}" height="{{heightDevice}}" controls>-->
         <!--<source *ngIf="linkVideo" [src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)" type="video/mp4">-->
       <!--</video>-->
