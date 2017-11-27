@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -13,7 +13,8 @@ import {
   ExtraQuestionsComponent,
   ExercisesComponent,
   WarmupComponent,
-  MenuSideComponent
+  MenuSideComponent,
+  WrapperVideoPlayerComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -33,7 +34,8 @@ const components = [
   WorkoutComponent,
   ExercisesComponent,
   WarmupComponent,
-  MenuSideComponent
+  MenuSideComponent,
+  WrapperVideoPlayerComponent
 ];
 
 console.log('components ', components);
@@ -51,7 +53,8 @@ console.log('components ', components);
     ExtraQuestionsService,
     ConfigService,
     DashbordService,
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class PageModule {}

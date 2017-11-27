@@ -57,9 +57,32 @@ page-dashboard {
         @include textTitle();
       }
       .block-1 {
+        position: relative;
         overflow: hidden;
         height: $height-block-1;
         background-color: $bg-color-dash;
+
+        background: url(../assets/imgs/workouts-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .play-button {
+          font-size: 2.5em;
+        }
+
+        .block-1-footer {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          position: absolute;
+          bottom: 5px;
+          box-sizing: border-box;
+          font-size: 0.575em;
+          left: 0;
+          span {
+            padding: 0 5px;
+          }
+        }
       }
 
       .block-2 {

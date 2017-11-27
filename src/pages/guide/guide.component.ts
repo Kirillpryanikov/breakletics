@@ -31,7 +31,6 @@ export class GuideComponent implements OnInit{
     if(this.user) {
       this.firstName = this.user['user_display_name'].split(' ')[0];
     }
-    console.log('GuideComponent user --> ', this.user);
   }
 
   ionViewDidEnter() {
@@ -49,7 +48,6 @@ export class GuideComponent implements OnInit{
         this.viewCtrl.dismiss();
       })
       .catch(err => {
-        console.log('Error Guide component --> ', err);
         this.viewCtrl.dismiss();
       })
   }

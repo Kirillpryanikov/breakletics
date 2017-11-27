@@ -1,0 +1,12 @@
+@import "../../theme/main";
+
+wrapper-player {
+  ion-content {
+    .container {
+      @include setFlexStyles();
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+    }
+  }
+}

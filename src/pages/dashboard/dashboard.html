@@ -16,19 +16,27 @@
 <ion-content>
   <div class="container-dashboard">
     <div class="block block-1">
-      <iframe *ngIf="linkVideo"
-              [src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)"
-              width="{{weightDevice}}"
-              height="{{heightDevice}}"
-              frameborder="0"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowfullscreen
-      >
-      </iframe>
-      <!--<video width="{{weightDevice}}" height="{{heightDevice}}" controls>-->
-        <!--<source *ngIf="linkVideo" [src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)" type="video/mp4">-->
-      <!--</video>-->
+      <ion-icon class="play-button" *ngIf="linkVideo" (click)="playVideoModal()" name="md-play"></ion-icon>
+      <div class="block-1-footer">
+        <span>{{'DASHBOARD.WORKOUTS_WEEK' | translate }}</span>
+        <span>
+          15
+          <ion-icon name="md-time"></ion-icon>
+        </span>
+      </div>
+
+      <!--<wrapper-player [video]="linkVideo"></wrapper-player>-->
+
+      <!--<iframe #iframe *ngIf="linkVideo"-->
+              <!--[src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)"-->
+              <!--width="{{weightDevice}}"-->
+              <!--height="{{heightDevice}}"-->
+              <!--frameborder="0"-->
+              <!--webkitallowfullscreen-->
+              <!--mozallowfullscreen-->
+              <!--allowfullscreen-->
+      <!--&gt;-->
+      <!--</iframe>-->
     </div>
     <div class="block block-2 workouts">
       {{'DASHBOARD.WORKOUTS' | translate }}

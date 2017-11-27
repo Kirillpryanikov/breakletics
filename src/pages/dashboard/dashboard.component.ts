@@ -1,11 +1,12 @@
-import { Component, OnInit, OnDestroy, SecurityContext } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, Input, EventEmitter } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { DomSanitizer, SafeResourceUrl,  } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { GuideComponent } from '../guide/guide.component';
 import { WelcomePageComponent } from '../welcome/welcome';
 import { DashbordService } from './dashboard.service';
+import { WrapperVideoPlayerComponent } from '../wrapper.video.player/wrapper.video.player.component';
 import { VideoWeekInterface } from '../interfaces/VideoWeekInterface';
 import { Subscription } from "rxjs/Subscription";
 
@@ -20,11 +21,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public video: VideoWeekInterface;
   public heightDevice: number;
   public weightDevice: number;
-
   public linkVideo: string;
-
   private videoWeekObservable: Subscription;
-
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -41,16 +39,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(){
     this.weightDevice = this.platform.width();
     this.heightDevice = this.platform.height()* 29.5 / 100;
-
     this.getUser();
-    this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
-      this.video = res;
-      // this.linkVideo = 'https://player.vimeo.com/video/' + this.video.video.split('https://vimeo.com/')[1];
-      this.linkVideo = 'https://player.vimeo.com/video/242763018';
-    }, err => {
-      console.log('err video', err);
-    });
+    this.handlerLoadVideo();
   }
+
   /**
    * get user from storage
    */
@@ -58,14 +50,23 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
-        console.log('this.user ', this.user);
         this.presentGuideModal(this.user)
       })
       .catch(err => {
-        console.log('Error ngOnInit component --> ', err);
         this.user = this.navParams.get('user');
         this.presentGuideModal(this.user)
       });
+  }
+
+  handlerLoadVideo() {
+    this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
+      this.video = res;
+      // this.linkVideo = 'https://player.vimeo.com/video/242763018';
+      this.linkVideo = '242763018';
+      // this.linkVideo = this.video.video.split('https://vimeo.com/')[1];
+    }, err => {
+      console.log('err video', err);
+    });
   }
 
   logout() {
@@ -81,16 +82,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
       })
   }
 
+  playVideoModal() {
+    if(this.linkVideo) {
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.linkVideo}).present();
+    }
+  }
+
   presentGuideModal(user) {
     this.nativeStorage.getItem('guide')
       .then(res => {
-        console.log('GET guide res', res);
         if(!res || res !== this.user['id']){
           this.modalCtrl.create(GuideComponent, {user: user}).present();
         }
       })
       .catch(err => {
-        console.log('ERRR guide---> ', err);
         this.modalCtrl.create(GuideComponent,{user: user}).present();
       })
   }
