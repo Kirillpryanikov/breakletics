@@ -1,51 +1,70 @@
 @import "../../theme/main";
 
 page-workout {
+  ion-header {
 
-  ion-content {
-    .container-dashboard{
-      background-color: $dashboard-background;
-      height: 100%;
-
-      .block {
-        // NEED REMOVE
-        @include setFlexStyles();
-        color: white;
-        font-size: 1.2em;
+    ion-navbar {
+      height: $height-header-dashboard;
+      background: #000;
+      button {
+        background: transparent;
+        color: $navbar-title-font-color;
+        font-size: $navbar-title-button_size;
+      }
+      .title {
+        color: $navbar-title-font-color !important;
         text-transform: uppercase;
-      }
-
-      .block-1 {
-        height: $height-block-1;
-        background-color: #32db64;
-      }
-
-      .block-2 {
-        height: $height-block-2;
-        background-color: #488aff;
-      }
-
-      .block-3 {
-        height: $height-block-3;
-        background-color: white;
-
-        .item-block-3 {
-          height: 100%;
-          float: left;
-        }
-
-        .item-block-3:nth-child(1) {
-          background-color: darkcyan;
-        }
-        .item-block-3:nth-child(2) {
-          background-color: chocolate;
-        }
-      }
-
-      .block-footer {
-        height: $height-block-footer;
-        background-color: blueviolet;
+        font-size: $navbar-title-font-size;
+        text-align: center;
+        letter-spacing: $navbar-title-font-spacing;
+        margin-right: 27px;
       }
     }
+    .sub-header {
+      background: #1b1c1c;
+      height: $height-header-dashboard;
+      @include setFlexStyles();
+      .filters {
+        @include setFlexStyles(space-between);
+        flex-direction: row;
+        //justify-content: space-between;
+        height: 70%;
+        border-bottom: 2px solid rgba(255,255,255,.5);
+        color: rgba(255,255,255,.5);
+        font-size: 1.7rem;
+        width: 90%;
+        align-self: center;
+        padding: 8px 0;
+      }
+      .filters-icon {
+        align-self: flex-start;
+        height: 80%;
+      }
+      ion-icon {
+      }
+      i {
+        @include setFlexStyles(center, flex-end);
+        width: 30px;
+        height: 15px;
+        align-self: center;
+      }
+      i:after {
+        content: '';
+        width: 30px;
+        height: 15px;
+        background: url(../../assets/imgs/filter-results-button.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        display: block;
+        background-size: contain;
+      }
+      .filter-items {
+        text-align: center;
+
+      }
+    }
+  }
+  ion-content {
+    background: #1b1c1c;
   }
 }

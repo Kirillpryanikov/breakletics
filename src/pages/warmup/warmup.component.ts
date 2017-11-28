@@ -25,6 +25,6 @@ export class WarmupComponent implements OnInit {
 
   logout() {
     this.nativeStorage.clear();
-    this.navCtrl.push(WelcomePageComponent);
+    this.navCtrl.setRoot(WelcomePageComponent);
   }
 }

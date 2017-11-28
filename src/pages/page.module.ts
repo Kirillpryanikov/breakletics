@@ -14,7 +14,8 @@ import {
   ExercisesComponent,
   WarmupComponent,
   MenuSideComponent,
-  WrapperVideoPlayerComponent
+  WrapperVideoPlayerComponent,
+  WorkoutFilterComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -35,10 +36,9 @@ const components = [
   ExercisesComponent,
   WarmupComponent,
   MenuSideComponent,
-  WrapperVideoPlayerComponent
+  WrapperVideoPlayerComponent,
+  WorkoutFilterComponent
 ];
-
-console.log('components ', components);
 
 @NgModule({
   declarations: components,
