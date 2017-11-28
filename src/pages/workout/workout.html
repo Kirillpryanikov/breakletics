@@ -1,16 +1,21 @@
 <ion-header transparent>
-  <ion-navbar no-border>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="logout()">
-        <ion-icon name="ios-log-out-outline"></ion-icon>
-      </button>
+  <ion-navbar color="dark">
+    <ion-buttons start>
+      <button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>
     </ion-buttons>
+    <div class="title">{{'WORKOUTS.TITLE' | translate}}</div>
   </ion-navbar>
+  <div class="sub-header">
+    <div class="filters">
+      <i class="filters-icon"></i>
+      <div class="filter-items" (click)="getFilters()">
+        <span>{{"WORKOUTS.SEARCH" | translate}}</span>
+      </div>
+      <ion-icon name="md-close-circle"></ion-icon>
+    </div>
+  </div>
 </ion-header>
-
 <ion-content>
   <div class="container-workout">
-    <h1>Workout</h1>
   </div>
-
 </ion-content>

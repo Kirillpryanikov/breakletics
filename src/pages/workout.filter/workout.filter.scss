@@ -1,0 +1,43 @@
+@import "../../theme/main";
+
+page-workout-filter {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  width: 100%;
+  ion-header {
+    ion-navbar {
+      button {
+        background: transparent;
+        ion-icon {
+          color: #fff;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  h2 {
+    margin-top: 17vh;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+  }
+  .levels {
+    height: 3.69rem;
+    width: 78.33%;
+    margin: 4.44vh auto;
+    @include setFlexStyles(space-between);
+    flex-direction: row;
+    .filter-item {
+      height: 100%;
+      @include setFlexStyles();
+      width: 29%;
+      background: #fff;
+      font-size: 1rem;
+    }
+    .filter-item.active {
+      color: white;
+      background: #000;
+    }
+  }
+  background: rgba(0,0,0,.9);
+}

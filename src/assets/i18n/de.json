@@ -153,5 +153,16 @@
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "AGB",
     "IMPRINT": "IMPRESSUM"
+  },
+  "WORKOUTS": {
+    "TITLE": "Workouts",
+    "SEARCH": "Filtern nach Schwierigkeit...",
+    "JETZT": "Jetzt 48+ Workouts freischalten"
+  },
+  "WORKOUTS_FILTER": {
+    "TITLE": "Filtern nach Schwierigkeit",
+    "BEGINNER": "BEGINNER",
+    "ADVANCED": "ADVANCED",
+    "EXPERT": "EXPERT"
   }
 }

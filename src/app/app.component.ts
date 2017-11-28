@@ -12,7 +12,8 @@ import {
   RegisterPageComponent,
   DashboardComponent,
   TabsComponent,
-  ExtraQuestionsComponent
+  ExtraQuestionsComponent,
+  WorkoutComponent
 } from '../pages/index'
 
 @Component({
