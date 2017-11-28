@@ -71,8 +71,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   next() {
-    this.player = null;
-    this.iFrameFirst.nativeElement.querySelector('iframe').remove();
+    this.iFrameFirst.nativeElement.remove();
     const options = {
       id: 'https://player.vimeo.com/video/' + 190821442 +'?autoplay=1',
       width: this.platform.width(),
