@@ -13,6 +13,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   @Input('video') video: any;
   @ViewChild('iframe1') iFrameFirst: ElementRef;
   @ViewChild('iframe2') iFrameSecond: ElementRef;
+  @ViewChild('nextbutton') buttonNext: ElementRef;
+
   private player;
 
   constructor(private platform: Platform,
@@ -72,6 +74,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   next() {
     this.iFrameFirst.nativeElement.remove();
+    this.buttonNext.nativeElement.remove();
     const options = {
       id: 'https://player.vimeo.com/video/' + 190821442 +'?autoplay=1',
       width: this.platform.width(),
