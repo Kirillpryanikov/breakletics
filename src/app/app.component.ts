@@ -6,10 +6,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Globalization } from '@ionic-native/globalization';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
 import {
   WelcomePageComponent,
   TabsComponent,
+  ExtraQuestionsComponent
 } from '../pages/index'
 
 @Component({
@@ -29,6 +29,7 @@ export class MyApp implements OnInit{
               private nativeStorage: NativeStorage,
               private screenOrientation: ScreenOrientation,
               private globalization: Globalization) {
+    this.platform = platform;
     this.initializeApp();
   }
 
@@ -40,7 +41,10 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      if(this.platform.is('core')) {
+        console.log('CORE');
+        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      }
       this.initTranslate();
     });
   }
@@ -76,7 +80,8 @@ export class MyApp implements OnInit{
         }
       })
       .catch(err => {
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = ExtraQuestionsComponent;
+        // this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
   }

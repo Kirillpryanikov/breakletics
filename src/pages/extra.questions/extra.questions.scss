@@ -1,5 +1,7 @@
 @import "../../theme/main";
+
 page-extra-questions {
+
   ion-content {
     color: #fff;
     background: url("../assets/imgs/login-bg.jpg");
@@ -51,6 +53,7 @@ page-extra-questions {
         .item-block .item-inner {
           padding-right: 0px !important;
           margin-top: 0;
+          border-bottom: 0.55px solid #fff !important;
         }
         .item-block:last-child .item-inner,
         .item-wrapper:last-child .item-block .item-inner:last-child {

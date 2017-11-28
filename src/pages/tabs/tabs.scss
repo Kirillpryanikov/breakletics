@@ -20,6 +20,7 @@
     opacity: 0.5;
   }
 }
+
 page-tabs {
   $tabs-ios-tab-min-height: 56px;
   @include makeIcon(b-home,'../assets/imgs/icon-home.png');
@@ -28,9 +29,6 @@ page-tabs {
   @include makeIcon(b-warmup,'../assets/imgs/icon-warmup.png');
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size:0.9rem;
-  ion-tabs {
-    background: #fff;
-  }
   ion-content {
   }
 }
