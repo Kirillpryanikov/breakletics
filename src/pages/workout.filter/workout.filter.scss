@@ -23,20 +23,46 @@ page-workout-filter {
   }
   .levels {
     height: 3.69rem;
-    width: 78.33%;
+    width: 80%;
     margin: 4.44vh auto;
     @include setFlexStyles(space-between);
     flex-direction: row;
     .filter-item {
       height: 100%;
       @include setFlexStyles();
-      width: 29%;
+      width: 30%;
       background: #fff;
       font-size: 1rem;
     }
     .filter-item.active {
       color: white;
       background: #000;
+      box-sizing: border-box;
+      border: 1px solid #fff;
+    }
+    .filter-item.active.flash:after {
+      background: url(../../assets/imgs/flash-black.png);
+      display: block;
+    }
+    .flash {
+      width: 12px;
+      height: 20px;
+      margin: 0 2px;
+      display: block;
+    }
+    .flash:after {
+      content: '';
+      height: 20px;
+      width: 12px;
+      display: block;
+      background-size: contain;
+    }
+    .flash:after {
+      content: '';
+      height: 20px;
+      width: 12px;
+      background: url(../../assets/imgs/flash-white.png);
+      background-size: contain;
     }
   }
   background: rgba(0,0,0,.9);

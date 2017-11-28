@@ -72,21 +72,13 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('user')
       .then(res => {
         if(!res){
-          // this.rootPage = RegisterPageComponent;
-          // this.rootPage = WelcomePageComponent;
           this.rootPage = TabsComponent;
         } else {
-          // this.rootPage = WelcomePageComponent;
           this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
-        // this.rootPage = ExtraQuestionsComponent;
         this.rootPage = TabsComponent;
-        // this.rootPage = TabsComponent;
-        // this.rootPage = RegisterPageComponent
-        // this.rootPage = TabsComponent;
-        // this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
   }

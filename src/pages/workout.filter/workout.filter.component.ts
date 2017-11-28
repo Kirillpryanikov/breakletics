@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
+import {NavController, ModalController, LoadingController, NavParams, ViewController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
@@ -13,13 +13,12 @@ export class WorkoutFilterComponent implements OnInit {
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
-              private navParams: NavParams) {}
+              private navParams: NavParams,
+              private viewCtrl: ViewController,) {}
 
-  ngOnInit(){
-    let user = this.navParams.get('user');
-  }
+  ngOnInit(){}
 
-  goToDash() {
-    // this.navCtrl.setRoot(DashboardComponent);
+  close() {
+    this.viewCtrl.dismiss();
   }
 }
