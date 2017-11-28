@@ -23,41 +23,57 @@ page-workout-filter {
   }
   .levels {
     height: 3.69rem;
-    width: 80%;
+    width: 90%;
     margin: 4.44vh auto;
     @include setFlexStyles(space-between);
     flex-direction: row;
     .filter-item {
       height: 100%;
       @include setFlexStyles();
-      width: 30%;
+      width: 31%;
       background: #fff;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      i:first-child {
+        margin-left: 5px;
+      }
+      &.active {
+        color: white;
+        background: #000;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        .flash:after {
+          background: url(../../assets/imgs/flash-white.png) 100% 100% no-repeat;
+          display: block;
+          content: '';
+          height: 18px;
+          width: 11px;
+          background-size: contain;
+        }
+      }
     }
-    .filter-item.active {
-      color: white;
-      background: #000;
-      box-sizing: border-box;
-      border: 1px solid #fff;
+
+    .filter-item {
+      .flash:after {
+        background: url(../../assets/imgs/flash-black.png) 100% 100% no-repeat;
+        content: '';
+        height: 18px;
+        width: 11px;
+        background-size: contain;
+        display: block;
+      }
     }
-    .filter-item.active.flash:after {
-      background: url(../../assets/imgs/flash-black.png);
-      display: block;
-    }
-    .flash {
-      width: 12px;
-      height: 20px;
-      margin: 0 2px;
-      display: block;
-    }
-    .flash:after {
-      content: '';
-      height: 20px;
-      width: 12px;
-      display: block;
-      background-size: contain;
-      background: url(../../assets/imgs/flash-white.png);
-    }
+  }
+
+  .go-btn {
+    width: 68.85%;
+    height: 7vh;
+    background-color: #fff;
+    color: #1a1b1b;
+    font-size: 1.6rem;
+    @include setFlexStyles();
+    margin: 12.22vh auto 0 auto;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   background: rgba(0,0,0,.9);
 }
