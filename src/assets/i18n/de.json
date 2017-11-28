@@ -165,6 +165,7 @@
     "TITLE": "Filtern nach Schwierigkeit",
     "BEGINNER": "BEGINNER",
     "ADVANCED": "ADVANCED",
-    "EXPERT": "EXPERT"
+    "EXPERT": "EXPERT",
+    "GO_BTN": "anwenden"
   }
 }
