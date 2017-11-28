@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { DomSanitizer } from '@angular/platform-browser';
 
 import { GuideComponent } from '../guide/guide.component';
 import { WelcomePageComponent } from '../welcome/welcome';
@@ -30,8 +29,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
               private service: DashbordService,
-              private platform: Platform,
-              private sanitizer: DomSanitizer) {
+              private platform: Platform) {
 
     this.loading = this.loadingCtrl.create({});
   }
@@ -61,10 +59,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
   handlerLoadVideo() {
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
-      // this.linkVideo = 'https://player.vimeo.com/video/242763018';
       this.linkVideo = this.video.video.split('https://vimeo.com/')[1];
     }, err => {
-      console.log('err video', err);
+      this.linkVideo = '190821442';
+      console.log('err video::: ', err);
     });
   }
 
@@ -90,7 +88,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   presentGuideModal(user) {
     this.nativeStorage.getItem('guide')
       .then(res => {
-        console.log('res ::: ', res);
         if(!res || res !== this.user['id']){
           this.modalCtrl.create(GuideComponent, {user: user}).present();
         }

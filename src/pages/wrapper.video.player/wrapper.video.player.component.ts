@@ -37,7 +37,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   getVideo(video) {
-    video = 190821442;
+    // video = [190821442, 242763018];
+    console.log('video  ---> ', video);
     if(video) {
       const options = {
         id: 'https://player.vimeo.com/video/' + video +'?autoplay=1',
@@ -56,7 +57,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   getDuration() {
     this.player.getDuration()
       .then(duration => {
-        this.data['duration'] = +(duration/60).toPrecision(4);
+        return duration;
       })
   }
 

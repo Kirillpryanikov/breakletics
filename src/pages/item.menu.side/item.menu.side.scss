@@ -1,0 +1,7 @@
+@import "../../theme/main";
+
+item-menu-side {
+  ion-content {
+    @include setFlexStyles();
+  }
+}

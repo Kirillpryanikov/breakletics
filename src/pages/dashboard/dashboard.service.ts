@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/publishReplay';
+
 import {ConfigService} from "../config.service";
 
 @Injectable()
@@ -12,6 +14,7 @@ export class DashbordService {
   videoWeek(): Observable<any> {
     return this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week`)
       .map(res => {
+        console.log('ERS ______', res);
         if(res && res["metaData"] && res["metaData"].video_url) {
           return {
             ID: res["ID"],
