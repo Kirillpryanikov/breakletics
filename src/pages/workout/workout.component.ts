@@ -22,7 +22,6 @@ export class WorkoutComponent implements OnInit {
   }
 
   ngOnInit(){
-    let user = this.navParams.get('user');
   }
 
   ionViewWillEnter() {
