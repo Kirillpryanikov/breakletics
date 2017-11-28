@@ -7,6 +7,21 @@ wrapper-player {
       width: 100%;
       height: 100%;
       background-color: #000;
+      position: absolute;
+      //div {
+      //  position: relative;
+      //}
+    }
+
+    button {
+      position: absolute;
+      bottom: 19%;
+      right: 12px;
+      padding: 25px 30px;
+      font-size: 1.3em;
+      opacity: 0.775;
+      background-color: whitesmoke;
+      z-index: 200;
     }
   }
 }
