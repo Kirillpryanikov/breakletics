@@ -5,15 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Globalization } from '@ionic-native/globalization';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 import {
-  LoginPageComponent,
   WelcomePageComponent,
-  RegisterPageComponent,
-  DashboardComponent,
   TabsComponent,
-  ExtraQuestionsComponent,
-  WorkoutComponent
 } from '../pages/index'
 
 @Component({
@@ -31,6 +27,7 @@ export class MyApp implements OnInit{
               public splashScreen: SplashScreen,
               private translate: TranslateService,
               private nativeStorage: NativeStorage,
+              private screenOrientation: ScreenOrientation,
               private globalization: Globalization) {
     this.initializeApp();
   }
@@ -43,6 +40,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }

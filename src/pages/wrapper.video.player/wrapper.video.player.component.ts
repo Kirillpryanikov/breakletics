@@ -12,9 +12,9 @@ import Player from '@vimeo/player';
 export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy {
   @Input('video') video: any;
   @ViewChild('iframe') iFrame: ElementRef;
-
   private player;
   public data = {};
+
   constructor(private platform: Platform,
               private navParams: NavParams,
               private screenOrientation: ScreenOrientation,
