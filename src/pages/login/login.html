@@ -1,6 +1,6 @@
 <ion-content text-center>
   <div class="header" padding>
-    <ion-icon name="ios-arrow-round-back"></ion-icon>
+    <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
   </div>
 
   <form #f="ngForm" (ngSubmit)="login(f)">
@@ -17,7 +17,7 @@
             <input type="text" ngModel name="email" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_EMAIL' | translate }}" required>
           </div>
           <div>
-            <input type="text" ngModel name="password" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_PASSWORD' | translate }}" required>
+            <input type="password" ngModel name="password" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_PASSWORD' | translate }}" required>
           </div>
         </div>
       </ion-row>
@@ -33,7 +33,11 @@
       </ion-row>
       <ion-row>
         <div class="title-under-btn">
-          <span>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON' | translate}}</span>
+          <span>
+            {{'LOGIN_PAGE.TITLE_UNDER_BUTTON1' | translate}}
+            <u>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON2' | translate}}</u>
+            {{'LOGIN_PAGE.TITLE_UNDER_BUTTON3' | translate}}
+          </span>
         </div>
       </ion-row>
       <ion-row>

@@ -1,32 +1,37 @@
 @import "../../theme/main";
 
-$height-navbar-login: 56px;
 $height-form: calc(100% - 56px);
 $padding-input-field: 30px 15px 12px 0;
 $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
 page-login {
+  font-family: "RobotoCondensesBold";
 
   ion-content {
+    background: url("../assets/imgs/login-bg.jpg");
+    background-position: center;
+    background-size: cover;
     .header {
       @include setFlexStyles(flex-start);
-      //position: fixed;
-      height: $height-navbar-login;
+      height: $height-header;
       font-size: $font-size-em-md;
+      color: $header-back-color;
     }
 
     form {
       @include setFlexStyles();
       height: $height-form;
-
+      color: #fff;
       .title-login-1 {
         width: 100%;
         font-size: $font-size-em-lg;
+        color: #fff;
+        margin-bottom: 5px;
       }
       .title-login-2{
         width: 100%;
-
+        color: #fff;
         font-size: $font-size-em-md;
         margin-bottom: 7%;
       }
@@ -36,8 +41,10 @@ page-login {
         input {
           width: 90%;
           border: none;
-          border-bottom: 1px solid gray;
+          border-bottom: 1px solid $white-opacity;
           padding: $padding-input-field;
+          background: rgba(1,1,1,0);
+          color: $white-opacity;
         }
       }
 
@@ -58,19 +65,20 @@ page-login {
           padding: 20px 0;
           font-size: $font-size-em-sm;
           letter-spacing: 2px;
+          background-color: #fff;
+          color: $btn-text-color;
         }
       }
 
       .title-under-btn {
-        width: 100%;
-        @include setFlexStyles();
-        font-size: $font-size-em-xss;
+        @include footerGuide();
       }
 
       .tooter-login {
         @include setFlexStyles();
+        width: 100%;
         margin-top: 18%;
-        font-size: 20px;
+        font-size: 1.6rem;
         text-decoration: underline;
         span {
           width: 80%;

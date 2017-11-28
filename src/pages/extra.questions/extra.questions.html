@@ -1,0 +1,78 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+  <div class="page">
+    <div class="title">
+      <div>{{"PAGE_EXTRA.TITLE" | translate}}</div>
+      <div>{{"PAGE_EXTRA.SUBTITLE" | translate}}</div>
+      <div>
+        <button (click)="skip()">{{"PAGE_EXTRA.BUTTON_1" | translate}}</button>
+      </div>
+    </div>
+
+    <form #extra="ngForm" (ngSubmit)="submit(extra)">
+      <ion-list >
+      <ion-item>
+        <ion-label floating for="date">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
+        <ion-datetime id="date" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" name="age" [(ngModel)]="extra.value.age">
+        </ion-datetime>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>{{"PAGE_EXTRA.FORM_Q.LOCATION" | translate}}</ion-label>
+        <ion-select name="location" ngModel>
+          <ion-option value="na"></ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>{{"PAGE_EXTRA.FORM_Q.MISSION.TITLE" | translate }}</ion-label>
+        <ion-select name="mission" ngModel>
+          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_1" | translate}}</ion-option>
+          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_2" | translate}}</ion-option>
+          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_3" | translate}}</ion-option>
+          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_4" | translate}}</ion-option>
+          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_5" | translate}}</ion-option>
+          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_6" | translate}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"PAGE_EXTRA.FORM_Q.HEAR.TITLE" | translate}}</ion-label>
+        <ion-select name="hear" ngModel>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_1" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_2" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_3" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_4" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_5" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_6" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_7" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_8" | translate}}</ion-option>
+          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_9" | translate}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{"PAGE_EXTRA.FORM_Q.FIT.TITLE" | translate}}</ion-label>
+        <ion-select name="fit" ngModel>
+          <ion-option value="na"></ion-option>
+          <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_1' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_1" | translate}}</ion-option>
+          <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_2' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_2" | translate}}</ion-option>
+          <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_3' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_3" | translate}}</ion-option>
+          <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_4' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_4" | translate}}</ion-option>
+          <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_5' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_5" | translate}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      </ion-list>
+      <div>
+        <button type="submit" [disabled]="false">{{"PAGE_EXTRA.FORM_Q.GO" | translate}}</button>
+      </div>
+    </form>
+
+  </div>
+
+
+</ion-content>

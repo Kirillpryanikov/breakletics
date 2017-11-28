@@ -1,0 +1,61 @@
+@import "../../theme/main";
+@import "./guide";
+
+page-guide {
+
+  .page-guide-3 {
+    position: absolute;
+    top:0;
+    width: 100%;
+    // 70 px - header; 56px - tabs
+    height: calc(100vh - 70px - 56px);
+    flex-direction: column;
+
+    .header-block {
+      height: $height-header-dashboard;
+      background-color: $guide-background;
+    }
+
+    .guide-block{
+      padding-top: 5%;
+      height: $height-block-1 + $height-block-2;
+      background-color: $guide-background;
+      @include setFlexStyles(flex-start);
+      flex-direction: column;
+
+      .namber-page {
+        width: 90%;
+        @include numberPage();
+      }
+
+      .title {
+        width: 60%;
+        @include title();
+      }
+
+      .next-guide {
+        width: 90%;
+        @include nextGuide();
+      }
+
+      .footer-guide{
+        @include footerGuide();
+      }
+    }
+
+    .block-3 {
+      height: $height-block-3;
+      .item-block-3 {
+        width: 100%;
+        height: 100%;
+        background-color: $guide-background;
+      }
+    }
+
+    .footer-block{
+      width: 100%;
+      height: 100%;
+      background-color: $guide-background;
+    }
+  }
+}

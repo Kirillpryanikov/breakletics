@@ -6,13 +6,154 @@
     "PLACEHOLDER_PASSWORD": "Passwort",
     "BUTTON_PASSWORD_FORGOTTEN": "Passwort vergessen?",
     "BUTTON_LOGIN": "MIT E-MAIL ANMELDEN",
-    "TITLE_UNDER_BUTTON": "Ich akzeptiere die AGB von Breakletics",
+    "TITLE_UNDER_BUTTON1": "Ich akzeptiere die ",
+    "TITLE_UNDER_BUTTON2": "AGB ",
+    "TITLE_UNDER_BUTTON3": "von Breakletics",
     "FOOTER_LOGIN": "Ich habe keinen Account und möchte mich registrieren"
   },
+  "REGISTER": {
+    "PAGE_1": {
+      "TITLE": "Dein Geschlecht?",
+      "BUTTON_WOMAN": "WEIBLICH",
+      "BUTTON_MAN": "Männer"
+    },
+    "PAGE_2": {
+      "TITLE": "Und wie heißen du?",
+      "FIRSTNAME": "Vorname",
+      "LASTNAME": "Nachname",
+      "MORE": "WEITER"
+    },
+    "PAGE_3": {
+      "TITLE": "Fast geschafft!",
+      "EMAIL": "E-Mail Adresse",
+      "PASSWORD": "Passwort",
+      "REGISTRATION": "MIT E-MAIL ANMELDEN",
+      "FOOTER_LOGIN": "Ich akzeptiere die AGB von Breakletics"
+    }
+  },
   "WELCOME_PAGE": {
-    "SLIDE_title": "Das neue Lieblings-Workout von Lena Gercke",
-    "SLIDE_desc": "- InStyle uber Breakletis",
+    "SLIDE_TITLE": "Das neue Lieblings-Workout von Lena Gercke",
+    "SLIDE_DESC": "- InStyle uber Breakletis",
     "REGISTER_BTN": "Loslegen!",
-    "LOGIN_BTN": "Login"
+    "LOGIN_BTN": "Login",
+    "PARTNER": "proud partner of"
+  },
+  "GUIDE_PAGE": {
+    "PAGE_GREETING": {
+      "TITLE": "Hey ",
+      "SUBTITLE": "bevor es losgeht eine gaaaaanz kurze Erkärung zu den Grundfunktionen der App!",
+      "BUTTON": "OKAY, SCHIESS LOS!"
+    },
+    "PAGE_1": {
+      "TITLE": "Jede Worche gibt es hier ein brandneues (kostenloses) \"Workout der Woche\".",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_2": {
+      "TITLE": "Hier findest du unsere ganzen Workouts - das Herzstück der App!",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_3": {
+      "TITLE": "Natürlich nicht ohne dich vorher warm zu machen!",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_4": {
+      "TITLE": "Fortgeschrittene können unter \"Exercises\" einzelne Übungen trainieren und sich so ihr eigenes Workout zusammenstellen!",
+      "BUTTON": "OKAY, VERSTANDEN!",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    },
+    "PAGE_5": {
+      "TITLE": "Genug gelabert!",
+      "SUBTITLE":"Mach JETZT dein erstes Breakletics Workout.",
+      "BUTTON_1": "WARM UP + WORKOUT",
+      "BUTTON_2": "NUR WORKOUT",
+      "FOOTER_TITLE": "Einführung abbrechen"
+    }
+  },
+  "PAGE_EXTRA": {
+    "TITLE": "Du musst nicht!",
+    "SUBTITLE":"Gründe geben warum der mehr Informatoinen geben soll.",
+    "BUTTON_1": "Nee, möchte ich jetzt loslegen!",
+    "FORM_Q": {
+      "AGE": "Geburtstag",
+      "LOCATION": "Woher kommst du?",
+      "MISSION": {
+        "TITLE": "Warum willst du Breakletics machen?",
+        "OPT_1": "Ich möchte meine Athletik & Mobilität steigern",
+        "OPT_2": "Ich möchte einen tollen Körper",
+        "OPT_3": "Ich möchte an meine Grenzen gehen ",
+        "OPT_4": "Ich möchte Spaß haben",
+        "OPT_5": "Ich möchte Abwechslung & Kreativität im Training",
+        "OPT_6": "Anderes"
+      },
+      "HEAR": {
+        "TITLE": "Wie hast du von Breakletics erfahren?",
+        "OPT_1": "Facebook",
+        "OPT_2": "Instagram",
+        "OPT_3": "Fernsehen",
+        "OPT_4": "Magazin",
+        "OPT_5": "Bekannte/r",
+        "OPT_6": "Messe (FIBO etc.)",
+        "OPT_7": "Fitness Studio",
+        "OPT_8": "App Store / Google Play Store",
+        "OPT_9": "Anders"
+      },
+      "FIT": {
+        "TITLE": "Wie oft machst du Sport pro Woche?",
+        "OPT_1": "5 mal oder mehr",
+        "OPT_2": "4-5 mal",
+        "OPT_3": "2-3 mal",
+        "OPT_4": "1-2 mal",
+        "OPT_5": "weniger"
+      },
+      "GO": "So, jetzt aber!"
+    }
+  },
+  "TABS": {
+    "TABS_1": "HOME",
+    "TABS_2": "WORKOUTS",
+    "TABS_3": "EXERCISES",
+    "TABS_4": "WARM UP"
+  },
+  "DASHBOARD": {
+    "WORKOUTS": "WORKOUTS",
+    "EXERCISES": "EXERCISES",
+    "WARM_UP": "WARM UP",
+    "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
+    "CRAZY_1": "Crazy XMAS Deal -",
+    "CRAZY_2": "- 5 Workouts FÜR 5 EUR",
+    "STATIC": "Pluasmember",
+    "PAY_TITLE_1": "FIT & ATHLETISCH",
+    "PAY_TITLE_2": "WERDEN MIT WORKOUTTS,",
+    "PAY_TITLE_3": "DIE EINFACH ROCKEN!",
+    "TEXT_LI_1": "Erhalte sofort Zugriff auf alle",
+    "TEXT_LI_1_1": "36 Workouts ",
+    "TEXT_LI_1_2": "28 Exercises und 4 Warm Ups/ Cool Downs!",
+    "TEXT_LI_2": "Regelmäßig",
+    "TEXT_LI_2_1": "NEUE",
+    "TEXT_LI_2_2": "Workouts, Exercises und sogar Features!",
+    "TEXT_LI_3": "Werde Teil der geschlossenen Facebook Gruppe und erhalte Zugriff auf",
+    "TEXT_LI_3_1": "stetig neue Videos (Exercises und mehr)",
+    "TEXT_LI_4": "...und vieles mehr!",
+    "BTN": "PLUSMEMBER WERDEN",
+    "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
+
+  },
+  "MENU_SIDE": {
+    "XMAS_DEAL": "XMAS DEAL",
+    "PLUSMEMBER": "PLUSMEMBER WERDEN",
+    "WORKOUT_OF_THE_WEEK": "WORKOUT DER WOCHE",
+    "WORKOUTS": "WORKOUTS",
+    "EXERCISES": "EXERCISES",
+    "WARM_UPS": "WARM UPS / COOL DOWNS",
+    "BREAKLETICS_TV": "BREAKLETICS TV",
+    "MY_ACCOUNT": "MEIN KONTO",
+    "FIND_BREAKLETICS_CLASS": "BREAKLETICS KURS FINDER",
+    "BREAKLETICS_SHOP": "BREAKLETICS SHOP",
+    "TRANSFORMATION": "TRANSFORMATION",
+    "TERMS_CONDITIONS": "AGB",
+    "IMPRINT": "IMPRESSUM"
   }
 }

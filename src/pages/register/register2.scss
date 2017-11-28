@@ -1,0 +1,38 @@
+@import "../../theme/main";
+
+$padding-input-field: 20px 15px 10px 0;
+$margin-top-container: 8%;
+$margin-top-button: 9%;
+
+page-register {
+  .page-second {
+    .container-fullname {
+      margin-top: $margin-top-container;
+      align-self: center;
+      input {
+        width: 90%;
+        border: none;
+        border-bottom: 1px solid $white-opacity;
+        padding: $padding-input-field;
+        background: rgba(1,1,1,0);
+        color: $white-opacity;
+      }
+    }
+
+    .handler {
+      width: 100%;
+      margin-top: $margin-top-button;
+      button {
+        padding: 19px 0;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        color: $btn-text-color;
+        background-color: #fff;
+
+      }
+      input{
+        letter-spacing: 2px;
+      }
+    }
+  }
+}

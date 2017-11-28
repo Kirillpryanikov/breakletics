@@ -1,6 +1,30 @@
+@import "./palette";
 
 @mixin setFlexStyles($param1: center, $param2: center){
   display: flex;
   justify-content: $param1;
   align-items: $param2;
 }
+
+@mixin guideButtonStyle() {
+  border: none;
+  letter-spacing: 2px;
+  padding: 5% 0;
+  background-color: $background-white;
+  font-weight: 600;
+  width: 60%;
+  font-size: 1.6rem;
+  color: $btn-text-color;
+
+}
+@mixin fullSizeBtn() {
+  border: none;
+  letter-spacing: 2px;
+  padding: 5% 0;
+  background-color: $background-white;
+  font-weight: 600;
+  width: 100%;
+  font-size: 1.6rem;
+  color: $btn-text-color;
+}
+
