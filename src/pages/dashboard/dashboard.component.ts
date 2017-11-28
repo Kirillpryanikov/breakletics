@@ -90,11 +90,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
   presentGuideModal(user) {
     this.nativeStorage.getItem('guide')
       .then(res => {
+        console.log('res ::: ', res);
         if(!res || res !== this.user['id']){
           this.modalCtrl.create(GuideComponent, {user: user}).present();
         }
       })
       .catch(err => {
+        console.log('err ', err);
         this.modalCtrl.create(GuideComponent,{user: user}).present();
       })
   }
