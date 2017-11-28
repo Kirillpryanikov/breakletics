@@ -22,16 +22,19 @@ export class WorkoutComponent implements OnInit {
   }
 
   ngOnInit(){
+    let user = this.navParams.get('user');
   }
 
   ionViewWillEnter() {
     this.tabBarElement.style.display = 'none';
   }
 
+  ionViewWillLeave() {
+    this.tabBarElement.style.display = 'flex';
+  }
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
   }
-
   getFilters() {
     this.modalCtrl.create(WorkoutFilterComponent).present();
   }
