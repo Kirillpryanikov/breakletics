@@ -80,7 +80,7 @@ export class MyApp implements OnInit{
         }
       })
       .catch(err => {
-        this.rootPage = ExtraQuestionsComponent;
+        this.rootPage = TabsComponent;
         // this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
