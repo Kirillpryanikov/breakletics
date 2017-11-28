@@ -8,10 +8,12 @@ page-extra-questions {
     background-position: center;
     background-size: cover;
     .page {
+      min-height: 100vh;
       width: 87%;
       @include setFlexStyles();
       flex-direction: column;
-      margin: auto;
+      overflow: scroll;
+      margin: 20px auto;
       .title {
         width: 100%;
         div:first-child {
@@ -57,7 +59,7 @@ page-extra-questions {
         }
         .item-block:last-child .item-inner,
         .item-wrapper:last-child .item-block .item-inner:last-child {
-          border-bottom: 0.55px solid #c8c7cc !important;
+          border-bottom: 0.55px solid #fff !important;
         }
 
         ion-label {
