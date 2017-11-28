@@ -62,8 +62,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
       // this.linkVideo = 'https://player.vimeo.com/video/242763018';
-      this.linkVideo = '242763018';
-      // this.linkVideo = this.video.video.split('https://vimeo.com/')[1];
+      this.linkVideo = this.video.video.split('https://vimeo.com/')[1];
     }, err => {
       console.log('err video', err);
     });
