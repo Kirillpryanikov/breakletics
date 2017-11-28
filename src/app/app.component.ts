@@ -71,14 +71,14 @@ export class MyApp implements OnInit{
   isAuth() {
     this.nativeStorage.getItem('user')
       .then(res => {
-        if(!res){
+        if(res){
           this.rootPage = TabsComponent;
         } else {
           this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
-        this.rootPage = TabsComponent;
+        this.rootPage = WelcomePageComponent;
         console.log('ERR in app.component ', err);
       })
   }
