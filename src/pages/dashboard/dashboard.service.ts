@@ -15,11 +15,20 @@ export class DashbordService {
     return this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week`)
       .map(res => {
         console.log('ERS ______', res);
-        if(res && res["metaData"] && res["metaData"].video_url) {
+        if(res && res["metaData"] && res["metaData"].video_url && res["vimeo_data"]) {
           return {
             ID: res["ID"],
-            video: res["metaData"].video_url[0],
-            title: res["post_title"]
+            video: res["metaData"].video_url[0].split('https://vimeo.com/')[1],
+            title: res["post_title"],
+            thumbnail: res["vimeo_data"].pictures.sizes.pop(),
+            duration: Math.round(res["vimeo_data"].duration / 60)
+          };
+        } else {
+          return {
+            video: '190821442',
+            title: res["post_title"],
+            thumbnail: {link: '../assets/imgs/workouts-bg.jpg'},
+            duration: 15
           };
         }
       });
