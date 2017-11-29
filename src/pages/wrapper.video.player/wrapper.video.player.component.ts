@@ -41,7 +41,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     console.log('video  ---> ', video);
     if(video) {
       const options = {
-        id: 'https://player.vimeo.com/video/' + 242763018 +'?autoplay=1',
+        id: 'https://player.vimeo.com/video/' + video +'?autoplay=1',
         width: this.platform.height(),
         height: this.platform.width(),
         autopause: false,
