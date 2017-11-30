@@ -59,7 +59,7 @@ page-welcome {
     @include setFlexStyles(space-between);
     flex-direction: column;
     .slider {
-      height: 45%;
+      height: 42vh;
       color: #fff;
       width: 100%;
       h2 {

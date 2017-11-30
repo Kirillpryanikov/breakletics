@@ -73,12 +73,12 @@ export class MyApp implements OnInit{
         if(res){
           this.rootPage = TabsComponent;
         } else {
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
-        this.rootPage = ExtraQuestionsComponent;
-        // this.rootPage = TabsComponent;
+        // this.rootPage = WelcomePageComponent;
+        this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
   }
