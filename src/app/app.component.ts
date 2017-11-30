@@ -77,8 +77,8 @@ export class MyApp implements OnInit{
         }
       })
       .catch(err => {
-        // this.rootPage = WelcomePageComponent;
-        this.rootPage = TabsComponent;
+        this.rootPage = WelcomePageComponent;
+        // this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
   }
