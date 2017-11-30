@@ -18,7 +18,7 @@
       "BUTTON_MAN": "Male"
     },
     "PAGE_2": {
-      "TITLE": "And what's your name?",
+      "TITLE": "And what\'s your name?",
       "FIRSTNAME": "First name",
       "LASTNAME": "Last name",
       "MORE": "NEXT"
@@ -34,7 +34,7 @@
   "WELCOME_PAGE": {
     "SLIDE_TITLE": "The new favorite workout of Lena Gercke",
     "SLIDE_DESC": "- InStyle about Breakletis",
-    "REGISTER_BTN": "Let's start!",
+    "REGISTER_BTN": "Let\'s start!",
     "LOGIN_BTN": "Login",
     "PARTNER": "proud partner of"
   },
@@ -60,7 +60,7 @@
       "FOOTER_TITLE": "Skip introduction"
     },
     "PAGE_4": {
-      "TITLE": "Under ͟Exercises͞ advanced users can train single exercises and thus make their own individual workouts!",
+      "TITLE": "Under ͟Exercises advanced users can train single exercises and thus make their own individual workouts!",
       "BUTTON": "OKAY, GOT IT!",
       "FOOTER_TITLE": "Skip introduction"
     },
