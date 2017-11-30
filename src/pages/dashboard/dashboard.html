@@ -15,7 +15,7 @@
 <ion-content>
   <div class="container-dashboard">
     <div class="block block-1">
-      <img [src]="video.thumbnail.link" width="100%">
+      <img *ngIf="video.thumbnail" [src]="video.thumbnail.link" width="100%">
       <ion-icon class="play-button" *ngIf="video.video" (click)="playVideoModal()" name="md-play"></ion-icon>
       <div class="block-1-footer">
         <span>{{'DASHBOARD.WORKOUTS_WEEK' | translate }}</span>
