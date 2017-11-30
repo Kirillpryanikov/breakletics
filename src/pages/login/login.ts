@@ -47,6 +47,7 @@ export class LoginPageComponent implements OnDestroy {
         this.dismissLoading();
 
       }, err => {
+        console.log('ERR:::: ', err);
         this.dismissLoading();
         this.presentToast(err.status);
       })

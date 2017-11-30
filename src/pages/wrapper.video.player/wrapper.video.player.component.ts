@@ -41,7 +41,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     // video = [190821442, 242763018];
     if(video) {
       const options = {
-        id: 'https://player.vimeo.com/video/' + video +'?autoplay=1',
+        id: 'https://player.vimeo.com/video/' + 222385665 +'?autoplay=1',
         width: this.platform.height(),
         height: this.platform.width(),
         autopause: false,
@@ -79,7 +79,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.iFrameFirst.nativeElement.remove();
     this.buttonNext.nativeElement.remove();
     const options = {
-      id: 'https://player.vimeo.com/video/' + 190821442 +'?autoplay=1',
+      id: 'https://player.vimeo.com/video/' + 222299434 +'?autoplay=1',
       width: this.platform.width(),
       height: this.platform.height(),
       autopause: false,
