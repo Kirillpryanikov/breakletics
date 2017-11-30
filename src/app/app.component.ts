@@ -41,7 +41,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }
@@ -73,11 +73,11 @@ export class MyApp implements OnInit{
         if(res){
           this.rootPage = TabsComponent;
         } else {
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
-        this.rootPage = ExtraQuestionsComponent;
+        this.rootPage = WelcomePageComponent;
         // this.rootPage = TabsComponent;
         console.log('ERR in app.component ', err);
       })
