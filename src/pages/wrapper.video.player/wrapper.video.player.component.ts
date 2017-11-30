@@ -11,9 +11,11 @@ import Player from '@vimeo/player';
 })
 export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy {
   @Input('video') video: any;
-  @ViewChild('iframe') iFrame: ElementRef;
+  @ViewChild('iframe1') iFrameFirst: ElementRef;
+  @ViewChild('iframe2') iFrameSecond: ElementRef;
+  @ViewChild('nextbutton') buttonNext: ElementRef;
+
   private player;
-  public data = {};
 
   constructor(private platform: Platform,
               private navParams: NavParams,
@@ -21,10 +23,9 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
               private viewController: ViewController) {}
 
   ngOnInit() {
-    console.log(this.screenOrientation.type);
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-
     const video = this.navParams.get('video');
+
     if(video) {
       this.getVideo(video);
     }
@@ -38,15 +39,20 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   getVideo(video) {
     // video = [190821442, 242763018];
-    console.log('video  ---> ', video);
     if(video) {
       const options = {
         id: 'https://player.vimeo.com/video/' + video +'?autoplay=1',
         width: this.platform.height(),
         height: this.platform.width(),
+        autopause: false,
+        controls: false,
+        showinfo: false
       };
-      this.player = new Player(this.iFrame.nativeElement, options);
+      this.player = new Player(this.iFrameFirst.nativeElement, options);
       this.play();
+      this.player.on('ended', (data)=> {
+        this.next();
+      });
     }
   }
 
@@ -67,6 +73,21 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   stop() {
     this.player.unload();
+  }
+
+  next() {
+    this.iFrameFirst.nativeElement.remove();
+    this.buttonNext.nativeElement.remove();
+    const options = {
+      id: 'https://player.vimeo.com/video/' + 190821442 +'?autoplay=1',
+      width: this.platform.width(),
+      height: this.platform.height(),
+      autopause: false,
+      controls: false,
+      showinfo: false
+    };
+    this.player = new Player(this.iFrameSecond.nativeElement, options);
+    this.play();
   }
 
   ngOnDestroy() {

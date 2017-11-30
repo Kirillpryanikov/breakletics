@@ -17,10 +17,9 @@ import { Subscription } from "rxjs/Subscription";
 export class DashboardComponent implements OnInit, OnDestroy {
   private loading: any;
   public user: object;
-  public video: VideoWeekInterface;
+  public video: any;
   public heightDevice: number;
   public weightDevice: number;
-  public linkVideo: string;
   private videoWeekObservable: Subscription;
 
   constructor(public navCtrl: NavController,
@@ -30,8 +29,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private navParams: NavParams,
               private service: DashbordService,
               private platform: Platform) {
-
-    this.loading = this.loadingCtrl.create({});
+    this.video = {
+      video: '',
+      thumbnail: ''
+    };
+    this.loading = this.loadingCtrl.create({
+    });
   }
 
   ngOnInit(){
@@ -59,9 +62,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   handlerLoadVideo() {
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
-      this.linkVideo = this.video.video.split('https://vimeo.com/')[1];
     }, err => {
-      this.linkVideo = '190821442';
       console.log('err video::: ', err);
     });
   }
@@ -80,8 +81,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   playVideoModal() {
-    if(this.linkVideo) {
-      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.linkVideo}).present();
+    if(this.video.video) {
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.video.video}).present();
     }
   }
 

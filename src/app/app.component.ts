@@ -41,10 +41,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      if(this.platform.is('core')) {
-        console.log('CORE');
-        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-      }
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }
@@ -76,7 +73,7 @@ export class MyApp implements OnInit{
         if(res){
           this.rootPage = TabsComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = ExtraQuestionsComponent;
         }
       })
       .catch(err => {
