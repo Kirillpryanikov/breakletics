@@ -90,6 +90,10 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.play();
   }
 
+  close() {
+    this.viewController.dismiss();
+  }
+
   ngOnDestroy() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
