@@ -6,7 +6,6 @@ import { GuideComponent } from '../guide/guide.component';
 import { WelcomePageComponent } from '../welcome/welcome';
 import { DashbordService } from './dashboard.service';
 import { WrapperVideoPlayerComponent } from '../wrapper.video.player/wrapper.video.player.component';
-import { VideoWeekInterface } from '../interfaces/VideoWeekInterface';
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
@@ -102,6 +101,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if(this.videoWeekObservable) {
       this.videoWeekObservable.unsubscribe();
+    }
+    if(this.loading) {
+      this.loading.dismiss();
     }
   }
 }

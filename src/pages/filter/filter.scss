@@ -76,6 +76,17 @@ filter-video {
     }
   }
 
+  .filters-warmups {
+    .levels {
+      display: flex;
+      justify-content: flex-start;
+      .filter-item {
+        margin-right: 15px;
+      }
+
+    }
+  }
+
   .go-btn {
     width: 68.85%;
     height: 7vh;

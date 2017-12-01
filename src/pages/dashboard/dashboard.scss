@@ -128,13 +128,11 @@ page-dashboard {
       .block-3 {
         height: $height-block-3;
         background-color: white;
-
         .item-block-3 {
           height: 100%;
           float: left;
           box-sizing: border-box;
         }
-
         .item-block-3:nth-child(1) {
           background: url(../assets/imgs/exercises-bg.jpg);
           background-repeat: no-repeat;
@@ -149,7 +147,6 @@ page-dashboard {
           border-left: 2px solid $bg-color-dash;
         }
       }
-
       .block-footer {
         background-color: $bg-color-dash;
         flex-direction: column;
@@ -223,6 +220,7 @@ page-dashboard {
           }
         }
         ul {
+          width: 100%;
           margin-top: 5.65%;
           margin-bottom: 7.13%;
           li {
