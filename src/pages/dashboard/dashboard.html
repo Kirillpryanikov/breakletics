@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="container-dashboard" *ngIf="video">
+  <div class="container-dashboard" *ngIf="video" [ngClass]="{'no-scroll': isScroll}">
     <div class="block block-1">
       <img [src]="video.video_img" width="100%">
       <ion-icon class="play-button" *ngIf="video.video_url" (click)="playVideoModal()" name="md-play"></ion-icon>

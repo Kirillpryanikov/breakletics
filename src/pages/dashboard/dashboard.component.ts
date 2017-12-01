@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public heightDevice: number;
   public weightDevice: number;
   private videoWeekObservable: Subscription;
+  public isScroll = false;
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -31,7 +32,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private platform: Platform) {
     this.loading = this.loadingCtrl.create({
     });
-
   }
 
   ngOnInit(){
@@ -59,7 +59,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   handlerLoadVideo() {
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
-      console.log('VIDEO', res);
     }, err => {
       console.log('err video::: ', err);
     });
@@ -85,17 +84,29 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   presentGuideModal(user) {
+    let guide;
     this.nativeStorage.getItem('guide')
       .then(res => {
-        if(!res || res !== this.user['id']){
-          this.modalCtrl.create(GuideComponent, {user: user}).present();
+        if(!res || res !== this.user['id']) {
+          this.isScroll = true;
+          guide = this.modalCtrl.create(GuideComponent, {user: user});
+          guide.onDidDismiss(data => {
+            this.isScroll = false;
+          });
+          guide.present()
         }
       })
       .catch(err => {
         console.log('err ', err);
-        this.modalCtrl.create(GuideComponent,{user: user}).present();
-      })
+        this.isScroll = true;
+        guide = this.modalCtrl.create(GuideComponent,{user: user});
+        guide.onDidDismiss(data => {
+          this.isScroll = false;
+        });
+        guide.present();
+      });
   }
+
 
   ngOnDestroy() {
     if(this.videoWeekObservable) {

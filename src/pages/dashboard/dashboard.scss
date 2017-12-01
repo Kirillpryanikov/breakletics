@@ -86,7 +86,6 @@ page-dashboard {
           display: flex;
           justify-content: space-between;
           width: 100%;
-          width: 100%;
           position: absolute;
           bottom: 5.5%;
           box-sizing: border-box;
@@ -249,5 +248,9 @@ page-dashboard {
         }
       }
     }
+  }
+
+  .no-scroll {
+    position: fixed;
   }
 }

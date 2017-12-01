@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Output } from '@angular/core';
 import { NavController, Slides, ViewController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {tryCatch} from "rxjs/util/tryCatch";
@@ -27,11 +27,12 @@ export class GuideComponent implements OnInit{
 
   ngOnInit(){
     this.user = this.navParams.get('user');
-
+    console.log('this.user:::  ', this.user);
     if(this.user) {
       this.firstName = this.user['user_display_name'].split(' ')[0];
     }
   }
+
 
   ionViewDidEnter() {
     this.slider.lockSwipes(true);
@@ -41,6 +42,7 @@ export class GuideComponent implements OnInit{
     this.slider.lockSwipes(false);
     this.slider.slideNext();
   }
+
 
   guideFinish() {
     this.nativeStorage.setItem('guide', this.user? this.user['id']: true)
