@@ -83,7 +83,9 @@
     <allow-navigation href="http://192.168.0.111:8101" />
     <allow-navigation href="http://192.168.0.111:8102" />
     <allow-navigation href="http://172.16.144.128:8100" />
-    <allow-navigation href="*" />
+    <allow-navigation href="http://192.168.0.111:8103" />
+    <allow-navigation href="http://*" />
+    <allow-navigation href="http://192.168.0.111:8104" />
     <engine name="android" spec="^6.3.0" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />

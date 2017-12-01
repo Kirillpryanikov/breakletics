@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { DashboardComponent, WorkoutFilterComponent } from '../index'
+import { DashboardComponent, WorkoutFilterComponent, FilterVideoComponent } from '../index'
 
 @Component({
   selector: 'page-workout',
@@ -36,6 +36,6 @@ export class WorkoutComponent implements OnInit {
     this.navCtrl.setRoot(DashboardComponent);
   }
   getFilters() {
-    this.modalCtrl.create(WorkoutFilterComponent).present();
+    this.modalCtrl.create(FilterVideoComponent).present();
   }
 }

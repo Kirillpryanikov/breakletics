@@ -140,5 +140,24 @@
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "TERMS AND CONDITIONS",
     "IMPRINT": "IMPRINT"
+  },
+  "WORKOUTS": {
+    "TITLE": "Workouts",
+    "SEARCH": "Filter by difficulty...",
+    "JETZT": "UNLOCK 48+ WORKOUTS NOW"
+  },
+  "WORKOUTS_FILTER": {
+    "TITLE": "Filter by difficulty",
+    "BEGINNER": "BEGINNER",
+    "ADVANCED": "ADVANCED",
+    "EXPERT": "EXPERT",
+    "GO_BTN": "APPLY"
+  },
+  "EXERCISES": {
+    "TITLE": "Filtern nach Kategorien",
+    "TOPROCKS":"TOPROCKS",
+    "FOOTWORKS": "FOOTWORKS",
+    "POWERMOVES": "POWERMOVES",
+    "CRUNCHES": "CRUNCHES"
   }
 }

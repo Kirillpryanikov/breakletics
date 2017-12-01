@@ -167,5 +167,12 @@
     "ADVANCED": "ADVANCED",
     "EXPERT": "EXPERT",
     "GO_BTN": "anwenden"
+  },
+  "EXERCISES": {
+    "TITLE": "Filtern nach Kategorien",
+    "TOPROCKS":"TOPROCKS",
+    "FOOTWORKS": "FOOTWORKS",
+    "POWERMOVES": "POWERMOVES",
+    "CRUNCHES": "CRUNCHES"
   }
 }
