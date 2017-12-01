@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { DashboardComponent, WorkoutFilterComponent, FilterVideoComponent } from '../index'
+import { Subscription } from 'rxjs/Subscription';
+import { WorkoutService } from './workout.service'
+import {
+  DashboardComponent,
+  FilterVideoComponent
+} from '../index'
 
 @Component({
   selector: 'page-workout',
@@ -11,18 +16,52 @@ import { DashboardComponent, WorkoutFilterComponent, FilterVideoComponent } from
 export class WorkoutComponent implements OnInit {
   private loading: any;
   private tabBarElement: any;
+  private workoutObservable: Subscription;
+  public workuots: any;
+
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
-              private navParams: NavParams) {
-    this.loading = this.loadingCtrl.create({});
+              private navParams: NavParams,
+              private service: WorkoutService) {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
-    console.log('GET tabs', this.tabBarElement);
   }
 
   ngOnInit(){
     let user = this.navParams.get('user');
+    this.presentLoading();
+    this.getWorkouts();
+  }
+  getWorkouts() {
+    this.workoutObservable = this.service.workouts()
+      .subscribe(responce => {
+        console.log('Responce: =>', responce);
+        this.workuots = responce;
+        this.dismissLoading();
+      }, err => {
+        this.dismissLoading();
+        console.log('Err: =>', err);
+      })
+  }
+
+  presentLoading(){
+    if(!this.loading){
+      this.loading = this.loadingCtrl.create({});
+      this.loading.present();
+    }
+  }
+
+  dismissLoading() {
+    if (this.loading) {
+      try {
+        this.loading.dismiss();
+      }
+      catch (exception) {
+        console.log(exception)
+      }
+      this.loading = null;
+    }
   }
 
   ionViewWillEnter() {
