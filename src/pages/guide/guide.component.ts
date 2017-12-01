@@ -27,11 +27,12 @@ export class GuideComponent implements OnInit{
 
   ngOnInit(){
     this.user = this.navParams.get('user');
-
+    console.log('this.user:::  ', this.user);
     if(this.user) {
       this.firstName = this.user['user_display_name'].split(' ')[0];
     }
   }
+
 
   ionViewDidEnter() {
     this.slider.lockSwipes(true);
@@ -42,6 +43,7 @@ export class GuideComponent implements OnInit{
     this.slider.slideNext();
   }
 
+
   guideFinish() {
     this.nativeStorage.setItem('guide', this.user? this.user['id']: true)
       .then(res => {
@@ -51,6 +53,4 @@ export class GuideComponent implements OnInit{
         this.viewCtrl.dismiss();
       })
   }
-
-
 }
