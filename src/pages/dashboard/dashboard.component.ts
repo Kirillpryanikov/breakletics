@@ -102,5 +102,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if(this.videoWeekObservable) {
       this.videoWeekObservable.unsubscribe();
     }
+    if(this.loading) {
+      this.loading.dismiss();
+    }
   }
 }

@@ -18,7 +18,7 @@
       "BUTTON_MAN": "Male"
     },
     "PAGE_2": {
-      "TITLE": "And what\'s your name?",
+      "TITLE": "And what's your name?",
       "FIRSTNAME": "First name",
       "LASTNAME": "Last name",
       "MORE": "NEXT"
@@ -34,8 +34,8 @@
   "WELCOME_PAGE": {
     "SLIDE_TITLE": "The new favorite workout of Lena Gercke",
     "SLIDE_DESC": "- InStyle about Breakletis",
-    "REGISTER_BTN": "Let\'s start!",
     "LOGIN_BTN": "Login",
+    "REGISTER_BTN": "Let's start!",
     "PARTNER": "proud partner of"
   },
   "GUIDE_PAGE": {
@@ -73,7 +73,7 @@
     }
   },
   "PAGE_EXTRA": {
-    "TITLE": "You don\'t need to...",
+    "TITLE": "You don't need to...",
     "SUBTITLE":"...but it would be great if you would give us some additional information, so we can make Breakletics better!",
     "BUTTON_1": "Nope, I want to start right away!",
     "FORM_Q": {
@@ -121,10 +121,23 @@
     "WORKOUTS": "WORKOUTS",
     "EXERCISES": "EXERCISES",
     "WARM_UP": "WARM UP",
-    "ZUMBA": "Only Pumba still does Zumba.",
-    "CRAZY": "CRAZY XMAS DEAL – 5 WORKOUTS FOR 6 $!",
-    "STATIC": "Plusmember",
-    "WORKOUTS_WEEK": "WORKOUT OF THE WEEK"
+    "ZUMBA": "-",
+    "CRAZY_1": "CRAZY XMAS DEAL",
+    "CRAZY_2": "5 WORKOUTS FOR 6 $!",
+    "STATIC": "Pluasmember",
+    "PAY_TITLE_1": "BECOME ATHLETIC",
+    "PAY_TITLE_2": " LEARN TO MOVE WITH CREATIVE,",
+    "PAY_TITLE_3": "KICK-ASS WORKOUTS! ",
+    "TEXT_LI_1": "Get access now to all of our",
+    "TEXT_LI_1_1": "36 Workouts ",
+    "TEXT_LI_1_2": "28 Exercises und 4 Warm Ups/ Cool Downs!",
+    "TEXT_LI_2_1": "NEW",
+    "TEXT_LI_2_2": "Exercises and Features on a regular basis!",
+    "TEXT_LI_3": "Become part of the private facebook group and gain access to",
+    "TEXT_LI_3_1": "new videos (exercises and more)!",
+    "TEXT_LI_4": "...and much more!",
+    "BTN": "BECOME PLUSMEMBER",
+    "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
   },
   "MENU_SIDE": {
     "XMAS_DEAL": "XMAS DEAL",
@@ -140,5 +153,29 @@
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "TERMS AND CONDITIONS",
     "IMPRINT": "IMPRINT"
+  },
+  "WORKOUTS": {
+    "TITLE": "Workouts",
+    "SEARCH": "Filter by difficulty...",
+    "JETZT": "UNLOCK 48+ WORKOUTS NOW"
+  },
+  "WORKOUTS_FILTER": {
+    "TITLE": "Filter by difficulty",
+    "BEGINNER": "BEGINNER",
+    "ADVANCED": "ADVANCED",
+    "EXPERT": "EXPERT",
+    "GO_BTN": "APPLY"
+  },
+  "EXERCISES": {
+    "TITLE": "Filtern nach Kategorien",
+    "TOPROCKS":"TOPROCKS",
+    "FOOTWORKS": "FOOTWORKS",
+    "POWERMOVES": "POWERMOVES",
+    "CRUNCHES": "CRUNCHES"
+  },
+  "WARMUPS": {
+    "TITLE": "Filter by Warm Up or Cool Down ",
+    "WARM_UP": "WARM UP",
+    "COOL_DOWN": "COOL DOWN"
   }
 }

@@ -139,7 +139,6 @@
     "TEXT_LI_4": "...und vieles mehr!",
     "BTN": "PLUSMEMBER WERDEN",
     "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
-
   },
   "MENU_SIDE": {
     "XMAS_DEAL": "XMAS DEAL",
@@ -167,5 +166,17 @@
     "ADVANCED": "ADVANCED",
     "EXPERT": "EXPERT",
     "GO_BTN": "anwenden"
+  },
+  "EXERCISES": {
+    "TITLE": "Filtern nach Kategorien",
+    "TOPROCKS":"TOPROCKS",
+    "FOOTWORKS": "FOOTWORKS",
+    "POWERMOVES": "POWERMOVES",
+    "CRUNCHES": "CRUNCHES"
+  },
+  "WARMUPS": {
+    "TITLE": "Filter by Warm Up or Cool Down ",
+    "WARM_UP": "WARM UP",
+    "COOL_DOWN": "COOL DOWN"
   }
 }

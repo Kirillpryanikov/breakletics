@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { WorkoutService } from './workout.service'
 import {
   DashboardComponent,
-  WorkoutFilterComponent
+  FilterVideoComponent
 } from '../index'
 
 @Component({
@@ -75,6 +75,6 @@ export class WorkoutComponent implements OnInit {
     this.navCtrl.setRoot(DashboardComponent);
   }
   getFilters() {
-    this.modalCtrl.create(WorkoutFilterComponent).present();
+    this.modalCtrl.create(FilterVideoComponent).present();
   }
 }

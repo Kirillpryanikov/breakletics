@@ -1,0 +1,49 @@
+<ion-header transparent>
+  <ion-navbar no-border transparent>
+    <ion-buttons end icon-only>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<div #containerFilters>
+  <div class="filters-wrapper">
+    <h2>{{"WORKOUTS_FILTER.TITLE" | translate}}</h2>
+    <div class="levels">
+      <button class="filter-item" (click)="setFilter('workouts', 'Beginner')">{{"WORKOUTS_FILTER.BEGINNER" | translate}}
+        <i class="flash "></i>
+      </button>
+      <button class="filter-item" (click)="setFilter('workouts', 'Advanced')">{{"WORKOUTS_FILTER.ADVANCED" | translate}}
+        <i class="flash "></i>
+        <i class="flash "></i>
+      </button>
+      <button class="filter-item active" (click)="setFilter('workouts', 'Expert')">{{"WORKOUTS_FILTER.EXPERT" | translate}}
+        <i class="flash "></i>
+        <i class="flash "></i>
+        <i class="flash "></i>
+      </button>
+    </div>
+  </div>
+  <div class="filters-exercises">
+    <h2>{{"EXERCISES.TITLE" | translate}}</h2>
+    <div class="levels">
+      <button class="filter-item" (click)="setFilter('exercises', 'Toprocks')">{{"EXERCISES.TOPROCKS" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('exercises', 'Footworks')">{{"EXERCISES.FOOTWORKS" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('exercises', 'Powermoves')">{{ "EXERCISES.POWERMOVES" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('exercises', 'Cruncher')">{{"EXERCISES.CRUNCHES" | translate}}</button>
+    </div>
+  </div>
+  <div class="filters-warmups">
+    <h2>{{"WARMUPS.TITLE" | translate}}</h2>
+    <div class="levels">
+      <button class="filter-item" (click)="setFilter('warmups_cooldown', 'Warm up')">{{"WARMUPS.WARM_UP" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('warmups_cooldown', 'Cool down')">{{"WARMUPS.COOL_DOWN" | translate}}</button>
+    </div>
+  </div>
+
+  <button class="go-btn">{{"WORKOUTS_FILTER.GO_BTN" | translate}}</button>
+
+</div>
+
