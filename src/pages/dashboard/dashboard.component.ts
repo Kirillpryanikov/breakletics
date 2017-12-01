@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { App, NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
+import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import { GuideComponent } from '../guide/guide.component';
@@ -13,6 +13,7 @@ import { Subscription } from "rxjs/Subscription";
   templateUrl: 'dashboard.html',
   styleUrls: ['/dashboard.scss']
 })
+
 export class DashboardComponent implements OnInit, OnDestroy {
   private loading: any;
   public user: object;
@@ -28,12 +29,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
               private service: DashbordService,
-              private platform: Platform,
-              private app: App) {
-    this.video = {
-      video: '',
-      thumbnail: ''
-    };
+              private platform: Platform) {
     this.loading = this.loadingCtrl.create({
     });
   }
@@ -82,8 +78,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   playVideoModal() {
-    if(this.video.video) {
-      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.video.video}).present();
+    if(this.video.video_url) {
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.video}).present();
     }
   }
 

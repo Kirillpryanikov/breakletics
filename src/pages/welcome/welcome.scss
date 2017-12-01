@@ -56,10 +56,7 @@ page-welcome {
   #main {
     height: 91.8%;
     width: 100%;
-    @media (max-width: 320px) {
-      line-height: 1.5rem;
-      font-size: 1.2rem;
-    }
+
     @include setFlexStyles(space-between);
     flex-direction: column;
     .slider {
@@ -67,7 +64,11 @@ page-welcome {
       color: #fff;
       width: 100%;
       h2 {
-        font-size: 1.9rem;
+        @media (max-width: 320px) {
+          line-height: 2.2rem;
+          font-size: 2.2rem;
+        }
+        font-size: 2.7rem;
         font-weight: bold;
       }
       span {
