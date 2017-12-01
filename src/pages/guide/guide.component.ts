@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, Output } from '@angular/core';
 import { NavController, Slides, ViewController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {tryCatch} from "rxjs/util/tryCatch";
@@ -51,4 +51,6 @@ export class GuideComponent implements OnInit{
         this.viewCtrl.dismiss();
       })
   }
+
+
 }

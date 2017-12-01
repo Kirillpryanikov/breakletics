@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
+import { App, NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import { GuideComponent } from '../guide/guide.component';
@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public heightDevice: number;
   public weightDevice: number;
   private videoWeekObservable: Subscription;
+  public isScroll = false;
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -27,7 +28,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
               private service: DashbordService,
-              private platform: Platform) {
+              private platform: Platform,
+              private app: App) {
     this.video = {
       video: '',
       thumbnail: ''
@@ -86,17 +88,29 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   presentGuideModal(user) {
+    let guide;
     this.nativeStorage.getItem('guide')
       .then(res => {
-        if(!res || res !== this.user['id']){
-          this.modalCtrl.create(GuideComponent, {user: user}).present();
+        if(!res || res !== this.user['id']) {
+          this.isScroll = true;
+          guide = this.modalCtrl.create(GuideComponent, {user: user});
+          guide.onDidDismiss(data => {
+            this.isScroll = false;
+          });
+          guide.present()
         }
       })
       .catch(err => {
         console.log('err ', err);
-        this.modalCtrl.create(GuideComponent,{user: user}).present();
-      })
+        this.isScroll = true;
+        guide = this.modalCtrl.create(GuideComponent,{user: user});
+        guide.onDidDismiss(data => {
+          this.isScroll = false;
+        });
+        guide.present();
+      });
   }
+
 
   ngOnDestroy() {
     if(this.videoWeekObservable) {
