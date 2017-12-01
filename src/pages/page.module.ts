@@ -15,7 +15,6 @@ import {
   WarmupComponent,
   MenuSideComponent,
   WrapperVideoPlayerComponent,
-  WorkoutFilterComponent,
   ItemMenuSide,
   FilterVideoComponent
 } from './index';
@@ -40,7 +39,6 @@ const components = [
   WarmupComponent,
   MenuSideComponent,
   WrapperVideoPlayerComponent,
-  WorkoutFilterComponent,
   ItemMenuSide,
   FilterVideoComponent
 ];
