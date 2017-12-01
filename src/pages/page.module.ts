@@ -24,6 +24,7 @@ import { LoginService } from './login/login.service';
 import { DashbordService } from './dashboard/dashboard.service';
 import { ExtraQuestionsService } from './extra.questions/extra.qustetions.service';
 import { ConfigService } from './config.service';
+import { WorkoutService } from './workout/workout.service';
 
 const components = [
   DashboardComponent,
@@ -55,6 +56,7 @@ const components = [
     ExtraQuestionsService,
     ConfigService,
     DashbordService,
+    WorkoutService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
