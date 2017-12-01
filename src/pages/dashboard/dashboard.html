@@ -13,28 +13,15 @@
 </ion-header>
 
 <ion-content>
-  <div class="container-dashboard">
+  <div class="container-dashboard" *ngIf="video">
     <div class="block block-1">
-      <img *ngIf="video.thumbnail" [src]="video.thumbnail.link" width="100%">
-      <ion-icon class="play-button" *ngIf="video.video" (click)="playVideoModal()" name="md-play"></ion-icon>
+      <img [src]="video.video_img" width="100%">
+      <ion-icon class="play-button" *ngIf="video.video_url" (click)="playVideoModal()" name="md-play"></ion-icon>
       <div class="block-1-footer">
         <span>{{'DASHBOARD.WORKOUTS_WEEK' | translate }}</span>
         <span>{{video.duration}} MIN <i class="time-icon"></i>
         </span>
       </div>
-
-      <!--<wrapper-player [video]="linkVideo"></wrapper-player>-->
-
-      <!--<iframe #iframe *ngIf="linkVideo"-->
-              <!--[src]="sanitizer.bypassSecurityTrustResourceUrl(linkVideo)"-->
-              <!--width="{{weightDevice}}"-->
-              <!--height="{{heightDevice}}"-->
-              <!--frameborder="0"-->
-              <!--webkitallowfullscreen-->
-              <!--mozallowfullscreen-->
-              <!--allowfullscreen-->
-      <!--&gt;-->
-      <!--</iframe>-->
     </div>
     <div class="block block-2 workouts">
       {{'DASHBOARD.WORKOUTS' | translate }}

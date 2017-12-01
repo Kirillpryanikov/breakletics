@@ -16,6 +16,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   @ViewChild('nextbutton') buttonNext: ElementRef;
 
   private player;
+  private videoParam;
 
   constructor(private platform: Platform,
               private navParams: NavParams,
@@ -24,36 +25,35 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   ngOnInit() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-    const video = this.navParams.get('video');
+    this.videoParam = this.navParams.get('video');
 
-    if(video) {
-      this.getVideo(video);
+    if(this.videoParam) {
+      this.getVideo();
     }
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes.video) {
-      this.getVideo(changes.video);
+      this.getVideo();
     }
   }
 
-  getVideo(video) {
+  getVideo() {
     // video = [190821442, 242763018];
-    if(video) {
-      const options = {
-        id: 'https://player.vimeo.com/video/' + 222385665 +'?autoplay=1',
-        width: this.platform.height(),
-        height: this.platform.width(),
-        autopause: false,
-        controls: false,
-        showinfo: false
-      };
-      this.player = new Player(this.iFrameFirst.nativeElement, options);
-      this.play();
-      this.player.on('ended', (data)=> {
-        this.next();
-      });
-    }
+
+    const options = {
+      id: 'https://player.vimeo.com/video/' + this.videoParam.warm_up_url.split('https://vimeo.com/')[1] +'?autoplay=1',
+      width: this.platform.height(),
+      height: this.platform.width(),
+      autopause: false,
+      controls: false,
+      showinfo: false
+    };
+    this.player = new Player(this.iFrameFirst.nativeElement, options);
+    this.play();
+    this.player.on('ended', (data)=> {
+      this.next();
+    });
   }
 
   play() {
@@ -79,7 +79,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.iFrameFirst.nativeElement.remove();
     this.buttonNext.nativeElement.remove();
     const options = {
-      id: 'https://player.vimeo.com/video/' + 222299434 +'?autoplay=1',
+      id: 'https://player.vimeo.com/video/' + this.videoParam.video_url.split('https://vimeo.com/')[1] +'?autoplay=1',
       width: this.platform.width(),
       height: this.platform.height(),
       autopause: false,

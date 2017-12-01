@@ -13,6 +13,7 @@ import { Subscription } from "rxjs/Subscription";
   templateUrl: 'dashboard.html',
   styleUrls: ['/dashboard.scss']
 })
+
 export class DashboardComponent implements OnInit, OnDestroy {
   private loading: any;
   public user: object;
@@ -28,12 +29,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private navParams: NavParams,
               private service: DashbordService,
               private platform: Platform) {
-    this.video = {
-      video: '',
-      thumbnail: ''
-    };
     this.loading = this.loadingCtrl.create({
     });
+
   }
 
   ngOnInit(){
@@ -61,6 +59,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   handlerLoadVideo() {
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
       this.video = res;
+      console.log('VIDEO', res);
     }, err => {
       console.log('err video::: ', err);
     });
@@ -80,8 +79,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   playVideoModal() {
-    if(this.video.video) {
-      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.video.video}).present();
+    if(this.video.video_url) {
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.video}).present();
     }
   }
 
