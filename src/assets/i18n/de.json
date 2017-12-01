@@ -178,5 +178,8 @@
     "TITLE": "Filter by Warm Up or Cool Down ",
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN"
+  },
+  "PLAYER": {
+    "SKIP": "Tutorial überspringen"
   }
 }

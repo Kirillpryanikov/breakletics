@@ -1,142 +1,142 @@
 <ion-header transparent>
-  <ion-navbar color="dark">
+  <ion-navbar>
     <ion-buttons left>
       <button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>
     </ion-buttons>
     <div class="title">{{'WORKOUTS.TITLE' | translate}}</div>
   </ion-navbar>
-  <div class="sub-header">
-    <div class="filters">
-      <i class="filters-icon"></i>
-      <div class="filter-items" (click)="getFilters()">
-        <span>{{"WORKOUTS.SEARCH" | translate}}</span>
-      </div>
-      <ion-icon name="md-close-circle"></ion-icon>
-    </div>
-  </div>
+  <!--<div class="sub-header">-->
+    <!--<div class="filters">-->
+      <!--<i class="filters-icon"></i>-->
+      <!--<div class="filter-items" (click)="getFilters()">-->
+        <!--<span>{{"WORKOUTS.SEARCH" | translate}}</span>-->
+      <!--</div>-->
+      <!--<ion-icon name="md-close-circle"></ion-icon>-->
+    <!--</div>-->
+  <!--</div>-->
 </ion-header>
 <ion-content>
-  <div class="container-workout">
-    <div class="video">
-      <div class="image-wrapper">
-        <img src="../../assets/imgs/workouts-bg.jpg" >
-      </div>
-      <div class="footer">
-        <div class="footer-inner">
-          <span>Title</span>
-          <span>
-            <span>15 MIN <i class="time-icon"></i>
-            </span>
-            <span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}
-              <i class="flash "></i>
-              <i class="flash "></i>
-              <i class="flash "></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="video">
-      <div class="image-wrapper">
-        <img src="../assets/imgs/workouts-bg.jpg" >
-      </div>
-      <div class="footer">
-        <div class="footer-inner">
-          <span>Title</span>
-          <span>
-            <span>15 MIN <i class="time-icon"></i>
-            </span>
-            <span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}
-              <i class="flash "></i>
-              <i class="flash "></i>
-              <i class="flash "></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="video">
-      <div class="image-wrapper">
-        <img src="../assets/imgs/workouts-bg.jpg" >
-      </div>
-      <div class="footer">
-        <div class="footer-inner">
-          <span>Title</span>
-          <span>
-            <span>15 MIN <i class="time-icon"></i>
-            </span>
-            <span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}
-              <i class="flash "></i>
-              <i class="flash "></i>
-              <i class="flash "></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate">
-    </div>
+  <!--<div class="container-workout">-->
+    <!--<div class="video">-->
+      <!--<div class="image-wrapper">-->
+        <!--<img src="../../assets/imgs/workouts-bg.jpg" >-->
+      <!--</div>-->
+      <!--<div class="footer">-->
+        <!--<div class="footer-inner">-->
+          <!--<span>Title</span>-->
+          <!--<span>-->
+            <!--<span>15 MIN <i class="time-icon"></i>-->
+            <!--</span>-->
+            <!--<span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+            <!--</span>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="video">-->
+      <!--<div class="image-wrapper">-->
+        <!--<img src="../assets/imgs/workouts-bg.jpg" >-->
+      <!--</div>-->
+      <!--<div class="footer">-->
+        <!--<div class="footer-inner">-->
+          <!--<span>Title</span>-->
+          <!--<span>-->
+            <!--<span>15 MIN <i class="time-icon"></i>-->
+            <!--</span>-->
+            <!--<span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+            <!--</span>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="video">-->
+      <!--<div class="image-wrapper">-->
+        <!--<img src="../assets/imgs/workouts-bg.jpg" >-->
+      <!--</div>-->
+      <!--<div class="footer">-->
+        <!--<div class="footer-inner">-->
+          <!--<span>Title</span>-->
+          <!--<span>-->
+            <!--<span>15 MIN <i class="time-icon"></i>-->
+            <!--</span>-->
+            <!--<span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+            <!--</span>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate">-->
+    <!--</div>-->
 
-    <div class="private video">
-      <div class="image-wrapper">
-        <img src="../assets/imgs/workouts-bg.jpg" >
-      </div>
-      <div class="footer">
-        <div class="footer-inner">
-          <span>Title</span>
-          <span>
-            <span>15 MIN <i class="time-icon"></i>
-            </span>
-            <span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}
-              <i class="flash "></i>
-              <i class="flash "></i>
-              <i class="flash "></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
+    <!--<div class="private video">-->
+      <!--<div class="image-wrapper">-->
+        <!--<img src="../assets/imgs/workouts-bg.jpg" >-->
+      <!--</div>-->
+      <!--<div class="footer">-->
+        <!--<div class="footer-inner">-->
+          <!--<span>Title</span>-->
+          <!--<span>-->
+            <!--<span>15 MIN <i class="time-icon"></i>-->
+            <!--</span>-->
+            <!--<span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+            <!--</span>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <div class="private video">
-      <div class="image-wrapper">
-        <img src="../assets/imgs/workouts-bg.jpg" >
-      </div>
-      <div class="footer">
-        <div class="footer-inner">
-          <span>Title</span>
-          <span>
-            <span>15 MIN <i class="time-icon"></i>
-            </span>
-            <span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}
-              <i class="flash "></i>
-              <i class="flash "></i>
-              <i class="flash "></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
+    <!--<div class="private video">-->
+      <!--<div class="image-wrapper">-->
+        <!--<img src="../assets/imgs/workouts-bg.jpg" >-->
+      <!--</div>-->
+      <!--<div class="footer">-->
+        <!--<div class="footer-inner">-->
+          <!--<span>Title</span>-->
+          <!--<span>-->
+            <!--<span>15 MIN <i class="time-icon"></i>-->
+            <!--</span>-->
+            <!--<span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+            <!--</span>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <div class="private video">
-      <div class="image-wrapper">
-        <img src="../assets/imgs/workouts-bg.jpg" >
-      </div>
-      <div class="footer">
-        <div class="footer-inner">
-          <span>Title</span>
-          <span>
-            <span>15 MIN <i class="time-icon"></i>
-            </span>
-            <span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}
-              <i class="flash "></i>
-              <i class="flash "></i>
-              <i class="flash "></i>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
+    <!--<div class="private video">-->
+      <!--<div class="image-wrapper">-->
+        <!--<img src="../assets/imgs/workouts-bg.jpg" >-->
+      <!--</div>-->
+      <!--<div class="footer">-->
+        <!--<div class="footer-inner">-->
+          <!--<span>Title</span>-->
+          <!--<span>-->
+            <!--<span>15 MIN <i class="time-icon"></i>-->
+            <!--</span>-->
+            <!--<span class="level">{{"WORKOUTS_FILTER.EXPERT" | translate}}-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+              <!--<i class="flash "></i>-->
+            <!--</span>-->
+          <!--</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
 
-  </div>
+  <!--</div>-->
 </ion-content>
