@@ -64,11 +64,12 @@ page-welcome {
       color: #fff;
       width: 100%;
       h2 {
+        font-family: Roboto;
         @media (max-width: 320px) {
-          line-height: 2.2rem;
-          font-size: 2.2rem;
+          line-height: 3.5rem;
+          font-size: 3.5rem;
         }
-        font-size: 2.7rem;
+        font-size: 4rem;
         font-weight: bold;
       }
       span {
