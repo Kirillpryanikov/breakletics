@@ -98,5 +98,8 @@ export class LoginPageComponent implements OnDestroy {
     if(this.loginObservable) {
       this.loginObservable.unsubscribe();
     }
+    if(this.loading) {
+      this.loading.dismiss();
+    }
   }
 }

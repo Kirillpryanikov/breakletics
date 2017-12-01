@@ -115,5 +115,8 @@ export class RegisterPageComponent implements OnDestroy{
     if(this.regObservable) {
       this.regObservable.unsubscribe();
     }
+    if(this.loading) {
+      this.loading.dismiss();
+    }
   }
 }
