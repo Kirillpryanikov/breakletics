@@ -18,6 +18,7 @@ export class WorkoutComponent implements OnInit {
   private tabBarElement: any;
   private workoutObservable: Subscription;
   public workuots: any;
+  public selectFilters = undefined;
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -33,6 +34,7 @@ export class WorkoutComponent implements OnInit {
     this.presentLoading();
     this.getWorkouts();
   }
+
   getWorkouts() {
     this.workoutObservable = this.service.workouts()
       .subscribe(responce => {
@@ -71,10 +73,19 @@ export class WorkoutComponent implements OnInit {
   ionViewWillLeave() {
     this.tabBarElement.style.display = 'flex';
   }
+
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
   }
+
   getFilters() {
-    this.modalCtrl.create(FilterVideoComponent).present();
+    console.log('data workout ', this.selectFilters)
+    let modal = this.modalCtrl.create(FilterVideoComponent, {workouts: true, warm_up: true, filters: this.selectFilters});
+    modal.onDidDismiss(data => {
+      if(data) {
+        this.selectFilters = data;
+      }
+    });
+    modal.present();
   }
 }

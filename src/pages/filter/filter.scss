@@ -76,7 +76,7 @@ filter-video {
     }
   }
 
-  .filters-warmups {
+  .filters-warm_up {
     .levels {
       display: flex;
       justify-content: flex-start;
@@ -85,6 +85,15 @@ filter-video {
       }
 
     }
+  }
+
+  .active-filter {
+    background-color: #7d7d7d !important;
+    background:  #7d7d7d !important;
+  }
+  .noactive-filter {
+    background-color: #000 !important;
+    background:  #000 !important;
   }
 
   .go-btn {

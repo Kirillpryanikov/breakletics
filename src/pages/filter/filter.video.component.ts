@@ -1,34 +1,47 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, OnDestroy } from '@angular/core';
 import {NavController, ModalController, LoadingController, NavParams, ViewController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
   selector: 'filter-video',
   templateUrl: 'filter.video.component.html',
   styleUrls: ['/filter.scss']
 })
-export class FilterVideoComponent implements OnInit {
-
+export class FilterVideoComponent implements OnInit, OnDestroy {
   @ViewChild('containerFilters') containerFilters: ElementRef;
+  workouts: false;
+  exercises: false;
+  warm_up: false;
 
   protected filters = {
     workouts: [],
     exercises: [],
-    warmups_cooldown: []
+    warm_up: []
   };
 
   constructor(public navCtrl: NavController,
-              private modalCtrl: ModalController,
-              private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController,
               private navParams: NavParams,
-              private viewCtrl: ViewController,) {}
+              private viewCtrl: ViewController,
+              private render: Renderer2) {}
 
-  ngOnInit(){}
+  ngOnInit(){
+    let { workouts, exercises, warm_up, filters } = this.navParams.data;
+    this.workouts = workouts;
+    this.exercises = exercises;
+    this.warm_up = warm_up;
+    console.log('filters :::: ', filters );
+    this.filters = filters ? filters : this.filters;
+  }
 
-  close() {
-    this.viewCtrl.dismiss();
+  ionViewWillEnter() {
+    this.selectFilters('workouts');
+    this.selectFilters('exercises');
+    this.selectFilters('warm_up');
+  }
+
+  close(data?) {
+    console.log('close ', data);
+    this.viewCtrl.dismiss(data);
   }
 
   setFilter(filter, value) {
@@ -42,11 +55,33 @@ export class FilterVideoComponent implements OnInit {
     if(!isExist) {
       this.filters[filter].push(value);
     } else {
-      delete this.filters[filter][isExist - 1];
+      this.filters[filter].splice(isExist - 1, 1);
+    }
+    this.selectFilters(filter)
+  }
+
+  selectFilters(name) {
+    const container = this.containerFilters.nativeElement.querySelectorAll(`.filters-${name} .filter-item`);
+    for(let i = 0; i < container.length; i++) {
+      let isActive = false;
+      for(let j = 0; j < this.filters[name].length; j++){
+        if(container[i].textContent.toLowerCase().trim() === this.filters[name][j].toLowerCase()) {
+          this.render.addClass(container[i], 'active');
+          isActive = true;
+        }
+      }
+      if(!isActive) {
+        this.render.removeClass(container[i], 'active');
+      }
     }
   }
 
-  getFilters() {
-    this.containerFilters.nativeElement.querySelectorAll('.')
+  ngOnDestroy() {
+    console.log('ngOnDestroy ::: ');
+  this.filters = {
+      workouts: [],
+      exercises: [],
+      warm_up: []
+    };
   }
 }
