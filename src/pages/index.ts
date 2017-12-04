@@ -17,3 +17,4 @@ export * from './workout.filter/workout.filter.component';
 export * from './filter/filter.video.component';
 // as soon as delete
 export * from './item.menu.side/item.menu.side';
+export * from './video.list/video.list.component';

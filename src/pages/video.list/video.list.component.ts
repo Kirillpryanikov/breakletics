@@ -1,53 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { Subscription } from 'rxjs/Subscription';
-import { WorkoutService } from './workout.service';
+import {ConfigService} from "../config.service";
 import { Video } from '../share/Video';
 
 import {
   DashboardComponent,
   FilterVideoComponent,
-  WrapperVideoPlayerComponent,
-  VideoListComponent
+  WrapperVideoPlayerComponent
 } from '../index'
 
 @Component({
-  selector: 'page-workout',
-  templateUrl: 'workout.html',
-  styleUrls: ['/workout.scss']
+  selector: 'video-list',
+  templateUrl: 'video.list.html',
+  styleUrls: ['/video.list.scss']
 })
-export class WorkoutComponent implements OnInit {
+export class VideoListComponent implements OnInit {
+  @Input() videos: Video[];
+  @Input() title: string;
+
+
   private loading: any;
   private tabBarElement: any;
-  private workoutObservable: Subscription;
-  public workuots: Video[];
   public levels;
+
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
-              private navParams: NavParams,
-              private service: WorkoutService) {
+              private navParams: NavParams) {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
   ngOnInit(){
-    console.log(this.levels);
+    this.levels = ConfigService.LEVELS;
+    console.log('video', this.videos);
     let user = this.navParams.get('user');
-    this.getWorkouts();
-  }
-  getWorkouts() {
-    this.presentLoading();
-    this.workoutObservable = this.service.workouts()
-      .subscribe(responce => {
-        console.log('Responce: =>', responce);
-        this.workuots = responce;
-        this.dismissLoading();
-      }, err => {
-        this.dismissLoading();
-        console.log('Err: =>', err);
-      })
+    // this.presentLoading();
   }
 
   playVideoModal(video) {
@@ -75,17 +64,18 @@ export class WorkoutComponent implements OnInit {
     }
   }
 
+  goToDash() {
+    this.navCtrl.setRoot(DashboardComponent);
+  }
+  getFilters() {
+    this.modalCtrl.create(FilterVideoComponent).present();
+  }
+
   ionViewWillEnter() {
     this.tabBarElement.style.display = 'none';
   }
 
   ionViewWillLeave() {
     this.tabBarElement.style.display = 'flex';
-  }
-  goToDash() {
-    this.navCtrl.setRoot(DashboardComponent);
-  }
-  getFilters() {
-    this.modalCtrl.create(FilterVideoComponent).present();
   }
 }

@@ -16,7 +16,8 @@ import {
   MenuSideComponent,
   WrapperVideoPlayerComponent,
   ItemMenuSide,
-  FilterVideoComponent
+  FilterVideoComponent,
+  VideoListComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -40,7 +41,8 @@ const components = [
   MenuSideComponent,
   WrapperVideoPlayerComponent,
   ItemMenuSide,
-  FilterVideoComponent
+  FilterVideoComponent,
+  VideoListComponent
 ];
 
 @NgModule({
