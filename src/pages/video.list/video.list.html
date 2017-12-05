@@ -9,6 +9,9 @@
   <div class="sub-header">
     <ion-searchbar
       *ngIf="search"
+      (ionInput)="searchByName($event)"
+      debounce="1250"
+      animated="true"
       [(ngModel)]="myInput"
       [showCancelButton]="shouldShowCancel"
       (ionInput)="onInput($event)"

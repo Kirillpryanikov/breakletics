@@ -43,6 +43,10 @@ export class VideoListComponent implements OnInit {
     // this.presentLoading();
   }
 
+  searchByName(ev) {
+    this.service[this.page](ev.target).subscribe(res => {})
+  }
+
   playVideoModal(video) {
     if(video.video_url) {
       this.modalCtrl.create(WrapperVideoPlayerComponent, {video: video}).present();
