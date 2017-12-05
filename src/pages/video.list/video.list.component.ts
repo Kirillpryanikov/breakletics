@@ -93,7 +93,9 @@ export class VideoListComponent implements OnInit {
     modal.onDidDismiss((data) => {
       if(data) {
         this.selectFilters = data;
-        this.service[this.page](data).subscribe(res => {})
+        this.service[this.page](data).subscribe(res => {
+          console.log('Answer :: ', res);
+        })
       }
     });
     modal.present();

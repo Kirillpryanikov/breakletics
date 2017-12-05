@@ -169,13 +169,13 @@
   },
   "EXERCISES": {
     "TITLE": "Filtern nach Kategorien",
-    "TOPROCKS":"TOPROCKS",
-    "FOOTWORKS": "FOOTWORKS",
-    "POWERMOVES": "POWERMOVES",
-    "CRUNCHES": "CRUNCHES"
+    "TOPROCKS":"BL TOPROCKS",
+    "FOOTWORKS": "BL FOOTWORKS",
+    "POWERMOVES": "BL POWERMOVES",
+    "CRUNCHES": "BL CRUNCHES"
   },
   "WARMUPS": {
-    "TITLE": "Filter by Warm Up or Cool Down ",
+    "TITLE": "Filter by Warm Up or Cool Down",
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN"
   },
