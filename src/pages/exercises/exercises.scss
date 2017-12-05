@@ -1,7 +1,7 @@
 @import "../../theme/main";
 
 page-exercises {
-
-  ion-content {
+  ion-content, .content {
+    background-color: #000;
   }
 }
