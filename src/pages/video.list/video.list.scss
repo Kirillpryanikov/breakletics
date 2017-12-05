@@ -1,6 +1,25 @@
 @import "../../theme/main";
 
 video-list {
+  ::-webkit-input-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,.5);
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+    margin-left: 5px;
+    color: rgba(255,255,255,.5);
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;
+    color: rgba(255,255,255,.5);
+  }
+
+  :-ms-input-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,.5);
+  }
   scroll-content {
     background: #1b1c1c;
   }
@@ -26,16 +45,17 @@ video-list {
     }
     .sub-header {
       background: #1b1c1c;
-      height: $height-header-dashboard;
+      min-height: $height-header-dashboard;
+      max-height: 144px;
+      padding-bottom: 10px;
       @include setFlexStyles();
       flex-direction: column;
       .filters {
         @include setFlexStyles(space-between);
         flex-direction: row;
-        //justify-content: space-between;
         height: 70%;
         border-bottom: 2px solid rgba(255,255,255,.5);
-        color: rgba(255,255,255,.5);
+        color: rgba(255,255,255,.6);
         font-size: 1.7rem;
         width: 90%;
         align-self: center;
@@ -45,6 +65,29 @@ video-list {
         align-self: flex-start;
         height: 80%;
       }
+      ion-searchbar {
+        padding: 0;
+        width: 90%;
+        .searchbar-md .searchbar-search-icon,.searchbar-search-icon {
+          left: 0;
+          align-self: center;
+        }
+        .searchbar-input-container {
+          @include setFlexStyles();
+        }
+      }
+      input,.searchbar-md .searchbar-input {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        padding: 4px 55px 4px 63px;
+        margin-bottom: 5px;
+        line-height: 3rem;
+        color: rgba(255,255,255,.5);
+        text-align: center;
+      }
+
       ion-icon {
       }
       i {

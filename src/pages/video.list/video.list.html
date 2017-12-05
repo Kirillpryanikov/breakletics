@@ -7,11 +7,13 @@
 
   </ion-navbar>
   <div class="sub-header">
-    <ion-searchbar
+    <ion-searchbar *ngIf="search"
       [(ngModel)]="myInput"
       [showCancelButton]="shouldShowCancel"
       (ionInput)="onInput($event)"
-      (ionCancel)="onCancel($event)">
+      (ionCancel)="onCancel($event)"
+      [placeholder]="'VIDEO_LIST.SEARCH' | translate"
+    >
     </ion-searchbar>
     <div class="filters">
       <i class="filters-icon"></i>

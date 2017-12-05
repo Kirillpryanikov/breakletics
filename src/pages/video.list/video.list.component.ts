@@ -19,6 +19,7 @@ import {
 export class VideoListComponent implements OnInit {
   @Input() videos: Video[];
   @Input() title: string;
+  @Input() search: boolean;
 
   private loading: any;
   private tabBarElement: any;
