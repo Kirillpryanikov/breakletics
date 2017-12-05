@@ -1,7 +1,7 @@
 <ion-header transparent>
   <ion-navbar no-border transparent>
     <ion-buttons end icon-only>
-      <button ion-button icon-only (click)="close()">
+      <button ion-button icon-only (click)="close(false)">
         <ion-icon name="md-close"></ion-icon>
       </button>
     </ion-buttons>
@@ -9,41 +9,41 @@
 </ion-header>
 
 <div #containerFilters>
-  <div *ngIf="workouts" class="filters-workouts">
+  <div *ngIf="difficulty" class="filters-difficulty">
     <h2>{{"WORKOUTS_FILTER.TITLE" | translate}}</h2>
     <div class="levels">
-      <button class="filter-item" (click)="setFilter('workouts', 'Beginner')">{{"WORKOUTS_FILTER.BEGINNER" | translate}}
+      <button class="filter-item" (click)="setFilter('difficulty', 'Beginner')">{{"WORKOUTS_FILTER.BEGINNER" | translate}}
         <i class="flash "></i>
       </button>
-      <button class="filter-item" (click)="setFilter('workouts', 'Advanced')">{{"WORKOUTS_FILTER.ADVANCED" | translate}}
+      <button class="filter-item" (click)="setFilter('difficulty', 'Advanced')">{{"WORKOUTS_FILTER.ADVANCED" | translate}}
         <i class="flash "></i>
         <i class="flash "></i>
       </button>
-      <button class="filter-item" (click)="setFilter('workouts', 'Expert')">{{"WORKOUTS_FILTER.EXPERT" | translate}}
+      <button class="filter-item" (click)="setFilter('difficulty', 'Expert')">{{"WORKOUTS_FILTER.EXPERT" | translate}}
         <i class="flash "></i>
         <i class="flash "></i>
         <i class="flash "></i>
       </button>
     </div>
   </div>
-  <div *ngIf="exercises"  class="filters-exercises">
+  <div *ngIf="category"  class="filters-category">
     <h2>{{"EXERCISES.TITLE" | translate}}</h2>
     <div class="levels">
-      <button class="filter-item" (click)="setFilter('exercises', 'Toprocks')">{{"EXERCISES.TOPROCKS" | translate}}</button>
-      <button class="filter-item" (click)="setFilter('exercises', 'Footworks')">{{"EXERCISES.FOOTWORKS" | translate}}</button>
-      <button class="filter-item" (click)="setFilter('exercises', 'Powermoves')">{{ "EXERCISES.POWERMOVES" | translate}}</button>
-      <button class="filter-item" (click)="setFilter('exercises', 'Crunches')">{{"EXERCISES.CRUNCHES" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'Toprocks')">{{"EXERCISES.TOPROCKS" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'Footworks')">{{"EXERCISES.FOOTWORKS" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'Powermoves')">{{ "EXERCISES.POWERMOVES" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'Crunches')">{{"EXERCISES.CRUNCHES" | translate}}</button>
     </div>
   </div>
-  <div *ngIf="warm_up" class="filters-warm_up">
+  <div *ngIf="warmcold" class="filters-warmcold">
     <h2>{{"WARMUPS.TITLE" | translate}}</h2>
     <div class="levels">
-      <button class="filter-item" (click)="setFilter('warm_up', 'Warm up')">{{"WARMUPS.WARM_UP" | translate}}</button>
-      <button class="filter-item" (click)="setFilter('warm_up', 'Cool down')">{{"WARMUPS.COOL_DOWN" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('warmcold', 'Warm up')">{{"WARMUPS.WARM_UP" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('warmcold', 'Cool down')">{{"WARMUPS.COOL_DOWN" | translate}}</button>
     </div>
   </div>
 
-  <button class="go-btn" (click)="close(filters)">{{"WORKOUTS_FILTER.GO_BTN" | translate}}</button>
+  <button class="go-btn" (click)="close(true)">{{"WORKOUTS_FILTER.GO_BTN" | translate}}</button>
 
 </div>
 

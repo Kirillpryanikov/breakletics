@@ -76,24 +76,14 @@ filter-video {
     }
   }
 
-  .filters-warm_up {
+  .filters-warmcold {
     .levels {
       display: flex;
       justify-content: flex-start;
       .filter-item {
         margin-right: 15px;
       }
-
     }
-  }
-
-  .active-filter {
-    background-color: #7d7d7d !important;
-    background:  #7d7d7d !important;
-  }
-  .noactive-filter {
-    background-color: #000 !important;
-    background:  #000 !important;
   }
 
   .go-btn {

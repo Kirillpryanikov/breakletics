@@ -1,23 +1,25 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, OnDestroy } from '@angular/core';
-import {NavController, ModalController, LoadingController, NavParams, ViewController} from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'filter-video',
   templateUrl: 'filter.video.component.html',
   styleUrls: ['/filter.scss']
 })
-export class FilterVideoComponent implements OnInit, OnDestroy {
+export class FilterVideoComponent implements OnInit {
   @ViewChild('containerFilters') containerFilters: ElementRef;
-  workouts: false;
-  exercises: false;
-  warm_up: false;
-
-  protected filters = {
-    workouts: [],
-    exercises: [],
-    warm_up: []
+  private difficulty: false;
+  private category: false;
+  private warmcold: false;
+  private dataPrev: any;
+  private filters: any;
+  private templateObj = {
+    difficulty: [],
+    category: [],
+    warmcold: [],
+    list: ''
   };
+
 
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
@@ -25,23 +27,25 @@ export class FilterVideoComponent implements OnInit, OnDestroy {
               private render: Renderer2) {}
 
   ngOnInit(){
-    let { workouts, exercises, warm_up, filters } = this.navParams.data;
-    this.workouts = workouts;
-    this.exercises = exercises;
-    this.warm_up = warm_up;
-    console.log('filters :::: ', filters );
-    this.filters = filters ? filters : this.filters;
+    let { difficulty, category, warmcold, select } = this.navParams.data;
+    this.difficulty = difficulty;
+    this.category = category;
+    this.warmcold = warmcold;
+
+    this.filters = select ? select :  JSON.parse(JSON.stringify(this.templateObj));
+    this.dataPrev = select ? JSON.parse(JSON.stringify(select)) : undefined;
   }
 
   ionViewWillEnter() {
-    this.selectFilters('workouts');
-    this.selectFilters('exercises');
-    this.selectFilters('warm_up');
+    this.selectFilters('difficulty');
+    this.selectFilters('category');
+    this.selectFilters('warmcold');
   }
 
-  close(data?) {
-    console.log('close ', data);
-    this.viewCtrl.dismiss(data);
+  close(data) {
+    let res = data ? this.filters : this.dataPrev ? this.dataPrev : this.templateObj;
+    res.list = this.convertArrayToString(res);
+    this.viewCtrl.dismiss(res);
   }
 
   setFilter(filter, value) {
@@ -76,12 +80,15 @@ export class FilterVideoComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnDestroy() {
-    console.log('ngOnDestroy ::: ');
-  this.filters = {
-      workouts: [],
-      exercises: [],
-      warm_up: []
-    };
+  convertArrayToString(obj) {
+    if(!obj) return;
+    let arr = [];
+    const keys = Object.keys(obj);
+    for(let i=0; i < keys.length; i++) {
+      if(keys[i] !== 'list') {
+        arr = arr.concat(obj[keys[i]]);
+      }
+    }
+    return arr.join(', ');
   }
 }

@@ -79,9 +79,8 @@ export class WorkoutComponent implements OnInit {
   }
 
   getFilters() {
-    console.log('data workout ', this.selectFilters)
-    let modal = this.modalCtrl.create(FilterVideoComponent, {workouts: true, warm_up: true, filters: this.selectFilters});
-    modal.onDidDismiss(data => {
+    const modal = this.modalCtrl.create(FilterVideoComponent, {difficulty: true, category: true, select: this.selectFilters});
+    modal.onDidDismiss((data) => {
       if(data) {
         this.selectFilters = data;
       }
