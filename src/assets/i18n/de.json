@@ -122,7 +122,64 @@
     "EXERCISES": "EXERCISES",
     "WARM_UP": "WARM UP",
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
-    "CRAZY": "Crazy XMAS Deal - 5 Workouts FÜR 5 EUR",
-    "STATIC": "Pluasmember"
+    "CRAZY_1": "Crazy XMAS Deal -",
+    "CRAZY_2": "- 5 Workouts FÜR 5 EUR",
+    "STATIC": "Pluasmember",
+    "PAY_TITLE_1": "FIT & ATHLETISCH",
+    "PAY_TITLE_2": "WERDEN MIT WORKOUTTS,",
+    "PAY_TITLE_3": "DIE EINFACH ROCKEN!",
+    "TEXT_LI_1": "Erhalte sofort Zugriff auf alle",
+    "TEXT_LI_1_1": "36 Workouts ",
+    "TEXT_LI_1_2": "28 Exercises und 4 Warm Ups/ Cool Downs!",
+    "TEXT_LI_2": "Regelmäßig",
+    "TEXT_LI_2_1": "NEUE",
+    "TEXT_LI_2_2": "Workouts, Exercises und sogar Features!",
+    "TEXT_LI_3": "Werde Teil der geschlossenen Facebook Gruppe und erhalte Zugriff auf",
+    "TEXT_LI_3_1": "stetig neue Videos (Exercises und mehr)",
+    "TEXT_LI_4": "...und vieles mehr!",
+    "BTN": "PLUSMEMBER WERDEN",
+    "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
+  },
+  "MENU_SIDE": {
+    "XMAS_DEAL": "XMAS DEAL",
+    "PLUSMEMBER": "PLUSMEMBER WERDEN",
+    "WORKOUT_OF_THE_WEEK": "WORKOUT DER WOCHE",
+    "WORKOUTS": "WORKOUTS",
+    "EXERCISES": "EXERCISES",
+    "WARM_UPS": "WARM UPS / COOL DOWNS",
+    "BREAKLETICS_TV": "BREAKLETICS TV",
+    "MY_ACCOUNT": "MEIN KONTO",
+    "FIND_BREAKLETICS_CLASS": "BREAKLETICS KURS FINDER",
+    "BREAKLETICS_SHOP": "BREAKLETICS SHOP",
+    "TRANSFORMATION": "TRANSFORMATION",
+    "TERMS_CONDITIONS": "AGB",
+    "IMPRINT": "IMPRESSUM"
+  },
+  "WORKOUTS": {
+    "TITLE": "Workouts",
+    "SEARCH": "Filtern nach Schwierigkeit...",
+    "JETZT": "Jetzt 48+ Workouts freischalten"
+  },
+  "WORKOUTS_FILTER": {
+    "TITLE": "Filtern nach Schwierigkeit",
+    "BEGINNER": "BEGINNER",
+    "ADVANCED": "ADVANCED",
+    "EXPERT": "EXPERT",
+    "GO_BTN": "anwenden"
+  },
+  "EXERCISES": {
+    "TITLE": "Filtern nach Kategorien",
+    "TOPROCKS":"TOPROCKS",
+    "FOOTWORKS": "FOOTWORKS",
+    "POWERMOVES": "POWERMOVES",
+    "CRUNCHES": "CRUNCHES"
+  },
+  "WARMUPS": {
+    "TITLE": "Filter by Warm Up or Cool Down ",
+    "WARM_UP": "WARM UP",
+    "COOL_DOWN": "COOL DOWN"
+  },
+  "PLAYER": {
+    "SKIP": "Tutorial überspringen"
   }
 }

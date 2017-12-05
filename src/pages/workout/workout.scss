@@ -1,51 +1,166 @@
 @import "../../theme/main";
 
 page-workout {
+  font-family: Roboto;
+  ion-header {
 
-  ion-content {
-    .container-dashboard{
-      background-color: $dashboard-background;
-      height: 100%;
-
-      .block {
-        // NEED REMOVE
-        @include setFlexStyles();
-        color: white;
-        font-size: 1.2em;
+    ion-navbar {
+      height: $height-header-dashboard;
+      background: #000;
+      button {
+        background: transparent;
+        color: $navbar-title-font-color;
+        font-size: $navbar-title-button_size;
+      }
+      .title {
+        color: $navbar-title-font-color !important;
         text-transform: uppercase;
+        font-size: $navbar-title-font-size;
+        text-align: center;
+        letter-spacing: $navbar-title-font-spacing;
+        margin-right: 27px;
       }
-
-      .block-1 {
-        height: $height-block-1;
-        background-color: #32db64;
+    }
+    .sub-header {
+      background: #1b1c1c;
+      height: $height-header-dashboard;
+      @include setFlexStyles();
+      .filters {
+        @include setFlexStyles(space-between);
+        flex-direction: row;
+        //justify-content: space-between;
+        height: 70%;
+        border-bottom: 2px solid rgba(255,255,255,.5);
+        color: rgba(255,255,255,.5);
+        font-size: 1.7rem;
+        width: 90%;
+        align-self: center;
+        padding: 8px 0;
       }
-
-      .block-2 {
-        height: $height-block-2;
-        background-color: #488aff;
+      .filters-icon {
+        align-self: flex-start;
+        height: 80%;
       }
+      ion-icon {
+      }
+      i {
+        @include setFlexStyles(center, flex-end);
+        width: 30px;
+        height: 15px;
+        align-self: center;
+      }
+      i:after {
+        content: '';
+        width: 30px;
+        height: 15px;
+        background: url(../../assets/imgs/filter-results-button.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        display: block;
+        background-size: contain;
+      }
+      .filter-items {
+        text-align: center;
 
-      .block-3 {
-        height: $height-block-3;
-        background-color: white;
-
-        .item-block-3 {
-          height: 100%;
-          float: left;
+      }
+    }
+  }
+  ion-content {
+    background: #1b1c1c;
+    .video {
+      height: 16.48vh;
+      width: 100%;
+      position: relative;
+      flex-direction: row;
+      @include setFlexStyles(flex-end);
+      text-align: center;
+      border-top: 1px solid #1b1b1c;
+      border-bottom: 1px solid #1b1b1c;
+      box-sizing: border-box;
+    }
+    .private {
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url("../assets/imgs/lock.png") 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 99;
+        //opacity: .97;
+      }
+    }
+    .image-wrapper {
+      max-height: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .footer {
+      width: 100%;
+      position: absolute;
+      bottom: 2%;
+      box-sizing: border-box;
+      font-size: 1rem;
+      color: #fff;
+      left: 0;
+      text-transform: uppercase;
+      .footer-inner {
+        width: 90%;
+        margin: auto;
+        @include setFlexStyles(space-between) ;
+      }
+      span {
+        font-weight: bold;
+        font-size: 1rem;
+        text-shadow: none;
+        @include setFlexStyles();
+        flex-direction: row;
+        .time-icon {
+          width: 15px;
+          height: 15px;
+          margin: 0 9px 3px 9px;
+          &:after {
+            width: 15px;
+            height: 15px;
+            content: '';
+            display: block;
+            background-size: cover;
+            background: url(../assets/imgs/time-icon.png) 100% 100% no-repeat;
+          }
         }
-
-        .item-block-3:nth-child(1) {
-          background-color: darkcyan;
-        }
-        .item-block-3:nth-child(2) {
-          background-color: chocolate;
-        }
       }
+    }
+    .levels {
+      @include setFlexStyles();
+      flex-direction: row;
+      position: relative;
 
-      .block-footer {
-        height: $height-block-footer;
-        background-color: blueviolet;
+    }
+    .flash {
+      &:after {
+        background: url(../../assets/imgs/flash-white.png) 100% 100% no-repeat;
+        content: '';
+        height: 13px;
+        width: 8px;
+        background-size: contain;
+        display: block;
       }
+    }
+    .divider-video {
+      height: 8.21vh;
+      width: 100%;
+      background: url("../assets/imgs/foote-bg.jpg") 50% 50% no-repeat;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      @include setFlexStyles();
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
   }
 }

@@ -1,15 +1,20 @@
 @import "../../theme/main";
+
 page-extra-questions {
+
   ion-content {
     color: #fff;
     background: url("../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
+
     .page {
       width: 87%;
-      @include setFlexStyles();
-      flex-direction: column;
-      margin: auto;
+
+      //overflow: auto;
+      margin: 20px auto;
+      //padding: 20px 0;
+      //position: relative;
       .title {
         width: 100%;
         div:first-child {
@@ -30,10 +35,10 @@ page-extra-questions {
       form {
         width: 100%;
         margin-top: 8.7%;
+        background: rgba(255,255,255, .0);
         @media (max-width: 320px) {
           margin-top: 0;
         }
-
         height: 57%;
         .item-block:first-child,
         .item-block:last-child
@@ -51,10 +56,11 @@ page-extra-questions {
         .item-block .item-inner {
           padding-right: 0px !important;
           margin-top: 0;
+          border-bottom: 1px solid #fff !important;
         }
         .item-block:last-child .item-inner,
         .item-wrapper:last-child .item-block .item-inner:last-child {
-          border-bottom: 0.55px solid #c8c7cc !important;
+          border-bottom: 0.55px solid #fff !important;
         }
 
         ion-label {
@@ -67,6 +73,7 @@ page-extra-questions {
         }
         .select-text, .datetime-text {
           color: $white-opacity;
+          background: rgba(255,255,255, .0);
         }
       }
     }

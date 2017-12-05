@@ -3,7 +3,7 @@
     <ion-slide>
       <div class="page-greeting">
         <div class="title">
-          <div>{{"GUIDE_PAGE.PAGE_GREETING.TITLE" | translate}} <span *ngIf="user">{{user['first_name']}},</span></div>
+          <div>{{"GUIDE_PAGE.PAGE_GREETING.TITLE" | translate}} <span *ngIf="firstName">{{firstName}},</span></div>
           <div>{{"GUIDE_PAGE.PAGE_GREETING.SUBTITLE" | translate}}</div>
           <div>
             <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_GREETING.BUTTON" | translate}}</button>
@@ -21,7 +21,7 @@
           <div class="next-guide">
             <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_1.BUTTON" | translate}}</button>
           </div>
-          <div class="footer-guide">
+          <div class="footer-guide" (click)="guideFinish()">
             {{"GUIDE_PAGE.PAGE_1.FOOTER_TITLE" | translate}}
           </div>
         </div>
@@ -38,7 +38,7 @@
           <div class="next-guide">
             <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_2.BUTTON" | translate}}</button>
           </div>
-          <div class="footer-guide">
+          <div class="footer-guide" (click)="guideFinish()">
             {{"GUIDE_PAGE.PAGE_2.FOOTER_TITLE" | translate}}
           </div>
         </div>
@@ -53,7 +53,7 @@
           <div class="next-guide">
             <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_3.BUTTON" | translate}}</button>
           </div>
-          <div class="footer-guide">
+          <div class="footer-guide" (click)="guideFinish()">
             {{"GUIDE_PAGE.PAGE_3.FOOTER_TITLE" | translate}}
           </div>
         </div>
@@ -72,7 +72,7 @@
           <div class="next-guide">
             <button (click)="goNextSlide()">{{"GUIDE_PAGE.PAGE_4.BUTTON" | translate}}</button>
           </div>
-          <div class="footer-guide">
+          <div class="footer-guide" (click)="guideFinish()">
             {{"GUIDE_PAGE.PAGE_4.FOOTER_TITLE" | translate}}
           </div>
         </div>
@@ -93,7 +93,7 @@
           <button (click)="guideFinish()">{{"GUIDE_PAGE.PAGE_5.BUTTON_1" | translate}}</button>
           <button (click)="guideFinish()">{{"GUIDE_PAGE.PAGE_5.BUTTON_2" | translate}}</button>
         </div>
-        <div class="footer-guide">
+        <div class="footer-guide" (click)="guideFinish()">
           {{"GUIDE_PAGE.PAGE_5.FOOTER_TITLE" | translate}}
         </div>
       </div>

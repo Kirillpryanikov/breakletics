@@ -1,0 +1,43 @@
+@import "../../theme/main";
+
+wrapper-player {
+  ion-content {
+    .container {
+      @include setFlexStyles();
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      position: absolute;
+      //div {
+      //  position: relative;
+      //}
+    }
+
+    button {
+      position: absolute;
+      bottom: 20%;
+      right: 7px;
+      padding: 10px 10px;
+      font-size: 1.4rem;
+      background-color: rgba(0,0,0,.7);
+      color: #fff;
+      font-weight: bold;
+      z-index: 200;
+      @include setFlexStyles();
+      ion-icon {
+        margin-left: 10px;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      padding: 10px;
+      z-index: 100;
+    }
+  }
+}

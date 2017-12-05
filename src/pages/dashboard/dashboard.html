@@ -1,17 +1,9 @@
-<ion-menu [content]="content">
-  <ion-content>
-    <ion-list>
-      <p>some menu content, could be list items</p>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
 <ion-header transparent>
   <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><img src="../assets/imgs/menu-logo.png" alt=""></ion-title>
+    <ion-title><img src="assets/imgs/menu-logo.png" alt=""></ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="plusmember">
         <div>{{'DASHBOARD.STATIC' | translate }}</div>
@@ -19,26 +11,49 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content #content>
 
-  <div class="container-dashboard">
+<ion-content>
+  <div class="container-dashboard" *ngIf="video" [ngClass]="{'no-scroll': isScroll}">
     <div class="block block-1">
-        Block 1
-    </div>
-    <div class="block block-2">
-        Block 2
-    </div>
-    <div class="block block-3">
-      <div class="block item-block-3" col-6>
-        Block 3.1
+      <img [src]="video.video_img" width="100%">
+      <ion-icon class="play-button" *ngIf="video.video_url" (click)="playVideoModal()" name="md-play"></ion-icon>
+      <div class="block-1-footer">
+        <span>{{'DASHBOARD.WORKOUTS_WEEK' | translate }}</span>
+        <span>{{video.duration}} MIN <i class="time-icon"></i>
+        </span>
       </div>
-      <div class="block item-block-3" col-6>
-        Block 3.2
+    </div>
+    <div class="block block-2 workouts">
+      {{'DASHBOARD.WORKOUTS' | translate }}
+    </div>
+    <div class="block block-3 ">
+      <div class="block item-block-3 exercises" col-6>
+        {{'DASHBOARD.EXERCISES' | translate }}
+      </div>
+      <div class="block item-block-3 warm ups" col-6>
+        {{'DASHBOARD.WARM_UP' | translate }}
       </div>
     </div>
     <div class="block block-footer">
-        Block Footer
+      <div class="head">
+        <h3>{{'DASHBOARD.ZUMBA' | translate }}</h3>
+      </div>
+      <div class="footer-item">
+        <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
+        <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
+      </div>
+    </div>
+    <div class="pay-block">
+        <div class="cliped-title"><span>{{'DASHBOARD.PAY_TITLE_1' | translate }}</span></div>
+        <div class="title">{{'DASHBOARD.PAY_TITLE_2' | translate }}</div>
+        <div class="title">{{'DASHBOARD.PAY_TITLE_3' | translate }}</div>
+      <ul>
+        <li>{{'DASHBOARD.TEXT_LI_1' | translate }} <strong>{{'DASHBOARD.TEXT_LI_1_1' | translate }}<br>{{'DASHBOARD.TEXT_LI_1_2' | translate }}</strong></li>
+        <li>{{'DASHBOARD.TEXT_LI_2' | translate }} <strong>{{'DASHBOARD.TEXT_LI_2_1' | translate }}</strong> {{'DASHBOARD.TEXT_LI_2_2' | translate }}</li>
+        <li>{{'DASHBOARD.TEXT_LI_3' | translate }} <strong>{{'DASHBOARD.TEXT_LI_3_1' | translate }}</strong>!</li>
+        <li><strong>{{'DASHBOARD.TEXT_LI_4' | translate }}</strong></li>
+      </ul>
+      <button>{{'DASHBOARD.BTN' | translate }}</button>
     </div>
   </div>
-
 </ion-content>

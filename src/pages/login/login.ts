@@ -47,6 +47,7 @@ export class LoginPageComponent implements OnDestroy {
         this.dismissLoading();
 
       }, err => {
+        console.log('ERR:::: ', err);
         this.dismissLoading();
         this.presentToast(err.status);
       })
@@ -96,6 +97,9 @@ export class LoginPageComponent implements OnDestroy {
   ngOnDestroy() {
     if(this.loginObservable) {
       this.loginObservable.unsubscribe();
+    }
+    if(this.loading) {
+      this.loading.dismiss();
     }
   }
 }

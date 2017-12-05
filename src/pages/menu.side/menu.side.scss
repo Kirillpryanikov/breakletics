@@ -1,0 +1,75 @@
+@import "../../theme/main";
+
+$margin-icon: 10px;
+
+menu-side-component {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  .scroll-content {
+    background-color: $dashboard-background;
+  }
+
+  ion-content {
+    ion-item {
+      background-color: transparent !important;
+    }
+    height: 100vh;
+    background-color: $dashboard-background;
+
+    .item-red {
+      color: $menu-red-color;
+    }
+    .item-blue {
+      color: $menu-blue-color;
+    }
+
+    div {
+      //background: $dashboard-background;
+      font-weight: 500;
+    }
+
+    .dark-text-color {
+      color: #707070
+    }
+
+    .light-text-color {
+      color: $guide-color-text;
+    }
+
+    .item-menu {
+      padding: 0 7.75%;
+      //background: $dashboard-background;
+
+      ion-icon {
+        width: 20px;
+        margin-right: $margin-icon;
+      }
+
+      .item {
+        padding: 10px 0;
+        font-size: 1.58rem;
+      }
+
+      .item:last-child {
+        padding-bottom: 0;
+      }
+      .item-block:first-child {
+        border-top: 0 !important;
+      }
+    }
+
+    .header {
+      @include setFlexStyles();
+      height: $header-image;
+      background-color: lightgray;
+      background: url(../assets/imgs/menu-bg.jpg);
+      background-size: cover;
+      background-position: bottom;
+      img {
+        width: 51.5%;
+      }
+    }
+  }
+  .page-tabs ion-tabs {
+    background-color: transparent;
+  }
+}

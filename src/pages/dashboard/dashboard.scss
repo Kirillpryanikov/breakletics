@@ -1,25 +1,47 @@
 @import "../../theme/main";
+$bg-color-dash: #111111;
+$font-size-dash: 2.14rem;
+$text-opacity: rgba(255,255,255,.85);
 
+@mixin textTitle() {
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: $font-size-dash;
+  letter-spacing: 1.8px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+}
+#dash-header {
+
+}
 page-dashboard {
-
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   ion-navbar {
     background: #000;
     height: $height-header-dashboard;
+    .bar-button-menutoggle-ios ion-icon,ion-icon {
+      font-size: 3.8rem !important;
+    }
 
-    button .plusmember {
+    .plusmember {
       color: #000000 !important;
       font-size: 0.82rem;
       text-transform: uppercase;
-      padding: 10px 15px !important;
+      padding: 4px 7px !important;
       background-color: #fff;
       border-radius: 0 !important;
-      height: 24px;
-      width: 86px;
+      height: 21px;
+      font-weight: bold;
+      //width: 85px;
     }
   }
   ion-title {
+    text-align: center;
     img {
       height: 38px;
+      margin-left: 5px;
     }
   }
 
@@ -31,42 +53,204 @@ page-dashboard {
       .block {
         // NEED REMOVE
         @include setFlexStyles();
-        color: white;
-        font-size: 1.2em;
-        text-transform: uppercase;
+        box-sizing: border-box;
+        @include textTitle();
       }
       .block-1 {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
         height: $height-block-1;
-        background-color: #32db64;
+        background-color: $bg-color-dash;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        img {
+          //min-height: 100%;
+          min-width: 100%;
+          position: absolute;
+          width: 100%;
+          left: 0;
+        }
+        .play-button {
+          font-size: 6rem;
+          color: rgba(255,255,255,.7);
+          text-shadow: 0px 0px 118px rgba(0,0,0,0.7),
+          0px 0px 118px rgba(0,0,0,0.7),
+          0px 0px 118px rgba(0,0,0,0.7);
+          z-index: 22;
+        }
+
+
+        .block-1-footer {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          position: absolute;
+          bottom: 5.5%;
+          box-sizing: border-box;
+          font-size: 0.575em;
+          left: 0;
+          span {
+            font-weight: bold;
+            padding: 0 5px;
+            font-size: 1rem;
+            text-shadow: none;
+            @include setFlexStyles();
+            flex-direction: row;
+            .time-icon {
+              width: 15px;
+              height: 15px;
+              margin-left: 5px;
+              margin-bottom: 3px;
+              &:after {
+                width: 15px;
+                height: 15px;
+                content: '';
+                display: block;
+                background-size: cover;
+                background: url(../assets/imgs/time-icon.png) 100% 100% no-repeat;
+              }
+            }
+          }
+        }
       }
 
       .block-2 {
         height: $height-block-2;
-        background-color: #488aff;
+        background: url(../assets/imgs/workouts-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-top: 2px solid $bg-color-dash;
+        border-bottom: 2px solid $bg-color-dash;
       }
 
       .block-3 {
         height: $height-block-3;
         background-color: white;
-
         .item-block-3 {
           height: 100%;
           float: left;
+          box-sizing: border-box;
         }
-
         .item-block-3:nth-child(1) {
-          background-color: darkcyan;
+          background: url(../assets/imgs/exercises-bg.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-right: 2px $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
+          background: url(../assets/imgs/warmup.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-left: 2px solid $bg-color-dash;
         }
       }
-
       .block-footer {
+        background-color: $bg-color-dash;
+        flex-direction: column;
+        position: relative;
+        .head {
+          height: 31%;
+          //position: absolute;
+          top: 0;
+          @include setFlexStyles();
+          h3 {
+            font-size: 1.25rem;
+            padding: 5px 0;
+            text-shadow: none !important;
+            color: #7d7d7d;
+          }
+        }
+        .footer-item {
+          height: 69%;
+          background: url(../assets/imgs/foote-bg.jpg);
+          background-size: cover;
+          background-position: center;
+          width: 100%;
+          flex-direction: column;
+          @include setFlexStyles();
+          h2 {
+            margin: 2px;
+            opacity: 0.8;
+            text-align: center;
+            @include textTitle();
+            text-shadow: none !important;
+          }
+        }
         height: $height-block-footer;
-        background-color: blueviolet;
       }
+      //-webkit-background-clip: text;
+      .pay-block {
+        height: 89vh;
+        background-color: $dashboard-background;
+        width: 100%;
+        flex-direction: column;
+        font-weight: bold;
+        @include setFlexStyles(flex-start);
+        .title {
+          text-transform: uppercase;
+          font-size: $font-size-dash;
+          letter-spacing: 1.8px;
+          color: $text-opacity;
+          -webkit-background-clip: text;
+          width: 100%;
+          text-align: center;
+          margin-top: 4px;
+        }
+        .cliped-title {
+          margin-top: 7.52%;
+          width: 100%;
+          background-color: $dashboard-background;
+          justify-content: flex-start;
+          span {
+            text-transform: uppercase;
+            font-size: $font-size-dash;
+            letter-spacing: 1.8px;
+            background: url(../assets/imgs/foote-bg.jpg);
+            background-size: cover;
+            background-position: center;
+            overflow:hidden;
+            color: rgba(255,255,255,.35);
+            -webkit-background-clip: text;
+            display: block;
+            width: 100%;
+            text-align: center;
+          }
+        }
+        ul {
+          width: 100%;
+          margin-top: 5.65%;
+          margin-bottom: 7.13%;
+          li {
+            letter-spacing: 0.8px;
+            line-height: 1.5rem;
+            font-size: 1.2rem;
+            color:$text-opacity;
+            padding: 1.75% 3.5%;
+            font-weight: normal;
 
+            list-style: none;
+            strong {
+              color: rgba(255,255,255,1);
+            };
+          }
+          li:before {
+            position: absolute;
+            content: "+";
+            display: inline-block;
+            margin-left: -3.5%;
+          }
+        }
+        button {
+          @include fullSizeBtn();
+        }
+      }
     }
+  }
+
+  .no-scroll {
+    position: fixed;
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -12,7 +12,11 @@ import {
   WorkoutComponent,
   ExtraQuestionsComponent,
   ExercisesComponent,
-  WarmupComponent
+  WarmupComponent,
+  MenuSideComponent,
+  WrapperVideoPlayerComponent,
+  ItemMenuSide,
+  FilterVideoComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -20,6 +24,7 @@ import { LoginService } from './login/login.service';
 import { DashbordService } from './dashboard/dashboard.service';
 import { ExtraQuestionsService } from './extra.questions/extra.qustetions.service';
 import { ConfigService } from './config.service';
+import { WorkoutService } from './workout/workout.service';
 
 const components = [
   DashboardComponent,
@@ -31,10 +36,12 @@ const components = [
   TabsComponent,
   WorkoutComponent,
   ExercisesComponent,
-  WarmupComponent
+  WarmupComponent,
+  MenuSideComponent,
+  WrapperVideoPlayerComponent,
+  ItemMenuSide,
+  FilterVideoComponent
 ];
-
-console.log('components ', components);
 
 @NgModule({
   declarations: components,
@@ -48,8 +55,10 @@ console.log('components ', components);
     RegisterService,
     ExtraQuestionsService,
     ConfigService,
-    DashbordService
-  ]
+    DashbordService,
+    WorkoutService
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class PageModule {}
