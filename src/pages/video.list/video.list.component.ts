@@ -15,6 +15,7 @@ import {
   templateUrl: 'video.list.html',
   styleUrls: ['/video.list.scss']
 })
+
 export class VideoListComponent implements OnInit {
   @Input() videos: Video[];
   @Input() title: string;
@@ -29,7 +30,7 @@ export class VideoListComponent implements OnInit {
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
               private navParams: NavParams) {
-    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+
   }
 
   ngOnInit(){

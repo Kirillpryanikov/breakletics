@@ -16,12 +16,13 @@
     </div>
   </div>
 </ion-header>
-<ion-content>
+<ion-content contentTop="200">
   <div class="container-workout">
-    <div class="video" *ngFor="let item of videos" (click)="playVideoModal(item)"
+    <div class="video slide-right" *ngFor="let item of videos; let i = index" (click)="playVideoModal(item)"
          [style.background]="'url(' + item.video_img + ')'"
          [style.backgroundSize]="'cover'"
-         [style.backgroundPosition]="'50% 50%'">
+         [style.backgroundPosition]="'50% 50%'"
+    >
       <div class="footer">
         <div class="footer-inner">
           <span [innerHTML]="item.post_title"></span>

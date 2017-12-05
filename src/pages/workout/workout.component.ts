@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Subscription } from 'rxjs/Subscription';
@@ -17,12 +17,13 @@ import {
   templateUrl: 'workout.html',
   styleUrls: ['/workout.scss']
 })
-export class WorkoutComponent implements OnInit {
+export class WorkoutComponent implements OnInit, OnDestroy {
   private loading: any;
   private tabBarElement: any;
   private workoutObservable: Subscription;
   public workuots: Video[];
   public levels;
+
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
@@ -37,6 +38,7 @@ export class WorkoutComponent implements OnInit {
     let user = this.navParams.get('user');
     this.getWorkouts();
   }
+
   getWorkouts() {
     this.presentLoading();
     this.workoutObservable = this.service.workouts()
@@ -48,12 +50,6 @@ export class WorkoutComponent implements OnInit {
         this.dismissLoading();
         console.log('Err: =>', err);
       })
-  }
-
-  playVideoModal(video) {
-    if(video.video_url) {
-      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: video}).present();
-    }
   }
 
   presentLoading(){
@@ -75,6 +71,14 @@ export class WorkoutComponent implements OnInit {
     }
   }
 
+  goToDash() {
+    this.navCtrl.setRoot(DashboardComponent);
+  }
+
+  getFilters() {
+    this.modalCtrl.create(FilterVideoComponent).present();
+  }
+
   ionViewWillEnter() {
     this.tabBarElement.style.display = 'none';
   }
@@ -82,10 +86,12 @@ export class WorkoutComponent implements OnInit {
   ionViewWillLeave() {
     this.tabBarElement.style.display = 'flex';
   }
-  goToDash() {
-    this.navCtrl.setRoot(DashboardComponent);
-  }
-  getFilters() {
-    this.modalCtrl.create(FilterVideoComponent).present();
+  ngOnDestroy() {
+    if(this.workoutObservable) {
+      this.workoutObservable.unsubscribe();
+    }
+    if(this.loading) {
+      this.loading.dismiss();
+    }
   }
 }
