@@ -8,18 +8,15 @@ import {NavController, NavParams, ViewController} from 'ionic-angular';
 })
 export class FilterVideoComponent implements OnInit {
   @ViewChild('containerFilters') containerFilters: ElementRef;
-  private difficulty: false;
+  private levels: false;
   private category: false;
   private warmcold: false;
-  private dataPrev: any;
-  private filters: any;
-  private templateObj = {
-    difficulty: [],
+  private filters = {
+    levels: [],
     category: [],
     warmcold: [],
     list: ''
   };
-
 
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
@@ -27,25 +24,26 @@ export class FilterVideoComponent implements OnInit {
               private render: Renderer2) {}
 
   ngOnInit(){
-    let { difficulty, category, warmcold, select } = this.navParams.data;
-    this.difficulty = difficulty;
+    let { levels, category, warmcold, select } = this.navParams.data;
+    this.levels = levels;
     this.category = category;
     this.warmcold = warmcold;
-
-    this.filters = select ? select :  JSON.parse(JSON.stringify(this.templateObj));
-    this.dataPrev = select ? JSON.parse(JSON.stringify(select)) : undefined;
+    this.filters = select ? JSON.parse(JSON.stringify(select)) :  JSON.parse(JSON.stringify(this.filters));
   }
 
   ionViewWillEnter() {
-    this.selectFilters('difficulty');
+    this.selectFilters('levels');
     this.selectFilters('category');
     this.selectFilters('warmcold');
   }
 
-  close(data) {
-    let res = data ? this.filters : this.dataPrev ? this.dataPrev : this.templateObj;
-    res.list = this.convertArrayToString(res);
-    this.viewCtrl.dismiss(res);
+  close() {
+    this.viewCtrl.dismiss();
+  }
+
+  aplly() {
+    this.filters.list = this.convertArrayToString(this.filters);
+    this.viewCtrl.dismiss(this.filters);
   }
 
   setFilter(filter, value) {

@@ -1,7 +1,7 @@
 <ion-header transparent>
   <ion-navbar no-border transparent>
     <ion-buttons end icon-only>
-      <button ion-button icon-only (click)="close(false)">
+      <button ion-button icon-only (click)="close()">
         <ion-icon name="md-close"></ion-icon>
       </button>
     </ion-buttons>
@@ -9,17 +9,17 @@
 </ion-header>
 
 <div #containerFilters>
-  <div *ngIf="difficulty" class="filters-difficulty">
+  <div *ngIf="levels" class="filters-levels">
     <h2>{{"WORKOUTS_FILTER.TITLE" | translate}}</h2>
     <div class="levels">
-      <button class="filter-item" (click)="setFilter('difficulty', 'Beginner')">{{"WORKOUTS_FILTER.BEGINNER" | translate}}
+      <button class="filter-item" (click)="setFilter('levels', 'Beginner')">{{"WORKOUTS_FILTER.BEGINNER" | translate}}
         <i class="flash "></i>
       </button>
-      <button class="filter-item" (click)="setFilter('difficulty', 'Advanced')">{{"WORKOUTS_FILTER.ADVANCED" | translate}}
+      <button class="filter-item" (click)="setFilter('levels', 'Advanced')">{{"WORKOUTS_FILTER.ADVANCED" | translate}}
         <i class="flash "></i>
         <i class="flash "></i>
       </button>
-      <button class="filter-item" (click)="setFilter('difficulty', 'Expert')">{{"WORKOUTS_FILTER.EXPERT" | translate}}
+      <button class="filter-item" (click)="setFilter('levels', 'Expert')">{{"WORKOUTS_FILTER.EXPERT" | translate}}
         <i class="flash "></i>
         <i class="flash "></i>
         <i class="flash "></i>
@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <button class="go-btn" (click)="close(true)">{{"WORKOUTS_FILTER.GO_BTN" | translate}}</button>
+  <button class="go-btn" (click)="aplly()">{{"WORKOUTS_FILTER.GO_BTN" | translate}}</button>
 
 </div>
 

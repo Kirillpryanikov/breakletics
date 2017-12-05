@@ -12,6 +12,7 @@ export class WorkoutService {
   private url = `${ConfigService.CONFIG.url}wp/v2/workouts`;
 
   workouts(): Observable<any> {
-    return this.http.get(this.url);
+    console.log('this.url', this.url);
+    return this.http.post(this.url, null);
   }
 }

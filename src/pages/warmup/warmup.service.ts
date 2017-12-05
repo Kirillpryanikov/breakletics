@@ -11,6 +11,7 @@ export class WarmupService {
   constructor(public http: HttpClient) {}
 
   warmups(): Observable<any> {
-    return this.http.get(`${ConfigService.CONFIG.url}wp/v2/warmups`);
+    console.log('warmups :::: warmups');
+    return this.http.post(`${ConfigService.CONFIG.url}wp/v2/warmups`, null);
   }
 }

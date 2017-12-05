@@ -3,6 +3,7 @@ import { NavController, ModalController, LoadingController, NavParams } from 'io
 import { NativeStorage } from '@ionic-native/native-storage';
 import {ConfigService} from "../config.service";
 import { Video } from '../share/Video';
+import { VideoListService } from './video.list.service';
 
 import {
   DashboardComponent,
@@ -19,6 +20,7 @@ import {
 export class VideoListComponent implements OnInit {
   @Input() videos: Video[];
   @Input() title: string;
+  @Input('page') page: string;
 
   private loading: any;
   private tabBarElement: any;
@@ -29,13 +31,13 @@ export class VideoListComponent implements OnInit {
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
-              private navParams: NavParams) {
-
-  }
+              private navParams: NavParams,
+              private service: VideoListService) {}
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
     console.log('video', this.videos);
+    console.log('this.page :: ', this.page);
     let user = this.navParams.get('user');
     // this.presentLoading();
   }
@@ -78,15 +80,47 @@ export class VideoListComponent implements OnInit {
   }
 
   getFilters() {
-    const modal = this.modalCtrl.create(FilterVideoComponent, {difficulty: true, category: true, select: this.selectFilters});
+    let allow = this.getAllowFilter();
+    const modal = this.modalCtrl.create(FilterVideoComponent,
+      {
+        levels: allow.levels,
+        warmcold: allow.warmcold,
+        category: allow.category,
+        select: this.selectFilters
+      });
+
     modal.onDidDismiss((data) => {
       if(data) {
         this.selectFilters = data;
-        console.log('data', data);
+        this.service[this.page](data).subscribe(res => {})
       }
     });
     modal.present();
   }
+
+  getAllowFilter(){
+    let filters = {
+      levels: false,
+      warmcold: false,
+      category: false
+    };
+
+    switch (this.page){
+      case 'workouts':
+        filters.levels = true;
+        break;
+      case 'exercises':
+        filters.levels = true;
+        filters.category = true;
+        break;
+      case 'warmup':
+        filters.warmcold = true;
+        break;
+      default: break;
+    }
+    return filters;
+  }
+
   clearFilters() {
     this.selectFilters = undefined;
   }

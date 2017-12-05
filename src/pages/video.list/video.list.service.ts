@@ -9,11 +9,13 @@ import {ConfigService} from "../config.service";
 @Injectable()
 export class VideoListService {
   constructor(public http: HttpClient) {}
-  private url = `${ConfigService.CONFIG.url}wp/v2/workouts`;
 
-  filter(action, param): Observable<any> {
-    return this.http.get(this.url+'?' + action + '=' + param);
+  workouts(params): Observable<any> {
+    console.log('workouts :: service', params);
+    let url = `${ConfigService.CONFIG.url}wp/v2/workouts`;
+    return this.http.post(url, params)
   }
+
   // search(name): Observable<any> {
   //   return this.http.get(this.url+'?level='+name);
   // }

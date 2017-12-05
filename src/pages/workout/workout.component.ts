@@ -19,7 +19,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   private loading: any;
   private tabBarElement: any;
   private workoutObservable: Subscription;
-  public workuots: Video[];
+  public workouts: Video[];
   public levels;
 
   constructor(public navCtrl: NavController,
@@ -33,6 +33,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
     let user = this.navParams.get('user');
+
     this.getWorkouts();
   }
 
@@ -41,7 +42,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.workoutObservable = this.service.workouts()
       .subscribe(responce => {
         console.log('Responce: =>', responce);
-        this.workuots = responce;
+        this.workouts = responce;
         this.dismissLoading();
       }, err => {
         this.dismissLoading();

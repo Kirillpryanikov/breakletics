@@ -11,6 +11,6 @@ export class ExercisesService {
   constructor(public http: HttpClient) {}
 
   exercises(): Observable<any> {
-    return this.http.get(`${ConfigService.CONFIG.url}wp/v2/exercises`);
+    return this.http.post(`${ConfigService.CONFIG.url}wp/v2/exercises`, null);
   }
 }
