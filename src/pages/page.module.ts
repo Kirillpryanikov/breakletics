@@ -28,6 +28,7 @@ import { ConfigService } from './config.service';
 import { WorkoutService } from './workout/workout.service';
 import { ExercisesService } from './exercises/exercises.service';
 import { WarmupService } from './warmup/warmup.service';
+import { VideoListService } from "./video.list/video.list.service";
 
 const components = [
   DashboardComponent,
@@ -62,7 +63,8 @@ const components = [
     DashbordService,
     WorkoutService,
     ExercisesService,
-    WarmupService
+    WarmupService,
+    VideoListService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

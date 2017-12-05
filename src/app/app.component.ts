@@ -78,8 +78,8 @@ export class MyApp implements OnInit{
         }
       })
       .catch(err => {
-        this.rootPage = TabsComponent;
         // this.rootPage = WelcomePageComponent;
+        this.rootPage = TabsComponent;
       })
   }
 }

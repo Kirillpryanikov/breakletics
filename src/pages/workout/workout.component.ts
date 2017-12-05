@@ -7,9 +7,7 @@ import { Video } from '../share/Video';
 
 import {
   DashboardComponent,
-  FilterVideoComponent,
-  WrapperVideoPlayerComponent,
-  VideoListComponent
+  FilterVideoComponent
 } from '../index'
 
 @Component({
@@ -34,7 +32,6 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(){
-    console.log(this.levels);
     let user = this.navParams.get('user');
     this.getWorkouts();
   }
@@ -73,10 +70,6 @@ export class WorkoutComponent implements OnInit, OnDestroy {
 
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
-  }
-
-  getFilters() {
-    this.modalCtrl.create(FilterVideoComponent).present();
   }
 
   ionViewWillEnter() {

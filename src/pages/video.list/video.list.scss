@@ -28,6 +28,7 @@ video-list {
       background: #1b1c1c;
       height: $height-header-dashboard;
       @include setFlexStyles();
+      flex-direction: column;
       .filters {
         @include setFlexStyles(space-between);
         flex-direction: row;

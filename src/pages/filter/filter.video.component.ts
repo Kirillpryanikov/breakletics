@@ -1,7 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {NavController, ModalController, LoadingController, NavParams, ViewController} from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
-import {el} from "@angular/platform-browser/testing/src/browser_util";
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'filter-video',
@@ -9,26 +7,45 @@ import {el} from "@angular/platform-browser/testing/src/browser_util";
   styleUrls: ['/filter.scss']
 })
 export class FilterVideoComponent implements OnInit {
-
   @ViewChild('containerFilters') containerFilters: ElementRef;
-
-  protected filters = {
-    workouts: [],
-    exercises: [],
-    warmups_cooldown: []
+  private difficulty: false;
+  private category: false;
+  private warmcold: false;
+  private dataPrev: any;
+  private filters: any;
+  private templateObj = {
+    difficulty: [],
+    category: [],
+    warmcold: [],
+    list: ''
   };
 
+
   constructor(public navCtrl: NavController,
-              private modalCtrl: ModalController,
-              private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController,
               private navParams: NavParams,
-              private viewCtrl: ViewController,) {}
+              private viewCtrl: ViewController,
+              private render: Renderer2) {}
 
-  ngOnInit(){}
+  ngOnInit(){
+    let { difficulty, category, warmcold, select } = this.navParams.data;
+    this.difficulty = difficulty;
+    this.category = category;
+    this.warmcold = warmcold;
 
-  close() {
-    this.viewCtrl.dismiss();
+    this.filters = select ? select :  JSON.parse(JSON.stringify(this.templateObj));
+    this.dataPrev = select ? JSON.parse(JSON.stringify(select)) : undefined;
+  }
+
+  ionViewWillEnter() {
+    this.selectFilters('difficulty');
+    this.selectFilters('category');
+    this.selectFilters('warmcold');
+  }
+
+  close(data) {
+    let res = data ? this.filters : this.dataPrev ? this.dataPrev : this.templateObj;
+    res.list = this.convertArrayToString(res);
+    this.viewCtrl.dismiss(res);
   }
 
   setFilter(filter, value) {
@@ -42,11 +59,39 @@ export class FilterVideoComponent implements OnInit {
     if(!isExist) {
       this.filters[filter].push(value);
     } else {
-      delete this.filters[filter][isExist - 1];
+      this.filters[filter].splice(isExist - 1, 1);
+    }
+    this.selectFilters(filter)
+  }
+
+  selectFilters(name) {
+    const container = this.containerFilters.nativeElement.querySelectorAll(`.filters-${name} .filter-item`);
+    for(let i = 0; i < container.length; i++) {
+      let isActive = false;
+      for(let j = 0; j < this.filters[name].length; j++){
+        if(container[i].textContent.toLowerCase().trim() === this.filters[name][j].toLowerCase()) {
+          this.render.addClass(container[i], 'active');
+          isActive = true;
+        }
+      }
+      if(!isActive) {
+        this.render.removeClass(container[i], 'active');
+      }
     }
   }
 
-  getFilters() {
-    this.containerFilters.nativeElement.querySelectorAll('.')
+  convertArrayToString(obj) {
+    if(!obj) return;
+    let arr = [];
+    const keys = Object.keys(obj);
+    for(let i=0; i < keys.length; i++) {
+      if(keys[i] !== 'list') {
+        arr = arr.concat(obj[keys[i]]);
+      }
+    }
+    if(arr.length === 0 ) {
+      return undefined;
+    }
+    return arr.join(', ');
   }
 }

@@ -20,10 +20,10 @@ export class VideoListComponent implements OnInit {
   @Input() videos: Video[];
   @Input() title: string;
 
-
   private loading: any;
   private tabBarElement: any;
   public levels;
+  public selectFilters = undefined;
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -68,9 +68,6 @@ export class VideoListComponent implements OnInit {
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
   }
-  getFilters() {
-    this.modalCtrl.create(FilterVideoComponent).present();
-  }
 
   ionViewWillEnter() {
     this.tabBarElement.style.display = 'none';
@@ -78,5 +75,19 @@ export class VideoListComponent implements OnInit {
 
   ionViewWillLeave() {
     this.tabBarElement.style.display = 'flex';
+  }
+
+  getFilters() {
+    const modal = this.modalCtrl.create(FilterVideoComponent, {difficulty: true, category: true, select: this.selectFilters});
+    modal.onDidDismiss((data) => {
+      if(data) {
+        this.selectFilters = data;
+        console.log('data', data);
+      }
+    });
+    modal.present();
+  }
+  clearFilters() {
+    this.selectFilters = undefined;
   }
 }

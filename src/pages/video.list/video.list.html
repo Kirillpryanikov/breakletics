@@ -7,10 +7,16 @@
 
   </ion-navbar>
   <div class="sub-header">
+    <ion-searchbar
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
     <div class="filters">
       <i class="filters-icon"></i>
       <div class="filter-items" (click)="getFilters()">
-        <span>{{"WORKOUTS.SEARCH" | translate}}</span>
+        <span>{{ selectFilters && selectFilters['list'] ? selectFilters['list'] : "WORKOUTS.SEARCH" | translate}}</span>
       </div>
       <ion-icon name="md-close-circle"></ion-icon>
     </div>
