@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "5.0.1",
     "@ionic-native/core": "4.4.0",
     "@ionic-native/globalization": "^4.4.2",
+    "@ionic-native/keyboard": "^4.4.2",
     "@ionic-native/native-storage": "^4.4.0",
     "@ionic-native/screen-orientation": "^4.4.2",
     "@ionic-native/splash-screen": "4.4.0",
@@ -33,7 +34,7 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "@vimeo/player": "^2.2.0",
     "com.moust.cordova.videoplayer": "https://github.com/moust/cordova-plugin-videoplayer.git",
-    "cordova-android": "^6.3.0",
+    "cordova-android": "6.3.0",
     "cordova-ios": "^4.4.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-globalization": "^1.0.8",
@@ -72,8 +73,8 @@
       "com.moust.cordova.videoplayer": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

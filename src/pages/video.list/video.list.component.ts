@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
+import {NavController, ModalController, LoadingController, NavParams} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {ConfigService} from "../config.service";
 import { Video } from '../share/Video';
 import { VideoListService } from './video.list.service';
+import { Keyboard } from '@ionic-native/keyboard';
 
 import {
   DashboardComponent,
@@ -33,20 +34,29 @@ export class VideoListComponent implements OnInit {
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
-              private service: VideoListService) {}
+              private service: VideoListService,
+              private keyboard: Keyboard) {}
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
-    console.log('video', this.videos);
+    console.log('keyboard', this.keyboard);
     console.log('this.page :: ', this.page);
     let user = this.navParams.get('user');
     // this.presentLoading();
   }
 
   searchByName(ev) {
-    this.service[this.page](ev.target).subscribe(res => {})
+    console.log('ev', ev);
+    this.service[this.page](ev.target).subscribe(res => {
+      console.log('res', res);
+    })
   }
-
+  // ionCancel(ev) {
+  //   console.log('ev', ev);
+  //   ev.target.value = '';
+  //   ev.target.nativeElement.blur();
+  //   this.keyboard.close();
+  // }
   playVideoModal(video) {
     if(video.video_url) {
       this.modalCtrl.create(WrapperVideoPlayerComponent, {video: video}).present();
@@ -97,7 +107,9 @@ export class VideoListComponent implements OnInit {
     modal.onDidDismiss((data) => {
       if(data) {
         this.selectFilters = data;
-        this.service[this.page](data).subscribe(res => {})
+        this.service[this.page](data).subscribe(res => {
+          console.log('Answer :: ', res);
+        })
       }
     });
     modal.present();

@@ -29,6 +29,7 @@ import { WorkoutService } from './workout/workout.service';
 import { ExercisesService } from './exercises/exercises.service';
 import { WarmupService } from './warmup/warmup.service';
 import { VideoListService } from "./video.list/video.list.service";
+import { Keyboard } from '@ionic-native/keyboard';
 
 const components = [
   DashboardComponent,
@@ -64,7 +65,8 @@ const components = [
     WorkoutService,
     ExercisesService,
     WarmupService,
-    VideoListService
+    VideoListService,
+    Keyboard
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

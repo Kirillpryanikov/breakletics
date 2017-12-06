@@ -16,6 +16,16 @@ export class VideoListService {
     return this.http.post(url, params)
   }
 
+  warmup(params): Observable<any> {
+    let url = `${ConfigService.CONFIG.url}wp/v2/warmup`;
+    return this.http.post(url, params)
+  }
+
+  exercises(params): Observable<any> {
+    let url = `${ConfigService.CONFIG.url}wp/v2/exercises`;
+    return this.http.post(url, params)
+  }
+
   // search(name): Observable<any> {
   //   return this.http.get(this.url+'?level='+name);
   // }
