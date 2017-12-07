@@ -22,6 +22,9 @@ filter-video {
     text-align: center;
   }
   .levels {
+    @media (max-width: 320px) {
+      width: 98%;
+    }
     //height: 3.69rem;
     width: 90%;
     margin: 4.44vh auto;
@@ -37,6 +40,12 @@ filter-video {
     }
 
     .filter-item {
+      @media (max-width: 320px) {
+        width: 32%;
+        font-size: 0.9rem;
+        letter-spacing: 1.6px;
+
+      }
       height: 3.69rem;
       @include setFlexStyles();
       width: 31%;
@@ -54,6 +63,10 @@ filter-video {
         box-sizing: border-box;
         border: 1px solid #fff;
         .flash:after {
+          @media (max-width: 320px) {
+            height: 16px;
+            width: 9px;
+          }
           background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
           display: block;
           content: '';
@@ -96,6 +109,13 @@ filter-video {
     margin: 12.22vh auto 0 auto;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-align: center;
+    span {
+      align-self: center;
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
   }
   background: rgba(0,0,0,.9);
 }

@@ -1,25 +1,27 @@
 @import "../../theme/main";
 
 video-list {
+
   ::-webkit-input-placeholder {
     text-align: center;
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.5) !important;
   }
   :-moz-placeholder { /* Firefox 18- */
     text-align: center;
     margin-left: 5px;
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.5)!important;;
   }
 
   ::-moz-placeholder {  /* Firefox 19+ */
     text-align: center;
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.5)!important;;
   }
 
   :-ms-input-placeholder {
     text-align: center;
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.5)!important;;
   }
+
   scroll-content {
     background: #1b1c1c;
   }
@@ -38,6 +40,9 @@ video-list {
         color: $navbar-title-font-color !important;
         text-transform: uppercase;
         font-size: $navbar-title-font-size;
+        @media (max-width: 320px) {
+          font-size: 1.4rem;
+        }
         text-align: center;
         letter-spacing: $navbar-title-font-spacing;
         margin-right: 27px;
@@ -46,14 +51,20 @@ video-list {
     .sub-header {
       background: #1b1c1c;
       min-height: $height-header-dashboard;
-      max-height: 144px;
+      height: auto;
+      //max-height: 144px;
       padding-bottom: 10px;
+      @media (max-width: 320px) {
+        padding-bottom: 5px;
+        min-height: $height-header-dashboard;
+      }
       @include setFlexStyles();
       flex-direction: column;
       .filters {
         @include setFlexStyles(space-between);
         flex-direction: row;
         height: 70%;
+        min-height: 38px;
         border-bottom: 2px solid rgba(255,255,255,.5);
         color: rgba(255,255,255,.6);
         font-size: 1.7rem;
@@ -69,11 +80,22 @@ video-list {
         padding: 0;
         width: 90%;
         .searchbar-md .searchbar-search-icon,.searchbar-search-icon {
-          left: 0;
-          align-self: center;
+          left: 3px;
+          margin-left: 0px !important;
         }
         .searchbar-input-container {
           @include setFlexStyles();
+          padding-left: 0px !important;
+          input {
+            background: transparent !important;
+            -webkit-text-fill-color:rgba(255,255,255,.5);
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -webkit-appearance: none !important;
+          }
         }
       }
       input,.searchbar-md .searchbar-input {
@@ -81,7 +103,7 @@ video-list {
         box-shadow: none !important;
         -webkit-box-shadow: none !important;
         border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-        padding: 4px 55px 4px 63px;
+        padding: 4px 55px 4px 63px !important;
         margin-bottom: 5px;
         line-height: 3rem;
         color: rgba(255,255,255,.5);
