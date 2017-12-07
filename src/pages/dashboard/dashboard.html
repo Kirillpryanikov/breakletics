@@ -23,14 +23,14 @@
         </span>
       </div>
     </div>
-    <div class="block block-2 workouts">
+    <div class="block block-2 workouts" (click)="goTo('WorkoutComponent')">
       {{'DASHBOARD.WORKOUTS' | translate }}
     </div>
-    <div class="block block-3 ">
+    <div class="block block-3 " (click)="goTo('ExercisesComponent')">
       <div class="block item-block-3 exercises" col-6>
         {{'DASHBOARD.EXERCISES' | translate }}
       </div>
-      <div class="block item-block-3 warm ups" col-6>
+      <div class="block item-block-3 warm ups" col-6 (click)="goTo('WarmupComponent')">
         {{'DASHBOARD.WARM_UP' | translate }}
       </div>
     </div>
@@ -43,17 +43,6 @@
         <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
       </div>
     </div>
-    <div class="pay-block">
-        <div class="cliped-title"><span>{{'DASHBOARD.PAY_TITLE_1' | translate }}</span></div>
-        <div class="title">{{'DASHBOARD.PAY_TITLE_2' | translate }}</div>
-        <div class="title">{{'DASHBOARD.PAY_TITLE_3' | translate }}</div>
-      <ul>
-        <li>{{'DASHBOARD.TEXT_LI_1' | translate }} <strong>{{'DASHBOARD.TEXT_LI_1_1' | translate }}<br>{{'DASHBOARD.TEXT_LI_1_2' | translate }}</strong></li>
-        <li>{{'DASHBOARD.TEXT_LI_2' | translate }} <strong>{{'DASHBOARD.TEXT_LI_2_1' | translate }}</strong> {{'DASHBOARD.TEXT_LI_2_2' | translate }}</li>
-        <li>{{'DASHBOARD.TEXT_LI_3' | translate }} <strong>{{'DASHBOARD.TEXT_LI_3_1' | translate }}</strong>!</li>
-        <li><strong>{{'DASHBOARD.TEXT_LI_4' | translate }}</strong></li>
-      </ul>
-      <button>{{'DASHBOARD.BTN' | translate }}</button>
-    </div>
+    <pay-it></pay-it>
   </div>
 </ion-content>

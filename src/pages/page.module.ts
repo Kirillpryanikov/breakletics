@@ -17,7 +17,8 @@ import {
   WrapperVideoPlayerComponent,
   ItemMenuSide,
   FilterVideoComponent,
-  VideoListComponent
+  VideoListComponent,
+  PayItComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -46,14 +47,15 @@ const components = [
   WrapperVideoPlayerComponent,
   ItemMenuSide,
   FilterVideoComponent,
-  VideoListComponent
+  VideoListComponent,
+  PayItComponent
 ];
 
 @NgModule({
   declarations: components,
   imports: [
     IonicModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
   ],
   entryComponents: components,
   providers: [

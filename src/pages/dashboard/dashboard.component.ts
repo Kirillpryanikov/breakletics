@@ -2,10 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { GuideComponent } from '../guide/guide.component';
-import { WelcomePageComponent } from '../welcome/welcome';
+import { GuideComponent, WrapperVideoPlayerComponent, WorkoutComponent, WelcomePageComponent, ExercisesComponent, WarmupComponent } from '../';
 import { DashbordService } from './dashboard.service';
-import { WrapperVideoPlayerComponent } from '../wrapper.video.player/wrapper.video.player.component';
 import { Subscription } from "rxjs/Subscription";
 
 @Component({
@@ -107,6 +105,28 @@ export class DashboardComponent implements OnInit, OnDestroy {
       });
   }
 
+  goTo(page){
+    console.log('page', page);
+    switch (page) {
+      case 'WorkoutComponent': {
+        page = WorkoutComponent;
+        break;
+      }
+      case 'ExercisesComponent': {
+        page = ExercisesComponent;
+        break;
+      }
+      case 'WarmupComponent': {
+        page = WarmupComponent;
+        break;
+      }
+      default: {
+        //statements;
+        break;
+      }
+    }
+    this.navCtrl.setRoot(page);
+  }
 
   ngOnDestroy() {
     if(this.videoWeekObservable) {

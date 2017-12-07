@@ -100,7 +100,7 @@ video-list {
         content: '';
         width: 30px;
         height: 15px;
-        background: url(../../assets/imgs/filter-results-button.png);
+        background: url(../assets/imgs/filter-results-button.png);
         background-position: bottom;
         background-repeat: no-repeat;
         display: block;
@@ -205,7 +205,7 @@ video-list {
         margin-left: 5px;
       }
       &:after {
-        background: url(../../assets/imgs/flash-white.png) 100% 100% no-repeat;
+        background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
         content: '';
         height: 13px;
         width: 8px;

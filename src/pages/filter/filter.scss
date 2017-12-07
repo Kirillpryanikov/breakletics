@@ -54,7 +54,7 @@ filter-video {
         box-sizing: border-box;
         border: 1px solid #fff;
         .flash:after {
-          background: url(../../assets/imgs/flash-white.png) 100% 100% no-repeat;
+          background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
           display: block;
           content: '';
           height: 18px;
@@ -66,7 +66,7 @@ filter-video {
 
     .filter-item {
       .flash:after {
-        background: url(../../assets/imgs/flash-black.png) 100% 100% no-repeat;
+        background: url(../assets/imgs/flash-black.png) 100% 100% no-repeat;
         content: '';
         height: 18px;
         width: 11px;

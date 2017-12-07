@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NavController, ModalController, LoadingController, NavParams} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {ConfigService} from "../config.service";
-import { Video } from '../share/Video';
+import { Video } from '../../share/Video';
 import { VideoListService } from './video.list.service';
 import { Keyboard } from '@ionic-native/keyboard';
 
@@ -11,6 +11,7 @@ import {
   FilterVideoComponent,
   WrapperVideoPlayerComponent
 } from '../index'
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'video-list',
@@ -23,7 +24,10 @@ export class VideoListComponent implements OnInit {
   @Input() title: string;
   @Input('page') page: string;
   @Input() search: boolean;
+  @Input() showDuration: boolean;
+  @Input() showLevels: boolean;
 
+  private vidoeObservable: Subscription;
   private loading: any;
   private tabBarElement: any;
   public levels;
@@ -39,24 +43,31 @@ export class VideoListComponent implements OnInit {
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
-    console.log('keyboard', this.keyboard);
+    console.log('this.levels', this.levels);
     console.log('this.page :: ', this.page);
     let user = this.navParams.get('user');
     // this.presentLoading();
   }
 
-  searchByName(ev) {
-    console.log('ev', ev);
-    this.service[this.page](ev.target).subscribe(res => {
-      console.log('res', res);
+  getData(req) {
+    this.vidoeObservable = this.service[this.page](req).subscribe(res => {
+      this.videos = res;
+      console.log('Answer :: ', res);
     })
   }
-  // ionCancel(ev) {
-  //   console.log('ev', ev);
-  //   ev.target.value = '';
-  //   ev.target.nativeElement.blur();
-  //   this.keyboard.close();
-  // }
+
+  searchByName(ev) {
+    this.keyboard.close();
+    console.log('ev', ev.target.value);
+    this.getData({"search":ev.target.value});
+  }
+
+  onCancel(ev) {
+    let el = document.querySelector('.searchbar-input');
+    ev.target.value = '';
+    this.keyboard.close();
+  }
+
   playVideoModal(video) {
     if(video.video_url) {
       this.modalCtrl.create(WrapperVideoPlayerComponent, {video: video}).present();
@@ -107,9 +118,7 @@ export class VideoListComponent implements OnInit {
     modal.onDidDismiss((data) => {
       if(data) {
         this.selectFilters = data;
-        this.service[this.page](data).subscribe(res => {
-          console.log('Answer :: ', res);
-        })
+        this.getData(data);
       }
     });
     modal.present();
@@ -139,6 +148,19 @@ export class VideoListComponent implements OnInit {
   }
 
   clearFilters() {
+    if(!this.selectFilters)
+      return;
+
     this.selectFilters = undefined;
+    this.getData(null);
+  }
+
+  ngOnDestroy() {
+    if(this.vidoeObservable) {
+      this.vidoeObservable.unsubscribe();
+    }
+    if(this.loading) {
+      this.loading.dismiss();
+    }
   }
 }

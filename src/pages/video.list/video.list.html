@@ -14,15 +14,14 @@
       animated="true"
       [showCancelButton]="shouldShowCancel"
       (ionCancel)="onCancel($event)"
-      [placeholder]="'VIDEO_LIST.SEARCH' | translate"
-    >
+      [placeholder]="'VIDEO_LIST.SEARCH' | translate">
     </ion-searchbar>
     <div class="filters">
       <i class="filters-icon"></i>
       <div class="filter-items" (click)="getFilters()">
         <span>{{ selectFilters && selectFilters['list'] ? selectFilters['list'] : "WORKOUTS.SEARCH" | translate}}</span>
       </div>
-      <ion-icon name="md-close-circle"></ion-icon>
+      <ion-icon name="md-close-circle" (click)="clearFilters()"></ion-icon>
     </div>
   </div>
 </ion-header>
@@ -37,9 +36,9 @@
         <div class="footer-inner">
           <span [innerHTML]="item.post_title"></span>
           <span>
-            <span>{{item.duration}}&nbsp;&nbsp;MIN <i class="time-icon"></i>
+            <span *ngIf="showDuration">{{item.duration}}&nbsp;&nbsp;MIN <i class="time-icon"></i>
             </span>
-            <span class="level" *ngIf="item.level">{{item.level}}
+            <span class="level" *ngIf="item.level && showLevels">{{item.level}}
               <ng-container *ngFor="let l of levels; let i = index;">
                 <i class="flash" *ngIf="i <= levels.indexOf(item.level)"></i>
               </ng-container>
@@ -70,5 +69,8 @@
         </div>
       </div>
     </div>
+
+    <pay-it></pay-it>
+
   </div>
 </ion-content>

@@ -43,6 +43,7 @@ export class FilterVideoComponent implements OnInit {
 
   aplly() {
     this.filters.list = this.convertArrayToString(this.filters);
+
     this.viewCtrl.dismiss(this.filters);
   }
 

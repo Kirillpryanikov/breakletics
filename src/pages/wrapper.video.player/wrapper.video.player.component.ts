@@ -26,6 +26,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   ngOnInit() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
     this.videoParam = this.navParams.get('video');
+    console.log('warmup', this.navParams.get('video') );
 
     if(this.videoParam) {
       this.getVideo();
@@ -40,9 +41,11 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   getVideo() {
     // video = [190821442, 242763018];
-
+    let video = this.videoParam.warm_up_url ?
+      this.videoParam.warm_up_url.split('https://vimeo.com/')[1] +'?autoplay=1' :
+      this.videoParam.video_url.split('https://vimeo.com/')[1] +'?autoplay=1'
     const options = {
-      id: 'https://player.vimeo.com/video/' + this.videoParam.warm_up_url.split('https://vimeo.com/')[1] +'?autoplay=1',
+      id: 'https://player.vimeo.com/video/' + video,
       width: this.platform.height(),
       height: this.platform.width(),
       autopause: false,
@@ -76,6 +79,11 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   next() {
+    if(!this.videoParam.warm_up_url) {
+      this.close();
+      return;
+    }
+
     this.iFrameFirst.nativeElement.remove();
     this.buttonNext.nativeElement.remove();
     const options = {

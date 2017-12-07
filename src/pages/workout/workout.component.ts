@@ -3,7 +3,7 @@ import { NavController, ModalController, LoadingController, NavParams } from 'io
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Subscription } from 'rxjs/Subscription';
 import { WorkoutService } from './workout.service';
-import { Video } from '../share/Video';
+import { Video } from '../../share/Video';
 
 import {
   DashboardComponent,

@@ -124,7 +124,7 @@
     "ZUMBA": "Only Pumba still does Zumba",
     "CRAZY_1": "CRAZY XMAS DEAL",
     "CRAZY_2": "5 WORKOUTS FOR 6 $!",
-    "STATIC": "Pluasmember",
+    "STATIC": "Plusmember",
     "PAY_TITLE_1": "BECOME ATHLETIC",
     "PAY_TITLE_2": " LEARN TO MOVE WITH CREATIVE,",
     "PAY_TITLE_3": "KICK-ASS WORKOUTS! ",
@@ -177,5 +177,8 @@
     "TITLE": "Filter by Warm Up or Cool Down ",
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN"
+  },
+  "VIDEO_LIST": {
+    "SEARCH": "Exercise search ..."
   }
 }

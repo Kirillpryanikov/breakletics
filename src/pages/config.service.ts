@@ -5,7 +5,7 @@ export class ConfigService {
 
   public static CONFIG = {
     url: 'http://breakletics.de/members/wp-json/',
-  }
+  };
 
-  public static LEVELS = ["Basic", "Advanced", "Pro"];
+  public static LEVELS = ["Beginner", "Advanced", "Expert"];
 }

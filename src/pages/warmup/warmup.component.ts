@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams, ViewController } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { Video } from "../share/Video";
+import { Video } from "../../share/Video";
 import { Subscription } from "rxjs/Subscription";
 import { DashboardComponent } from "../index";
 import { WarmupService } from "./warmup.service";

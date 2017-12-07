@@ -14,6 +14,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 import { MyApp } from './app.component';
 import { PageModule } from '../pages/page.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthenticationInterceptor} from "../share/interceptor.service";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -49,7 +51,12 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     Globalization,
     ScreenOrientation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true,
+    }
   ]
 })
 export class AppModule {}

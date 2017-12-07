@@ -73,13 +73,13 @@ export class MyApp implements OnInit{
         if(res){
           this.rootPage = TabsComponent;
         } else {
-          this.rootPage = TabsComponent;
+          this.rootPage = WelcomePageComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = TabsComponent;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }
