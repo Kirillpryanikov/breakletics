@@ -1,6 +1,6 @@
 <ion-content text-center>
   <div class="header" padding>
-    <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
+    <ion-icon (click)="goTo('Welcome')" name="ios-arrow-round-back"></ion-icon>
   </div>
 
   <form #f="ngForm" (ngSubmit)="login(f)">
@@ -42,7 +42,7 @@
       </ion-row>
       <ion-row>
         <div class="tooter-login">
-          <span>{{'LOGIN_PAGE.FOOTER_LOGIN' | translate}}</span>
+          <span (click)="goTo('SignUp')">{{'LOGIN_PAGE.FOOTER_LOGIN' | translate}}</span>
         </div>
       </ion-row>
     </ion-grid>

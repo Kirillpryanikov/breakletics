@@ -7,6 +7,7 @@ import { WelcomePageComponent } from '../welcome/welcome';
 import { LoginService } from './login.service';
 import { TabsComponent } from '../index';
 import { Subscription } from "rxjs/Subscription";
+import {RegisterPageComponent} from "../register/register";
 
 @Component({
   selector: 'page-login',
@@ -53,8 +54,22 @@ export class LoginPageComponent implements OnDestroy {
       })
   }
 
-  goToWelcome() {
-    this.navCtrl.setRoot(WelcomePageComponent);
+  goTo(page:string) {
+    let setPage: any;
+    switch(page) {
+      case 'Welcome': {
+        setPage = WelcomePageComponent;
+        break;
+      }
+      case 'SignUp': {
+        setPage = RegisterPageComponent;
+        break;
+      }
+      default: {
+      }
+    }
+
+    this.navCtrl.push(setPage);
   }
 
   dismissLoading() {

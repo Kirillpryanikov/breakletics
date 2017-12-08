@@ -1,6 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
+import { StatusBar } from '@ionic-native/status-bar';
 
 import {
   LoginPageComponent,
@@ -20,7 +21,6 @@ import {
   VideoListComponent,
   PayItComponent
 } from './index';
-
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
 import { DashbordService } from './dashboard/dashboard.service';
@@ -68,7 +68,8 @@ const components = [
     ExercisesService,
     WarmupService,
     VideoListService,
-    Keyboard
+    Keyboard,
+    StatusBar
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

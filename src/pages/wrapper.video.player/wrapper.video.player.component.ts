@@ -3,6 +3,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 import { Platform, NavParams, ViewController } from 'ionic-angular';
 import Player from '@vimeo/player';
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'wrapper-player',
@@ -21,12 +22,13 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   constructor(private platform: Platform,
               private navParams: NavParams,
               private screenOrientation: ScreenOrientation,
-              private viewController: ViewController) {}
+              private viewController: ViewController,
+              private statusBar: StatusBar) {}
 
   ngOnInit() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
     this.videoParam = this.navParams.get('video');
-    console.log('warmup', this.navParams.get('video') );
+    this.statusBar.hide();
 
     if(this.videoParam) {
       this.getVideo();
@@ -106,6 +108,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   ngOnDestroy() {
+    this.statusBar.show();
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
 }
