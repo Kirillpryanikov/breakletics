@@ -10,11 +10,11 @@ export class FilterVideoComponent implements OnInit {
   @ViewChild('containerFilters') containerFilters: ElementRef;
   private levels: false;
   private category: false;
-  private warmcold: false;
+  private warmup: false;
   private filters = {
     levels: [],
     category: [],
-    warmcold: [],
+    warmup: [],
     list: ''
   };
 
@@ -24,17 +24,17 @@ export class FilterVideoComponent implements OnInit {
               private render: Renderer2) {}
 
   ngOnInit(){
-    let { levels, category, warmcold, select } = this.navParams.data;
+    let { levels, category, warmup, select } = this.navParams.data;
     this.levels = levels;
     this.category = category;
-    this.warmcold = warmcold;
+    this.warmup = warmup;
     this.filters = select ? JSON.parse(JSON.stringify(select)) :  JSON.parse(JSON.stringify(this.filters));
   }
 
   ionViewWillEnter() {
     this.selectFilters('levels');
     this.selectFilters('category');
-    this.selectFilters('warmcold');
+    this.selectFilters('warmup');
   }
 
   close() {

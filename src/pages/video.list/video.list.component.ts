@@ -110,7 +110,7 @@ export class VideoListComponent implements OnInit {
     const modal = this.modalCtrl.create(FilterVideoComponent,
       {
         levels: allow.levels,
-        warmcold: allow.warmcold,
+        warmup: allow.warmup,
         category: allow.category,
         select: this.selectFilters
       });
@@ -127,7 +127,7 @@ export class VideoListComponent implements OnInit {
   getAllowFilter(){
     let filters = {
       levels: false,
-      warmcold: false,
+      warmup: false,
       category: false
     };
 
@@ -140,7 +140,7 @@ export class VideoListComponent implements OnInit {
         filters.category = true;
         break;
       case 'warmup':
-        filters.warmcold = true;
+        filters.warmup = true;
         break;
       default: break;
     }
