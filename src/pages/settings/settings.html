@@ -1,0 +1,45 @@
+<ion-header transparent>
+  <ion-navbar color="dark">
+    <ion-buttons left>
+      <button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>
+    </ion-buttons>
+    <div class="title" [innerHTML]="'SETTINGS.TITLE' | translate"></div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item no-lines>
+      <h2 [innerHTML]="'SETTINGS.SUBTITLE' | translate"></h2>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label floating [innerHTML]="'SETTINGS.NAME' | translate"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label floating [innerHTML]="'SETTINGS.LASTNAME' | translate"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label floating [innerHTML]="'SETTINGS.GENDER' | translate"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label floating [innerHTML]="'SETTINGS.EMAIL' | translate"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label floating [innerHTML]="'SETTINGS.BORN' | translate"></ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <ion-label floating [innerHTML]="'SETTINGS.REGION' | translate"></ion-label>
+      <ion-input type="text" value="Lorem"></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

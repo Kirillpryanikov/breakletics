@@ -19,8 +19,10 @@ import {
   ItemMenuSide,
   FilterVideoComponent,
   VideoListComponent,
-  PayItComponent
+  PayItComponent,
+  SettingsComponent
 } from './index';
+
 import { RegisterService } from './register/register.service';
 import { LoginService } from './login/login.service';
 import { DashbordService } from './dashboard/dashboard.service';
@@ -48,7 +50,8 @@ const components = [
   ItemMenuSide,
   FilterVideoComponent,
   VideoListComponent,
-  PayItComponent
+  PayItComponent,
+  SettingsComponent
 ];
 
 @NgModule({

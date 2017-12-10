@@ -9,7 +9,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {
   WelcomePageComponent,
   TabsComponent,
-  ExtraQuestionsComponent
+  SettingsComponent
 } from '../pages/index'
 
 @Component({
@@ -71,15 +71,15 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('user')
       .then(res => {
         if(res){
-          this.rootPage = TabsComponent;
+          this.rootPage = SettingsComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = SettingsComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = SettingsComponent;
       })
   }
 }

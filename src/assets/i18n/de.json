@@ -181,5 +181,15 @@
   },
   "VIDEO_LIST": {
     "SEARCH": "Exercise suchen ..."
+  },
+  "SETTINGS": {
+    "TITLE": "Persönliche daten",
+    "SUBTITLE": "Persönliche daten",
+    "NAME": "Vorname",
+    "LASTNAME": "Nachname",
+    "GENDER": "Geschlecht",
+    "EMAIL": "E-Mail",
+    "BORN": "Geburtstag",
+    "REGION": "Region"
   }
 }
