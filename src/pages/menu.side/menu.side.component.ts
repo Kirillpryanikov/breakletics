@@ -11,11 +11,13 @@ import {SettingsComponent} from "../index";
   styleUrls: ['/menu.side.scss']
 })
 export class MenuSideComponent implements OnInit {
-
+  private user:any;
   constructor(public navCtrl: NavController,
               private navParams: NavParams) {}
 
-  ngOnInit(){}
+  ngOnInit(){
+
+  }
 
   someMethods(title) {
     this.navCtrl.push(ItemMenuSide , {data: title})

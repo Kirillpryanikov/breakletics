@@ -34,12 +34,11 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     //   });
     // });
     //
-    console.log('REQ :: ', req);
     return next
       .handle(req)
       .do(
-        succ => console.log('succ',succ),
-        err => console.log('err', err)
+        succ => {},
+        err => {}
     );
   }
 }
