@@ -71,15 +71,15 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('user')
       .then(res => {
         if(res){
-          this.rootPage = SettingsComponent;
+          this.rootPage = TabsComponent;
         } else {
-          this.rootPage = SettingsComponent;
+          this.rootPage = TabsComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = SettingsComponent;
+        this.rootPage = TabsComponent;
       })
   }
 }

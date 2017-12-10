@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {DashboardComponent} from "../index";
+import {AccountComponent} from "../account/account.component";
 
 @Component({
   selector: 'settings',
@@ -18,7 +19,13 @@ export class SettingsComponent implements OnInit {
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
   }
-
+  goTo(page){
+    switch (page) {
+      case 'MY_ACCOUNT': {
+        this.navCtrl.push(AccountComponent);
+      }
+    }
+  }
   aplly() {
     this.viewCtrl.dismiss();
   }

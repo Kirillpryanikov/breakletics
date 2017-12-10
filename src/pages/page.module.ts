@@ -20,7 +20,8 @@ import {
   FilterVideoComponent,
   VideoListComponent,
   PayItComponent,
-  SettingsComponent
+  SettingsComponent,
+  AccountComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -51,7 +52,8 @@ const components = [
   FilterVideoComponent,
   VideoListComponent,
   PayItComponent,
-  SettingsComponent
+  SettingsComponent,
+  AccountComponent
 ];
 
 @NgModule({

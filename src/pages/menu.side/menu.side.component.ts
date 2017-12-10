@@ -17,7 +17,6 @@ export class MenuSideComponent implements OnInit {
 
   ngOnInit(){}
 
-
   someMethods(title) {
     this.navCtrl.push(ItemMenuSide , {data: title})
   }
@@ -25,7 +24,7 @@ export class MenuSideComponent implements OnInit {
   goTo(page){
     switch (page) {
       case 'MY_ACCOUNT': {
-        this.navCtrl.setRoot(SettingsComponent);
+        this.navCtrl.push(SettingsComponent);
       }
     }
   }
