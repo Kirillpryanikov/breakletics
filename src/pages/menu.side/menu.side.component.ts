@@ -3,6 +3,7 @@ import { NavController,  NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 import { ItemMenuSide } from '../item.menu.side/item.menu.side';
+import {SettingsComponent} from "../index";
 
 @Component({
   selector: 'menu-side-component',
@@ -10,16 +11,23 @@ import { ItemMenuSide } from '../item.menu.side/item.menu.side';
   styleUrls: ['/menu.side.scss']
 })
 export class MenuSideComponent implements OnInit {
-
+  private user:any;
   constructor(public navCtrl: NavController,
-              private nativeStorage: NativeStorage,
               private navParams: NavParams) {}
 
-  ngOnInit(){}
+  ngOnInit(){
 
+  }
 
   someMethods(title) {
     this.navCtrl.push(ItemMenuSide , {data: title})
   }
 
+  goTo(page){
+    switch (page) {
+      case 'MY_ACCOUNT': {
+        this.navCtrl.push(SettingsComponent);
+      }
+    }
+  }
 }

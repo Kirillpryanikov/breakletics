@@ -18,3 +18,5 @@ export * from './filter/filter.video.component';
 export * from './item.menu.side/item.menu.side';
 export * from './video.list/video.list.component';
 export * from './payit/payit.component';
+export * from './settings/settings';
+export * from './account/account.component';

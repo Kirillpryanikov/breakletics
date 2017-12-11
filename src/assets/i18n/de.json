@@ -181,5 +181,25 @@
   },
   "VIDEO_LIST": {
     "SEARCH": "Exercise suchen ..."
+  },
+  "ACCOUNT": {
+    "TITLE": "Persönliche daten",
+    "SUBTITLE": "Persönliche daten",
+    "NAME": "Vorname",
+    "LASTNAME": "Nachname",
+    "GENDER": "Geschlecht",
+    "EMAIL": "E-Mail",
+    "BORN": "Geburtstag",
+    "REGION": "Region"
+  },
+  "SETTINGS": {
+    "PAGE_TITLE": "mein konto",
+    "SETTING_TITLE": "Allgemein",
+    "SETTING_SUBTITLE": "Persönliche Daten",
+    "SETTING_BTN": "Bearbeiten",
+    "PRODUCT_TITLE": "Produkte",
+    "PRODUCT_PLUSMEMBER": "Du bist kein PlusMember",
+    "PRODUCT_BY": "Jetzt kaufen",
+    "PRODUCT_DEAL": "X-Mas Deal"
   }
 }

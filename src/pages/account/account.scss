@@ -1,0 +1,54 @@
+@import "../../theme/main";
+
+account {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  ion-header {
+    ion-navbar {
+      height: $height-header-dashboard;
+      background: #000;
+      button {
+        background: transparent;
+        color: $navbar-title-font-color;
+        font-size: $navbar-title-button_size;
+      }
+      .title {
+        color: $navbar-title-font-color !important;
+        text-transform: uppercase;
+        font-size: $navbar-title-font-size;
+        @media (max-width: 320px) {
+          font-size: 1.4rem;
+        }
+        text-align: center;
+        letter-spacing: $navbar-title-font-spacing;
+        margin-right: 27px;
+      }
+    }
+  }
+
+  ion-content {
+    background: url(../assets/imgs/dark-bg.gif) 50% 50%;
+    background-color: #000;
+    background-size: cover;
+    ion-item:first-child {
+      margin-top: 2.57rem;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.42rem;
+      color: #fff;
+      @media (max-width: 320px) {
+        font-size: 1.2rem;
+      }
+    }
+    ion-label {
+      color: #8e8e8e;
+    }
+    ion-input {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid #8e8e8e
+    }
+  }
+}
