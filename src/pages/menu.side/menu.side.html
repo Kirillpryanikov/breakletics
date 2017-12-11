@@ -20,13 +20,13 @@
         <div class="item light-text-color" (click)="someMethods('MENU_SIDE.WORKOUT_OF_THE_WEEK')">
           <span>{{'MENU_SIDE.WORKOUT_OF_THE_WEEK' | translate}}</span>
         </div>
-        <div class="item light-text-color" (click)="someMethods('MENU_SIDE.WORKOUTS')">
+        <div class="item light-text-color" (click)="goTo('WorkoutComponent')">
           <span>{{'MENU_SIDE.WORKOUTS' | translate}}</span>
         </div>
-        <div class="item light-text-color" (click)="someMethods('MENU_SIDE.EXERCISES')">
+        <div class="item light-text-color" (click)="goTo('ExercisesComponent')">
           <span>{{'MENU_SIDE.EXERCISES' | translate}}</span>
         </div>
-        <div class="item light-text-color" (click)="someMethods('MENU_SIDE.WARM_UPS')">
+        <div class="item light-text-color" (click)="goTo('WarmupComponent')">
           <span>{{'MENU_SIDE.WARM_UPS' | translate}}</span>
         </div>
       </div>

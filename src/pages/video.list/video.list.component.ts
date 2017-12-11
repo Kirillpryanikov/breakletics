@@ -12,6 +12,7 @@ import {
   WrapperVideoPlayerComponent
 } from '../index'
 import {Subscription} from "rxjs/Subscription";
+import {TabsComponent} from "../tabs/tabs.component";
 
 @Component({
   selector: 'video-list',
@@ -94,7 +95,7 @@ export class VideoListComponent implements OnInit {
   }
 
   goToDash() {
-    this.navCtrl.setRoot(DashboardComponent);
+    this.navCtrl.setRoot(TabsComponent);
   }
 
   ionViewWillEnter() {

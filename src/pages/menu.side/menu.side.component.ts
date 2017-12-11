@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController,  NavParams } from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
 
 import { ItemMenuSide } from '../item.menu.side/item.menu.side';
-import {SettingsComponent} from "../index";
+import {
+  SettingsComponent,
+  WarmupComponent,
+  ExercisesComponent,
+  WorkoutComponent
+} from "../index";
 
 @Component({
   selector: 'menu-side-component',
@@ -28,6 +32,23 @@ export class MenuSideComponent implements OnInit {
       case 'MY_ACCOUNT': {
         this.navCtrl.push(SettingsComponent);
       }
+      case 'WorkoutComponent': {
+        this.navCtrl.setRoot(WorkoutComponent);
+        break;
+      }
+      case 'ExercisesComponent': {
+        this.navCtrl.setRoot(ExercisesComponent);
+        break;
+      }
+      case 'WarmupComponent': {
+        this.navCtrl.setRoot(WarmupComponent);
+        break;
+      }
+      default: {
+        //statements;
+        break;
+      }
     }
   }
+
 }
