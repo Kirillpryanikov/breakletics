@@ -26,7 +26,6 @@ export class WarmupComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(){
-    console.log('!!!!!!!!!!!!!!!!!!!!!! WarmupComponent')
     this.getWarmups();
   }
   getWarmups() {

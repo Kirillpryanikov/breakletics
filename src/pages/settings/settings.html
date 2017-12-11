@@ -2,7 +2,7 @@
   <ion-navbar color="dark" hideBackButton >
     <ion-buttons left>
       <button ion-button navPop icon-only>
-        <ion-icon ios="ios-arrow-round-back"></ion-icon>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
       </button>
       <!--<button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>-->
     </ion-buttons>
@@ -27,13 +27,13 @@
     <ion-row>
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_PLUSMEMBER' | translate"></ion-col>
       <ion-col class="col-button">
-        <button class="button" [innerHTML]="'SETTINGS.PRODUCT_BY' | translate"></button>
+        <button class="button button-by">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_DEAL' | translate"></ion-col>
-      <ion-col class="col-button">
-        <button class="button" [innerHTML]="'SETTINGS.PRODUCT_BY' | translate"></button>
+      <ion-col class="col-button ">
+        <button class="button bought">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
       </ion-col>
     </ion-row>
   </ion-grid>

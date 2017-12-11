@@ -50,5 +50,8 @@ account {
       padding-bottom: 1.2rem;
       border-bottom: 1px solid #8e8e8e
     }
+    .list-md .item-input:last-child,.list-ios .item-input:last-child {
+      border: 0!important;
+    }
   }
 }

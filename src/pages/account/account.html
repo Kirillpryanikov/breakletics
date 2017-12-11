@@ -2,7 +2,7 @@
   <ion-navbar color="dark" hideBackButton>
     <ion-buttons left>
       <button ion-button navPop icon-only>
-        <ion-icon ios="ios-arrow-round-back"></ion-icon>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
       </button>
       <!--<button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>-->
     </ion-buttons>
@@ -10,13 +10,13 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list>
+  <ion-list no-lines>
     <ion-item no-lines>
       <h2 [innerHTML]="'ACCOUNT.SUBTITLE' | translate"></h2>
     </ion-item>
     <ion-item no-lines>
       <ion-label floating [innerHTML]="'ACCOUNT.NAME' | translate"></ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [value]="user.user_display_name || ''"></ion-input>
     </ion-item>
 
     <ion-item no-lines>
@@ -31,7 +31,7 @@
 
     <ion-item no-lines>
       <ion-label floating [innerHTML]="'ACCOUNT.EMAIL' | translate"></ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="email" [value]="user.user_email || ''"></ion-input>
     </ion-item>
 
     <ion-item no-lines>

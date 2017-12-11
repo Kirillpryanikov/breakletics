@@ -26,7 +26,7 @@ export class ExtraQuestionsComponent implements OnInit {
   }
 
   submit(extra: NgForm) {
-    console.log('NgForm', );
+    console.log('NgForm', extra);
     this.navCtrl.setRoot(TabsComponent, {user: this.user});
   }
 
