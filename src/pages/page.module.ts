@@ -21,7 +21,13 @@ import {
   VideoListComponent,
   PayItComponent,
   SettingsComponent,
-  AccountComponent
+  AccountComponent,
+  PasswordRestoreComponent,
+  DeAgbComponent,
+  AgbComponent,
+  ImprintComponent,
+  DeImprintComponent,
+  EnImprintComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -34,6 +40,7 @@ import { ExercisesService } from './exercises/exercises.service';
 import { WarmupService } from './warmup/warmup.service';
 import { VideoListService } from "./video.list/video.list.service";
 import { Keyboard } from '@ionic-native/keyboard';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 const components = [
   DashboardComponent,
@@ -53,7 +60,13 @@ const components = [
   VideoListComponent,
   PayItComponent,
   SettingsComponent,
-  AccountComponent
+  AccountComponent,
+  PasswordRestoreComponent,
+  DeAgbComponent,
+  AgbComponent,
+  ImprintComponent,
+  DeImprintComponent,
+  EnImprintComponent,
 ];
 
 @NgModule({
@@ -74,7 +87,8 @@ const components = [
     WarmupService,
     VideoListService,
     Keyboard,
-    StatusBar
+    StatusBar,
+    InAppBrowser
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

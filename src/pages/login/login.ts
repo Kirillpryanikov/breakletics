@@ -3,21 +3,25 @@ import { NavController, LoadingController, ToastController } from 'ionic-angular
 import { NgForm } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { WelcomePageComponent } from '../welcome/welcome';
-import { LoginService } from './login.service';
-import { TabsComponent } from '../index';
+import {
+  TabsComponent,
+  PasswordRestoreComponent,
+  WelcomePageComponent,
+  AgbComponent
+} from '../index';
 import { Subscription } from "rxjs/Subscription";
 import {RegisterPageComponent} from "../register/register";
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
   styleUrls: ['/login.scss']
 })
+
 export class LoginPageComponent implements OnDestroy {
   private loading: any;
   private toast: any;
-
   private loginObservable: Subscription;
 
   constructor(private navCtrl: NavController,
@@ -40,7 +44,7 @@ export class LoginPageComponent implements OnDestroy {
     }
     this.loginObservable = this.service.login(data)
       .subscribe(responce => {
-        console.log('responce', responce);
+        console.log('User responce :: ', responce);
         if(responce.token) {
           this.nativeStorage.setItem('user', responce);
           this.navCtrl.push(TabsComponent,{ user: responce });
@@ -63,6 +67,14 @@ export class LoginPageComponent implements OnDestroy {
       }
       case 'SignUp': {
         setPage = RegisterPageComponent;
+        break;
+      }
+      case 'Forgot': {
+        setPage = PasswordRestoreComponent;
+        break;
+      }
+      case 'AGB': {
+        setPage = AgbComponent;
         break;
       }
       default: {

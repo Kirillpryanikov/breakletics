@@ -23,7 +23,7 @@
       </ion-row>
       <ion-row>
         <div class="password-forgotten">
-          <span>{{'LOGIN_PAGE.BUTTON_PASSWORD_FORGOTTEN' | translate}}</span>
+          <span (click)="goTo('Forgot')">{{'LOGIN_PAGE.BUTTON_PASSWORD_FORGOTTEN' | translate}}</span>
         </div>
       </ion-row>
       <ion-row>
@@ -32,7 +32,7 @@
         </div>
       </ion-row>
       <ion-row>
-        <div class="title-under-btn">
+        <div class="title-under-btn" (click)="goTo('AGB')">
           <span>
             {{'LOGIN_PAGE.TITLE_UNDER_BUTTON1' | translate}}
             <u>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON2' | translate}}</u>

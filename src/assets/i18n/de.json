@@ -11,6 +11,12 @@
     "TITLE_UNDER_BUTTON3": "von Breakletics",
     "FOOTER_LOGIN": "Ich habe keinen Account und möchte mich registrieren"
   },
+  "FORGOT_PAGE": {
+    "TITLE1": "Huch,",
+    "TITLE2": "wie ging das Passwort?",
+    "PLACEHOLDER_EMAIL": "E-Mail Adresse mit der du dich registriert hast",
+    "BUTTON_LOGIN": "neues passwort anfordern"
+  },
   "REGISTER": {
     "PAGE_1": {
       "TITLE": "Dein Geschlecht?",
@@ -201,5 +207,11 @@
     "PRODUCT_PLUSMEMBER": "Du bist kein PlusMember",
     "PRODUCT_BY": "Jetzt kaufen",
     "PRODUCT_DEAL": "X-Mas Deal"
+  },
+  "AGB": {
+    "PAGE_TITLE": "AGB"
+  },
+  "IMPRINT": {
+    "PAGE_TITLE": "Impressum"
   }
 }

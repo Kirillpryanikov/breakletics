@@ -200,5 +200,11 @@
     "PRODUCT_PLUSMEMBER": "You are not a PlusMember",
     "PRODUCT_BY": "Buy now",
     "PRODUCT_DEAL": "X-Mas Deal"
+  },
+  "AGB": {
+    "PAGE_TITLE": "AGB"
+  },
+  "IMPRINT": {
+    "PAGE_TITLE": "Imprint"
   }
 }

@@ -5,19 +5,29 @@ $padding-input-field: 30px 15px 12px 0;
 $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
-page-login {
+password-restore {
   font-family: "RobotoCondensesBold";
-
+  .header-md:after, .header-ios:after {
+    background-image: none !important;
+    content: '';
+  }
+  ion-header {
+    @include setFlexStyles(flex-start);
+    //height: $height-header;
+    color: $header-back-color;
+    ion-icon {
+      color: $header-back-color;
+    }
+    .bar-button-md, .bar-button-ios {
+      font-size: 1.8rem;
+      margin-left: 5px;
+    }
+  }
   ion-content {
     background: url("../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
-    .header {
-      @include setFlexStyles(flex-start);
-      height: $height-header;
-      font-size: $font-size-em-md;
-      color: $header-back-color;
-    }
+
 
     form {
       @include setFlexStyles();
@@ -28,15 +38,19 @@ page-login {
         font-size: $font-size-em-lg;
         color: #fff;
         margin-bottom: 5px;
+        text-align: center;
       }
       .title-login-2{
         width: 100%;
         color: #fff;
         font-size: $font-size-em-md;
         margin-bottom: 7%;
+        text-align: center;
+
       }
 
       .container-input {
+        text-align: center;
         width: 100%;
         input {
           width: 90%;
@@ -67,6 +81,8 @@ page-login {
           letter-spacing: 2px;
           background-color: #fff;
           color: $btn-text-color;
+          text-transform: uppercase;
+          font-weight: bold;
         }
       }
 
@@ -77,7 +93,7 @@ page-login {
       .tooter-login {
         @include setFlexStyles();
         width: 100%;
-        margin-top: 8%;
+        margin-top: 18%;
         font-size: 1.6rem;
         text-decoration: underline;
         span {

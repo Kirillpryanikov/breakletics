@@ -1,0 +1,14 @@
+<ion-header transparent>
+  <ion-navbar color="dark" hideBackButton >
+    <ion-buttons left>
+      <button ion-button navPop icon-only>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <div class="title" [innerHTML]="'IMPRINT.PAGE_TITLE' | translate"></div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <de-imprint *ngIf="language === 'de'"></de-imprint>
+  <en-imprint *ngIf="language !== 'de'"></en-imprint>
+</ion-content>

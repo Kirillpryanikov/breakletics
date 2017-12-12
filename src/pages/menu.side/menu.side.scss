@@ -3,7 +3,6 @@
 $margin-icon: 10px;
 
 menu-side-component {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
   .scroll-content {
     background-color: $dashboard-background;
   }
@@ -47,6 +46,7 @@ menu-side-component {
       .item {
         padding: 10px 0;
         font-size: 1.58rem;
+        letter-spacing: 2px;
       }
 
       .item:last-child {

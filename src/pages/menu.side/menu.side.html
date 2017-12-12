@@ -33,25 +33,25 @@
     </ion-item>
     <ion-item no-padding no-margin>
       <div class="item-menu dark-text-color">
-        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_TV')">
+        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_TV')" *ngIf="false">
           <span>{{'MENU_SIDE.BREAKLETICS_TV' | translate}}</span>
         </div>
         <div class="item dark-text-color" (click)="goTo('MY_ACCOUNT')">
           <span>{{'MENU_SIDE.MY_ACCOUNT' | translate}}</span>
         </div>
-        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.FIND_BREAKLETICS_CLASS')">
+        <div class="item dark-text-color" (click)="goToLink('http://breakletics.de/#')">
           <span>{{'MENU_SIDE.FIND_BREAKLETICS_CLASS' | translate}}</span>
         </div>
-        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_SHOP')">
+        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_SHOP')" *ngIf="false">
           <span>{{'MENU_SIDE.BREAKLETICS_SHOP' | translate}}</span>
         </div>
-        <div class="item" (click)="someMethods('MENU_SIDE.TRANSFORMATION')">
+        <div class="item" (click)="goToLink('http://breakletics.de/transformation/')">
           <span>{{'MENU_SIDE.TRANSFORMATION' | translate}}</span>
         </div>
-        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.TERMS_CONDITIONS')">
+        <div class="item dark-text-color" (click)="goTo('AGB')">
           <span>{{'MENU_SIDE.TERMS_CONDITIONS' | translate}}</span>
         </div>
-        <div class="item" (click)="someMethods('MENU_SIDE.IMPRINT')">
+        <div class="item" (click)="goTo('IMPRINT')">
           <span>{{'MENU_SIDE.IMPRINT' | translate}}</span>
         </div>
       </div>
