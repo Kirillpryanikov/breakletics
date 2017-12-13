@@ -27,7 +27,8 @@ import {
   AgbComponent,
   ImprintComponent,
   DeImprintComponent,
-  EnImprintComponent
+  EnImprintComponent,
+  ADLeyersComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -67,6 +68,7 @@ const components = [
   ImprintComponent,
   DeImprintComponent,
   EnImprintComponent,
+  ADLeyersComponent
 ];
 
 @NgModule({
