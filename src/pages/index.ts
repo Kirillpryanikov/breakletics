@@ -27,3 +27,5 @@ export * from './imprint/imprint.component';
 export * from './imprint/de/de.component';
 export * from './imprint/en/en.component';
 export * from './ad.leyers/ad.leyers.component';
+export * from './ad.leyers/de/ad.leyers.component';
+export * from './ad.leyers/en/ad.leyers.component';

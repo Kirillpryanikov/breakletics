@@ -9,8 +9,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {
   WelcomePageComponent,
   TabsComponent,
-  SettingsComponent
 } from '../pages/index'
+import {AuthorizationService} from "../share/Authorization.service";
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +28,8 @@ export class MyApp implements OnInit{
               private translate: TranslateService,
               private nativeStorage: NativeStorage,
               private screenOrientation: ScreenOrientation,
-              private globalization: Globalization) {
+              private globalization: Globalization,
+              private authService: AuthorizationService) {
     this.platform = platform;
     this.initializeApp();
   }
@@ -41,7 +42,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }
@@ -71,6 +72,7 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('user')
       .then(res => {
         if(res){
+          this.authService.session.start(res);
           this.rootPage = TabsComponent;
         } else {
           this.rootPage = WelcomePageComponent;
@@ -79,7 +81,7 @@ export class MyApp implements OnInit{
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = WelcomePageComponent ;
       })
   }
 }

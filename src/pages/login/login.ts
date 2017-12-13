@@ -11,7 +11,7 @@ import {
 } from '../index';
 import { Subscription } from "rxjs/Subscription";
 import {RegisterPageComponent} from "../register/register";
-import { LoginService } from './login.service';
+import { AuthorizationService } from './../../share/Authorization.service';
 
 @Component({
   selector: 'page-login',
@@ -25,7 +25,7 @@ export class LoginPageComponent implements OnDestroy {
   private loginObservable: Subscription;
 
   constructor(private navCtrl: NavController,
-              private service: LoginService,
+              private service: AuthorizationService,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController) {}

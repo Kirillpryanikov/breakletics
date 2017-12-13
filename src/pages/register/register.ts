@@ -2,7 +2,7 @@ import { Component, ViewChild, OnDestroy } from '@angular/core';
 import { NavController, Slides, LoadingController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
-import { LoginService } from '../login/login.service';
+import { AuthorizationService } from '../../share/Authorization.service';
 import { TabsComponent } from '../index';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
@@ -25,7 +25,7 @@ export class RegisterPageComponent implements OnDestroy{
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
               private nativeStorage: NativeStorage,
-              private loginService: LoginService) {}
+              private loginService: AuthorizationService) {}
 
   goNext() {
     this.slider.slideNext();

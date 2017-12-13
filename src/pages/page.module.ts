@@ -28,11 +28,12 @@ import {
   ImprintComponent,
   DeImprintComponent,
   EnImprintComponent,
-  ADLeyersComponent
+  ADLeyersComponent,
+  DeADLeyersComponent,
+  EnADLeyersComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
-import { LoginService } from './login/login.service';
 import { DashbordService } from './dashboard/dashboard.service';
 import { ExtraQuestionsService } from './extra.questions/extra.qustetions.service';
 import { ConfigService } from './config.service';
@@ -42,6 +43,7 @@ import { WarmupService } from './warmup/warmup.service';
 import { VideoListService } from "./video.list/video.list.service";
 import { Keyboard } from '@ionic-native/keyboard';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { AuthorizationService } from './../share/Authorization.service';
 
 const components = [
   DashboardComponent,
@@ -68,7 +70,9 @@ const components = [
   ImprintComponent,
   DeImprintComponent,
   EnImprintComponent,
-  ADLeyersComponent
+  ADLeyersComponent,
+  DeADLeyersComponent,
+  EnADLeyersComponent
 ];
 
 @NgModule({
@@ -79,7 +83,6 @@ const components = [
   ],
   entryComponents: components,
   providers: [
-    LoginService,
     RegisterService,
     ExtraQuestionsService,
     ConfigService,
@@ -90,7 +93,8 @@ const components = [
     VideoListService,
     Keyboard,
     StatusBar,
-    InAppBrowser
+    InAppBrowser,
+    AuthorizationService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

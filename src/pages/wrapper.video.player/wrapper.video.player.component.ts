@@ -1,9 +1,14 @@
 import {Component, ElementRef, ViewChild, OnChanges, SimpleChanges, Input, OnInit, OnDestroy } from '@angular/core';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
-import { Platform, NavParams, ViewController } from 'ionic-angular';
+import {Platform, NavParams, ViewController, ModalController} from 'ionic-angular';
 import Player from '@vimeo/player';
 import { StatusBar } from '@ionic-native/status-bar';
+import {
+  ADLeyersComponent
+} from '../index';
+import {User} from "../../share/User";
+import {AuthorizationService} from "../../share/Authorization.service";
 
 @Component({
   selector: 'wrapper-player',
@@ -18,18 +23,20 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   private player;
   private videoParam;
-
+  public user: User;
   constructor(private platform: Platform,
               private navParams: NavParams,
               private screenOrientation: ScreenOrientation,
               private viewController: ViewController,
-              private statusBar: StatusBar) {}
+              private statusBar: StatusBar,
+              private modalCtrl: ModalController,
+              private userService: AuthorizationService) {}
 
   ngOnInit() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
     this.videoParam = this.navParams.get('video');
     this.statusBar.hide();
-
+    this.user = this.userService.user.get();
     if(this.videoParam) {
       this.getVideo();
     }
@@ -99,6 +106,9 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.player = new Player(this.iFrameSecond.nativeElement, options);
     this.play();
     this.player.on('ended', (data)=> {
+
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      this.modalCtrl.create(ADLeyersComponent).present();
       this.close();
     });
   }
