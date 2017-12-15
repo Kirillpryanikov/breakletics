@@ -1,0 +1,171 @@
+@import "../../../theme/main";
+
+$height-form: calc(100% - 56px);
+$padding-input-field: 30px 15px 12px 0;
+$padding-block-password-forgotten: 20px 15px 5px 15px;
+$padding-block-handler-submit: 20px 15px 15px 15px;
+
+de-plusmember {
+  .top-right,
+  .bottom-left {
+    position: absolute;
+    z-index: -1;
+  }
+  .top-right {
+    top:0;
+    right: 0;
+    width: 10.82rem;
+    z-index: 9;
+  }
+  font-family: Roboto;
+  .header-md:after, .header-ios:after {
+    background-image: none !important;
+    content: '';
+  }
+  ion-header {
+    @include setFlexStyles(flex-start);
+    //height: $height-header;
+    color: $header-back-color;
+    ion-icon {
+      color: $header-back-color;
+    }
+    .bar-button-md, .bar-button-ios {
+      font-size: 1.8rem;
+      margin-left: 5px;
+    }
+  }
+
+  ion-content {
+    .divider {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(to right, #12b4e7, #e7102b);
+    }
+    .container {
+      width: 100%;
+      position: relative;
+      background-position: center;
+      background-size: cover;
+    }
+    .hero {
+      height: 100vh;
+      background: url("../assets/imgs/Herobg.jpg");
+      background-position: center;
+      background-size: cover;
+      span {
+        display: block;
+      }
+      .content-inner {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        text-align: center;
+        bottom: 3.57rem;
+        @include setFlexStyles();
+        flex-direction: column;
+      }
+      .sub-title {
+        margin-bottom: 2.39rem;
+        font-size: 2.5rem;
+      }
+      .top-title {
+        margin-bottom: 3.21rem;
+      }
+      .handler {
+        margin-bottom: 2.14rem;
+      }
+      img {
+        width: 13%;
+      }
+    }
+    .partners{
+      background: url('../assets/imgs/login-bg.jpg');
+      background-size: cover;
+      background-position: bottom;
+      .content-inner {
+        background: linear-gradient(to right, #12b4e7, #e7102b);
+      }
+      .banners {
+        width: 100%;
+        max-height: 32vh;
+      }
+      .head-title {
+        padding: 1.85rem 0;
+        text-align: center;
+        font-size: 1.0rem;
+      }
+    }
+
+
+    height: 100vh;
+    @include setFlexStyles();
+    color: #fff;
+    text-align: center;
+    span {
+      display: block;
+    }
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      width: 18.14rem;
+    }
+    .gutschein-wrapper {
+      text-align: center;
+    }
+    .gutschein {
+      width: 57%;
+      height: auto;
+      margin: 5.57rem auto 1.78rem auto;
+    }
+    .top-title {      width: 100%;
+      color: #fff;
+      font-size: 1.42rem;
+      line-height: 1.62rem;
+      text-align: center;
+    }
+    .sub-title {
+      font-size: 2.85rem;
+      letter-spacing: 2px;
+      font-weight: bold;
+      color: #a4a4a4;
+      text-align: center;
+      text-transform: uppercase;
+      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //padding: 0px 4rem;
+      margin: 0px auto 1.5rem auto;
+    }
+    .banner-list {
+      display: block;
+      clear: both;
+      width: 74%;
+      margin: 1.4rem auto 4.6rem auto;
+      text-align: center;
+      @include setFlexStyles(space-between);
+      img {
+        width: 30%;
+      }
+    }
+
+    .handler {
+      @include setFlexStyles();
+      width: 100%;
+      margin-top: 0.9rem;
+      button {
+        width: 57%;
+        padding: 1.5rem 0;
+        font-size: 1.92rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        color: #1a1b1b;
+        text-transform: uppercase;
+        font-weight: bold;
+        align-self: center;
+      }
+    }
+  }
+}

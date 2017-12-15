@@ -6,9 +6,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Globalization } from '@ionic-native/globalization';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 import {
   WelcomePageComponent,
   TabsComponent,
+  DePlusmemberComponent
 } from '../pages/index'
 import {AuthorizationService} from "../share/Authorization.service";
 
@@ -73,15 +75,15 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = TabsComponent;
+          this.rootPage = DePlusmemberComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = DePlusmemberComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = WelcomePageComponent ;
+        this.rootPage = DePlusmemberComponent ;
       })
   }
 }

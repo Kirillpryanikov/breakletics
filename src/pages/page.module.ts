@@ -30,7 +30,9 @@ import {
   EnImprintComponent,
   ADLeyersComponent,
   DeADLeyersComponent,
-  EnADLeyersComponent
+  EnADLeyersComponent,
+  PlusmemberComponent,
+  DePlusmemberComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -72,7 +74,9 @@ const components = [
   EnImprintComponent,
   ADLeyersComponent,
   DeADLeyersComponent,
-  EnADLeyersComponent
+  EnADLeyersComponent,
+  PlusmemberComponent,
+  DePlusmemberComponent
 ];
 
 @NgModule({

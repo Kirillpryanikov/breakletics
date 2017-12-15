@@ -1,12 +1,13 @@
 export class User {
   id: number;
-  post_title: string;
-  date: string;
-  video_url: string;
-  warm_up_url: string;
-  video_img: string;
-  warm_up_img: string;
-  duration: string;
-  level: string;
-  tags: [any];
+  plusmember: string;
+  token: string;
+  user_display_name: string;
+  user_email: string;
+  user_nicename: string;
+  birthday: number;
+  where_are_you_from: string;
+  why_do_you_want_to_do_breakletics: string;
+  how_did_you_learn_about_breakletics: string;
+  how_often_do_you_train_per_week: string;
 };

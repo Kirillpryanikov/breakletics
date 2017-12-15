@@ -29,3 +29,5 @@ export * from './imprint/en/en.component';
 export * from './ad.leyers/ad.leyers.component';
 export * from './ad.leyers/de/ad.leyers.component';
 export * from './ad.leyers/en/ad.leyers.component';
+export * from './plusmember/plusmember.component';
+export * from './plusmember/de/de.plusmember.component';
