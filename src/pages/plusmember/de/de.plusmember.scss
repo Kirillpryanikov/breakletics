@@ -6,6 +6,7 @@ $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
 de-plusmember {
+  font-family: Roboto;
   .top-right,
   .bottom-left {
     position: absolute;
@@ -17,7 +18,6 @@ de-plusmember {
     width: 10.82rem;
     z-index: 9;
   }
-  font-family: Roboto;
   .header-md:after, .header-ios:after {
     background-image: none !important;
     content: '';
@@ -36,13 +36,69 @@ de-plusmember {
   }
 
   ion-content {
+    height: 100vh;
+    @include setFlexStyles();
+    color: #fff;
+    text-align: center;
+    span {
+      display: block;
+    }
+    .handler {
+      @include setFlexStyles();
+      width: 100%;
+      margin-top: 0.9rem;
+      button {
+        width: 57%;
+        padding: 1.5rem 0;
+        font-size: 1.92rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        color: #1a1b1b;
+        text-transform: uppercase;
+        font-weight: bold;
+        align-self: center;
+      }
+    }
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      width: 18.14rem;
+    }
+    .gutschein-wrapper {
+      text-align: center;
+    }
+    .gutschein {
+      width: 57%;
+      height: auto;
+      margin: 5.57rem auto 1.78rem auto;
+    }
+    .top-title {      width: 100%;
+      color: #fff;
+      font-size: 1.42rem;
+      line-height: 1.62rem;
+      text-align: center;
+    }
+    .sub-title {
+      font-size: 2.85rem;
+      letter-spacing: 2px;
+      font-weight: bold;
+      color: #a4a4a4;
+      text-align: center;
+      text-transform: uppercase;
+      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //padding: 0px 4rem;
+      margin: 0px auto 1.5rem auto;
+    }
+
     .divider {
       position: absolute;
       bottom: 0;
       right: 0;
       height: 4px;
       width: 100%;
-      background: linear-gradient(to right, #12b4e7, #e7102b);
+      background: linear-gradient(to right, #e7102b, #12b4e7);
     }
     .container {
       width: 100%;
@@ -86,86 +142,271 @@ de-plusmember {
       background-size: cover;
       background-position: bottom;
       .content-inner {
-        background: linear-gradient(to right, #12b4e7, #e7102b);
+        background: linear-gradient(to right, rgba(231,16,43,0.4), rgba(18,180,231,0.4));
       }
       .banners {
         width: 100%;
         max-height: 32vh;
+        padding-bottom: 2.78rem;
+        img {
+          width: 82.7%;
+        }
       }
       .head-title {
         padding: 1.85rem 0;
         text-align: center;
-        font-size: 1.0rem;
+        font-size: 1.3rem;
+        color: #fff;
       }
     }
-
-
-    height: 100vh;
-    @include setFlexStyles();
-    color: #fff;
-    text-align: center;
-    span {
-      display: block;
-    }
-    .bottom-left {
-      bottom: 0;
-      left: 0;
-      width: 18.14rem;
-    }
-    .gutschein-wrapper {
-      text-align: center;
-    }
-    .gutschein {
-      width: 57%;
-      height: auto;
-      margin: 5.57rem auto 1.78rem auto;
-    }
-    .top-title {      width: 100%;
-      color: #fff;
-      font-size: 1.42rem;
-      line-height: 1.62rem;
-      text-align: center;
-    }
-    .sub-title {
-      font-size: 2.85rem;
-      letter-spacing: 2px;
-      font-weight: bold;
-      color: #a4a4a4;
-      text-align: center;
-      text-transform: uppercase;
-      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      //padding: 0px 4rem;
-      margin: 0px auto 1.5rem auto;
-    }
-    .banner-list {
-      display: block;
-      clear: both;
-      width: 74%;
-      margin: 1.4rem auto 4.6rem auto;
-      text-align: center;
-      @include setFlexStyles(space-between);
-      img {
-        width: 30%;
-      }
-    }
-
-    .handler {
-      @include setFlexStyles();
+    .slider-block {
+      background: url("../assets/imgs/dark-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 4.72rem 2.5rem;
       width: 100%;
-      margin-top: 0.9rem;
-      button {
-        width: 57%;
-        padding: 1.5rem 0;
-        font-size: 1.92rem;
+      .avatar-wrapper {
+        margin: auto;
+        margin-bottom: 1.43rem;
+        width: 9.43rem;
+        height: 9.43rem;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: 9;
+        @include setFlexStyles();
+        background: linear-gradient(to right, #e7102b, #12b4e7);
+        //border: 0.29rem solid transparent;
+        box-sizing: border-box;
+        padding: 4px;
+        .avatar {
+          background-size: cover;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+
+      .slider-top {
+        color: #7b7b7b;
+        font-size: 1.5rem;
+      }
+      .slider-sub-title {
+        color: #dfdee1;
+        font-size: 2.27rem;
+        margin: 1.79rem 0;
+      }
+      .name {
+        font-size: 1.96rem;
         letter-spacing: 2px;
-        background-color: #fff;
-        color: #1a1b1b;
-        text-transform: uppercase;
         font-weight: bold;
-        align-self: center;
+        color: #a4a4a4;
+        text-align: center;
+        text-transform: uppercase;
+        background-image:linear-gradient(90deg,#e7102b, #12b4e7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        //padding: 0px 4rem;
+        margin: 0px auto 1.5rem auto;
+      }
+      .date {
+        font-size: 1.25rem;
+        color: #7c7c7c;
+      }
+      .description {
+        font-size: 1.78rem;
+        color: #dfdee1;
+        padding: 4.78rem 4.36rem;
+        text-align: center;
+        position: relative;
+        &:after,&:before {
+          content: '';
+          display: block;
+          width: 4.34rem;
+          height: 4.5rem;
+          position: absolute;
+          opacity: 0.25;
+        }
+        &:before {
+          top: 0px;
+          right: 0px;
+          background: url("../assets/imgs/coma-right.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+
+        }&:after {
+          bottom: 0px;
+          left: 0px;
+          background: url("../assets/imgs/coma-left.png");
+          background-size: contain;
+         background-repeat: no-repeat;
+       }
+      }
+      .slider {
+        color: #fff;
+        width: 100%;
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+          width: 10px;
+          height: 10px;
+        }
+        .swiper-pagination-bullet {
+          background: #fff;
+          opacity: 1;
+          width: 5px;
+          height: 5px;
+        }
+        .swiper-pagination {
+          @include setFlexStyles();
+        }
       }
     }
+    .benefits {
+      background: url("../assets/imgs/dark-bg.jpg");
+      background-size: cover;
+      background-position: center;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        height: 7.25rem;
+        display: block;
+        background: url('../assets/imgs/before-benefis.png');
+        background-size: cover;
+      }
+      width: 100%;
+      .content-inner {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(223,225,222,.1);
+        padding: 4.72rem 2.5rem 7.22rem 2.5rem;
+      }
+      .benefits-title,
+      .benefits-subtitle {
+        font-size: 3.24rem;
+        color: #dfdee1;
+        text-align: center;
+        font-weight: bold;
+      }
+      .benefits-subtitle {
+        margin-bottom: 5.18rem;
+      }
+      .benefit {
+        margin: 0 0.43rem;
+        text-align: left;
+        padding: 0 0 1.92rem 3.93rem;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          left: 5px;
+          top: 5px;
+          content: '';
+          display: block;
+          background: url('../assets/imgs/checked.png');
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 2rem;
+          height: 2rem;
+          
+        }
+        .benefit-title {
+          font-size: 1.43rem;
+          background-image:linear-gradient(90deg,#e7102b, #12b4e7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: 3px;
+        }
+        .benefit-subtitle {
+          color: #dfdee1;
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .price {
+      background: url("../assets/imgs/dark-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 14.5rem 1.7rem 03.2rem 1.7rem;
+      color: #fff;
+      .risk {
+        font-size: 1.96rem;
+        @include setFlexStyles();
+        text-transform: uppercase;
+        margin-bottom: 3.21rem;
+        img {
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-right: 0.86rem;
+        }
+      }
+      .price-title {
+        font-size: 7.14rem;
+        margin-bottom: 2.5rem;
+        font-weight: bold;
+      }
+      .price-subtitle {
+        font-size: 1.43rem;
+        margin-bottom: 4.71rem;
+      }
+      .prices-wrapper{
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 0.428rem solid #fff;
+        @include setFlexStyles();
+        flex-direction: row;
+        margin-bottom: 0.71rem;
+        .left {
+          @include setFlexStyles(space-between);
+          flex-direction: row;
+          text-align: left;
+          display: flex;
+          width: 81%;
+          margin-top: 2rem;
+          margin-bottom: 1.78rem;
+          span:first-child {
+            margin: 0 2.5rem 0 1.8rem;
+            font-size: 1.78rem;
+            text-transform: uppercase;
+          }
+          .pre-amount {
+            font-size: 1.25rem;
+            align-self: flex-start;
+            text-transform: uppercase;
+          }
+          .amount{
+            font-size: 3.07rem;
+            text-transform: uppercase;
+          }
+          .amount-after {
+            font-size: 1.214rem;
+            text-transform: uppercase;
+            margin-right: 0.71rem;
+          }
+        }
+        .right {
+          width: 19%;
+          background-color: #fff;
+          height: 100%;
+          display: block;
+          .right-inner {
+            height: 100%;
+            width: 100%;
+            display: block;
+          }
+        }
+
+      }
+
+    }
+
   }
 }

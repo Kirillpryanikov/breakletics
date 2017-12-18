@@ -3,6 +3,7 @@ import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
 
+
 import {
   LoginPageComponent,
   DashboardComponent,
@@ -46,6 +47,7 @@ import { VideoListService } from "./video.list/video.list.service";
 import { Keyboard } from '@ionic-native/keyboard';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AuthorizationService } from './../share/Authorization.service';
+import { PlusmemberService } from './plusmember/plusmember.service';
 
 const components = [
   DashboardComponent,
@@ -98,7 +100,8 @@ const components = [
     Keyboard,
     StatusBar,
     InAppBrowser,
-    AuthorizationService
+    AuthorizationService,
+    PlusmemberService
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
