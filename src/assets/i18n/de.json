@@ -38,8 +38,12 @@
     }
   },
   "WELCOME_PAGE": {
-    "SLIDE_TITLE": "Das neue Lieblings-Workout von Lena Gercke",
-    "SLIDE_DESC": "- InStyle uber Breakletis",
+    "SLIDE1_TITLE": "„DAS NEUE LIEBLINGS-WORKOUT VON LENA GERCKE“",
+    "SLIDE1_DESC": "- InStyle über Breakletis",
+    "SLIDE2_TITLE": "NIE MEHR LANGEWEILE BEIM TRAINING",
+    "SLIDE2_DESC": "Mit dem abwechslungsreichsten Workout der Welt",
+    "SLIDE3_TITLE": "JEDER KANN MITMACHEN",
+    "SLIDE3_DESC": "Selbst Anfänger und Grobmotoriker lernen die Moves in Sekunden",
     "REGISTER_BTN": "Loslegen!",
     "LOGIN_BTN": "Login",
     "PARTNER": "proud partner of"

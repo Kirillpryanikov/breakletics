@@ -46,6 +46,7 @@ page-dashboard {
   }
 
   ion-content {
+
     .container-dashboard{
       background-color: $dashboard-background;
       height: 100%;
@@ -164,6 +165,7 @@ page-dashboard {
           }
         }
         .footer-item {
+          font-family: Roboto;
           height: 69%;
           background: url(../assets/imgs/foote-bg.jpg);
           background-size: cover;
@@ -177,6 +179,28 @@ page-dashboard {
             text-align: center;
             @include textTitle();
             text-shadow: none !important;
+          }
+          .en {
+            h2 {
+              opacity: 0.8;
+              text-align: center;
+              @include textTitle();
+              text-shadow: none !important;
+              margin-top: 2%;
+              font-weight: bold;
+
+            }
+          }
+          .risk {
+            font-size: 1.3rem;
+            @include setFlexStyles();
+            text-transform: uppercase;
+            margin-top: 1%;
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+              margin-right: 0.86rem;
+            }
           }
         }
         height: $height-block-footer;

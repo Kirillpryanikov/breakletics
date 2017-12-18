@@ -22,7 +22,6 @@ export class AuthorizationService {
   user = {
     that: this,
     get(){
-      console.log('this:: ', this.that);
       console.log('User Get:: ',this.that._user);
       if(this.that._user) {
         return this.that._user;

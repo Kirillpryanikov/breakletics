@@ -16,7 +16,9 @@ export class TabsComponent implements OnInit, OnDestroy {
   constructor(public navCtrl: NavController) {
   }
 
-  ngOnInit(){}
+  ngOnInit(){
+    // Tabs.select(0);
+  }
 
   ngOnDestroy(){}
 }

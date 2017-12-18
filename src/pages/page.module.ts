@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { IonicModule } from 'ionic-angular';
+import { IonicModule, Tabs } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -104,7 +104,8 @@ const components = [
     InAppBrowser,
     AuthorizationService,
     PlusmemberService,
-    LaunchNavigator
+    LaunchNavigator,
+    Tabs
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

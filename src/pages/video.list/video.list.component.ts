@@ -50,7 +50,6 @@ export class VideoListComponent implements OnInit {
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
     console.log('this.levels', this.levels);
-    console.log('this.page :: ', this.page);
     this.user = this.authService.user.get();
     // this.presentLoading();
   }
@@ -103,8 +102,8 @@ export class VideoListComponent implements OnInit {
   }
 
   goToDash() {
-    // this.navCtrl.setRoot(TabsComponent);
-      this.app.getRootNav().setRoot(TabsComponent);
+    this.navCtrl.setRoot(TabsComponent);
+      // this.app.getRootNav().setRoot(TabsComponent);
   }
 
   ionViewWillEnter() {

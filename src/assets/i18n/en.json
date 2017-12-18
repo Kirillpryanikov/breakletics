@@ -32,10 +32,14 @@
     }
   },
   "WELCOME_PAGE": {
-    "SLIDE_TITLE": "The new favorite workout of Lena Gercke",
-    "SLIDE_DESC": "- InStyle about Breakletis",
+    "SLIDE1_TITLE": "NEVER AGAIN HAVE A BORING WORKOUT",
+    "SLIDE1_DESC": "With the most varied workout of the planet",
+    "SLIDE2_TITLE": "ANY ONE CAN JOIN!",
+    "SLIDE2_DESC": "Even beginners with two left feet can learn our exercises in seconds!",
+    "SLIDE3_TITLE": "BECOME FIT AND ATHLETIC",
+    "SLIDE3_DESC": "With functional and effective movements",
+    "REGISTER_BTN": "Loslegen!",
     "LOGIN_BTN": "Login",
-    "REGISTER_BTN": "Let's start!",
     "PARTNER": "proud partner of"
   },
   "GUIDE_PAGE": {

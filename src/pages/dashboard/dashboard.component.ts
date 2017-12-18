@@ -106,7 +106,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   goTo(page){
-    console.log('page', page);
     switch (page) {
       case 'WorkoutComponent': {
         this.navCtrl.setRoot(WorkoutComponent);

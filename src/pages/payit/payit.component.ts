@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
+import {ConfigService} from "../config.service";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
 
 @Component({
   selector: 'pay-it',
@@ -7,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PayItComponent implements OnInit {
+  public language;
+  constructor(
+    // private translate: TranslateService,
+    private iab: InAppBrowser
+  ) {}
 
-  constructor() {}
-
-  ngOnInit(){}
+  ngOnInit(){
+    // this.language = this.translate.currentLang;
+  }
+  pay() {
+    const browser = this.iab.create(ConfigService.CONFIG.payUrl, '_system');
+  }
 }

@@ -10,11 +10,14 @@ import {
   ExercisesComponent,
   WorkoutComponent,
   ImprintComponent,
-  PlusmemberComponent
+  PlusmemberComponent,
+  ADLeyersComponent
 } from "../index";
 
 import {AgbComponent} from "../agb/agb.component";
 import {TranslateService} from "@ngx-translate/core";
+import {User} from "../../share/User";
+import {AuthorizationService} from "../../share/authorization.service";
 
 @Component({
   selector: 'menu-side-component',
@@ -23,15 +26,17 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class MenuSideComponent implements OnInit {
   public language;
-
+  public user: User;
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private navParams: NavParams,
               private iab: InAppBrowser,
-              private translate: TranslateService) {}
+              private translate: TranslateService,
+              private auth: AuthorizationService) {}
 
   ngOnInit(){
       this.language = this.translate.currentLang;
+      this.user = this.auth.user.get();
   }
 
   someMethods(title) {
@@ -40,6 +45,10 @@ export class MenuSideComponent implements OnInit {
 
   goTo(page){
     switch (page) {
+      case 'XMAS_DEAL': {
+        this.modalCtrl.create(ADLeyersComponent).present();
+        break;
+      }
       case 'PLUSMEMBER': {
         this.modalCtrl.create(PlusmemberComponent).present();
         break;

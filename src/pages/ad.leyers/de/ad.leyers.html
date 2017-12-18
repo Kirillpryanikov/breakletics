@@ -1,7 +1,7 @@
 <ion-header transparent>
   <ion-navbar hideBackButton transparent>
     <ion-buttons left>
-      <button ion-button navPop icon-only>
+      <button ion-button icon-only (click)="close()">
         <ion-icon name="ios-arrow-round-back"></ion-icon>
       </button>
     </ion-buttons>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="handler">
-    <button type="submit" >Zu den xmas<br>angeboten</button>
+    <button type="submit" (click)="plusmember()">Zu den xmas<br>angeboten</button>
   </div>
 
 

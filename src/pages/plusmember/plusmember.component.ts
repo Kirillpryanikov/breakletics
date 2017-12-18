@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {App, NavController, ViewController} from 'ionic-angular';
 import {TranslateService} from "@ngx-translate/core";
 import {PlusmemberService} from "./plusmember.service";
-import {TabsComponent} from "../tabs/tabs.component";
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import {InAppBrowser} from "@ionic-native/in-app-browser";
 
 @Component({
   selector: 'plusmember',
@@ -18,13 +19,17 @@ export class PlusmemberComponent implements OnInit {
               private viewCtrl: ViewController,
               private translate: TranslateService,
               private service: PlusmemberService,
-              private app: App,
+              private launchNavigator: LaunchNavigator,
+              private iab: InAppBrowser,
   ) {}
 
   ngOnInit(){
     this.language = this.translate.currentLang;
-      this.testimonials = this.service.testimonials();
+      this.testimonials = this.service.testimonials(this.language);
       this.benefits = this.service.benefits(this.language);
   }
 
+  goToLink(url) {
+    const browser = this.iab.create(url, '_system');
+  }
 }

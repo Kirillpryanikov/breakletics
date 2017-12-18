@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 @Component({
@@ -9,6 +9,8 @@ import {NavController, NavParams, ViewController} from 'ionic-angular';
 export class DePlusmemberComponent implements OnInit {
   @Input() testimonials: any[];
   @Input() benefits: any[];
+  @Output() goToLink = new EventEmitter<boolean>();
+
   constructor(public navCtrl: NavController,
               private viewCtrl: ViewController,
               ) {}
@@ -19,4 +21,9 @@ export class DePlusmemberComponent implements OnInit {
   close() {
     this.viewCtrl.dismiss();
   }
+
+  open(link){
+    this.goToLink.emit(link);
+  }
+
 }

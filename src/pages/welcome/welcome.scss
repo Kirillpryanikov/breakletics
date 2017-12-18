@@ -62,14 +62,18 @@ page-welcome {
     .slider {
       height: 49vh;
       color: #fff;
-      width: 100%;
+      width: 90%;
+      @media (max-width: 320px) {
+        width: 100%;
+      }
       h2 {
         font-family: Roboto;
+        font-weight: bold;
         @media (max-width: 320px) {
-          line-height: 3.5rem;
-          font-size: 3.5rem;
+          //line-height: 3.0rem;
+          font-size: 3.0rem;
         }
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: bold;
       }
       span {

@@ -38,9 +38,13 @@
       <div class="head">
         <h3>{{'DASHBOARD.ZUMBA' | translate }}</h3>
       </div>
-      <div class="footer-item">
+      <div class="footer-item" *ngIf="language === 'de'">
         <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
         <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
+      </div>
+      <div class="footer-item en" *ngIf="language !== 'de'">
+        <h2>4 weeks for 1 usd</h2>
+        <div class="risk"><img src="../assets/imgs/approved-signal.png" alt="">100% RISKFREE</div>
       </div>
     </div>
     <pay-it></pay-it>
