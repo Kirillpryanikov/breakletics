@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NavController, ModalController, LoadingController, NavParams} from 'ionic-angular';
+import {NavController, ModalController, LoadingController, NavParams, App} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {ConfigService} from "../config.service";
 import { Video } from '../../share/Video';
@@ -40,7 +40,8 @@ export class VideoListComponent implements OnInit {
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
               private service: VideoListService,
-              private keyboard: Keyboard) {}
+              private keyboard: Keyboard,
+              private app: App) {}
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
@@ -53,7 +54,6 @@ export class VideoListComponent implements OnInit {
   getData(req) {
     this.vidoeObservable = this.service[this.page](req).subscribe(res => {
       this.videos = res;
-      console.log('Answer :: ', res);
     })
   }
 
@@ -88,14 +88,14 @@ export class VideoListComponent implements OnInit {
         this.loading.dismiss();
       }
       catch (exception) {
-        console.log(exception)
       }
       this.loading = null;
     }
   }
 
   goToDash() {
-    this.navCtrl.setRoot(TabsComponent);
+    // this.navCtrl.setRoot(TabsComponent);
+      this.app.getRootNav().setRoot(TabsComponent);
   }
 
   ionViewWillEnter() {

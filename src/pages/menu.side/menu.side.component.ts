@@ -12,6 +12,7 @@ import {
   ImprintComponent
 } from "../index";
 import {AgbComponent} from "../agb/agb.component";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'menu-side-component',
@@ -19,13 +20,15 @@ import {AgbComponent} from "../agb/agb.component";
   styleUrls: ['/menu.side.scss']
 })
 export class MenuSideComponent implements OnInit {
-  private user:any;
+  private user:any
+  public language;
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
-              private iab: InAppBrowser) {}
+              private iab: InAppBrowser,
+              private translate: TranslateService) {}
 
   ngOnInit(){
-
+      this.language = this.translate.currentLang;
   }
 
   someMethods(title) {
@@ -39,15 +42,15 @@ export class MenuSideComponent implements OnInit {
         break;
       }
       case 'WorkoutComponent': {
-        this.navCtrl.push(WorkoutComponent);
+        this.navCtrl.setRoot(WorkoutComponent);
         break;
       }
       case 'ExercisesComponent': {
-        this.navCtrl.push(ExercisesComponent);
+        this.navCtrl.setRoot(ExercisesComponent);
         break;
       }
       case 'WarmupComponent': {
-        this.navCtrl.push(WarmupComponent);
+        this.navCtrl.setRoot(WarmupComponent);
         break;
       }
       case 'AGB': {

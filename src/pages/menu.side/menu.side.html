@@ -45,7 +45,7 @@
         <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_SHOP')" *ngIf="false">
           <span>{{'MENU_SIDE.BREAKLETICS_SHOP' | translate}}</span>
         </div>
-        <div class="item" (click)="goToLink('http://breakletics.de/transformation/')">
+        <div class="item" (click)="goToLink('http://breakletics.de/transformation/')" *ngIf="language === 'de'">
           <span>{{'MENU_SIDE.TRANSFORMATION' | translate}}</span>
         </div>
         <div class="item dark-text-color" (click)="goTo('AGB')">
