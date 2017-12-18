@@ -41,28 +41,53 @@ export class PlusmemberService {
     ];
   };
 
-  benefits(){
-    return [
-        {
-            title: "Effektives funktionales Training",
-            description: "Erhalte einen athletischen Körper, der auch wirklich was kann!"
-        },
-        {
-            title: "ABWECHSLUNG OHNE ENDE",
-            description: "48 Workouts, 36 Exercises, 4 Warm Up, 4 Cool Downs!"
-        },
-        {
-            title: "FÜR ABSOLUT JEDE/N",
-            description: "für absolute Anfänger bis Fitness Freaks!"
-        },
-        {
-            title: "NIE MEHR LANGEWEILE BEIM TRAINING",
-            description: "Es werden regelmäßig neue Workouts und Features entwickelt!"
-        },
-        {
-            title: "MOTIVIERENDE NEUE MUSIK",
-            description: "Es gibt regelmäßig neue fette Power-Beats!"
-        }
-    ];
+  benefits(language){
+      if(language === 'de'){
+            return [
+                {
+                    title: "Effektives funktionales Training",
+                    description: "Erhalte einen athletischen Körper, der auch wirklich was kann!"
+                },
+                {
+                    title: "ABWECHSLUNG OHNE ENDE",
+                    description: "48 Workouts, 36 Exercises, 4 Warm Up, 4 Cool Downs!"
+                },
+                {
+                    title: "FÜR ABSOLUT JEDE/N",
+                    description: "für absolute Anfänger bis Fitness Freaks!"
+                },
+                {
+                    title: "NIE MEHR LANGEWEILE BEIM TRAINING",
+                    description: "Es werden regelmäßig neue Workouts und Features entwickelt!"
+                },
+                {
+                    title: "MOTIVIERENDE NEUE MUSIK",
+                    description: "Es gibt regelmäßig neue fette Power-Beats!"
+                }
+            ];
+      } else {
+          return [
+              {
+                  title: "EFFECTIVE FUNCTIONAL TRAINING",
+                  description: "Get an athletic body which not only looks fantastic but which is also able to move!"
+              },
+              {
+                  title: "ENDLESS VARIETY",
+                  description: "48 Workouts, 36 Exercises, 4 Warm Ups, 4 Cool Downs!"
+              },
+              {
+                  title: "ANYONE CAN DO IT",
+                  description: "For absolute beginners to fitness freaks!"
+              },
+              {
+                  title: "IT NEVER EVER GET’S BORING",
+                  description: "Continuous updates with new workouts, exercises and even features!"
+              },
+              {
+                  title: "NEW FRESH MUSIC",
+                  description: "Train to new powerful beats!"
+              }
+          ];
+      }
   }
 }

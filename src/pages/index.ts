@@ -31,3 +31,4 @@ export * from './ad.leyers/de/ad.leyers.component';
 export * from './ad.leyers/en/ad.leyers.component';
 export * from './plusmember/plusmember.component';
 export * from './plusmember/de/de.plusmember.component';
+export * from './plusmember/en/en.plusmember.component';

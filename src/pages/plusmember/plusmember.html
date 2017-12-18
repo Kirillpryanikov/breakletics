@@ -1,6 +1,11 @@
 <ion-content>
-  <!--<en-ad-leyers *ngIf="language !== 'de'"></en-ad-leyers>-->
   <de-plusmember [testimonials]="testimonials"
                  [benefits]="benefits"
-                 *ngIf="testimonials"></de-plusmember>
+                 *ngIf="language === 'de'">
+  </de-plusmember>
+
+  <en-plusmember [testimonials]="testimonials"
+                 [benefits]="benefits"
+                 *ngIf="language !== 'de'">
+  </en-plusmember>
 </ion-content>

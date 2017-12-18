@@ -33,7 +33,8 @@ import {
   DeADLeyersComponent,
   EnADLeyersComponent,
   PlusmemberComponent,
-  DePlusmemberComponent
+  DePlusmemberComponent,
+  EnPlusmemberComponent
 } from './index';
 
 import { RegisterService } from './register/register.service';
@@ -78,7 +79,8 @@ const components = [
   DeADLeyersComponent,
   EnADLeyersComponent,
   PlusmemberComponent,
-  DePlusmemberComponent
+  DePlusmemberComponent,
+  EnPlusmemberComponent
 ];
 
 @NgModule({
@@ -101,7 +103,7 @@ const components = [
     StatusBar,
     InAppBrowser,
     AuthorizationService,
-    PlusmemberService
+    PlusmemberService,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

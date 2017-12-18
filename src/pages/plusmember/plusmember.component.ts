@@ -18,9 +18,9 @@ export class PlusmemberComponent implements OnInit {
               ) {}
 
   ngOnInit(){
-    // this.language = this.translate.currentLang;
+    this.language = this.translate.currentLang;
       this.testimonials = this.service.testimonials();
-      this.benefits = this.service.benefits();
+      this.benefits = this.service.benefits(this.language);
   }
 
   close() {

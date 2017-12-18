@@ -13,6 +13,7 @@ import {
     PlusmemberComponent
 } from '../pages/index'
 import {AuthorizationService} from "../share/Authorization.service";
+import {ExtraQuestionsComponent} from "../pages/extra.questions/extra.questions";
 
 @Component({
   templateUrl: 'app.html'
@@ -75,15 +76,15 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = PlusmemberComponent;
+          this.rootPage = ExtraQuestionsComponent;
         } else {
-          this.rootPage = PlusmemberComponent;
+          this.rootPage = ExtraQuestionsComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = PlusmemberComponent ;
+        this.rootPage = ExtraQuestionsComponent ;
       })
   }
 }
