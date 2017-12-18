@@ -40,6 +40,7 @@ export class AuthorizationService {
   session = {
     that: this,
     start(user){
+      console.log('session start ');
       this.that._user = user;
       this.that.nativeStorage.setItem('user', user);
     }

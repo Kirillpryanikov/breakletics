@@ -11,7 +11,7 @@ import {
 } from '../index';
 import { Subscription } from "rxjs/Subscription";
 import {RegisterPageComponent} from "../register/register";
-import { AuthorizationService } from './../../share/Authorization.service';
+import { AuthorizationService } from '../../share/authorization.service';
 
 @Component({
   selector: 'page-login',
@@ -98,7 +98,10 @@ export class LoginPageComponent implements OnDestroy {
 
   presentLoading(){
     if(!this.loading){
-      this.loading = this.loadingCtrl.create({});
+      this.loading = this.loadingCtrl.create({
+        spinner: 'crescent',
+        duration: 3000
+      });
       this.loading.present();
     }
   }

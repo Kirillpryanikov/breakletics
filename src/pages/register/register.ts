@@ -2,7 +2,7 @@ import { Component, ViewChild, OnDestroy } from '@angular/core';
 import { NavController, Slides, LoadingController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RegisterService } from './register.service';
-import { AuthorizationService } from '../../share/Authorization.service';
+import { AuthorizationService } from '../../share/authorization.service';
 import { TabsComponent } from '../index';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";

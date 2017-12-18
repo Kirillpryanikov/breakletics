@@ -16,22 +16,22 @@
     <form #extra="ngForm" (ngSubmit)="submit(extra)">
       <ion-list >
       <ion-item>
-        <ion-label floating for="date">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
-        <ion-datetime id="date" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" name="age" [(ngModel)]="extra.value.age">
+        <ion-label floating for="birthday">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
+        <ion-datetime id="birthday" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" name="birthday" ngModel>
         </ion-datetime>
 
       </ion-item>
 
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.LOCATION" | translate}}</ion-label>
-        <ion-select name="location" ngModel>
+        <ion-select name="where_are_you_from" ngModel>
           <ion-option value="na"></ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.MISSION.TITLE" | translate }}</ion-label>
-        <ion-select name="mission" ngModel>
+        <ion-select name="why_do_you_want_to_do_breakletics" ngModel>
           <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_1" | translate}}</ion-option>
           <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_2" | translate}}</ion-option>
           <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_3" | translate}}</ion-option>
@@ -42,7 +42,7 @@
       </ion-item>
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.HEAR.TITLE" | translate}}</ion-label>
-        <ion-select name="hear" ngModel>
+        <ion-select name="how_did_you_learn_about_breakletics" ngModel>
           <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_1" | translate}}</ion-option>
           <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_2" | translate}}</ion-option>
           <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_3" | translate}}</ion-option>
@@ -56,7 +56,7 @@
       </ion-item>
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.FIT.TITLE" | translate}}</ion-label>
-        <ion-select name="fit" ngModel>
+        <ion-select name="how_often_do_you_train_per_week" ngModel>
           <ion-option value="na"></ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_1' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_1" | translate}}</ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_2' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_2" | translate}}</ion-option>

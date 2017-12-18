@@ -269,23 +269,12 @@ en-plusmember {
       background-size: cover;
       background-position: center;
 
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left:0;
-        width: 100%;
-        height: 7.25rem;
-        display: block;
-        background: url('../assets/imgs/before-benefis.png');
-        background-size: cover;
-      }
       width: 100%;
       .content-inner {
         width: 100%;
         height: 100%;
         background-color: rgba(223,225,222,.1);
-        padding: 4.72rem 2.5rem 7.22rem 2.5rem;
+        padding: 4.72rem 2.5rem 1rem 2.5rem;
       }
       .benefits-title,
       .benefits-subtitle {
@@ -315,7 +304,7 @@ en-plusmember {
           background-repeat: no-repeat;
           width: 2rem;
           height: 2rem;
-          
+
         }
         .benefit-title {
           font-size: 1.23rem;
@@ -334,10 +323,17 @@ en-plusmember {
     }
 
     .price {
+      .content-inner {
+        background: url("../assets/imgs/plusmember-bay-bg.png");
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        padding: 14.5rem 2.7% 03.2rem 2.7%;
+
+      }
       background: url("../assets/imgs/dark-bg.jpg");
       background-size: cover;
       background-position: center;
-      padding: 14.5rem 2.7% 03.2rem 2.7%;
       color: #fff;
       .risk {
         font-size: 1.96rem;

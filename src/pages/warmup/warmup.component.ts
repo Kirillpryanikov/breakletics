@@ -44,7 +44,10 @@ export class WarmupComponent implements OnInit, OnDestroy {
 
   presentLoading(){
     if(!this.loading){
-      this.loading = this.loadingCtrl.create({});
+      this.loading = this.loadingCtrl.create({
+        spinner: 'crescent',
+        duration: 3000
+      });
       this.loading.present();
     }
   }

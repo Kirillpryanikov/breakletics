@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { GuideComponent, WrapperVideoPlayerComponent, WorkoutComponent, WelcomePageComponent, ExercisesComponent, WarmupComponent } from '../';
+import { GuideComponent, PlusmemberComponent, WrapperVideoPlayerComponent, WorkoutComponent, WelcomePageComponent, ExercisesComponent, WarmupComponent } from '../';
 import { DashbordService } from './dashboard.service';
 import { Subscription } from "rxjs/Subscription";
 
@@ -46,7 +46,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
-        this.presentGuideModal(this.user)
+        this.presentGuideModal(this.user);
       })
       .catch(err => {
         this.user = this.navParams.get('user');
@@ -109,15 +109,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
     console.log('page', page);
     switch (page) {
       case 'WorkoutComponent': {
-        page = WorkoutComponent;
+        this.navCtrl.setRoot(WorkoutComponent);
         break;
       }
       case 'ExercisesComponent': {
-        page = ExercisesComponent;
+        this.navCtrl.setRoot(ExercisesComponent);
+        break;
+      }
+      case 'plusmember': {
+        this.modalCtrl.create(PlusmemberComponent).present();
         break;
       }
       case 'WarmupComponent': {
-        page = WarmupComponent;
+        this.navCtrl.setRoot(WarmupComponent);
         break;
       }
       default: {
@@ -125,7 +129,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         break;
       }
     }
-    this.navCtrl.setRoot(page);
+
   }
 
   ngOnDestroy() {

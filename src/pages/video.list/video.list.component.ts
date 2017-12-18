@@ -13,6 +13,8 @@ import {
 } from '../index'
 import {Subscription} from "rxjs/Subscription";
 import {TabsComponent} from "../tabs/tabs.component";
+import {AuthorizationService} from "../../share/authorization.service";
+import {User} from "../../share/User";
 
 @Component({
   selector: 'video-list',
@@ -33,6 +35,7 @@ export class VideoListComponent implements OnInit {
   private tabBarElement: any;
   public levels;
   public selectFilters = undefined;
+  public user: User;
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -41,19 +44,22 @@ export class VideoListComponent implements OnInit {
               private navParams: NavParams,
               private service: VideoListService,
               private keyboard: Keyboard,
-              private app: App) {}
+              private app: App,
+              private authService: AuthorizationService) {}
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
     console.log('this.levels', this.levels);
     console.log('this.page :: ', this.page);
-    let user = this.navParams.get('user');
+    this.user = this.authService.user.get();
     // this.presentLoading();
   }
 
   getData(req) {
+    this.presentLoading();
     this.vidoeObservable = this.service[this.page](req).subscribe(res => {
       this.videos = res;
+      this.dismissLoading();
     })
   }
 
@@ -77,7 +83,10 @@ export class VideoListComponent implements OnInit {
 
   presentLoading(){
     if(!this.loading){
-      this.loading = this.loadingCtrl.create({});
+      this.loading = this.loadingCtrl.create({
+        spinner: 'crescent',
+        duration: 3000
+      });
       this.loading.present();
     }
   }

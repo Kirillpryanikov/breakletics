@@ -10,9 +10,10 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {
   WelcomePageComponent,
   TabsComponent,
-    PlusmemberComponent
-} from '../pages/index'
-import {AuthorizationService} from "../share/Authorization.service";
+  PlusmemberComponent
+} from '../pages/index';
+
+import {AuthorizationService} from "../share/authorization.service";
 import {ExtraQuestionsComponent} from "../pages/extra.questions/extra.questions";
 
 @Component({
@@ -76,15 +77,15 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = TabsComponent;
         } else {
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = WelcomePageComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = ExtraQuestionsComponent ;
+        this.rootPage = WelcomePageComponent ;
       })
   }
 }

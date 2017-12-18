@@ -3,7 +3,6 @@ import { IonicModule } from 'ionic-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatusBar } from '@ionic-native/status-bar';
 
-
 import {
   LoginPageComponent,
   DashboardComponent,
@@ -47,8 +46,9 @@ import { WarmupService } from './warmup/warmup.service';
 import { VideoListService } from "./video.list/video.list.service";
 import { Keyboard } from '@ionic-native/keyboard';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { AuthorizationService } from './../share/Authorization.service';
+import { AuthorizationService } from '../share/authorization.service';
 import { PlusmemberService } from './plusmember/plusmember.service';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 const components = [
   DashboardComponent,
@@ -104,6 +104,7 @@ const components = [
     InAppBrowser,
     AuthorizationService,
     PlusmemberService,
+    LaunchNavigator
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -8,7 +8,7 @@ import {
   ADLeyersComponent
 } from '../index';
 import {User} from "../../share/User";
-import {AuthorizationService} from "../../share/Authorization.service";
+import {AuthorizationService} from "../../share/authorization.service";
 
 @Component({
   selector: 'wrapper-player',

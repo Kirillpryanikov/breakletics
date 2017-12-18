@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {ModalController, NavController, NavParams} from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { ItemMenuSide } from '../item.menu.side/item.menu.side';
@@ -9,8 +9,10 @@ import {
   WarmupComponent,
   ExercisesComponent,
   WorkoutComponent,
-  ImprintComponent
+  ImprintComponent,
+  PlusmemberComponent
 } from "../index";
+
 import {AgbComponent} from "../agb/agb.component";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -20,9 +22,10 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['/menu.side.scss']
 })
 export class MenuSideComponent implements OnInit {
-  private user:any
   public language;
+
   constructor(public navCtrl: NavController,
+              private modalCtrl: ModalController,
               private navParams: NavParams,
               private iab: InAppBrowser,
               private translate: TranslateService) {}
@@ -37,6 +40,10 @@ export class MenuSideComponent implements OnInit {
 
   goTo(page){
     switch (page) {
+      case 'PLUSMEMBER': {
+        this.modalCtrl.create(PlusmemberComponent).present();
+        break;
+      }
       case 'MY_ACCOUNT': {
         this.navCtrl.push(SettingsComponent);
         break;

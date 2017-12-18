@@ -3,7 +3,7 @@
     <ion-header transparent>
       <ion-navbar hideBackButton transparent>
         <ion-buttons left>
-          <button ion-button navPop icon-only>
+          <button ion-button icon-only (click)="close()">
             <ion-icon name="ios-arrow-round-back"></ion-icon>
           </button>
         </ion-buttons>
@@ -65,46 +65,48 @@
         </div>
     </div>
     <div class="container price">
+      <div class="content-inner">
         <div class="risk"><img src="../assets/imgs/approved-signal.png" alt="">0% Risiko</div>
-        <div class="price-title">1 EUR</div>
-        <div class="price-subtitle">für den 1. Monat und wenn es dir gefällt, danach</div>
+          <div class="price-title">1 EUR</div>
+          <div class="price-subtitle">für den 1. Monat und wenn es dir gefällt, danach</div>
 
-        <div class="prices-wrapper">
-            <div class="left">
-                <div class="left-inner">
-                    <span>Jährlich</span>
-                    <span class="pre-amount">77,88 EUR</span>
-                    <span class="amount">6,49</span>
-                    <span class="amount-after">EUR /<br>Monat</span>
-                </div>
-            </div>
-            <div class="right">
-                <div class="right-inner">
-                    <span>Spare</span>
-                    <span> -35%</span>
-                </div>
-            </div>
-        </div>
-        <div class="prices-wrapper">
-            <div class="left">
-                <div class="left-inner">
-                    <span>Monatlich</span>
-                    <span class="pre-amount"><s>11,99 EUR</s></span>
-                    <span class="amount">9,99</span>
-                    <span class="amount-after">EUR /<br>Monat</span>
-                </div>
-            </div>
-            <div class="right">
-                <div class="right-inner">
-                    <span>Einführungs preis!</span>
-                </div>
-            </div>
-        </div>
+          <div class="prices-wrapper">
+              <div class="left">
+                  <div class="left-inner">
+                      <span>Jährlich</span>
+                      <span class="pre-amount">77,88 EUR</span>
+                      <span class="amount">6,49</span>
+                      <span class="amount-after">EUR /<br>Monat</span>
+                  </div>
+              </div>
+              <div class="right">
+                  <div class="right-inner">
+                      <span>Spare</span>
+                      <span> -35%</span>
+                  </div>
+              </div>
+          </div>
+          <div class="prices-wrapper">
+              <div class="left">
+                  <div class="left-inner">
+                      <span>Monatlich</span>
+                      <span class="pre-amount"><s>11,99 EUR</s></span>
+                      <span class="amount">9,99</span>
+                      <span class="amount-after">EUR /<br>Monat</span>
+                  </div>
+              </div>
+              <div class="right">
+                  <div class="right-inner">
+                      <span>Einführungs preis!</span>
+                  </div>
+              </div>
+          </div>
 
-        <div class="subtitle-after">
-            <span>Dein Abo verlängert sich automatisch um den gewählten Zeitraum. </span>
-            <span>Du kannst die Verlängerung jederzeit kündigen. </span>
-            <span>Die Abrechnung erfolgt in dem gewählten Intervall über Digistore24.</span>
-        </div>
+          <div class="subtitle-after">
+              <span>Dein Abo verlängert sich automatisch um den gewählten Zeitraum. </span>
+              <span>Du kannst die Verlängerung jederzeit kündigen. </span>
+              <span>Die Abrechnung erfolgt in dem gewählten Intervall über Digistore24.</span>
+          </div>
+      </div>
     </div>
 </ion-content>
