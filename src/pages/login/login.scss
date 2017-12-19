@@ -20,6 +20,7 @@ page-login {
     }
 
     form {
+      @include placeholderColor();
       @include setFlexStyles();
       height: $height-form;
       color: #fff;
@@ -44,7 +45,7 @@ page-login {
           border-bottom: 1px solid $white-opacity;
           padding: $padding-input-field;
           background: rgba(1,1,1,0);
-          color: $white-opacity;
+          color: #fff;
         }
       }
 

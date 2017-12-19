@@ -36,7 +36,6 @@ import {
   EnPlusmemberComponent
 } from './index';
 
-import { RegisterService } from './register/register.service';
 import { DashbordService } from './dashboard/dashboard.service';
 import { ExtraQuestionsService } from './extra.questions/extra.qustetions.service';
 import { ConfigService } from './config.service';
@@ -49,6 +48,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { AuthorizationService } from '../share/authorization.service';
 import { PlusmemberService } from './plusmember/plusmember.service';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthenticationInterceptor} from "../share/interceptor.service";
 
 const components = [
   DashboardComponent,
@@ -91,7 +92,6 @@ const components = [
   ],
   entryComponents: components,
   providers: [
-    RegisterService,
     ExtraQuestionsService,
     ConfigService,
     DashbordService,
@@ -105,7 +105,12 @@ const components = [
     AuthorizationService,
     PlusmemberService,
     LaunchNavigator,
-    Tabs
+    Tabs,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptor,
+      multi: true,
+    }
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

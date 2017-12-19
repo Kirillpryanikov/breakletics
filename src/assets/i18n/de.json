@@ -9,7 +9,8 @@
     "TITLE_UNDER_BUTTON1": "Ich akzeptiere die ",
     "TITLE_UNDER_BUTTON2": "AGB ",
     "TITLE_UNDER_BUTTON3": "von Breakletics",
-    "FOOTER_LOGIN": "Ich habe keinen Account und möchte mich registrieren"
+    "FOOTER_LOGIN1": "Ich habe keinen Account und ",
+    "FOOTER_LOGIN2": "möchte mich registrieren"
   },
   "FORGOT_PAGE": {
     "TITLE1": "Huch,",

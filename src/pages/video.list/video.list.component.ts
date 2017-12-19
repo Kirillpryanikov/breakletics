@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {NavController, ModalController, LoadingController, NavParams, App} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {ConfigService} from "../config.service";
@@ -6,15 +6,15 @@ import { Video } from '../../share/Video';
 import { VideoListService } from './video.list.service';
 import { Keyboard } from '@ionic-native/keyboard';
 
+
 import {
-  DashboardComponent,
   FilterVideoComponent,
   WrapperVideoPlayerComponent
 } from '../index'
 import {Subscription} from "rxjs/Subscription";
-import {TabsComponent} from "../tabs/tabs.component";
 import {AuthorizationService} from "../../share/authorization.service";
 import {User} from "../../share/User";
+import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 
 @Component({
   selector: 'video-list',
@@ -23,6 +23,8 @@ import {User} from "../../share/User";
 })
 
 export class VideoListComponent implements OnInit {
+  @ViewChild('tabContainer') tabContainer: Tabs;
+
   @Input() videos: Video[];
   @Input() title: string;
   @Input('page') page: string;
@@ -102,8 +104,9 @@ export class VideoListComponent implements OnInit {
   }
 
   goToDash() {
-    this.navCtrl.setRoot(TabsComponent);
+    // this.navCtrl.setRoot(TabsComponent);
       // this.app.getRootNav().setRoot(TabsComponent);
+    this.navCtrl.parent.select(0);
   }
 
   ionViewWillEnter() {

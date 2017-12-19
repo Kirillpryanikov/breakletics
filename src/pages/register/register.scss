@@ -10,6 +10,8 @@ page-register {
     background-position: center;
     background-size: cover;
 
+    @include placeholderColor();
+
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
       width: 10px;
       height: 10px;

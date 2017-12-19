@@ -1,7 +1,8 @@
 import { Component, ViewChild, OnInit, Output } from '@angular/core';
-import { NavController, Slides, ViewController, NavParams } from 'ionic-angular';
+import {NavController, Slides, ViewController, NavParams, ModalController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {tryCatch} from "rxjs/util/tryCatch";
+import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
 
 @Component({
   selector: 'page-guide',
@@ -21,7 +22,8 @@ export class GuideComponent implements OnInit{
   constructor(private navCtrl: NavController,
               private nativeStorage: NativeStorage,
               private viewCtrl: ViewController,
-              private navParams: NavParams) {}
+              private navParams: NavParams,
+              private modalCtrl: ModalController) {}
 
   public user: object;
 
@@ -43,7 +45,6 @@ export class GuideComponent implements OnInit{
     this.slider.slideNext();
   }
 
-
   guideFinish() {
     this.nativeStorage.setItem('guide', this.user? this.user['id']: true)
       .then(res => {
@@ -52,5 +53,18 @@ export class GuideComponent implements OnInit{
       .catch(err => {
         this.viewCtrl.dismiss();
       })
+  }
+
+  workoutPlusWarmup(){
+    this.playVideoModal({video_url:'https://vimeo.com/247622460'});
+    this.guideFinish();
+  }
+
+  workout(){
+    this.playVideoModal({ video_url: 'https://vimeo.com/247691009'});
+    this.guideFinish();
+  }
+  playVideoModal(url) {
+    this.modalCtrl.create(WrapperVideoPlayerComponent, {video: url}).present();
   }
 }

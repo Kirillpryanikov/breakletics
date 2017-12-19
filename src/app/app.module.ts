@@ -51,12 +51,8 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     Globalization,
     ScreenOrientation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthenticationInterceptor,
-      multi: true,
-    }
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+
   ]
 })
 export class AppModule {}

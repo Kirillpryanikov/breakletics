@@ -33,14 +33,26 @@ export class AuthorizationService {
         })
         .catch(err => {
         });
+    },
+    set(data):Observable<any>{
+      console.log('THIS :: ',this);
+      return this.that.http.post(`${ConfigService.CONFIG.url}wp/v2/users/register`, data)
+    },
+    update(data):Observable<any>{
+      return this.that.http.post(`${ConfigService.CONFIG.url}wp/v2/users/meta`, data).map(res=>{
+        // this.session.start(res);
+        return res;
+      })
+        .catch(err =>  Observable.throw(err.json() || 'Server error'))
     }
   };
 
   session = {
     that: this,
     start(user){
-      console.log('session start ');
       this.that._user = user;
+      console.log('session start :: ', user);
+
       this.that.nativeStorage.setItem('user', user);
     }
   }

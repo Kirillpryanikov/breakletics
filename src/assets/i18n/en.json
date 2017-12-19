@@ -9,7 +9,8 @@
     "TITLE_UNDER_BUTTON1": "I accept ",
     "TITLE_UNDER_BUTTON2": "the general terms and conditions of ",
     "TITLE_UNDER_BUTTON3": "Breakletics",
-    "FOOTER_LOGIN": "I do not have an account and want to sign up"
+    "FOOTER_LOGIN1": "I do not have an account and ",
+    "FOOTER_LOGIN2": "want to sign up"
   },
   "REGISTER": {
     "PAGE_1": {
@@ -38,7 +39,7 @@
     "SLIDE2_DESC": "Even beginners with two left feet can learn our exercises in seconds!",
     "SLIDE3_TITLE": "BECOME FIT AND ATHLETIC",
     "SLIDE3_DESC": "With functional and effective movements",
-    "REGISTER_BTN": "Loslegen!",
+    "REGISTER_BTN": "Register!",
     "LOGIN_BTN": "Login",
     "PARTNER": "proud partner of"
   },
