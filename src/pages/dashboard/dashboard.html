@@ -36,7 +36,7 @@
     </div>
     <div class="block block-footer">
       <div class="head">
-        <h3>{{'DASHBOARD.ZUMBA' | translate }}</h3>
+        <h3 [innerHTML]="rundStr"></h3>
       </div>
       <div class="footer-item" *ngIf="language === 'de'">
         <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>

@@ -81,7 +81,7 @@
     "SUBTITLE":"...but it would be great if you would give us some additional information, so we can make Breakletics better!",
     "BUTTON_1": "Nope, I want to start right away!",
     "FORM_Q": {
-      "AGE": "Your age",
+      "AGE": "Birthday",
       "LOCATION": "Where are you from?",
       "MISSION": {
         "TITLE": "Why do you want to do Breakletics?",

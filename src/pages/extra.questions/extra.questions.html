@@ -25,7 +25,7 @@
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.LOCATION" | translate}}</ion-label>
         <ion-select name="where_are_you_from" ngModel>
-          <ion-option value="na"></ion-option>
+          <ion-option *ngFor="let item of locations" [innerHTML]="item"></ion-option>
         </ion-select>
       </ion-item>
 

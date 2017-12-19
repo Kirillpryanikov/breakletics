@@ -5,6 +5,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { GuideComponent, PlusmemberComponent, WrapperVideoPlayerComponent, WorkoutComponent, WelcomePageComponent, ExercisesComponent, WarmupComponent } from '../';
 import { DashbordService } from './dashboard.service';
 import { Subscription } from "rxjs/Subscription";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'page-dashboard',
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public weightDevice: number;
   private videoWeekObservable: Subscription;
   public isScroll = false;
+  public rundStr;
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
@@ -27,7 +29,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
               private service: DashbordService,
-              private platform: Platform) {
+              private platform: Platform,
+              private translate: TranslateService) {
     this.loading = this.loadingCtrl.create({
     });
   }
@@ -37,6 +40,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
     this.handlerLoadVideo();
+    this.rundStr = this.service.getRundomString(this.translate.currentLang);
   }
 
   /**

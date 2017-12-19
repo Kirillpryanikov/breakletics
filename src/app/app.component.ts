@@ -10,11 +10,12 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {
   WelcomePageComponent,
   TabsComponent,
-  PlusmemberComponent
+  PlusmemberComponent,
 } from '../pages/index';
 
 import {AuthorizationService} from "../share/authorization.service";
 import {ExtraQuestionsComponent} from "../pages/extra.questions/extra.questions";
+import {DashboardComponent} from "../pages/dashboard/dashboard.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -46,7 +47,10 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+        if(this.platform.is('cordova')){
+          console.log('Cordova run');
+          //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+        }
       this.initTranslate();
     });
   }
@@ -77,15 +81,15 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = TabsComponent;
+          this.rootPage = DashboardComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = DashboardComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = WelcomePageComponent ;
+        this.rootPage = DashboardComponent ;
       })
   }
 }
