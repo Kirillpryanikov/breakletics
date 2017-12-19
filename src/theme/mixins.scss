@@ -5,7 +5,29 @@
   justify-content: $param1;
   align-items: $param2;
 }
+@mixin placeholderColor($param: #ada5ab) {
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $param;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $param;
+    opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $param;
+    opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $param;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:    $param;
+  }
 
+  ::placeholder { /* Most modern browsers support this now. */
+    color:    $param;
+  }
+}
 @mixin guideButtonStyle() {
   border: none;
   letter-spacing: 2px;

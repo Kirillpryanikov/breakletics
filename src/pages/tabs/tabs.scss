@@ -19,6 +19,7 @@
   a[aria-selected=false]{
     opacity: 0.5;
   }
+
 }
 
 page-tabs {
@@ -27,7 +28,8 @@ page-tabs {
   @include makeIcon(b-flash,'../assets/imgs/icon-flesh.png');
   @include makeIcon(b-exercises,'../assets/imgs/icon-program.png');
   @include makeIcon(b-warmup,'../assets/imgs/icon-warmup.png');
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Roboto";
+  font-weight: bold;
   font-size:0.9rem;
   ion-content {
   }

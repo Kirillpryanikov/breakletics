@@ -13,11 +13,14 @@ $text-opacity: rgba(255,255,255,.85);
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
 }
+
 #dash-header {
 
 }
 page-dashboard {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+
+  font-family: "Roboto";
+  font-weight: bold;
   ion-navbar {
     background: #000;
     height: $height-header-dashboard;

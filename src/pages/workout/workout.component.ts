@@ -32,16 +32,15 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(){
+    this.presentLoading();
     let user = this.navParams.get('user');
 
     this.getWorkouts();
   }
 
   getWorkouts() {
-    this.presentLoading();
     this.workoutObservable = this.service.workouts()
       .subscribe(responce => {
-        console.log('Responce: =>', responce);
         this.workouts = responce;
         this.dismissLoading();
       }, err => {
@@ -49,29 +48,6 @@ export class WorkoutComponent implements OnInit, OnDestroy {
         console.log('Err: =>', err);
       })
   }
-
-  presentLoading(){
-    if(!this.loading){
-      this.loading = this.loadingCtrl.create({
-        spinner: 'crescent',
-        duration: 3000
-      });
-      this.loading.present();
-    }
-  }
-
-  dismissLoading() {
-    if (this.loading) {
-      try {
-        this.loading.dismiss();
-      }
-      catch (exception) {
-        console.log(exception)
-      }
-      this.loading = null;
-    }
-  }
-
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
   }
@@ -87,8 +63,28 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     if(this.workoutObservable) {
       this.workoutObservable.unsubscribe();
     }
-    if(this.loading) {
-      this.loading.dismiss();
-    }
+      this.dismissLoading();
   }
+
+    presentLoading(){
+        if(!this.loading){
+            this.loading = this.loadingCtrl.create({
+                spinner: 'crescent',
+                duration: 3000
+            });
+            this.loading.present();
+        }
+    }
+
+    dismissLoading() {
+        if (this.loading) {
+            try {
+                this.loading.dismiss();
+            }
+            catch (exception) {
+                console.log(exception)
+            }
+            this.loading = null;
+        }
+    }
 }

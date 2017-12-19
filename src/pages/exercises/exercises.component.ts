@@ -33,7 +33,6 @@ export class ExercisesComponent implements OnInit, OnDestroy {
     this.presentLoading();
     this.exercisesObservable = this.service.exercises()
       .subscribe(responce => {
-        console.log('Responce: =>', responce);
         this.exercises = responce;
         this.dismissLoading();
       }, err => {
@@ -63,6 +62,7 @@ export class ExercisesComponent implements OnInit, OnDestroy {
       this.loading = null;
     }
   }
+
   ionViewWillEnter() {
     this.tabBarElement.style.display = 'none';
   }

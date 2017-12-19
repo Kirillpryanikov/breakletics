@@ -15,7 +15,6 @@ import {
 
 import {AuthorizationService} from "../share/authorization.service";
 import {ExtraQuestionsComponent} from "../pages/extra.questions/extra.questions";
-import {DashboardComponent} from "../pages/dashboard/dashboard.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -47,10 +46,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-        if(this.platform.is('cordova')){
-          console.log('Cordova run');
-          //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-        }
+      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }
@@ -80,16 +76,17 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('user')
       .then(res => {
         if(res){
+          console.log('restore session', res);
           this.authService.session.start(res);
-          this.rootPage = DashboardComponent;
+          this.rootPage = TabsComponent;
         } else {
-          this.rootPage = DashboardComponent;
+          this.rootPage = WelcomePageComponent;
           // this.rootPage = WelcomePageComponent;
         }
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
-        this.rootPage = DashboardComponent ;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }

@@ -1,44 +1,37 @@
-import { Injectable } from '@angular/core';
-import { NativeStorage } from '@ionic-native/native-storage';
+import {Injectable, Injector} from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
+  HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
 
-import "rxjs/add/operator/do";
+import {AuthorizationService} from './authorization.service';
+
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
-  private newReq: any;
 
-  constructor(private nativeStorage: NativeStorage) {
-  }
+  constructor(
+              private injector: Injector) {}
 
-  getUser(cb) {
-    this.nativeStorage.getItem('user')
-      .then(res => {
-        cb(res);
-      })
-      .catch(err => {
-        cb(err);
-      });
-  }
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const auth = this.injector.get(AuthorizationService);
+    const user = auth.user.get();
+    console.log(' intercept user:: ',user);
 
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    if(!user || !user.token) {
+      console.log('NEXT');
+      return next.handle(request);
+    }
 
-    // this.getUser(function (res) {
-    //   console.log('user :: ', res);
-    //   this.newReq = req.clone({
-    //     headers: req.headers.set('Authorization', res.token)
-    //   });
-    // });
-    //
-    return next
-      .handle(req)
-      .do(
-        succ => {},
-        err => {}
-    );
+    request = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${user.token}`
+      }
+    });
+
+    return next.handle(request);
   }
 }

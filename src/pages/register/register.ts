@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnDestroy } from '@angular/core';
 import { NavController, Slides, LoadingController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
-import { RegisterService } from './register.service';
 import { AuthorizationService } from '../../share/authorization.service';
 import { TabsComponent } from '../index';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
@@ -21,11 +20,10 @@ export class RegisterPageComponent implements OnDestroy{
   private regObservable: Subscription;
 
   constructor(public navCtrl: NavController,
-              private service: RegisterService,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController,
               private nativeStorage: NativeStorage,
-              private loginService: AuthorizationService) {}
+              private auth: AuthorizationService) {}
 
   goNext() {
     this.slider.slideNext();
@@ -43,7 +41,7 @@ export class RegisterPageComponent implements OnDestroy{
      */
     data.username = f.value.email;
 
-    this.regObservable = this.service.registration(data)
+    this.regObservable = this.auth.user.set(data)
       .subscribe(responce => {
         this.authorization(responce.email, f.value.password, responce);
       }, err => {
@@ -62,7 +60,7 @@ export class RegisterPageComponent implements OnDestroy{
    */
   authorization(username, password, user) {
     console.log('user step 1: ', user);
-    return this.loginService.login({username, password})
+    return this.auth.login({username, password})
       .subscribe(res =>{
         this.nativeStorage.setItem('user', res);
         this.navCtrl.push(ExtraQuestionsComponent, { user: user });

@@ -31,8 +31,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private service: DashbordService,
               private platform: Platform,
               private translate: TranslateService) {
-    this.loading = this.loadingCtrl.create({
-    });
+    // this.loading = this.loadingCtrl.create({
+    // });
   }
 
   ngOnInit(){
@@ -43,18 +43,43 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.rundStr = this.service.getRundomString(this.translate.currentLang);
   }
 
+    presentLoading(){
+        if(!this.loading){
+            this.loading = this.loadingCtrl.create({
+                spinner: 'crescent',
+                duration: 3000
+            });
+            this.loading.present();
+        }
+    }
+
+    dismissLoading() {
+        if (this.loading) {
+            try {
+                this.loading.dismiss();
+            }
+            catch (exception) {
+                console.log(exception)
+            }
+            this.loading = null;
+        }
+    }
+
   /**
    * get user from storage
    */
   getUser() {
-    this.user = this.nativeStorage.getItem('user')
+      this.presentLoading();
+      this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
         this.presentGuideModal(this.user);
+        this.dismissLoading();
       })
       .catch(err => {
         this.user = this.navParams.get('user');
-        this.presentGuideModal(this.user)
+        this.presentGuideModal(this.user);
+        this.dismissLoading();
       });
   }
 
