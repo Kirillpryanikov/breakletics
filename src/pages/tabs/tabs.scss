@@ -9,8 +9,8 @@
   .ion-md-#{$arg}-circle-outline:before ,
   .ion-md-#{$arg}-outline:before  {
     content: '';
-    width: 91%;
-    height: 91%;
+    width: 2.4rem;
+    height: 2.4rem;
     background-repeat: no-repeat;
     background-position: 50%;
     background-image: url($val);

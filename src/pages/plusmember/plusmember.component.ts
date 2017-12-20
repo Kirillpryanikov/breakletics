@@ -32,6 +32,7 @@ export class PlusmemberComponent implements OnInit {
   }
 
   goToLink(url) {
-    const browser = this.iab.create(url, '_system');
+    console.log('url', url);
+    // const browser = this.iab.create(url, '_system');
   }
 }

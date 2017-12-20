@@ -11,6 +11,7 @@ de-plusmember {
   .bottom-left {
     position: absolute;
     z-index: -1;
+    padding: 3px;
   }
   .top-right {
     top:0;
@@ -418,7 +419,7 @@ de-plusmember {
             flex-direction: column;
             margin: auto;
             span:first-child{
-              font-size: 1.15rem;
+              font-size: 1rem;
             }
           }
         }
