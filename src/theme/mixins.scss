@@ -39,13 +39,14 @@
   color: $btn-text-color;
 
 }
-@mixin fullSizeBtn() {
+@mixin fullSizeBtn($param: 100%) {
   border: none;
   letter-spacing: 2px;
-  padding: 5% 0;
+  padding: 5% 2rem;
   background-color: $background-white;
-  font-weight: 600;
-  width: 100%;
+  font-family: "Roboto";
+  font-weight: bold;
+  width: $param;
   font-size: 1.6rem;
   color: $btn-text-color;
 }

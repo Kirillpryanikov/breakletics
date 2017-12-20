@@ -18,17 +18,18 @@ $text-opacity: rgba(255,255,255,.85);
 
 }
 page-dashboard {
-
   font-family: "Roboto";
   font-weight: bold;
   ion-navbar {
-    background: #000;
+    background: #000!important;
     height: $height-header-dashboard;
     .bar-button-menutoggle-ios ion-icon,ion-icon {
       font-size: 3.8rem !important;
     }
 
     .plusmember {
+      font-family: Roboto;
+      font-weight: bold;
       color: #000000 !important;
       font-size: 0.82rem;
       text-transform: uppercase;

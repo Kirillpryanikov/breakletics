@@ -87,7 +87,8 @@ page-guide {
       padding-top: 30px;
       margin-bottom: 70px;
       button{
-        @include fullSizeBtn();
+        @include fullSizeBtn(auto);
+
       }
     }
   }
