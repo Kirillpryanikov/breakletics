@@ -13,26 +13,33 @@ $text-opacity: rgba(255,255,255,.85);
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
 }
+
 #dash-header {
 
 }
 page-dashboard {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Roboto";
+  font-weight: bold;
   ion-navbar {
-    background: #000;
+    .toolbar-background {
+      background: #000!important;
+    }
+    background: #000!important;
     height: $height-header-dashboard;
     .bar-button-menutoggle-ios ion-icon,ion-icon {
       font-size: 3.8rem !important;
     }
 
     .plusmember {
+      font-family: Roboto;
+      font-weight: bold;
       color: #000000 !important;
       font-size: 0.82rem;
       text-transform: uppercase;
-      padding: 4px 7px !important;
+      padding: 1rem  !important;
       background-color: #fff;
       border-radius: 0 !important;
-      height: 21px;
+      height: 1.71rem;
       font-weight: bold;
       //width: 85px;
     }
@@ -88,30 +95,33 @@ page-dashboard {
           justify-content: space-between;
           width: 100%;
           position: absolute;
-          bottom: 5.5%;
+          bottom: 0.5rem;
           box-sizing: border-box;
           font-size: 0.575em;
           left: 0;
           span {
             font-weight: bold;
             padding: 0 5px;
-            font-size: 1rem;
+            font-size: 0.89rem;
             text-shadow: none;
             @include setFlexStyles();
             flex-direction: row;
-            .time-icon {
-              width: 15px;
-              height: 15px;
+            .time-icon, img {
+              width: 1.1rem;
+              height: 1.1rem;
               margin-left: 5px;
               margin-bottom: 3px;
-              &:after {
-                width: 15px;
-                height: 15px;
-                content: '';
-                display: block;
-                background-size: cover;
-                background: url("../assets/imgs/time-icon.png") 100% 100% no-repeat;
-              }
+              position: relative;
+              min-width: 10px;
+              //&:after {
+              //  position: absolute;
+              //  width: 1.1rem;
+              //  height: 1.1rem;
+              //  content: '';
+              //  display: block;
+              //  background-size: contain;
+              //  background: url("../assets/imgs/time-icon.png") 100% 100% no-repeat;
+              //}
             }
           }
         }

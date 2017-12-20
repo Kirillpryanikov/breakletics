@@ -9,8 +9,8 @@
   .ion-md-#{$arg}-circle-outline:before ,
   .ion-md-#{$arg}-outline:before  {
     content: '';
-    width: 1.78rem;
-    height:1.78rem;;
+    width: 91%;
+    height: 91%;
     background-repeat: no-repeat;
     background-position: 50%;
     background-image: url($val);
@@ -21,14 +21,17 @@
   }
 
 }
-
+.tabbar {
+  background: #000 !important;
+}
 page-tabs {
   $tabs-ios-tab-min-height: 56px;
   @include makeIcon(b-home,'../assets/imgs/icon-home.png');
   @include makeIcon(b-flash,'../assets/imgs/icon-flesh.png');
   @include makeIcon(b-exercises,'../assets/imgs/icon-program.png');
   @include makeIcon(b-warmup,'../assets/imgs/icon-warmup.png');
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "Roboto";
+  font-weight: bold;
   font-size:0.9rem;
   ion-content {
   }

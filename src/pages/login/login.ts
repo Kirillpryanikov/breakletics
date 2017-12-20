@@ -46,7 +46,8 @@ export class LoginPageComponent implements OnDestroy {
       .subscribe(responce => {
         console.log('User responce :: ', responce);
         if(responce.token) {
-          this.nativeStorage.setItem('user', responce);
+            this.dismissLoading();
+            this.nativeStorage.setItem('user', responce);
           this.navCtrl.push(TabsComponent,{ user: responce });
         }
         this.dismissLoading();

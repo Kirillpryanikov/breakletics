@@ -46,7 +46,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }
@@ -60,7 +60,7 @@ export class MyApp implements OnInit{
    */
   initTranslate() {
     this.translate.setDefaultLang('de');
-
+    this.translate.use('de');
     /**
      * Get language device
      */
@@ -68,6 +68,8 @@ export class MyApp implements OnInit{
       .then(res => {
         const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
         this.translate.use(countryCode);
+        console.log('set lng :: ', this.translate.currentLang);
+
       })
       .catch(e => console.log('language app.component err --> ', e));
   }
@@ -83,6 +85,7 @@ export class MyApp implements OnInit{
           this.rootPage = WelcomePageComponent;
           // this.rootPage = WelcomePageComponent;
         }
+
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;

@@ -6,9 +6,10 @@ $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
 page-login {
-  font-family: "RobotoCondensesBold";
+  font-family: Roboto;
 
   ion-content {
+    font-weight:bold;
     background: url("../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
@@ -67,12 +68,14 @@ page-login {
           font-size: $font-size-em-sm;
           letter-spacing: 2px;
           background-color: #fff;
+          font-weight: bold;
           color: $btn-text-color;
         }
       }
 
       .title-under-btn {
         @include footerGuide();
+        font-weight: normal;
       }
 
       .tooter-login {

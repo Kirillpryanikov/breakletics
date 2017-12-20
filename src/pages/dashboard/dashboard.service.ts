@@ -5,12 +5,16 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/publishReplay';
 
 import {ConfigService} from "../config.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Injectable()
 export class DashbordService {
   _videoWeek: Observable<any> = null;
-
-  constructor(public http: HttpClient) {}
+  public language;
+  constructor(public http: HttpClient, private translate: TranslateService) {
+    this.language = this.translate.currentLang;
+    console.log('    this.language = this.translate.currentLang;', this.language );
+  }
 
   videoWeek(): Observable<any> {
     if(!this._videoWeek) {
@@ -21,7 +25,8 @@ export class DashbordService {
     return this._videoWeek;
   }
   randomText(lng){
-    if(lng === 'de'){
+
+    if(lng === 'de' || !lng){
       return [
           "NUR PUMBA MACHT HEUT NOCH ZUMBA",
           "DER MUSKELKATER IST DEIN FREUND",
@@ -55,6 +60,8 @@ export class DashbordService {
   }
 
   getRundomString(lng){
+    lng || 'de'
+      console.log('getRundomString getRundomString :: ', lng);
      const arr = this.randomText(lng);
       const nm = Math.floor(Math.random() * arr.length);
       return arr[nm] || '';

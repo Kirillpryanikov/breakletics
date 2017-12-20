@@ -1,4 +1,14 @@
 @font-face {
-  font-family: "RobotoCondensesBold";
-  src: url("../assets/fonts/RobotoCondensesBold.ttf");
+  font-family: Roboto;
+  src: url("../assets/fonts/RobotoCondensed-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../assets/fonts/RobotoCondensed-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../assets/fonts/RobotoCondensed-Bold.ttf");
+  font-style: italic;
 }

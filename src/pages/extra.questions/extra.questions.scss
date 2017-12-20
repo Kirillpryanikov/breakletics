@@ -19,6 +19,7 @@ page-extra-questions {
       //position: relative;
       .title {
         width: 100%;
+        font-weight:bold;
         div:first-child {
           color: $guide-color-text;
           font-size: $font-size-onboarding-lg;
@@ -31,6 +32,7 @@ page-extra-questions {
         }
         button {
           @include fullSizeBtn();
+          font-weight: bold;
         }
       }
 
@@ -72,6 +74,7 @@ page-extra-questions {
         button[type=submit] {
           @include fullSizeBtn();
           margin-top: 13.2%;
+          font-weight: bold;
         }
         .select-text, .datetime-text {
           color: $white-opacity;

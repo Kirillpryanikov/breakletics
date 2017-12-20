@@ -1,11 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
+import {Component, OnInit, OnDestroy, AfterContentInit} from '@angular/core';
+import {NavController, ModalController, LoadingController, NavParams, Platform, ViewController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
+import {TranslateService} from "@ngx-translate/core";
 
 import { GuideComponent, PlusmemberComponent, WrapperVideoPlayerComponent, WorkoutComponent, WelcomePageComponent, ExercisesComponent, WarmupComponent } from '../';
 import { DashbordService } from './dashboard.service';
 import { Subscription } from "rxjs/Subscription";
-import {TranslateService} from "@ngx-translate/core";
+
 
 @Component({
   selector: 'page-dashboard',
@@ -22,17 +23,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private videoWeekObservable: Subscription;
   public isScroll = false;
   public rundStr;
+  public language;
 
   constructor(public navCtrl: NavController,
+              private translate: TranslateService,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
               private loadingCtrl: LoadingController,
               private navParams: NavParams,
               private service: DashbordService,
+              private viewCtrl: ViewController,
               private platform: Platform,
-              private translate: TranslateService) {
-    this.loading = this.loadingCtrl.create({
-    });
+              ) {
+    // this.loading = this.loadingCtrl.create({
+    // });
   }
 
   ngOnInit(){
@@ -40,21 +44,56 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
     this.handlerLoadVideo();
-    this.rundStr = this.service.getRundomString(this.translate.currentLang);
   }
+  ngAfterViewInit(){
+    setTimeout(() => {
+      this.language = this.translate.currentLang;
+      console.log('After View',this.language, this.translate);
+      this.rundStr = this.service.getRundomString(this.translate.currentLang);
+    },2000);
+    this.language = this.translate.currentLang;
+    console.log('After View',this.language, this.translate);
+    this.rundStr = this.service.getRundomString(this.translate.currentLang);
+
+  }
+
+    presentLoading(){
+        if(!this.loading){
+            this.loading = this.loadingCtrl.create({
+                spinner: 'crescent',
+                duration: 3000
+            });
+            this.loading.present();
+        }
+    }
+
+    dismissLoading() {
+        if (this.loading) {
+            try {
+                this.loading.dismiss();
+            }
+            catch (exception) {
+                console.log(exception)
+            }
+            this.loading = null;
+        }
+    }
 
   /**
    * get user from storage
    */
   getUser() {
-    this.user = this.nativeStorage.getItem('user')
+      this.presentLoading();
+      this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
         this.presentGuideModal(this.user);
+        this.dismissLoading();
       })
       .catch(err => {
         this.user = this.navParams.get('user');
-        this.presentGuideModal(this.user)
+        this.presentGuideModal(this.user);
+        this.dismissLoading();
       });
   }
 

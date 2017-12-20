@@ -15,6 +15,7 @@ import {Subscription} from "rxjs/Subscription";
 import {AuthorizationService} from "../../share/authorization.service";
 import {User} from "../../share/User";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
+import {TabsComponent} from "../tabs/tabs.component";
 
 @Component({
   selector: 'video-list',
@@ -53,7 +54,6 @@ export class VideoListComponent implements OnInit {
     this.levels = ConfigService.LEVELS;
     console.log('this.levels', this.levels);
     this.user = this.authService.user.get();
-    // this.presentLoading();
   }
 
   getData(req) {
@@ -104,9 +104,15 @@ export class VideoListComponent implements OnInit {
   }
 
   goToDash() {
-    // this.navCtrl.setRoot(TabsComponent);
       // this.app.getRootNav().setRoot(TabsComponent);
-    this.navCtrl.parent.select(0);
+      console.log('this.navCtrl.parent',this.navCtrl.parent);
+      if(!this.navCtrl.parent || this.navCtrl.parent === null) {
+        console.log('NUll pagents');
+          this.navCtrl.setRoot(TabsComponent);
+      } else {
+          this.navCtrl.parent.select(0);
+
+      }
   }
 
   ionViewWillEnter() {

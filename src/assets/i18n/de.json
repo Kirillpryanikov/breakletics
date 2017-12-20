@@ -39,10 +39,10 @@
     }
   },
   "WELCOME_PAGE": {
-    "SLIDE1_TITLE": "„DAS NEUE LIEBLINGS-WORKOUT VON LENA GERCKE“",
-    "SLIDE1_DESC": "- InStyle über Breakletis",
-    "SLIDE2_TITLE": "NIE MEHR LANGEWEILE BEIM TRAINING",
-    "SLIDE2_DESC": "Mit dem abwechslungsreichsten Workout der Welt",
+    "SLIDE2_TITLE": "„DAS NEUE LIEBLINGS-WORKOUT VON LENA GERCKE“",
+    "SLIDE2_DESC": "- InStyle über Breakletis",
+    "SLIDE1_TITLE": "NIE MEHR LANGEWEILE BEIM TRAINING",
+    "SLIDE1_DESC": "Mit dem abwechslungsreichsten Workout der Welt",
     "SLIDE3_TITLE": "JEDER KANN MITMACHEN",
     "SLIDE3_DESC": "Selbst Anfänger und Grobmotoriker lernen die Moves in Sekunden",
     "REGISTER_BTN": "Loslegen!",
@@ -135,7 +135,7 @@
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
     "CRAZY_1": "Crazy XMAS Deal -",
     "CRAZY_2": "- 5 Workouts FÜR 5 EUR",
-    "STATIC": "Pluasmember",
+    "STATIC": "Plusmember",
     "PAY_TITLE_1": "FIT & ATHLETISCH",
     "PAY_TITLE_2": "WERDEN MIT WORKOUTTS,",
     "PAY_TITLE_3": "DIE EINFACH ROCKEN!",
@@ -149,7 +149,7 @@
     "TEXT_LI_3_1": "stetig neue Videos (Exercises und mehr)",
     "TEXT_LI_4": "...und vieles mehr!",
     "BTN": "PLUSMEMBER WERDEN",
-    "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
+    "WORKOUTS_WEEK": "workout der woche"
   },
   "MENU_SIDE": {
     "XMAS_DEAL": "XMAS DEAL",
@@ -160,7 +160,7 @@
     "WARM_UPS": "WARM UPS / COOL DOWNS",
     "BREAKLETICS_TV": "BREAKLETICS TV",
     "MY_ACCOUNT": "MEIN KONTO",
-    "FIND_BREAKLETICS_CLASS": "BREAKLETICS KURS FINDER",
+    "FIND_BREAKLETICS_CLASS": "Breakletics kurs finden",
     "BREAKLETICS_SHOP": "BREAKLETICS SHOP",
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "AGB",
