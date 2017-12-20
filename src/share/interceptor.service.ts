@@ -19,7 +19,6 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const auth = this.injector.get(AuthorizationService);
     const user = auth.user.get();
-    console.log(' intercept user:: ',user);
 
     if(!user || !user.token) {
       console.log('NEXT');

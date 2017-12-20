@@ -22,7 +22,6 @@ export class AuthorizationService {
   user = {
     that: this,
     get(){
-      console.log('User Get:: ',this.that._user);
       if(this.that._user) {
         return this.that._user;
       }
@@ -35,7 +34,6 @@ export class AuthorizationService {
         });
     },
     set(data):Observable<any>{
-      console.log('THIS :: ',this);
       return this.that.http.post(`${ConfigService.CONFIG.url}wp/v2/users/register`, data)
     },
     update(data):Observable<any>{
@@ -51,8 +49,6 @@ export class AuthorizationService {
     that: this,
     start(user){
       this.that._user = user;
-      console.log('session start :: ', user);
-
       this.that.nativeStorage.setItem('user', user);
     }
   }

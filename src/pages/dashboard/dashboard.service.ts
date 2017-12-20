@@ -55,6 +55,7 @@ export class DashbordService {
   }
 
   getRundomString(lng){
+      console.log('getRundomString getRundomString :: ', lng);
      const arr = this.randomText(lng);
       const nm = Math.floor(Math.random() * arr.length);
       return arr[nm] || '';

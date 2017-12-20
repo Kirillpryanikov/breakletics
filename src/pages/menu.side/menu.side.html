@@ -16,7 +16,7 @@
       </div>
     </ion-item>
     <ion-item no-padding no-margin>
-      <div class="item-menu">
+      <div class="item-menu" *ngIf="false">
         <div class="item light-text-color" (click)="someMethods('MENU_SIDE.WORKOUT_OF_THE_WEEK')">
           <span>{{'MENU_SIDE.WORKOUT_OF_THE_WEEK' | translate}}</span>
         </div>
@@ -39,7 +39,7 @@
         <div class="item dark-text-color" (click)="goTo('MY_ACCOUNT')">
           <span>{{'MENU_SIDE.MY_ACCOUNT' | translate}}</span>
         </div>
-        <div class="item dark-text-color" (click)="goToLink('http://breakletics.de/#')">
+        <div class="item dark-text-color" (click)="goToLink('http://breakletics.de/')">
           <span>{{'MENU_SIDE.FIND_BREAKLETICS_CLASS' | translate}}</span>
         </div>
         <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_SHOP')" *ngIf="false">
