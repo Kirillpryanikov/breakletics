@@ -19,7 +19,7 @@ pay-it {
   @include slideUpAnimation();
   @include slideTop();
   .pay-block {
-    height: 89vh;
+    padding-bottom: 19rem;
     background-color: $dashboard-background;
     width: 100%;
     flex-direction: column;
@@ -80,7 +80,7 @@ pay-it {
       }
     }
     button {
-      @include fullSizeBtn();
+      @include fullSizeBtn(87%);
     }
   }
 }
