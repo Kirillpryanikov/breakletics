@@ -110,7 +110,7 @@ page-dashboard {
                 content: '';
                 display: block;
                 background-size: cover;
-                background: url(../assets/imgs/time-icon.png) 100% 100% no-repeat;
+                background: url("../assets/imgs/time-icon.png") 100% 100% no-repeat;
               }
             }
           }
@@ -119,7 +119,7 @@ page-dashboard {
 
       .block-2 {
         height: $height-block-2;
-        background: url(../assets/imgs/workouts-bg.jpg);
+        background: url("../assets/imgs/workouts-bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         border-top: 2px solid $bg-color-dash;
@@ -135,14 +135,14 @@ page-dashboard {
           box-sizing: border-box;
         }
         .item-block-3:nth-child(1) {
-          background: url(../assets/imgs/exercises-bg.jpg);
+          background: url("../assets/imgs/exercises-bg.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           border-right: 2px $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
-          background: url(../assets/imgs/warmup.jpg);
+          background: url("../assets/imgs/warmup.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           border-left: 2px solid $bg-color-dash;
@@ -168,7 +168,7 @@ page-dashboard {
         .footer-item {
           font-family: Roboto;
           height: 69%;
-          background: url(../assets/imgs/foote-bg.jpg);
+          background: url("../assets/imgs/foote-bg.jpg");
           background-size: cover;
           background-position: center;
           width: 100%;
