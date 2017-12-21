@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ModalController, NavController, NavParams} from 'ionic-angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-
-import { ItemMenuSide } from '../item.menu.side/item.menu.side';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+import {ItemMenuSide} from '../item.menu.side/item.menu.side';
 
 import {
   SettingsComponent,
@@ -18,6 +17,9 @@ import {AgbComponent} from "../agb/agb.component";
 import {TranslateService} from "@ngx-translate/core";
 import {User} from "../../share/User";
 import {AuthorizationService} from "../../share/authorization.service";
+import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
+import {DashbordService} from './../dashboard/dashboard.service';
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'menu-side-component',
@@ -27,20 +29,31 @@ import {AuthorizationService} from "../../share/authorization.service";
 export class MenuSideComponent implements OnInit {
   public language;
   public user: User;
+  private videoWeekObservable: Subscription;
+
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
               private navParams: NavParams,
               private iab: InAppBrowser,
               private translate: TranslateService,
-              private auth: AuthorizationService) {}
+              private auth: AuthorizationService,
+              private service: DashbordService) {}
 
   ngOnInit(){
-      this.language = this.translate.currentLang;
-      this.user = this.auth.user.get();
+    this.language = this.translate.currentLang;
+    this.user = this.auth.user.get();
   }
 
   someMethods(title) {
     this.navCtrl.push(ItemMenuSide , {data: title})
+  }
+
+  playVideoWeek(){
+    this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {res}).present();
+    }, err => {
+      console.log('err video::: ', err);
+    });
   }
 
   goTo(page){

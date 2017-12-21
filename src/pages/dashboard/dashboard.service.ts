@@ -24,6 +24,7 @@ export class DashbordService {
     }
     return this._videoWeek;
   }
+
   randomText(lng){
 
     if(lng === 'de' || !lng){

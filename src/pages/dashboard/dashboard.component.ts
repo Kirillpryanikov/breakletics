@@ -48,36 +48,35 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngAfterViewInit(){
     setTimeout(() => {
       this.language = this.translate.currentLang;
-      console.log('After View',this.language, this.translate);
       this.rundStr = this.service.getRundomString(this.translate.currentLang);
     },2000);
+
     this.language = this.translate.currentLang;
-    console.log('After View',this.language, this.translate);
     this.rundStr = this.service.getRundomString(this.translate.currentLang);
 
   }
 
-    presentLoading(){
-        if(!this.loading){
-            this.loading = this.loadingCtrl.create({
-                spinner: 'crescent',
-                duration: 3000
-            });
-            this.loading.present();
-        }
-    }
+  presentLoading(){
+      if(!this.loading){
+          this.loading = this.loadingCtrl.create({
+              spinner: 'crescent',
+              duration: 3000
+          });
+          this.loading.present();
+      }
+  }
 
-    dismissLoading() {
-        if (this.loading) {
-            try {
-                this.loading.dismiss();
-            }
-            catch (exception) {
-                console.log(exception)
-            }
-            this.loading = null;
-        }
-    }
+  dismissLoading() {
+      if (this.loading) {
+          try {
+              this.loading.dismiss();
+          }
+          catch (exception) {
+              console.log(exception);
+          }
+          this.loading = null;
+      }
+  }
 
   /**
    * get user from storage
