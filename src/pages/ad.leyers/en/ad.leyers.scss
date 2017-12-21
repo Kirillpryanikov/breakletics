@@ -82,15 +82,17 @@ en-ad-leyers {
         text-transform: uppercase;
         color: #fff;
         text-align: left;
-        @include setFlexStyles(flex-start);
+        @include setFlexStyles();
         &:first-child {
-          font-size: 7rem;
-          font-weight:bold;
+          font-size: 7.1rem;
+          font-weight: bold;
+          line-height: 6.1rem;
         }
         &:nth-child(2) {
-          letter-spacing: 1.2rem;
-          font-weight:bold;
-          font-size: 3.34rem;
+          letter-spacing: 0.9rem;
+          font-weight: bold;
+          font-size: 3.54rem;
+          margin-left: 0.5rem;
         }
         &:nth-child(3) {
           font-weight:bold;

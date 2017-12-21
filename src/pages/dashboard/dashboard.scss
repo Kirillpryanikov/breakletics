@@ -25,7 +25,7 @@ $text-opacity: rgba(255,255,255,.85);
 
 }
 page-dashboard {
-  font-family: "Roboto";
+  font-family: Roboto !important;
   font-weight: bold;
   ion-navbar {
     .toolbar-background {
@@ -118,6 +118,7 @@ page-dashboard {
             padding: 0 5px;
             font-size: 0.89rem;
             text-shadow: none;
+            letter-spacing: 1.5px;
             @include setFlexStyles();
             flex-direction: row;
             .time-icon, img {
