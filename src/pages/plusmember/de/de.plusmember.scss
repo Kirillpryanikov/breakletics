@@ -7,6 +7,7 @@ $padding-block-handler-submit: 20px 15px 15px 15px;
 
 de-plusmember {
   font-family: Roboto;
+  font-weight: bold;
   .top-right,
   .bottom-left {
     position: absolute;
@@ -194,15 +195,16 @@ de-plusmember {
 
       .slider-top {
         color: #7b7b7b;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight: normal;
       }
       .slider-sub-title {
         color: #dfdee1;
-        font-size: 2.07rem;
+        font-size: 2.27rem;
         margin: 1.79rem 0;
       }
       .name {
-        font-size: 1.76rem;
+        font-size: 1.96rem;
         letter-spacing: 2px;
         font-weight: bold;
         color: #a4a4a4;
@@ -215,8 +217,9 @@ de-plusmember {
         margin: 0px auto 1.5rem auto;
       }
       .date {
-        font-size: 1.05rem;
+        font-size: 1.25rem;
         color: #7c7c7c;
+        font-weight: normal;
       }
       .description {
         font-size: 1.58rem;
@@ -231,6 +234,7 @@ de-plusmember {
           height: 4.5rem;
           position: absolute;
           opacity: 0.25;
+          font-weight: normal;
         }
         &:before {
           top: 0px;
@@ -319,6 +323,7 @@ de-plusmember {
         .benefit-subtitle {
           color: #dfdee1;
           font-size: 1.05rem;
+          font-weight: normal;
         }
       }
     }
@@ -419,7 +424,7 @@ de-plusmember {
             flex-direction: column;
             margin: auto;
             span:first-child{
-              font-size: 1rem;
+              font-size: 1.0rem;
             }
           }
         }

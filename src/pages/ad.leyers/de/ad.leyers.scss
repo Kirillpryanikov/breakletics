@@ -6,6 +6,8 @@ $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
 de-ad-leyers {
+  font-family: Roboto;
+  font-weight: bold !important;
   .top-right,
   .bottom-left {
     position: absolute;
@@ -17,7 +19,6 @@ de-ad-leyers {
     width: 10.82rem;
     z-index: 9;
   }
-  font-family: Roboto;
   .header-md:after, .header-ios:after {
     background-image: none !important;
     content: '';
