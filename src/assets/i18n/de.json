@@ -169,11 +169,11 @@
   },
   "WORKOUTS": {
     "TITLE": "Workouts",
-    "SEARCH": "Filtern nach Schwierigkeit...",
+    "SEARCH": "Filtern nach Warm Ups und Cool Downs",
     "JETZT": "Jetzt 48+ Workouts freischalten"
   },
   "WORKOUTS_FILTER": {
-    "TITLE": "Filtern nach Schwierigkeit",
+    "TITLE": "Filtern nach Warm Ups und Cool Downs",
     "BEGINNER": "BEGINNER",
     "ADVANCED": "ADVANCED",
     "EXPERT": "EXPERT",
@@ -187,7 +187,7 @@
     "CRUNCHES": "BL CRUNCHES"
   },
   "WARMUPS": {
-    "TITLE": "Filter by Warm Up or Cool Down",
+    "TITLE": "WARM UPS / COOL DOWNS",
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN"
   },

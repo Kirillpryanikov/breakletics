@@ -67,4 +67,6 @@ export class GuideComponent implements OnInit{
   playVideoModal(url) {
     this.modalCtrl.create(WrapperVideoPlayerComponent, {video: url}).present();
   }
+
+
 }

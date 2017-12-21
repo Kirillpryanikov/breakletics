@@ -114,6 +114,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   close() {
+    console.log('close video');
     this.viewController.dismiss();
   }
 

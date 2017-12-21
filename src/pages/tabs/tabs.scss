@@ -21,9 +21,21 @@
   }
 
 }
+
 .tabbar {
   background: #000 !important;
 }
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  -webkit-transform: translate3d(0, 0px, 0);
+  transform: translate3d(0, 0px, 0);
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-text {
+  -webkit-transform: none;
+  transform: none;
+}
+
 page-tabs {
   $tabs-ios-tab-min-height: 56px;
   @include makeIcon(b-home,'../assets/imgs/icon-home.png');

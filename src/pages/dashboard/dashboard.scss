@@ -13,7 +13,14 @@ $text-opacity: rgba(255,255,255,.85);
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
 }
-
+.divider {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 0.178rem;
+  width: 100%;
+  background: linear-gradient(to right, #e7102b, #12b4e7);
+}
 #dash-header {
 
 }
@@ -47,7 +54,7 @@ page-dashboard {
   ion-title {
     text-align: center;
     img {
-      height: 38px;
+      height: 3rem;
       margin-left: 5px;
     }
   }
@@ -65,6 +72,7 @@ page-dashboard {
         @include textTitle();
       }
       .block-1 {
+
         position: relative;
         overflow: hidden;
         width: 100%;
@@ -72,6 +80,7 @@ page-dashboard {
         background-color: $bg-color-dash;
         background-size: cover;
         background-repeat: no-repeat;
+
 
         img {
           //min-height: 100%;
@@ -95,10 +104,15 @@ page-dashboard {
           justify-content: space-between;
           width: 100%;
           position: absolute;
-          bottom: 0.5rem;
+          bottom: 0rem;
+          min-height: 4rem;
           box-sizing: border-box;
           font-size: 0.575em;
           left: 0;
+          -moz-box-shadow: inset 0px -42px 35px rgba(0,0,0,0.5);
+          -webkit-box-shadow: inset 0px -42px 35px rgba(0,0,0,0.5);
+          box-shadow: inset 0px -27px 40px rgba(0, 0, 0, 0.5);
+          //background: linear-gradient(rgba(233,233,233,0.2), rgba(26,27,27, 0.7));
           span {
             font-weight: bold;
             padding: 0 5px;
@@ -132,8 +146,8 @@ page-dashboard {
         background: url("../assets/imgs/workouts-bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
-        border-top: 2px solid $bg-color-dash;
-        border-bottom: 2px solid $bg-color-dash;
+        border-top: 0.18rem solid $bg-color-dash;
+        border-bottom: 0.18rem solid $bg-color-dash;
       }
 
       .block-3 {
@@ -148,14 +162,14 @@ page-dashboard {
           background: url("../assets/imgs/exercises-bg.jpg");
           background-repeat: no-repeat;
           background-size: cover;
-          border-right: 2px $bg-color-dash;
+          border-right: 0.18rem $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
           background: url("../assets/imgs/warmup.jpg");
           background-repeat: no-repeat;
           background-size: cover;
-          border-left: 2px solid $bg-color-dash;
+          border-left: 0.18rem solid $bg-color-dash;
         }
       }
       .block-footer {

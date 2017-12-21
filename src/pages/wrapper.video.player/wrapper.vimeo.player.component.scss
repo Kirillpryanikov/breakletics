@@ -31,12 +31,12 @@ wrapper-player {
 
     .close {
       position: absolute;
-      top: 5%;
-      left: 5%;
+      padding: 5%;
+      top: 0;
+      left: 0;
       font-size: 1.5em;
       font-weight: bold;
       color: white;
-      padding: 10px;
       z-index: 100;
     }
   }

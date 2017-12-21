@@ -50,7 +50,7 @@ export class MenuSideComponent implements OnInit {
 
   playVideoWeek(){
     this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
-      this.modalCtrl.create(WrapperVideoPlayerComponent, {res}).present();
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: res}).present();
     }, err => {
       console.log('err video::: ', err);
     });
@@ -100,4 +100,10 @@ export class MenuSideComponent implements OnInit {
     const browser = this.iab.create('url', '_system');
   }
 
+  ngOnDestroy() {
+    if(this.videoWeekObservable) {
+      this.videoWeekObservable.unsubscribe();
+    }
+
+  }
 }

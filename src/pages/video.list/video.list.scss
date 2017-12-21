@@ -29,10 +29,11 @@ video-list {
   }
   font-family: Roboto;
   ion-header {
-
+    .toolbar-md-dark .toolbar-background-md, .toolbar-background-ios {
+      background: #000 !important;
+    }
     ion-navbar {
-      height: $height-header-dashboard;
-      background: #000;
+      height: 5rem;
       button {
         background: transparent;
         color: $navbar-title-font-color;
@@ -52,13 +53,13 @@ video-list {
     }
     .sub-header {
       background: #1b1c1c;
-      min-height: $height-header-dashboard;
+      min-height: 5rem;
       height: auto;
       //max-height: 144px;
       padding-bottom: 10px;
       @media (max-width: 320px) {
         padding-bottom: 5px;
-        min-height: $height-header-dashboard;
+        min-height: 5rem;
       }
       @include setFlexStyles();
       flex-direction: column;
@@ -69,7 +70,7 @@ video-list {
         min-height: 38px;
         border-bottom: 2px solid rgba(255,255,255,.5);
         color: rgba(255,255,255,.6);
-        font-size: 1.7rem;
+        font-size: 1rem;
         width: 90%;
         align-self: center;
         padding: 8px 0;
@@ -113,6 +114,7 @@ video-list {
       }
 
       ion-icon {
+        font-size: 1.7rem;
       }
       i {
         @include setFlexStyles(center, flex-end);
@@ -132,7 +134,9 @@ video-list {
       }
       .filter-items {
         text-align: center;
-
+        span {
+          font-style: 1rem;
+        }
       }
     }
   }
@@ -162,15 +166,28 @@ video-list {
     .private {
       &:after {
         content: '';
+        width: 4rem;
+        height: 4.7rem;
+        position: absolute;
+        left: calc(50% - 2rem);
+        top: calc(50% - 2.35rem);
+        background: url("../assets/imgs/lock.png") 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 99;
+        display: block;
+        //opacity: .97;
+      }
+      &:before {
+        content: '';
         width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
-        background: url("../assets/imgs/lock.png") 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: 99;
+        background: rgba(0,0,0,0.7);
+        z-index: 98;
+        display: block;
         //opacity: .97;
       }
     }
