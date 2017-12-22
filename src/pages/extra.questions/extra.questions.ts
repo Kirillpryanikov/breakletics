@@ -18,6 +18,7 @@ export class ExtraQuestionsComponent implements OnInit {
   public user: User;
   public locations;
   private loading;
+
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
               private translate: TranslateService,
@@ -27,6 +28,8 @@ export class ExtraQuestionsComponent implements OnInit {
               ) {}
 
   ngOnInit() {
+    this.user = this.navParams.get('user');
+
     let language = this.translate.currentLang === 'de'? 'DE': 'EN';
     let locations = this.service.getLocation();
     this.locations = locations.map(function (el) {
@@ -34,8 +37,7 @@ export class ExtraQuestionsComponent implements OnInit {
         return el.properties[language];
       }
     });
-    this.user = this.navParams.get('user');
-    console.log('extra component data --> ', this.user);
+
   }
 
   stpSelect() {
@@ -45,7 +47,7 @@ export class ExtraQuestionsComponent implements OnInit {
   submit(extra: NgForm) {
     this.presentLoading();
     this.user = this.auth.user.get();
-    console.log('NgForm', extra.value, this.user);
+
     let data = extra.value;
     data["id"] = this.user['id'];
 
@@ -57,6 +59,7 @@ export class ExtraQuestionsComponent implements OnInit {
       console.log('ERR:::: ', err);
       this.dismissLoading();
     });
+
     this.navCtrl.setRoot(TabsComponent, {user: this.user});
   }
 
@@ -82,6 +85,12 @@ export class ExtraQuestionsComponent implements OnInit {
       catch (exception) {
       }
       this.loading = null;
+    }
+  }
+
+  ngOnDestroy() {
+    if(this.loading) {
+      this.loading.dismiss();
     }
   }
 }

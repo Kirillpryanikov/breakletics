@@ -83,11 +83,13 @@ export class MyApp implements OnInit{
         } else {
           this.rootPage = WelcomePageComponent;
           // this.rootPage = WelcomePageComponent;
+          this.authService.session.reset();
         }
 
       })
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
+        this.authService.session.reset();
         this.rootPage = WelcomePageComponent;
       })
   }

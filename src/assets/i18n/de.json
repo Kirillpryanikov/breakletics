@@ -212,7 +212,8 @@
     "PRODUCT_TITLE": "Produkte",
     "PRODUCT_PLUSMEMBER": "Du bist kein PlusMember",
     "PRODUCT_BY": "Jetzt kaufen",
-    "PRODUCT_DEAL": "X-Mas Deal"
+    "PRODUCT_DEAL": "X-Mas Deal",
+    "UPDATE_BTN": "AKTUALISIEREN"
   },
   "AGB": {
     "PAGE_TITLE": "AGB"

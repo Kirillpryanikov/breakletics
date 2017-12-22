@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {DashboardComponent} from "../index";
 import {AccountComponent} from "../account/account.component";
+import {User} from "../../share/User";
+import {AuthorizationService} from "../../share/authorization.service";
 
 @Component({
   selector: 'settings',
@@ -9,11 +11,15 @@ import {AccountComponent} from "../account/account.component";
   styleUrls: ['/settings.scss']
 })
 export class SettingsComponent implements OnInit {
+  public user: User;
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
-              private viewCtrl: ViewController) {}
+              private viewCtrl: ViewController,
+              private auth: AuthorizationService) {}
 
   ngOnInit(){
+    this.user = this.auth.user.get();
+    console.log('this.user', this.user);
   }
 
   goToDash() {

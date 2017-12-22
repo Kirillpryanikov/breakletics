@@ -13,6 +13,7 @@ export class AuthorizationService {
   }
 
   login(data): Observable<any> {
+    console.log('Login req :: ', data);
     return this.http.post(`${ConfigService.CONFIG.url}jwt-auth/v1/token`, data).map(res=>{
       this.session.start(res);
       return res;
@@ -36,12 +37,20 @@ export class AuthorizationService {
     set(data):Observable<any>{
       return this.that.http.post(`${ConfigService.CONFIG.url}wp/v2/users/register`, data)
     },
-    update(data):Observable<any>{
-      return this.that.http.post(`${ConfigService.CONFIG.url}wp/v2/users/meta`, data).map(res=>{
-        // this.session.start(res);
+    update(data):Observable<any> {
+      return this.that.http.post(`${ConfigService.CONFIG.url}wp/v2/users/meta`, data).map(res => {
+        /**
+         *update user session*/
+        for (let key in res) {
+          if(this.that._user.hasOwnProperty(key) && res[key]){
+            this.that._user[key] = res[key];
+            console.log(key + ' => ' + res[key]);
+          }
+        }
+        this.that.session.start(this.that._user);
+
         return res;
-      })
-        .catch(err =>  Observable.throw(err.json() || 'Server error'))
+      });
     }
   };
 
@@ -50,7 +59,10 @@ export class AuthorizationService {
     start(user){
       this.that._user = user;
       this.that.nativeStorage.setItem('user', user);
+    },
+    reset(){
+      this.that._user = {};
+      this.that.nativeStorage.setItem('user', '');
     }
   }
-
 }

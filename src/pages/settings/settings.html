@@ -33,7 +33,7 @@
     <ion-row>
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_DEAL' | translate"></ion-col>
       <ion-col class="col-button ">
-        <button class="button bought">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
+        <button class="button " [ngClass]="{'bought': user.plusmember > 0}">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
       </ion-col>
     </ion-row>
   </ion-grid>

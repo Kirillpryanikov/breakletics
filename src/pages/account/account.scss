@@ -2,7 +2,11 @@
 
 account {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
+
   ion-header {
+    ion-searchbar {
+      min-height: $height-header-dashboard;
+    }
     ion-navbar {
       height: $height-header-dashboard;
       background: #000;
@@ -43,7 +47,7 @@ account {
     ion-label {
       color: #8e8e8e;
     }
-    ion-input {
+    ion-input, .datetime-text, ion-select {
       font-size: 1.5rem;
       font-weight: bold;
       color: #fff;
@@ -52,6 +56,22 @@ account {
     }
     .list-md .item-input:last-child,.list-ios .item-input:last-child {
       border: 0!important;
+    }
+    .handler {
+      @include setFlexStyles();
+      width: 100%;
+      margin-top: 0.9rem;
+      margin-bottom: 5.9rem;
+      button {
+        width: 80%;
+        padding: 1.5rem 0;
+        font-size: 1.66rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
     }
   }
 }

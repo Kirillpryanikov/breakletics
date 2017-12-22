@@ -3,6 +3,8 @@ export class User {
   plusmember: string;
   token: string;
   user_display_name: string;
+  first_name: string;
+  last_name: string;
   user_email: string;
   user_nicename: string;
   birthday: number;
