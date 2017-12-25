@@ -224,5 +224,6 @@
     "TIME": "4WEEKS",
     "PRICE_FOOTER": "100% Riskfree",
     "APPLY": "get it now"
-  }
+  },
+  "LOGOUT": "Log out"
 }

@@ -10,7 +10,8 @@ import {
   WorkoutComponent,
   ImprintComponent,
   PlusmemberComponent,
-  ADLeyersComponent
+  ADLeyersComponent,
+  WelcomePageComponent
 } from "../index";
 
 import {AgbComponent} from "../agb/agb.component";
@@ -33,7 +34,6 @@ export class MenuSideComponent implements OnInit {
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
-              private navParams: NavParams,
               private iab: InAppBrowser,
               private translate: TranslateService,
               private auth: AuthorizationService,
@@ -96,6 +96,12 @@ export class MenuSideComponent implements OnInit {
       }
     }
   }
+
+  logout(){
+    this.auth.session.reset();
+    this.navCtrl.setRoot(WelcomePageComponent);
+  }
+
   goToLink(url: string) {
     const browser = this.iab.create('url', '_system');
   }
@@ -104,6 +110,5 @@ export class MenuSideComponent implements OnInit {
     if(this.videoWeekObservable) {
       this.videoWeekObservable.unsubscribe();
     }
-
   }
 }

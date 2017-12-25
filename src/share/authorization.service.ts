@@ -44,11 +44,9 @@ export class AuthorizationService {
         for (let key in res) {
           if(this.that._user.hasOwnProperty(key) && res[key]){
             this.that._user[key] = res[key];
-            console.log(key + ' => ' + res[key]);
           }
         }
         this.that.session.start(this.that._user);
-
         return res;
       });
     }

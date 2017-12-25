@@ -38,12 +38,11 @@ export class AccountComponent implements OnInit {
   update(meta: NgForm){
     let req = {
       id: this.user.id,
-      birthday: this.user.birthday,
-      first_name: this.user.first_name,
-      last_name: this.user.last_name,
-      where_are_you_from: this.user.where_are_you_from
+      birthday: meta.value.birthday,
+      first_name: meta.value.first_name,
+      last_name: meta.value.last_name,
+      where_are_you_from: meta.value.where_are_you_from
     };
-
     this.auth.user.update(req).subscribe(responce => {
     }, err => {
       console.log('ERR:::: ', err);
