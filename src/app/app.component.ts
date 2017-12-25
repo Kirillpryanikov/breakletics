@@ -46,7 +46,7 @@ export class MyApp implements OnInit{
 
       this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }
@@ -81,7 +81,7 @@ export class MyApp implements OnInit{
           this.authService.session.start(res);
           this.rootPage = TabsComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = TabsComponent;
           // this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
@@ -90,7 +90,7 @@ export class MyApp implements OnInit{
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
         this.authService.session.reset();
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = TabsComponent;
       })
   }
 }

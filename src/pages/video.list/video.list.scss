@@ -1,5 +1,12 @@
 @import "../../theme/main";
+.platform-ios.platform-cordova {
+@media (max-width: 320px) {
+      .sub-header {
+           // margin-top: 2rem;
+          }
+      }
 
+  }
 video-list {
   font-family: "Roboto";
   font-weight: bold;
@@ -66,18 +73,21 @@ video-list {
     }
 
   }
+
   ion-content {
     @include slideRightAnimation();
     background: #1b1c1c;
     .sub-header {
       background: #1b1c1c;
-      min-height: 5rem;
+      min-height: 5.5rem;
       height: auto;
       //max-height: 144px;
       padding-bottom: 10px;
       @media (max-width: 320px) {
+
         padding-bottom: 5px;
-        min-height: 5rem;
+         min-height: 8.5rem;
+
       }
       @include setFlexStyles();
       flex-direction: column;
@@ -99,6 +109,7 @@ video-list {
         height: 80%;
       }
       ion-searchbar {
+        min-height: 3.5rem;
         padding: 0;
         width: 90%;
         font-size: 1.4rem !important;
