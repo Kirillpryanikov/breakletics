@@ -61,9 +61,14 @@ video-list {
         }
         text-align: center;
         letter-spacing: $navbar-title-font-spacing;
-        margin-right: 27px;
+        //margin-right: 27px;
       }
     }
+
+  }
+  ion-content {
+    @include slideRightAnimation();
+    background: #1b1c1c;
     .sub-header {
       background: #1b1c1c;
       min-height: 5rem;
@@ -152,15 +157,12 @@ video-list {
       }
       .filter-items {
         text-align: center;
+        width: 100%;
         span {
           font-style: 1rem;
         }
       }
     }
-  }
-  ion-content {
-    @include slideRightAnimation();
-    background: #1b1c1c;
     .container-workout {
       background: #1b1c1c;
     }

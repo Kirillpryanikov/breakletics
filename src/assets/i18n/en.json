@@ -163,7 +163,7 @@
   "WORKOUTS": {
     "TITLE": "Workouts",
     "SEARCH": "Filter by Warm Up or Cool Down",
-    "JETZT": "UNLOCK 48+ WORKOUTS NOW"
+    "JETZT": "UNLOCK 24+ WORKOUTS NOW"
   },
   "WORKOUTS_FILTER": {
     "TITLE": "Filter by Warm Up or Cool Down",
@@ -225,5 +225,11 @@
     "PRICE_FOOTER": "100% Riskfree",
     "APPLY": "get it now"
   },
-  "LOGOUT": "Log out"
+  "LOGOUT": "Log out",
+  "FORGOT_PAGE": {
+    "TITLE1": "Huch,",
+    "TITLE2": "wie ging das Passwort?",
+    "PLACEHOLDER_EMAIL": "E-Mail Adresse mit der du dich registriert hast",
+    "BUTTON_LOGIN": "neues passwort anfordern"
+  }
 }

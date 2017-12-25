@@ -21,7 +21,7 @@ export class WarmupComponent implements OnInit, OnDestroy {
               private helper: HelperService,
               private service: WarmupService,
               ) {
-    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+    // this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
   ngOnInit(){
@@ -45,13 +45,13 @@ export class WarmupComponent implements OnInit, OnDestroy {
     this.navCtrl.setRoot(DashboardComponent);
   }
 
-  ionViewWillEnter() {
-    this.tabBarElement.style.display = 'none';
-  }
-
-  ionViewWillLeave() {
-    this.tabBarElement.style.display = 'flex';
-  }
+  // ionViewWillEnter() {
+  //   this.tabBarElement.style.display = 'none';
+  // }
+  //
+  // ionViewWillLeave() {
+  //   this.tabBarElement.style.display = 'flex';
+  // }
 
   ngOnDestroy() {
     if(this.warmupsObservable) {

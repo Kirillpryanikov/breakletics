@@ -23,7 +23,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   constructor(public navCtrl: NavController,
               private service: WorkoutService,
               private helper: HelperService) {
-    this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
+    // this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
   ngOnInit(){
@@ -46,13 +46,13 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.navCtrl.setRoot(DashboardComponent);
   }
 
-  ionViewWillEnter() {
-    this.tabBarElement.style.display = 'none';
-  }
-
-  ionViewWillLeave() {
-    this.tabBarElement.style.display = 'flex';
-  }
+  // ionViewWillEnter() {
+  //   this.tabBarElement.style.display = 'none';
+  // }
+  //
+  // ionViewWillLeave() {
+  //   this.tabBarElement.style.display = 'flex';
+  // }
 
   ngOnDestroy() {
     if(this.workoutObservable) {

@@ -1,8 +1,8 @@
 <ion-header transparent>
   <ion-navbar color="dark">
-    <ion-buttons left>
-      <button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>
-    </ion-buttons>
+    <!--<ion-buttons left>-->
+      <!--<button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>-->
+    <!--</ion-buttons>-->
     <!--<ion-buttons left>-->
       <!--<button ion-button navPop icon-only>-->
         <!--<ion-icon name="ios-arrow-round-back"></ion-icon>-->
@@ -11,6 +11,8 @@
     <div class="title" [innerHTML]="title"></div>
     <div class="divider"></div>
   </ion-navbar>
+</ion-header>
+<ion-content contentTop="200">
   <div class="sub-header">
     <ion-searchbar
       *ngIf="search"
@@ -26,11 +28,9 @@
       <div class="filter-items" (click)="getFilters()">
         <span>{{ selectFilters && selectFilters['list'] ? selectFilters['list'] : "WORKOUTS.SEARCH" | translate}}</span>
       </div>
-      <ion-icon name="md-close-circle" (click)="clearFilters()"></ion-icon>
+      <ion-icon name="md-close-circle" (click)="clearFilters()" *ngIf="selectFilters && selectFilters['list']"></ion-icon>
     </div>
   </div>
-</ion-header>
-<ion-content contentTop="200">
   <div class="container-workout">
     <ng-container *ngFor="let item of videos; let i = index" >
       <div class="video slide-right"  (click)="playVideoModal(item)" *ngIf="user && user.plusmember === item.plusmember"
@@ -55,7 +55,8 @@
       </div>
     </ng-container>
 
-    <div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate"></div>
+    <div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate" *ngIf="!hideBanner"></div>
+
     <ng-container *ngFor="let item of videos; let i = index" >
       <div class="private video slide-right" *ngIf="user && user.plusmember < item.plusmember"
            [style.background]="'url(' + item.video_img + ')'"

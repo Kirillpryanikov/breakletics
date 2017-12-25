@@ -43,6 +43,8 @@ export class MyApp implements OnInit{
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
+
+      this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();

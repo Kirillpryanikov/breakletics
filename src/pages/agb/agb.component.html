@@ -9,5 +9,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <de-agb></de-agb>
+  <en-agb *ngIf="language !== 'de'"></en-agb>
+  <de-agb *ngIf="language === 'de'"></de-agb>
 </ion-content>

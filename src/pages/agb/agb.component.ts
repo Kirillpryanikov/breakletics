@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'agb-component',
@@ -7,10 +8,12 @@ import {NavController, NavParams, ViewController} from 'ionic-angular';
   styleUrls: ['/agb.component.scss']
 })
 export class AgbComponent implements OnInit {
+  public language: any;
   constructor(public navCtrl: NavController,
-              private navParams: NavParams,
-              private viewCtrl: ViewController) {}
+              private translate: TranslateService,
+              ) {}
 
   ngOnInit(){
+    this.language = this.translate.currentLang;
   }
 }

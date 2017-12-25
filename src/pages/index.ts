@@ -23,6 +23,7 @@ export * from './account/account.component';
 export * from './password.restore/restore';
 export * from './agb/agb.component';
 export * from './agb/de/de.component';
+export * from './agb/en/en.component';
 export * from './imprint/imprint.component';
 export * from './imprint/de/de.component';
 export * from './imprint/en/en.component';

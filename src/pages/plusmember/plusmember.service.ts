@@ -85,7 +85,7 @@ export class PlusmemberService {
                 },
                 {
                     title: "ABWECHSLUNG OHNE ENDE",
-                    description: "48 Workouts, 36 Exercises, 4 Warm Up, 4 Cool Downs!"
+                    description: "24+ Workouts, 48+ Exercises, 1 Warm Up, 1 Cool Downs!"
                 },
                 {
                     title: "FÜR ABSOLUT JEDE/N",
@@ -108,7 +108,7 @@ export class PlusmemberService {
               },
               {
                   title: "ENDLESS VARIETY",
-                  description: "48 Workouts, 36 Exercises, 4 Warm Ups, 4 Cool Downs!"
+                  description: "24+ Workouts, 48+ Exercises, 1 Warm Ups, 1 Cool Downs!"
               },
               {
                   title: "ANYONE CAN DO IT",
