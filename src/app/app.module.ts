@@ -11,7 +11,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { MyApp } from './app.component';
 import { PageModule } from '../pages/page.module';
 
@@ -49,8 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     Globalization,
     ScreenOrientation,
+    GoogleAnalytics,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-
   ]
 })
 export class AppModule {}

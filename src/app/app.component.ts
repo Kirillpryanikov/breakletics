@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Globalization } from '@ionic-native/globalization';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 import {
   WelcomePageComponent,
@@ -31,7 +32,8 @@ export class MyApp implements OnInit{
               private nativeStorage: NativeStorage,
               private screenOrientation: ScreenOrientation,
               private globalization: Globalization,
-              private authService: AuthorizationService) {
+              private authService: AuthorizationService,
+              private ga: GoogleAnalytics) {
     this.platform = platform;
     this.initializeApp();
   }
@@ -46,8 +48,17 @@ export class MyApp implements OnInit{
 
       this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
-      //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
+
+      this.ga.startTrackerWithId('UA-63203216-2')
+        .then(() => {
+          console.log('Google analytics is ready now');
+          this.ga.trackView('test');
+          // Tracker is ready
+          // You can now track pages or set additional information such as AppVersion or UserId
+        })
+        .catch(e => console.log('Error starting GoogleAnalytics', e));
     });
   }
 
@@ -81,7 +92,7 @@ export class MyApp implements OnInit{
           this.authService.session.start(res);
           this.rootPage = TabsComponent;
         } else {
-          this.rootPage = TabsComponent;
+          this.rootPage = WelcomePageComponent;
           // this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
@@ -90,7 +101,7 @@ export class MyApp implements OnInit{
       .catch(err => {
         // this.rootPage = WelcomePageComponent;
         this.authService.session.reset();
-        this.rootPage = TabsComponent;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }
