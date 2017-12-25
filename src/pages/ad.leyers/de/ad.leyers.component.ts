@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {NavController, NavParams, ViewController} from 'ionic-angular';
+import {NavController, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'de-ad-leyers',

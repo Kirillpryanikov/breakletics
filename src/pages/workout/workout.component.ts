@@ -1,14 +1,13 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams } from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
+import { NavController, NavParams } from 'ionic-angular';
 import { Subscription } from 'rxjs/Subscription';
 import { WorkoutService } from './workout.service';
 import { Video } from '../../share/Video';
 
 import {
   DashboardComponent,
-  FilterVideoComponent
 } from '../index'
+import {HelperService} from "../../share/helper.service";
 
 @Component({
   selector: 'page-workout',
@@ -16,25 +15,19 @@ import {
   styleUrls: ['/workout.scss']
 })
 export class WorkoutComponent implements OnInit, OnDestroy {
-  private loading: any;
   private tabBarElement: any;
   private workoutObservable: Subscription;
   public workouts: Video[];
   public levels;
 
   constructor(public navCtrl: NavController,
-              private modalCtrl: ModalController,
-              private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController,
-              private navParams: NavParams,
-              private service: WorkoutService) {
+              private service: WorkoutService,
+              private helper: HelperService) {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
   ngOnInit(){
-    this.presentLoading();
-    let user = this.navParams.get('user');
-
+    this.helper.loading.show();
     this.getWorkouts();
   }
 
@@ -42,12 +35,13 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.workoutObservable = this.service.workouts()
       .subscribe(responce => {
         this.workouts = responce;
-        this.dismissLoading();
+        this.helper.loading.hide();
       }, err => {
-        this.dismissLoading();
+        this.helper.loading.hide();
         console.log('Err: =>', err);
       })
   }
+
   goToDash() {
     this.navCtrl.setRoot(DashboardComponent);
   }
@@ -59,32 +53,12 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   ionViewWillLeave() {
     this.tabBarElement.style.display = 'flex';
   }
+
   ngOnDestroy() {
     if(this.workoutObservable) {
       this.workoutObservable.unsubscribe();
     }
-      this.dismissLoading();
+
+    this.helper.loading.hide();
   }
-
-    presentLoading(){
-        if(!this.loading){
-            this.loading = this.loadingCtrl.create({
-                spinner: 'crescent',
-                duration: 3000
-            });
-            this.loading.present();
-        }
-    }
-
-    dismissLoading() {
-        if (this.loading) {
-            try {
-                this.loading.dismiss();
-            }
-            catch (exception) {
-                console.log(exception)
-            }
-            this.loading = null;
-        }
-    }
 }

@@ -1,6 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {NavController, NavParams, ViewController} from 'ionic-angular';
-import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import {NavController, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'en-plusmember',

@@ -1,8 +1,8 @@
-import { Component, ViewChild, OnInit, Output } from '@angular/core';
-import {NavController, Slides, ViewController, NavParams, ModalController} from 'ionic-angular';
+import {Component, ViewChild, OnInit} from '@angular/core';
+import {Slides, ViewController, ModalController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import {tryCatch} from "rxjs/util/tryCatch";
 import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
+import {AuthorizationService} from "../../share/authorization.service";
 
 @Component({
   selector: 'page-guide',
@@ -16,25 +16,19 @@ import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video
 })
 export class GuideComponent implements OnInit{
   @ViewChild('slider') slider: Slides;
-
   public firstName: string;
 
-  constructor(private navCtrl: NavController,
+  constructor(
               private nativeStorage: NativeStorage,
               private viewCtrl: ViewController,
-              private navParams: NavParams,
+              private auth: AuthorizationService,
               private modalCtrl: ModalController) {}
 
   public user: object;
 
   ngOnInit(){
-    this.user = this.navParams.get('user');
-    console.log('this.user:::  ', this.user);
-    if(this.user) {
-      this.firstName = this.user['user_display_name'].split(' ')[0];
-    }
+    this.user = this.auth.user.get();
   }
-
 
   ionViewDidEnter() {
     this.slider.lockSwipes(true);
@@ -64,6 +58,7 @@ export class GuideComponent implements OnInit{
     this.playVideoModal({ video_url: 'https://vimeo.com/247691009'});
     this.guideFinish();
   }
+
   playVideoModal(url) {
     this.modalCtrl.create(WrapperVideoPlayerComponent, {video: url}).present();
   }

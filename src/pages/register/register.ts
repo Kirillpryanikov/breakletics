@@ -1,11 +1,10 @@
 import { Component, ViewChild, OnDestroy } from '@angular/core';
-import { NavController, Slides, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, Slides, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { AuthorizationService } from '../../share/authorization.service';
-import { TabsComponent } from '../index';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
-import { NativeStorage } from '@ionic-native/native-storage';
+import {HelperService} from "../../share/helper.service";
 
 @Component({
   selector: 'page-register',
@@ -14,15 +13,12 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class RegisterPageComponent implements OnDestroy{
   @ViewChild('slider') slider: Slides;
-
   private toast: any;
-  private loading: any;
   private regObservable: Subscription;
 
   constructor(public navCtrl: NavController,
-              private loadingCtrl: LoadingController,
+              private helper: HelperService,
               private toastCtrl: ToastController,
-              private nativeStorage: NativeStorage,
               private auth: AuthorizationService) {}
 
   goNext() {
@@ -34,7 +30,7 @@ export class RegisterPageComponent implements OnDestroy{
    * @param {NgForm} f
    */
   submit(f: NgForm) {
-    this.presentLoading();
+    this.helper.loading.show();
     let data = f.value;
     /**
      * This is necessary. From WORDPERSS
@@ -48,7 +44,8 @@ export class RegisterPageComponent implements OnDestroy{
         console.log('err register', err);
         this.slider.slideTo(0);
         this.presentToast(err.status);
-        this.dismissLoading();
+        this.helper.loading.hide();
+
       })
   }
 
@@ -59,32 +56,11 @@ export class RegisterPageComponent implements OnDestroy{
    * @returns {Subscription}
    */
   authorization(username, password, user) {
-    console.log('user step 1: ', user);
     return this.auth.login({username, password})
       .subscribe(res =>{
-        this.nativeStorage.setItem('user', res);
-        this.navCtrl.push(ExtraQuestionsComponent, { user: user });
-        this.dismissLoading();
+        this.navCtrl.push(ExtraQuestionsComponent);
+        this.helper.loading.hide();
       })
-  }
-
-  dismissLoading() {
-    if (this.loading) {
-      try {
-        this.loading.dismiss();
-      }
-      catch (exception) {
-        console.log(exception)
-      }
-      this.loading = null;
-    }
-  }
-
-  presentLoading(){
-    if(!this.loading){
-      this.loading = this.loadingCtrl.create({});
-      this.loading.present();
-    }
   }
 
   /**
@@ -113,8 +89,6 @@ export class RegisterPageComponent implements OnDestroy{
     if(this.regObservable) {
       this.regObservable.unsubscribe();
     }
-    if(this.loading) {
-      this.loading.dismiss();
-    }
+    this.helper.loading.hide();
   }
 }

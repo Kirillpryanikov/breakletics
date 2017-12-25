@@ -10,11 +10,9 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {
   WelcomePageComponent,
   TabsComponent,
-  PlusmemberComponent,
 } from '../pages/index';
 
 import {AuthorizationService} from "../share/authorization.service";
-import {ExtraQuestionsComponent} from "../pages/extra.questions/extra.questions";
 
 @Component({
   templateUrl: 'app.html'
@@ -46,7 +44,7 @@ export class MyApp implements OnInit{
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.initTranslate();
     });
   }

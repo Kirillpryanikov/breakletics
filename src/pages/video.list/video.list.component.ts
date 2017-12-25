@@ -1,6 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {NavController, ModalController, LoadingController, NavParams, App} from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
+import {NavController, ModalController} from 'ionic-angular';
 import {ConfigService} from "../config.service";
 import { Video } from '../../share/Video';
 import { VideoListService } from './video.list.service';
@@ -16,6 +15,7 @@ import {AuthorizationService} from "../../share/authorization.service";
 import {User} from "../../share/User";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {TabsComponent} from "../tabs/tabs.component";
+import {HelperService} from "../../share/helper.service";
 
 @Component({
   selector: 'video-list',
@@ -42,31 +42,26 @@ export class VideoListComponent implements OnInit {
 
   constructor(public navCtrl: NavController,
               private modalCtrl: ModalController,
-              private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController,
-              private navParams: NavParams,
               private service: VideoListService,
               private keyboard: Keyboard,
-              private app: App,
-              private authService: AuthorizationService) {}
+              private authService: AuthorizationService,
+              private helper: HelperService) {}
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
-    console.log('this.levels', this.levels);
     this.user = this.authService.user.get();
   }
 
   getData(req) {
-    this.presentLoading();
+    this.helper.loading.show();
     this.vidoeObservable = this.service[this.page](req).subscribe(res => {
       this.videos = res;
-      this.dismissLoading();
+      this.helper.loading.hide();
     })
   }
 
   searchByName(ev) {
     this.keyboard.close();
-    console.log('ev', ev.target.value);
     this.getData({"search":ev.target.value});
   }
 
@@ -82,30 +77,7 @@ export class VideoListComponent implements OnInit {
     }
   }
 
-  presentLoading(){
-    if(!this.loading){
-      this.loading = this.loadingCtrl.create({
-        spinner: 'crescent',
-        duration: 3000
-      });
-      this.loading.present();
-    }
-  }
-
-  dismissLoading() {
-    if (this.loading) {
-      try {
-        this.loading.dismiss();
-      }
-      catch (exception) {
-      }
-      this.loading = null;
-    }
-  }
-
   goToDash() {
-      // this.app.getRootNav().setRoot(TabsComponent);
-      console.log('this.navCtrl.parent',this.navCtrl.parent);
       if(!this.navCtrl.parent || this.navCtrl.parent === null) {
         console.log('NUll pagents');
           this.navCtrl.setRoot(TabsComponent);
@@ -176,9 +148,6 @@ export class VideoListComponent implements OnInit {
   ngOnDestroy() {
     if(this.vidoeObservable) {
       this.vidoeObservable.unsubscribe();
-    }
-    if(this.loading) {
-      this.loading.dismiss();
     }
   }
 }

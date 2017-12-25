@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
-import {NavController, NavParams, ViewController} from 'ionic-angular';
+import {NavController, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'de-plusmember',

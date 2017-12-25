@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams, ViewController } from 'ionic-angular';
-import { NativeStorage } from '@ionic-native/native-storage';
+import { NavController} from 'ionic-angular';
 import { Video } from "../../share/Video";
 import { Subscription } from "rxjs/Subscription";
 import { DashboardComponent } from "../index";
 import { WarmupService } from "./warmup.service";
+import {HelperService} from "../../share/helper.service";
 
 @Component({
   selector: 'page-warmup',
@@ -13,55 +13,32 @@ import { WarmupService } from "./warmup.service";
 })
 
 export class WarmupComponent implements OnInit, OnDestroy {
-  private loading: any;
   private warmupsObservable: Subscription;
   public warmupsData: Video[];
   private tabBarElement;
 
   constructor(public navCtrl: NavController,
-              private loadingCtrl: LoadingController,
-              private service: WarmupService) {
+              private helper: HelperService,
+              private service: WarmupService,
+              ) {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
-    this.loading = this.loadingCtrl.create({});
   }
 
   ngOnInit(){
     this.getWarmups();
   }
+
   getWarmups() {
-    this.presentLoading();
+    this.helper.loading.show();
 
     this.warmupsObservable = this.service.warmups()
       .subscribe(responce => {
-        console.log('Responce: =>', responce);
         this.warmupsData = responce;
-        this.dismissLoading();
+        this.helper.loading.hide();
       }, err => {
-        this.dismissLoading();
+        this.helper.loading.hide();
         console.log('Err: =>', err);
       })
-  }
-
-  presentLoading(){
-    if(!this.loading){
-      this.loading = this.loadingCtrl.create({
-        spinner: 'crescent',
-        duration: 3000
-      });
-      this.loading.present();
-    }
-  }
-
-  dismissLoading() {
-    if (this.loading) {
-      try {
-        this.loading.dismiss();
-      }
-      catch (exception) {
-        console.log(exception)
-      }
-      this.loading = null;
-    }
   }
 
   goToDash() {
@@ -79,9 +56,6 @@ export class WarmupComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if(this.warmupsObservable) {
       this.warmupsObservable.unsubscribe();
-    }
-    if(this.loading) {
-      this.loading.dismiss();
     }
   }
 }

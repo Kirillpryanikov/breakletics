@@ -50,6 +50,7 @@ import { PlusmemberService } from './plusmember/plusmember.service';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AuthenticationInterceptor} from "../share/interceptor.service";
+import {HelperService} from "../share/helper.service";
 
 const components = [
   DashboardComponent,
@@ -81,7 +82,7 @@ const components = [
   EnADLeyersComponent,
   PlusmemberComponent,
   DePlusmemberComponent,
-  EnPlusmemberComponent
+  EnPlusmemberComponent,
 ];
 
 @NgModule({
@@ -105,6 +106,7 @@ const components = [
     AuthorizationService,
     PlusmemberService,
     LaunchNavigator,
+    HelperService,
     Tabs,
     {
       provide: HTTP_INTERCEPTORS,
