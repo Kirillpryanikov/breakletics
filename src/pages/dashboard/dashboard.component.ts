@@ -44,11 +44,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(){
+    // this.changeTab();
+    console.log('DashInit');
     this.weightDevice = this.platform.width();
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
     this.handlerLoadVideo();
   }
+
   ngAfterViewInit(){
     setTimeout(() => {
       this.language = this.translate.currentLang;
@@ -119,11 +122,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   goTo(page){
     switch (page) {
       case 'WorkoutComponent': {
-        this.navCtrl.setRoot(WorkoutComponent);
+        this.goToTab(1);
         break;
       }
       case 'ExercisesComponent': {
-        this.navCtrl.setRoot(ExercisesComponent);
+        this.goToTab(2);
         break;
       }
       case 'plusmember': {
@@ -131,15 +134,21 @@ export class DashboardComponent implements OnInit, OnDestroy {
         break;
       }
       case 'WarmupComponent': {
-        this.navCtrl.setRoot(WarmupComponent);
+        this.goToTab(3);
         break;
       }
       default: {
-        //statements;
         break;
       }
     }
+  }
 
+  goToTab(toPage: number) {
+    if(this.navCtrl.parent || this.navCtrl.parent !== null) {
+      this.navCtrl.parent.select(toPage);
+    } else {
+      console.log('it is not a tab');
+    }
   }
 
   ngOnDestroy() {

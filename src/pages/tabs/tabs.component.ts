@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {NavController, NavParams, Tabs} from 'ionic-angular';
 import {DashboardComponent, WorkoutComponent, ExercisesComponent, WarmupComponent  } from "../index";
 
 @Component({
@@ -8,17 +8,31 @@ import {DashboardComponent, WorkoutComponent, ExercisesComponent, WarmupComponen
   styleUrls: ['/tabs.scss']
 })
 export class TabsComponent implements OnInit, OnDestroy {
+  @ViewChild('tabContainer') tabRef: Tabs;
+  public selected: number;
+
   dashboard = DashboardComponent;
   workout = WorkoutComponent;
   exercises = ExercisesComponent;
   warmup = WarmupComponent;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private navParams: NavParams) {
   }
 
   ngOnInit(){
-    // Tabs.select(0);
+    if(this.navParams.get('tab') > 0) {
+      this.selected = this.navParams.get('tab');
+    }
   }
 
+  // ngAfterContentInit() {
+  //   setTimeout(()=>{
+  //     console.log('AfterInit');
+  //     if(this.navParams.get('tab') > 0) {
+  //       this.tabRef.select(this.navParams.get('tab'));
+  //     }
+  //   },2000)
+  //
+  // }
   ngOnDestroy(){}
 }

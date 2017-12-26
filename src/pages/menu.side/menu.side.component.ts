@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ModalController, NavController} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ItemMenuSide} from '../item.menu.side/item.menu.side';
 
@@ -21,6 +21,7 @@ import {AuthorizationService} from "../../share/authorization.service";
 import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
 import {DashbordService} from './../dashboard/dashboard.service';
 import {Subscription} from "rxjs/Subscription";
+import {TabsComponent} from "../tabs/tabs.component";
 
 @Component({
   selector: 'menu-side-component',
@@ -71,15 +72,16 @@ export class MenuSideComponent implements OnInit {
         break;
       }
       case 'WorkoutComponent': {
-        this.navCtrl.setRoot(WorkoutComponent);
+        this.navCtrl.setRoot(TabsComponent, {tab: 1});
         break;
       }
       case 'ExercisesComponent': {
-        this.navCtrl.setRoot(ExercisesComponent);
+        console.log(this.navCtrl);
+        this.navCtrl.setRoot(TabsComponent, {tab: 2});
         break;
       }
       case 'WarmupComponent': {
-        this.navCtrl.setRoot(WarmupComponent);
+        this.navCtrl.setRoot(TabsComponent, {tab: 3});
         break;
       }
       case 'AGB': {
