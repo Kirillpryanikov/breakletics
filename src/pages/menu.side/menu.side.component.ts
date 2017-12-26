@@ -41,6 +41,7 @@ export class MenuSideComponent implements OnInit {
               private service: DashbordService) {}
 
   ngOnInit(){
+    console.log('Menu init ::');
     this.language = this.translate.currentLang;
     this.user = this.auth.user.get();
   }
