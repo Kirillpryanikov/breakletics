@@ -1,6 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
+import {NgForm} from "@angular/forms";
+import {AuthorizationService} from "../../share/authorization.service";
+import {Subscription} from "rxjs/Subscription";
+import {HelperService} from "../../share/helper.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'password-restore',
@@ -9,31 +14,42 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class PasswordRestoreComponent implements OnDestroy {
   private loading: any;
+  private passwordObservable: Subscription;
+  private toast: any;
 
-  constructor(private navCtrl: NavController,
-              private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController)
+  constructor(private auth: AuthorizationService,
+              private toastCtrl: ToastController,
+              private helper: HelperService,
+              private translate: TranslateService)
   {}
 
-  dismissLoading() {
-    if (this.loading) {
-      try {
-        this.loading.dismiss();
-      }
-      catch (exception) {
-        console.log(exception)
-      }
-      this.loading = null;
-    }
+  recovery(f:NgForm) {
+    this.helper.loading.show();
+    this.passwordObservable = this.auth.passwordRecovery(f.value.email)
+      .subscribe(responce => {
+        this.presentToast(this.translate.instant('FORGOT_PAGE.SUCCESS'));
+        this.helper.loading.hide();
+      }, err => {
+        console.log('ERR:::: ', err);
+        this.helper.loading.hide();
+        this.presentToast(this.translate.instant('FORGOT_PAGE.ERROR'));
+      })
   }
 
-  presentLoading(){
-    if(!this.loading){
-      this.loading = this.loadingCtrl.create({});
-      this.loading.present();
-    }
+  presentToast(msg) {
+    if (this.toast) this.toast.dismiss();
+    this.toast = this.toastCtrl.create({
+      message: msg,
+      duration: 4000,
+      position: 'bottom'
+    });
+
+    this.toast.present();
   }
 
   ngOnDestroy() {
+    if(this.passwordObservable) {
+      this.passwordObservable.unsubscribe();
+    }
   }
 }

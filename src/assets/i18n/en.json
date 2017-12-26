@@ -230,6 +230,8 @@
     "TITLE1": "Huch,",
     "TITLE2": "wie ging das Passwort?",
     "PLACEHOLDER_EMAIL": "E-Mail Adresse mit der du dich registriert hast",
-    "BUTTON_LOGIN": "neues passwort anfordern"
+    "BUTTON_LOGIN": "neues passwort anfordern",
+    "SUCCESS": "Check your email, we sent you a new password!",
+    "ERROR": "ERROR"
   }
 }

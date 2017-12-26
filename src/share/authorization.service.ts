@@ -52,6 +52,11 @@ export class AuthorizationService {
     }
   };
 
+  passwordRecovery(email){
+    const url = 'http://breakletics.de/members/api/user/retrieve_password/?insecure=cool&user_login=';
+    return this.http.get(url + email);
+  }
+
   session = {
     that: this,
     start(user){
