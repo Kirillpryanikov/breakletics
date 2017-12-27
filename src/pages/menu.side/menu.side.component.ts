@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ModalController, NavController} from 'ionic-angular';
+import {ModalController, NavController, App, MenuController} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ItemMenuSide} from '../item.menu.side/item.menu.side';
 
@@ -38,7 +38,9 @@ export class MenuSideComponent implements OnInit {
               private iab: InAppBrowser,
               private translate: TranslateService,
               private auth: AuthorizationService,
-              private service: DashbordService) {}
+              private service: DashbordService,
+              public app: App,
+              public menu: MenuController) {}
 
   ngOnInit(){
     console.log('Menu init ::');
@@ -59,6 +61,7 @@ export class MenuSideComponent implements OnInit {
   }
 
   goTo(page){
+    this.menu.close();
     switch (page) {
       case 'XMAS_DEAL': {
         this.modalCtrl.create(ADLeyersComponent).present();
@@ -73,7 +76,8 @@ export class MenuSideComponent implements OnInit {
         break;
       }
       case 'WorkoutComponent': {
-        this.navCtrl.setRoot(TabsComponent, {tab: 1});
+        let nav = this.app.getRootNav();
+        nav.setRoot(TabsComponent, {tab: 1});
         break;
       }
       case 'ExercisesComponent': {

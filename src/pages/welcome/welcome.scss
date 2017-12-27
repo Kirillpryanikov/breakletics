@@ -43,13 +43,18 @@ page-welcome {
       width: 9%;
       max-width: 98px;
       margin-right: 5.46%;
+      align-self: flex-end;
     }
     .partner-text {
+      align-self: flex-end;
+      span {
+        display: block;
+      }
       width: 65px;
       text-align: right;
       margin-right: 2.8%;
       text-transform: uppercase;
-      font-size: 0.7em;
+      font-size: 0.59rem;
       color: #fff;
     }
   }

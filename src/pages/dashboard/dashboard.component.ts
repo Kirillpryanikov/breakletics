@@ -54,6 +54,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   openMenu() {
+    console.log('this.menuCtrl', this.menuCtrl.getOpen());
+
     this.menuCtrl.open();
   }
 

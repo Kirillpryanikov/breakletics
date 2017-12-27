@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
@@ -6,7 +6,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'item.menu.side.html',
   styleUrls: ['/item.menu.side.scss']
 })
-export class ItemMenuSide {
+export class ItemMenuSide implements OnInit {
 
   public title: string = "Some page";
 
@@ -14,6 +14,8 @@ export class ItemMenuSide {
               private navParams: NavParams) {
       this.title = this.navParams.get('data');
   }
-
+  ngOnInit(){
+    console.log('OnInit menu item');
+  }
   close() {}
 }
