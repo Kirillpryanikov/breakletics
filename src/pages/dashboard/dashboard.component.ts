@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {NavController, ModalController, NavParams, Platform} from 'ionic-angular';
+import {NavController, ModalController, NavParams, Platform, MenuController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {TranslateService} from "@ngx-translate/core";
 
@@ -40,6 +40,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private navParams: NavParams,
               private service: DashbordService,
               private platform: Platform,
+              public menuCtrl: MenuController
               ) {
   }
 
@@ -50,6 +51,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
     this.handlerLoadVideo();
+  }
+
+  openMenu() {
+    this.menuCtrl.open();
   }
 
   ngAfterViewInit(){

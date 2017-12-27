@@ -34,12 +34,18 @@ page-dashboard {
     .toolbar-background {
       background: #000!important;
     }
+    ion-buttons {
+      width: 100%;
+      @include setFlexStyles(space-between);
+    }
     background: #000!important;
     height: $height-header-dashboard;
     .bar-button-menutoggle-ios ion-icon,ion-icon {
       font-size: 3.8rem !important;
     }
-
+    .plusmember-wrapper {
+      min-width: 43px;
+    }
     .plusmember {
       font-family: Roboto;
       font-weight: bold;

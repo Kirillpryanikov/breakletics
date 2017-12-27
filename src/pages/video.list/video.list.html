@@ -80,7 +80,7 @@
       </div>
     </ng-container>
 
-    <pay-it></pay-it>
+    <pay-it *ngIf="user && user.plusmember < 1"></pay-it>
 
   </div>
 </ion-content>
