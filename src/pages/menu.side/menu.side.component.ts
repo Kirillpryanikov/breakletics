@@ -1,13 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ModalController, App, MenuController} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ItemMenuSide} from '../item.menu.side/item.menu.side';
 
 import {
   SettingsComponent,
-  WarmupComponent,
-  ExercisesComponent,
-  WorkoutComponent,
   ImprintComponent,
   PlusmemberComponent,
   ADLeyersComponent,
@@ -62,7 +59,7 @@ export class MenuSideComponent implements OnInit {
   }
 
   goTo(page){
-    this.menu.close('mainmenu');
+    this.menu.close();
     switch (page) {
       case 'XMAS_DEAL': {
         this.modalCtrl.create(ADLeyersComponent).present();
@@ -100,7 +97,6 @@ export class MenuSideComponent implements OnInit {
         this.logout();
       }
       default: {
-        //statements;
         break;
       }
     }
