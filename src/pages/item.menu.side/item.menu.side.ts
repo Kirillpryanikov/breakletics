@@ -15,7 +15,6 @@ export class ItemMenuSide implements OnInit {
       this.title = this.navParams.get('data');
   }
   ngOnInit(){
-    console.log('OnInit menu item');
   }
   close() {}
 }

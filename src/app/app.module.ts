@@ -14,6 +14,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { MyApp } from './app.component';
 import { PageModule } from '../pages/page.module';
+import {ItemMenuSide} from '../pages/item.menu.side/item.menu.side';
+import {MenuSideComponent} from '../pages/menu.side/menu.side.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -21,7 +23,9 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    ItemMenuSide,
+    MenuSideComponent
   ],
   imports: [
     BrowserModule,

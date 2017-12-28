@@ -33,6 +33,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public language;
 
   constructor(public navCtrl: NavController,
+              public menu: MenuController,
               private translate: TranslateService,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
@@ -46,6 +47,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
     // this.changeTab();
+    this.menu.swipeEnable(true);
     console.log('DashInit');
     this.weightDevice = this.platform.width();
     this.heightDevice = this.platform.height()* 29.5 / 100;

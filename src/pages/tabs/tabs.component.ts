@@ -25,18 +25,5 @@ export class TabsComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngAfterContentInit() {
-
-    // setTimeout(()=>{
-    //   console.log('AfterInit');
-    //   if(this.navParams.get('tab') > 0) {
-    //     this.tabRef.select(this.navParams.get('tab'));
-    //   }
-    // },2000)
-
-  }
-  goToDash() {
-    console.log('GO TO DASH');
-  }
   ngOnDestroy(){}
 }

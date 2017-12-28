@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ModalController, NavController, App, MenuController} from 'ionic-angular';
+import {ModalController, App, MenuController} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ItemMenuSide} from '../item.menu.side/item.menu.side';
 
@@ -32,24 +32,25 @@ export class MenuSideComponent implements OnInit {
   public language;
   public user: User;
   private videoWeekObservable: Subscription;
-
-  constructor(public navCtrl: NavController,
-              private modalCtrl: ModalController,
+  private nav;
+  constructor(private modalCtrl: ModalController,
               private iab: InAppBrowser,
               private translate: TranslateService,
               private auth: AuthorizationService,
               private service: DashbordService,
               public app: App,
-              public menu: MenuController) {}
+              public menu: MenuController) {
+  }
 
   ngOnInit(){
-    console.log('Menu init ::');
+    this.menu.swipeEnable(false);
+    this.nav = this.app.getRootNav();
     this.language = this.translate.currentLang;
     this.user = this.auth.user.get();
   }
 
   someMethods(title) {
-    this.navCtrl.push(ItemMenuSide , {data: title})
+    this.nav.push(ItemMenuSide , {data: title})
   }
 
   playVideoWeek(){
@@ -72,29 +73,27 @@ export class MenuSideComponent implements OnInit {
         break;
       }
       case 'MY_ACCOUNT': {
-        this.navCtrl.push(SettingsComponent);
+        this.nav.push(SettingsComponent);
         break;
       }
       case 'WorkoutComponent': {
-        let nav = this.app.getRootNav();
-        nav.setRoot(TabsComponent, {tab: 1});
+        this.nav.setRoot(TabsComponent, {tab: 1});
         break;
       }
       case 'ExercisesComponent': {
-        console.log(this.navCtrl);
-        this.navCtrl.setRoot(TabsComponent, {tab: 2});
+        this.nav.setRoot(TabsComponent, {tab: 2});
         break;
       }
       case 'WarmupComponent': {
-        this.navCtrl.setRoot(TabsComponent, {tab: 3});
+        this.nav.setRoot(TabsComponent, {tab: 3});
         break;
       }
       case 'AGB': {
-        this.navCtrl.push(AgbComponent);
+        this.nav.push(AgbComponent);
         break;
       }
       case 'IMPRINT': {
-        this.navCtrl.push(ImprintComponent);
+        this.nav.push(ImprintComponent);
         break;
       }
       default: {
@@ -106,7 +105,7 @@ export class MenuSideComponent implements OnInit {
 
   logout(){
     this.auth.session.reset();
-    this.navCtrl.setRoot(WelcomePageComponent);
+    this.nav.setRoot(WelcomePageComponent);
   }
 
   goToLink(url: string) {

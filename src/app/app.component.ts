@@ -55,8 +55,6 @@ export class MyApp implements OnInit{
         .then(() => {
           console.log('Google analytics is ready now');
           this.ga.trackView('test');
-          // Tracker is ready
-          // You can now track pages or set additional information such as AppVersion or UserId
         })
         .catch(e => console.log('Error starting GoogleAnalytics', e));
     });
@@ -88,7 +86,6 @@ export class MyApp implements OnInit{
     this.nativeStorage.getItem('user')
       .then(res => {
         if(res){
-          console.log('restore session', res);
           this.authService.session.start(res);
           this.rootPage = TabsComponent;
         } else {
