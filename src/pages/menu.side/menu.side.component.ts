@@ -62,7 +62,7 @@ export class MenuSideComponent implements OnInit {
   }
 
   goTo(page){
-    this.menu.close();
+    this.menu.close('mainmenu');
     switch (page) {
       case 'XMAS_DEAL': {
         this.modalCtrl.create(ADLeyersComponent).present();
@@ -96,6 +96,9 @@ export class MenuSideComponent implements OnInit {
         this.nav.push(ImprintComponent);
         break;
       }
+      case 'LOGOUT': {
+        this.logout();
+      }
       default: {
         //statements;
         break;
@@ -104,6 +107,7 @@ export class MenuSideComponent implements OnInit {
   }
 
   logout(){
+    this.menu.swipeEnable(false);
     this.auth.session.reset();
     this.nav.setRoot(WelcomePageComponent);
   }

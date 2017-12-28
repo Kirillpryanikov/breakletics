@@ -1,10 +1,11 @@
 import { Component, ViewChild, OnDestroy } from '@angular/core';
-import { NavController, Slides, ToastController } from 'ionic-angular';
+import {ModalController, NavController, Slides, ToastController} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { AuthorizationService } from '../../share/authorization.service';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
 import {HelperService} from "../../share/helper.service";
+import {AgbComponent} from "../index";
 
 @Component({
   selector: 'page-register',
@@ -19,7 +20,8 @@ export class RegisterPageComponent implements OnDestroy{
   constructor(public navCtrl: NavController,
               private helper: HelperService,
               private toastCtrl: ToastController,
-              private auth: AuthorizationService) {}
+              private auth: AuthorizationService,
+              private modalCtrl: ModalController) {}
 
   goNext() {
     this.slider.slideNext();
@@ -84,7 +86,9 @@ export class RegisterPageComponent implements OnDestroy{
     });
     this.toast.present();
   }
-
+  openModal() {
+    this.modalCtrl.create(AgbComponent).present();
+  }
   ngOnDestroy() {
     if(this.regObservable) {
       this.regObservable.unsubscribe();

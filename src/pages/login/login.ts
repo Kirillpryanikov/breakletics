@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import {ModalController, NavController, ToastController} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage';
 
@@ -29,7 +29,8 @@ export class LoginPageComponent implements OnDestroy {
               private auth: AuthorizationService,
               private nativeStorage: NativeStorage,
               private helper: HelperService,
-              private toastCtrl: ToastController) {}
+              private toastCtrl: ToastController,
+              private modalCtrl: ModalController ) {}
 
   login(form: NgForm) {
     this.helper.loading.show();
@@ -86,7 +87,9 @@ export class LoginPageComponent implements OnDestroy {
 
     this.navCtrl.push(setPage);
   }
-
+  openModal() {
+    this.modalCtrl.create(AgbComponent).present();
+  }
   presentToast(status) {
     let msg: string;
 
