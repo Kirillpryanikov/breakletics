@@ -4,7 +4,7 @@
       <button ion-button transparent (click)="openMenu()">
         <ion-icon name="menu" (click)="openMenu()"></ion-icon>
       </button>
-      <ion-title><img src="assets/imgs/menu-logo.png" alt=""></ion-title>
+      <img src="assets/imgs/menu-logo.png" alt="">
 
       <div class="plusmember-wrapper">
         <button ion-button icon-only class="plusmember" *ngIf="user && user.plusmember < 1" (click)="goTo('plusmember')">
