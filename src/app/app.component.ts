@@ -49,6 +49,7 @@ export class MyApp implements OnInit{
       this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+
       this.initTranslate();
 
       this.ga.startTrackerWithId('UA-63203216-2')
