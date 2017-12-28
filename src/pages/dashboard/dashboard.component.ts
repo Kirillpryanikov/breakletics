@@ -164,6 +164,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if(this.videoWeekObservable) {
       this.videoWeekObservable.unsubscribe();
     }
+    this.menu.close('mainmenu');
+    this.menu.swipeEnable(false);
     this.helper.loading.hide();
   }
 }

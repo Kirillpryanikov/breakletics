@@ -107,7 +107,6 @@ export class MenuSideComponent implements OnInit {
   }
 
   logout(){
-    this.menu.swipeEnable(false);
     this.auth.session.reset();
     this.nav.setRoot(WelcomePageComponent);
   }
