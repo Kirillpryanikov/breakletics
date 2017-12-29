@@ -30,6 +30,9 @@ body {
 #dash-header {
 
 }
+.toolbar-background {
+  background: #000!important;
+}
 page-dashboard {
   font-family: Roboto !important;
   font-weight: bold;
@@ -38,9 +41,7 @@ page-dashboard {
       height: 2.8rem;
       margin-left: 5px;
     }
-    .toolbar-background {
-      background: #000!important;
-    }
+
     ion-buttons {
       width: 100%;
       @include setFlexStyles(space-between);
@@ -104,8 +105,8 @@ page-dashboard {
         }
 
         .block-1-footer {
-          display: flex;
-          justify-content: space-between;
+          @include setFlexStyles(space-between, flex-end);
+          padding-bottom: 3px;
           width: 100%;
           position: absolute;
           bottom: 0rem;
@@ -113,9 +114,9 @@ page-dashboard {
           box-sizing: border-box;
           font-size: 0.575em;
           left: 0;
-          -moz-box-shadow: inset 0px -42px 35px rgba(0,0,0,0.5);
-          -webkit-box-shadow: inset 0px -42px 35px rgba(0,0,0,0.5);
-          box-shadow: inset 0px -42px 35px rgba(0,0,0,0.5);
+          -moz-box-shadow: inset 0px -17px 17px  rgba(0,0,0,0.5);
+          -webkit-box-shadow: inset 0px -17px 17px  rgba(0,0,0,0.5);
+          box-shadow: inset 0px -17px 17px  rgba(0,0,0,0.5);
           //background: linear-gradient(rgba(233,233,233,0.2), rgba(26,27,27, 0.7));
           span {
             font-weight: bold;

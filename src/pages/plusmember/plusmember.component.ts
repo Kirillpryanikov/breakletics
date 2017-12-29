@@ -26,7 +26,7 @@ export class PlusmemberComponent implements OnInit {
     this.benefits = this.service.benefits(this.language);
   }
 
-  goToLink(url: string) {
-    const browser = this.iab.create('url', '_system');
+  goToLink(url) {
+    const browser = this.iab.create(url, '_system');
   }
 }
