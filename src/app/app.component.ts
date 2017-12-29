@@ -20,7 +20,7 @@ import {AuthorizationService} from "../share/authorization.service";
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp implements OnInit{
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any;
@@ -41,7 +41,6 @@ export class MyApp implements OnInit{
   }
 
   ngOnInit(){
-    this.isAuth();
   }
 
   initializeApp() {
@@ -53,6 +52,7 @@ export class MyApp implements OnInit{
       // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
       this.initTranslate();
+      this.isAuth();
 
       this.ga.startTrackerWithId('UA-63203216-2')
         .then(() => {
@@ -80,7 +80,6 @@ export class MyApp implements OnInit{
       .then(res => {
         const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
         this.translate.use(countryCode);
-
       })
       .catch(e => console.log('language app.component err --> ', e));
   }
@@ -90,6 +89,7 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
+          this.authService.eventOpenMenu()
           this.rootPage = TabsComponent;
         } else {
           this.rootPage = WelcomePageComponent;

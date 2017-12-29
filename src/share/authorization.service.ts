@@ -9,8 +9,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
 @Injectable()
 export class AuthorizationService {
   private _user: User;
-  constructor(public http: HttpClient, private nativeStorage: NativeStorage,) {
-  }
+  private openMenuSide: any;
+
+  constructor(public http: HttpClient, private nativeStorage: NativeStorage) {}
 
   login(data): Observable<any> {
     console.log('Login req :: ', data);
@@ -18,6 +19,19 @@ export class AuthorizationService {
       this.session.start(res);
       return res;
     })
+  }
+
+  subscribeMenu() {
+    return Observable.create(observer => {
+      return this.openMenuSide = observer
+    })
+  }
+
+  eventOpenMenu() {
+    console.log('this.connectionObserver ', this.openMenuSide);
+    if(this.openMenuSide) {
+      return this.openMenuSide.next(this._user);
+    }
   }
 
   user = {
@@ -61,11 +75,14 @@ export class AuthorizationService {
     that: this,
     start(user){
       this.that._user = user;
+      this.that.eventOpenMenu();
       this.that.nativeStorage.setItem('user', user);
     },
     reset(){
       this.that._user = {};
       this.that.nativeStorage.setItem('user', '');
+      console.log('SET 2:::::');
+      this.that.eventOpenMenu();
     }
   }
 }
