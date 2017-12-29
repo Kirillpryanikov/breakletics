@@ -8,6 +8,8 @@ import { Globalization } from '@ionic-native/globalization';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
+import { ExtraQuestionsComponent } from '../pages/extra.questions/extra.questions'
+
 import {
   WelcomePageComponent,
   TabsComponent,
@@ -91,13 +93,11 @@ export class MyApp implements OnInit{
           this.rootPage = TabsComponent;
         } else {
           this.rootPage = WelcomePageComponent;
-          // this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
 
       })
       .catch(err => {
-        // this.rootPage = WelcomePageComponent;
         this.authService.session.reset();
         this.rootPage = WelcomePageComponent;
       })
