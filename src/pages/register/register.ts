@@ -6,6 +6,7 @@ import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
 import {HelperService} from "../../share/helper.service";
 import {AgbComponent} from "../index";
+import {WelcomePageComponent} from "../welcome/welcome";
 
 @Component({
   selector: 'page-register',
@@ -89,6 +90,22 @@ export class RegisterPageComponent implements OnDestroy{
   openModal() {
     this.modalCtrl.create(AgbComponent).present();
   }
+  goTo(page:string) {
+    let setPage: any;
+    switch (page) {
+      case 'Welcome': {
+        setPage = WelcomePageComponent;
+        break;
+      }
+      default: {
+        setPage = false;
+      }
+    }
+
+    if(setPage)
+      this.navCtrl.push(setPage);
+  }
+
   ngOnDestroy() {
     if(this.regObservable) {
       this.regObservable.unsubscribe();

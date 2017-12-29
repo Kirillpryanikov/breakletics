@@ -43,7 +43,7 @@ page-register {
     }
 
     .footer-reg {
-      @include footerGuide();
+      @include Agb();
       font-weight: normal;
     }
   }
