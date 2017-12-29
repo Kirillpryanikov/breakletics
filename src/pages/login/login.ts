@@ -82,14 +82,18 @@ export class LoginPageComponent implements OnDestroy {
         break;
       }
       default: {
+        setPage = false;
       }
     }
 
-    this.navCtrl.push(setPage);
+    if(setPage)
+      this.navCtrl.push(setPage);
   }
+
   openModal() {
     this.modalCtrl.create(AgbComponent).present();
   }
+
   presentToast(status) {
     let msg: string;
 

@@ -16,7 +16,7 @@ import {ExtraQuestionsService} from "../extra.questions/extra.qustetions.service
 export class AccountComponent implements OnInit {
   public locations: any[];
   public user: User;
-
+  public timer: any;
   constructor(public navCtrl: NavController,
               private auth: AuthorizationService,
               private translate: TranslateService,
@@ -43,6 +43,7 @@ export class AccountComponent implements OnInit {
       last_name: meta.value.last_name,
       where_are_you_from: meta.value.where_are_you_from
     };
+
     this.auth.user.update(req).subscribe(responce => {
     }, err => {
       console.log('ERR:::: ', err);

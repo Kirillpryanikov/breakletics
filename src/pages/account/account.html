@@ -17,17 +17,17 @@
       </ion-item>
       <ion-item no-lines>
         <ion-label floating [innerHTML]="'ACCOUNT.NAME' | translate"></ion-label>
-        <ion-input type="text" [ngModel]="user.first_name || ''" name="first_name" (ngModelChange)='update(meta)' debounce="2250"></ion-input>
+        <ion-input type="text" [ngModel]="user.first_name || ''" name="first_name" (blur)='update(meta)' debounce="2250"></ion-input>
       </ion-item>
 
       <ion-item no-lines>
         <ion-label floating [innerHTML]="'ACCOUNT.LASTNAME' | translate"></ion-label>
-        <ion-input type="text" name="last_name" [ngModel]="user.last_name" (ngModelChange)='update(meta)' debounce="2250"></ion-input>
+        <ion-input type="text" name="last_name" [ngModel]="user.last_name" (blur)='update(meta)' debounce="2250"></ion-input>
       </ion-item>
 
       <ion-item no-lines>
         <ion-label floating [innerHTML]="'ACCOUNT.GENDER' | translate"></ion-label>
-        <ion-input type="text" name="gender" [ngModel]="user.gender || ''" (ngModelChange)='update(meta)' debounce="2250"></ion-input>
+        <ion-input type="text" name="gender" [ngModel]="user.gender || ''" (blur)='update(meta)' debounce="2250"></ion-input>
       </ion-item>
 
       <ion-item no-lines>
@@ -43,7 +43,7 @@
 
       <ion-item no-lines>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.LOCATION" | translate}}</ion-label>
-        <ion-select name="where_are_you_from" [ngModel]="user.where_are_you_from" (ngModelChange)='update(meta)'>
+        <ion-select name="where_are_you_from" [ngModel]="user.where_are_you_from" (blur)='update(meta)'>
           <ion-option *ngFor="let item of locations" [innerHTML]="item"></ion-option>
         </ion-select>
       </ion-item>

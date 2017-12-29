@@ -31,6 +31,18 @@ page-dashboard {
   font-family: Roboto !important;
   font-weight: bold;
   ion-navbar {
+    img {
+      height: 3rem;
+      margin-left: 5px;
+    }
+    //@media (max-width: 320px) {
+    //  ion-title {
+    //    padding: 0;
+    //    height: auto !important;
+    //    min-height: auto !important;
+    //  }
+    //}`
+
     .toolbar-background {
       background: #000!important;
     }
@@ -58,13 +70,6 @@ page-dashboard {
       height: 1.71rem;
       font-weight: bold;
       //width: 85px;
-    }
-  }
-  ion-title {
-    text-align: center;
-    img {
-      height: 3rem;
-      margin-left: 5px;
     }
   }
 
@@ -137,15 +142,6 @@ page-dashboard {
               margin-bottom: 3px;
               position: relative;
               min-width: 10px;
-              //&:after {
-              //  position: absolute;
-              //  width: 1.1rem;
-              //  height: 1.1rem;
-              //  content: '';
-              //  display: block;
-              //  background-size: contain;
-              //  background: url("../assets/imgs/time-icon.png") 100% 100% no-repeat;
-              //}
             }
           }
         }
