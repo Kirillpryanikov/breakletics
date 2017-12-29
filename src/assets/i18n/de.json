@@ -123,7 +123,9 @@
         "OPT_4": "1-2 mal",
         "OPT_5": "weniger"
       },
-      "GO": "So, jetzt aber!"
+      "GO": "So, jetzt aber!",
+      "OTHER": "Andere"
+
     }
   },
   "TABS": {
