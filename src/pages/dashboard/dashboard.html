@@ -2,7 +2,7 @@
   <ion-navbar color="dark">
     <ion-buttons>
       <button ion-button transparent (click)="openMenu()">
-        <ion-icon name="menu" (click)="openMenu()"></ion-icon>
+        <ion-icon name="ios-menu-outline" (click)="openMenu()"></ion-icon>
       </button>
       <img src="assets/imgs/menu-logo.png" alt="">
 
@@ -21,8 +21,8 @@
 </ion-header>
 
 <ion-content>
-  <div class="container-dashboard" *ngIf="video" [ngClass]="{'no-scroll': isScroll}">
-    <div class="block block-1">
+  <div class="container-dashboard"  [ngClass]="{'no-scroll': isScroll}">
+    <div class="block block-1" *ngIf="video">
       <img [src]="video.video_img" width="100%">
       <ion-icon class="play-button" *ngIf="video.video_url" (click)="playVideoModal()" name="md-play"></ion-icon>
       <div class="block-1-footer">

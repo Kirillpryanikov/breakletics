@@ -35,17 +35,9 @@ page-dashboard {
   font-weight: bold;
   ion-navbar {
     img {
-      height: 3rem;
+      height: 2.8rem;
       margin-left: 5px;
     }
-    //@media (max-width: 320px) {
-    //  ion-title {
-    //    padding: 0;
-    //    height: auto !important;
-    //    min-height: auto !important;
-    //  }
-    //}`
-
     .toolbar-background {
       background: #000!important;
     }
@@ -65,23 +57,21 @@ page-dashboard {
       font-family: Roboto;
       font-weight: bold;
       color: #000000 !important;
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      padding: 1rem  !important;
+      padding: 0.8rem  !important;
       background-color: #fff;
       border-radius: 0 !important;
-      height: 1.71rem;
+      height: 1.5rem;
       font-weight: bold;
-      //width: 85px;
     }
   }
 
   ion-content {
 
-    .container-dashboard{
+    .container-dashboard {
       background-color: $dashboard-background;
       height: 100%;
-
       .block {
         // NEED REMOVE
         @include setFlexStyles();
@@ -89,7 +79,6 @@ page-dashboard {
         @include textTitle();
       }
       .block-1 {
-
         position: relative;
         overflow: hidden;
         width: 100%;
@@ -97,7 +86,6 @@ page-dashboard {
         background-color: $bg-color-dash;
         background-size: cover;
         background-repeat: no-repeat;
-
 
         img {
           //min-height: 100%;
@@ -114,7 +102,6 @@ page-dashboard {
           0px 0px 118px rgba(0,0,0,0.7);
           z-index: 22;
         }
-
 
         .block-1-footer {
           display: flex;
