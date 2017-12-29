@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ModalController, App, MenuController} from 'ionic-angular';
+import {Component, OnInit } from '@angular/core';
+import {ModalController, App, MenuController, Events} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ItemMenuSide} from '../item.menu.side/item.menu.side';
 
@@ -36,14 +36,19 @@ export class MenuSideComponent implements OnInit {
               private auth: AuthorizationService,
               private service: DashbordService,
               public app: App,
-              public menu: MenuController) {
+              public menu: MenuController,
+              public events: Events) {
+    events.subscribe('isOpen', (user) => {
+      this.user = this.auth.user.get();
+    });
   }
 
-  ngOnInit(){
+  ngOnInit() {
+    this.user = this.auth.user.get();
+    console.log(this.user);
     this.menu.swipeEnable(false);
     this.nav = this.app.getRootNav();
     this.language = this.translate.currentLang;
-    this.user = this.auth.user.get();
   }
 
   someMethods(title) {

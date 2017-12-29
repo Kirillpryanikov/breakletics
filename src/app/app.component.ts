@@ -16,12 +16,11 @@ import {
 } from '../pages/index';
 
 import {AuthorizationService} from "../share/authorization.service";
-import {PlusmemberComponent} from "../pages/plusmember/plusmember.component";
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp implements OnInit{
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any;
@@ -42,18 +41,17 @@ export class MyApp implements OnInit{
   }
 
   ngOnInit(){
-    this.isAuth();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleLightContent();
-
       // this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
-      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
       this.initTranslate();
+      this.isAuth();
 
       this.ga.startTrackerWithId('UA-63203216-2')
         .then(() => {
@@ -81,7 +79,6 @@ export class MyApp implements OnInit{
       .then(res => {
         const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
         this.translate.use(countryCode);
-
       })
       .catch(e => console.log('language app.component err --> ', e));
   }
@@ -91,16 +88,16 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = PlusmemberComponent;
+          this.rootPage = TabsComponent;
         } else {
-          this.rootPage = PlusmemberComponent;
+          this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
 
       })
       .catch(err => {
         this.authService.session.reset();
-        this.rootPage = PlusmemberComponent;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }

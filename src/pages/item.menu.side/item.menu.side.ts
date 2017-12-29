@@ -16,5 +16,9 @@ export class ItemMenuSide implements OnInit {
   }
   ngOnInit(){
   }
+
+  isOpen(){
+    console.log('test');
+  }
   close() {}
 }

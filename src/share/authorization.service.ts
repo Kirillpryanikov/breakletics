@@ -9,8 +9,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
 @Injectable()
 export class AuthorizationService {
   private _user: User;
-  constructor(public http: HttpClient, private nativeStorage: NativeStorage,) {
-  }
+
+  constructor(public http: HttpClient, private nativeStorage: NativeStorage) {}
 
   login(data): Observable<any> {
     console.log('Login req :: ', data);
@@ -66,6 +66,7 @@ export class AuthorizationService {
     reset(){
       this.that._user = {};
       this.that.nativeStorage.setItem('user', '');
+      console.log('SET 2:::::');
     }
   }
 }

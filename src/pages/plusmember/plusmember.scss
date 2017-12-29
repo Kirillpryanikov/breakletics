@@ -337,12 +337,18 @@ plusmember {
       background-size: cover;
       background-position: center;
       color: #fff;
-      .content-inner {
-        background: url("../assets/imgs/plusmember-bay-bg.png");
-        background-size: cover;
+      .inner-price {
+        background-color: rgba(223, 225, 222, 0.1);
         width: 100%;
         height: 100%;
         padding: 14.5rem 2.7% 03.2rem 2.7%;
+
+      }
+      .content-inner {
+        background: url("../assets/imgs/imgpsh_fullsize.png");
+        background-size: cover;
+        width: 100%;
+        height: 100%;
       }
       .risk {
         font-size: 1.96rem;
