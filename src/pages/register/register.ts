@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnDestroy, OnInit } from '@angular/core';
 import {ModalController, NavController, Slides, ToastController} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { AuthorizationService } from '../../share/authorization.service';
@@ -12,10 +12,11 @@ import {AgbComponent} from "../index";
   templateUrl: 'register.html',
   styleUrls: ['/register.scss', '/register1.scss', '/register2.scss', '/register3.scss'],
 })
-export class RegisterPageComponent implements OnDestroy{
+export class RegisterPageComponent implements OnInit, OnDestroy{
   @ViewChild('slider') slider: Slides;
   private toast: any;
   private regObservable: Subscription;
+  protected nameUser = {firstName: '', lastName: ''};
 
   constructor(public navCtrl: NavController,
               private helper: HelperService,
@@ -23,8 +24,19 @@ export class RegisterPageComponent implements OnDestroy{
               private auth: AuthorizationService,
               private modalCtrl: ModalController) {}
 
+  ngOnInit(){
+    this.slider.lockSwipeToNext(true);
+  }
+
   goNext() {
-    this.slider.slideNext();
+    this.slider.lockSwipeToNext(false);
+    if(this.slider.getActiveIndex() === 1 && this.nameUser.firstName  && this.nameUser.lastName) {
+      this.slider.slideNext();
+    } else if(this.slider.getActiveIndex() !== 1 ) {
+      this.slider.slideNext();
+    }
+
+    this.slider.lockSwipeToNext(true);
   }
 
   /**

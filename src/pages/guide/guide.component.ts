@@ -16,7 +16,6 @@ import {AuthorizationService} from "../../share/authorization.service";
 })
 export class GuideComponent implements OnInit{
   @ViewChild('slider') slider: Slides;
-  public firstName: string;
 
   constructor(
               private nativeStorage: NativeStorage,
