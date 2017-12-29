@@ -120,7 +120,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
           guide.onDidDismiss(data => {
             this.isScroll = false;
           });
-          guide.present()
+          setTimeout(function () {
+            guide.present()
+          },500)
         }
       })
       .catch(err => {

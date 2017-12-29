@@ -19,12 +19,15 @@
   a[aria-selected=false]{
     opacity: 0.5;
   }
-
 }
 
 .tabbar {
   background: #000 !important;
 }
+
+//.tabs-md .tab-button {
+//  font-size: 1.2em !important;
+//}
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
   -webkit-transform: translate3d(0, 0px, 0);
