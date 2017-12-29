@@ -93,7 +93,6 @@ export class MyApp implements OnInit {
           this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
-
       })
       .catch(err => {
         this.authService.session.reset();

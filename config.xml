@@ -3,7 +3,7 @@
     <name>Breakletics</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.0.111:8104" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -84,6 +84,29 @@
     <allow-navigation href="http://192.168.0.111:8102" />
     <allow-navigation href="http://192.168.0.111:8103" />
     <allow-navigation href="http://192.168.0.111:8104" />
+    <allow-navigation href="http://192.168.0.111:8105" />
+    <allow-navigation href="http://192.168.0.111:8106" />
+    <allow-navigation href="http://192.168.0.111:8107" />
+    <allow-navigation href="http://192.168.0.111:8108" />
+    <allow-navigation href="http://192.168.0.111:8109" />
+    <allow-navigation href="http://192.168.0.111:8110" />
+    <allow-navigation href="http://192.168.0.111:8111" />
+    <allow-navigation href="http://192.168.0.111:8112" />
+    <allow-navigation href="http://192.168.0.111:8113" />
+    <allow-navigation href="http://192.168.0.111:8114" />
+    <allow-navigation href="http://192.168.0.111:8115" />
+    <allow-navigation href="http://192.168.0.111:8116" />
+    <allow-navigation href="http://192.168.0.111:8117" />
+    <allow-navigation href="http://192.168.0.111:8118" />
+    <allow-navigation href="http://172.16.220.1:8119" />
+    <allow-navigation href="http://192.168.0.111:8120" />
+    <allow-navigation href="http://192.168.0.111:8121" />
+    <allow-navigation href="http://192.168.0.111:8122" />
+    <allow-navigation href="http://192.168.0.111:8123" />
+    <allow-navigation href="http://192.168.0.111:8124" />
+    <allow-navigation href="http://192.168.0.111:8125" />
+    <allow-navigation href="http://192.168.0.111:8126" />
+    <allow-navigation href="http://192.168.0.111:8128" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />

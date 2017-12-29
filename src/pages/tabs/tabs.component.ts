@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, ViewChild} from '@angular/core';
+import {Component, OnInit, OnDestroy, ViewChild, ElementRef} from '@angular/core';
 import {NavController, NavParams, Tabs} from 'ionic-angular';
 import {DashboardComponent, WorkoutComponent, ExercisesComponent, WarmupComponent  } from "../index";
 
@@ -9,6 +9,7 @@ import {DashboardComponent, WorkoutComponent, ExercisesComponent, WarmupComponen
 })
 export class TabsComponent implements OnInit, OnDestroy {
   @ViewChild('tabContainer') tabRef: Tabs;
+
   public selected: number;
 
   dashboard = DashboardComponent;
