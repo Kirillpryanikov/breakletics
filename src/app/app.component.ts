@@ -90,16 +90,16 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = TabsComponent;
         } else {
-          this.rootPage = ExtraQuestionsComponent;
+          this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
 
       })
       .catch(err => {
         this.authService.session.reset();
-        this.rootPage = ExtraQuestionsComponent;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }
