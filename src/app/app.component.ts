@@ -50,7 +50,7 @@ export class MyApp implements OnInit{
 
       // this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
       this.initTranslate();
 
