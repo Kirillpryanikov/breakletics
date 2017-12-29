@@ -42,7 +42,7 @@
         {{'DASHBOARD.WARM_UP' | translate }}
       </div>
     </div>
-    <div class="block block-footer" *ngIf="user && user.plusmember < 1" (click)="goTo('plusmember')">
+    <div class="block block-footer" (click)="goTo('plusmember')">
       <div class="head">
         <h3 [innerHTML]="rundStr"></h3>
       </div>

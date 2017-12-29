@@ -1,6 +1,11 @@
 @import "../../theme/main";
-
+#iphone-frame .statusbar {
+  background-image: transparent;
+}
 page-welcome {
+  height: 100vh;
+  background: #000;
+  width: 100%;
   font-family: "Roboto";
   video {
     position: fixed;
