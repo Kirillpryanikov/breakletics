@@ -113,7 +113,7 @@ export class MenuSideComponent implements OnInit {
   }
 
   goToLink(url: string) {
-    const browser = this.iab.create('url', '_system');
+    const browser = this.iab.create(url, '_system');
   }
 
   ngOnDestroy() {
