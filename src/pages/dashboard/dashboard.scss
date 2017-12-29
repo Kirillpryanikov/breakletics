@@ -137,6 +137,22 @@ page-dashboard {
           }
         }
       }
+      .block-warm-ups {
+        width: 100%;
+        height: $height-block-3;
+        background-color: chocolate;
+        background: url("../assets/imgs/baba-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .block-exercises {
+        width: 100%;
+        height: $height-block-3;
+        background-color: chocolate;
+        background: url("../assets/imgs/man-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
 
       .block-2 {
         height: $height-block-2;

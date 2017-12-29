@@ -35,25 +35,40 @@
       {{'DASHBOARD.WORKOUTS' | translate }}
     </div>
     <div class="block block-3 ">
-      <div class="block item-block-3 exercises" col-6 (click)="goTo('ExercisesComponent')">
-        {{'DASHBOARD.EXERCISES' | translate }}
-      </div>
-      <div class="block item-block-3 warm ups" col-6 (click)="goTo('WarmupComponent')">
-        {{'DASHBOARD.WARM_UP' | translate }}
-      </div>
+      <ng-container *ngIf="user && user.plusmember > 0">
+        <div class="block block-exercises" (click)="goTo('ExercisesComponent')">
+          {{'DASHBOARD.EXERCISES' | translate }}
+        </div>
+      </ng-container>
+      <ng-container *ngIf="user && user.plusmember < 1">
+        <div class="block item-block-3 exercises" col-6 (click)="goTo('ExercisesComponent')">
+          {{'DASHBOARD.EXERCISES' | translate }}
+        </div>
+        <div class="block item-block-3 warm-ups" col-6 (click)="goTo('WarmupComponent')">
+          {{'DASHBOARD.WARM_UP' | translate }}
+        </div>
+      </ng-container>
+
     </div>
-    <div class="block block-footer" (click)="goTo('plusmember')">
+    <div class="block block-footer">
       <div class="head">
         <h3 [innerHTML]="rundStr"></h3>
       </div>
-      <div class="footer-item" *ngIf="language === 'de'" (click)="goTo('plusmember')">
-        <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
-        <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
-      </div>
-      <div class="footer-item en" *ngIf="language !== 'de'" (click)="goTo('plusmember')">
-        <h2>4 weeks for 1 usd</h2>
-        <div class="risk"><img src="assets/imgs/approved-signal.png" alt="">100% RISKFREE</div>
-      </div>
+      <ng-container *ngIf="user && user.plusmember > 0">
+        <div class="block block-warm-ups" (click)="goTo('WarmupComponent')">
+          {{'DASHBOARD.WARM_UP' | translate }} / {{'DASHBOARD.COOL_DOWN' | translate }}
+        </div>
+      </ng-container>
+      <ng-container *ngIf="user && user.plusmember < 1">
+        <div class="footer-item" *ngIf="language === 'de'" (click)="goTo('plusmember')">
+          <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
+          <h2>{{'DASHBOARD.CRAZY_2' | translate }}</h2>
+        </div>
+        <div class="footer-item en" *ngIf="language !== 'de'" (click)="goTo('plusmember')">
+          <h2>4 weeks for 1 usd</h2>
+          <div class="risk"><img src="assets/imgs/approved-signal.png" alt="">100% RISKFREE</div>
+        </div>
+      </ng-container>
     </div>
     <pay-it *ngIf="user && user.plusmember < 1"></pay-it>
   </div>
