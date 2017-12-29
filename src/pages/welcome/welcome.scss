@@ -111,7 +111,7 @@ page-welcome {
     #footer {
       width: 100%;
       height: 60px;
-      margin-bottom: 50px;
+      margin-bottom: 4rem;
 
       @include setFlexStyles(space-between);
       flex-direction: row;
@@ -128,8 +128,8 @@ page-welcome {
 
       #signin:before {
         content: '';
-        width: 100%;
-        height: 60px;
+        width: 50vw;
+        height: 48px;
         position: absolute;
         background: #fff;
         transform: skewX(-11Deg);
@@ -148,20 +148,25 @@ page-welcome {
       }
       #login:before {
         content: '';
-        width: 100%;
+        width: 50vw;
         height: 48px;
         position: absolute;
-        border: 6px solid white;
+        border: 0.42rem solid white;
+        box-sizing: border-box;
         transform: skewX(-11Deg);
-        left: 6px;
+        left: 8px;
       }
       #login {
         height: 100%;
         width: 50%;
         @include setFlexStyles();
-
       }
 
+    }
+    .span-wrapper {
+      width: 100%;
+      height: 7.14rem;
+      @include setFlexStyles();
     }
   }
 
