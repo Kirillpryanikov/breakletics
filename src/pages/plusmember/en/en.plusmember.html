@@ -10,11 +10,11 @@
       </ion-navbar>
     </ion-header>
     <div class="content-inner">
-      <span class="sub-title">BECOME ATHLETIC <br> AND FIT LIKE NEVER BEFORE</span>
+      <div class="sub-title"><div>BECOME ATHLETIC</div><div>AND FIT LIKE NEVER BEFORE</div></div>
       <span class="top-title">with the most innovative workout in the world!</span>
 
       <div class="handler">
-        <button type="submit" (click)="open('https://www.digistore24.com/product/92793')">TO THE OFFER</button>
+        <button type="submit" (click)="open('https://www.digistore24.com/product/188371')">TO THE OFFER</button>
       </div>
 
       <img src="assets/imgs/arrow.png" alt="">
@@ -46,7 +46,7 @@
                         >
                         </div>
                     </div>
-                    <div class="name" [innerHTML]="item.name"></div>
+                    <div class="name"><div [innerHTML]="item.name"></div></div>
                     <div class="date" [innerHTML]="item.date"></div>
                     <div class="description" [innerHTML]="item.description"></div>
                 </ion-slide>
@@ -59,7 +59,7 @@
             <div class="benefits-subtitle">a PlusMember now!</div>
 
             <div class="benefit" *ngFor="let item of benefits">
-                <div class="benefit-title" [innerHTML]="item.title"></div>
+                <div class="benefit-title"><div [innerHTML]="item.title"></div></div>
                 <div class="benefit-subtitle" [innerHTML]="item.description"></div>
             </div>
         </div>

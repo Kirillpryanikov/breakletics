@@ -10,7 +10,7 @@
       </ion-navbar>
     </ion-header>
     <div class="content-inner">
-      <span class="sub-title">werde athletisch <br>und fit wie nie zuvor</span>
+      <div class="sub-title"><div>werde athletisch</div><div>und fit wie nie zuvor</div></div>
       <span class="top-title">mit dem innovativsten Workout der Welt!</span>
 
       <div class="handler">
@@ -46,7 +46,7 @@
                         >
                         </div>
                     </div>
-                    <div class="name" [innerHTML]="item.name"></div>
+                    <div class="name"><div [innerHTML]="item.name"></div></div>
                     <div class="date" [innerHTML]="item.date"></div>
                     <div class="description" [innerHTML]="item.description"></div>
                 </ion-slide>
@@ -59,7 +59,7 @@
             <div class="benefits-subtitle">PlusMember zu werden!</div>
 
             <div class="benefit" *ngFor="let item of benefits">
-                <div class="benefit-title" [innerHTML]="item.title"></div>
+                <div class="benefit-title"><div [innerHTML]="item.title"></div></div>
                 <div class="benefit-subtitle" [innerHTML]="item.description"></div>
             </div>
         </div>

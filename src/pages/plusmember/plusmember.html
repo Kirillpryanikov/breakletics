@@ -1,13 +1,13 @@
 <ion-content>
   <de-plusmember [testimonials]="testimonials"
                  [benefits]="benefits"
-                 *ngIf="language === 'de'"
+                 *ngIf="language !== 'de'"
                  (goToLink)="goToLink($event)">
   </de-plusmember>
 
-  <en-plusmember [testimonials]="testimonials"
-                 [benefits]="benefits"
-                 *ngIf="language !== 'de'"
-                 (goToLink)="goToLink($event)">
-  </en-plusmember>
+  <!--<en-plusmember [testimonials]="testimonials"-->
+                 <!--[benefits]="benefits"-->
+                 <!--*ngIf="language !== 'de'"-->
+                 <!--(goToLink)="goToLink($event)">-->
+  <!--</en-plusmember>-->
 </ion-content>

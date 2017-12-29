@@ -16,6 +16,7 @@ import {
 } from '../pages/index';
 
 import {AuthorizationService} from "../share/authorization.service";
+import {PlusmemberComponent} from "../pages/plusmember/plusmember.component";
 
 @Component({
   templateUrl: 'app.html'
@@ -90,16 +91,16 @@ export class MyApp implements OnInit{
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = TabsComponent;
+          this.rootPage = PlusmemberComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
+          this.rootPage = PlusmemberComponent;
           this.authService.session.reset();
         }
 
       })
       .catch(err => {
         this.authService.session.reset();
-        this.rootPage = WelcomePageComponent;
+        this.rootPage = PlusmemberComponent;
       })
   }
 }
