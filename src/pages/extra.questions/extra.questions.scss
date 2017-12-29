@@ -9,12 +9,17 @@ page-extra-questions {
     background: url("../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
-
-    .page {
+    .header {
+      @include setFlexStyles(flex-start);
+      height: $height-header;
+      font-size: $font-size-em-md;
+      color: $header-back-color;
+    }
+      .page {
       width: 87%;
 
       //overflow: auto;
-      margin: 20px auto;
+      margin:  0 auto 20px auto;
       //padding: 20px 0;
       //position: relative;
       .title {
@@ -35,7 +40,12 @@ page-extra-questions {
           font-weight: bold;
         }
       }
-
+      .datetime-md, .datetime-ios {
+        //padding: 0.98rem 0.57rem 0.98rem 0;
+      }
+        .label-md, .label-ios {
+          //padding: 0.98rem 0.57rem 0.98rem 0;
+        }
       form {
         width: 100%;
         margin-top: 8.7%;

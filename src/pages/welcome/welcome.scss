@@ -73,7 +73,14 @@ page-welcome {
       @media (max-width: 320px) {
         width: 100%;
       }
+      .slide-zoom {
+        height: 40vh;
+        @include setFlexStyles();
+        flex-direction: column;
+      }
       h2 {
+        @include setFlexStyles(center, flex-end);
+        height: 30vh;
         font-family: Roboto;
         font-weight: bold;
         @media (max-width: 320px) {
@@ -84,10 +91,12 @@ page-welcome {
         font-weight: bold;
       }
       span {
+        @include setFlexStyles();
+        height: 10vh;
         font-size: 1em;
         font-weight: normal;
         position: relative;
-        top: 10px;
+        //top: 10px;
       }
       .swiper-pagination-bullet.swiper-pagination-bullet-active {
         width: 10px;

@@ -1,9 +1,9 @@
 @import "../../theme/main";
 
 $height-form: calc(100% - 56px);
-$padding-input-field: 30px 15px 12px 0;
-$padding-block-password-forgotten: 20px 15px 5px 15px;
-$padding-block-handler-submit: 20px 15px 15px 15px;
+$padding-input-field: 2.14rem 1.07rem 0.86rem 0;
+$padding-block-password-forgotten: 1.42rem 1.07rem 0.35rem 1.07rem;
+$padding-block-handler-submit: 1.42rem 1.07rem 1.07rem 1.07rem;
 
 page-login {
   font-family: Roboto;
@@ -29,7 +29,7 @@ page-login {
         width: 100%;
         font-size: $font-size-em-lg;
         color: #fff;
-        margin-bottom: 5px;
+        margin-bottom: 0.35rem;
       }
       .title-login-2{
         width: 100%;
@@ -64,7 +64,7 @@ page-login {
 
         button {
           width: 100%;
-          padding: 20px 0;
+          padding: 1.42rem 0;
           font-size: $font-size-em-sm;
           letter-spacing: 2px;
           background-color: #fff;
@@ -74,15 +74,15 @@ page-login {
       }
 
       .title-under-btn {
-        @include footerGuide();
+        @include Agb();
         font-weight: normal;
       }
 
       .tooter-login {
         @include setFlexStyles();
+
         width: 100%;
-        margin-top: 8%;
-        font-size: 1.6rem;
+        font-size: 1.96rem;
         text-decoration: underline;
         span {
           width: 80%;
