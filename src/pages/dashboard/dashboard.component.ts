@@ -14,6 +14,7 @@ import {
 import { DashbordService } from './dashboard.service';
 import { Subscription } from "rxjs/Subscription";
 import {HelperService} from "../../share/helper.service";
+import {AuthorizationService} from "../../share/authorization.service";
 
 
 @Component({
@@ -43,7 +44,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private service: DashbordService,
               private platform: Platform,
               public menuCtrl: MenuController,
-              public events: Events
+              public events: Events,
+              private auth: AuthorizationService
               ) {
   }
 
@@ -81,11 +83,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
+        console.log('asdfasdf',res);
         this.presentGuideModal(this.user);
         this.helper.loading.hide();
       })
       .catch(err => {
-        this.user = this.navParams.get('user');
+        this.user = this.auth.user.get();
+        console.log('this.user',this.user);
+
         this.presentGuideModal(this.user);
         this.helper.loading.hide();
       });
