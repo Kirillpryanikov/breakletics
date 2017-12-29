@@ -33,7 +33,7 @@
   </div>
   <div class="container-workout">
     <ng-container *ngFor="let item of videos; let i = index" >
-      <div class="video slide-right"  (click)="playVideoModal(item)" *ngIf="user && user.plusmember === item.plusmember"
+      <div class="video"  (click)="playVideoModal(item)" *ngIf="user && user.plusmember === item.plusmember"
            [style.background]="'url(' + item.video_img + ')'"
            [style.backgroundSize]="'cover'"
            [style.backgroundPosition]="'50% 50%'"
@@ -58,7 +58,7 @@
     <div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate" *ngIf="!hideBanner"></div>
 
     <ng-container *ngFor="let item of videos; let i = index" >
-      <div class="private video slide-right" *ngIf="user && user.plusmember < item.plusmember"
+      <div class="private video" *ngIf="user && user.plusmember < item.plusmember"
            [style.background]="'url(' + item.video_img + ')'"
            [style.backgroundSize]="'cover'"
            [style.backgroundPosition]="'50% 50%'"

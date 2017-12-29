@@ -29,10 +29,10 @@ filter-video {
     width: 90%;
     margin: 4.44vh auto;
     overflow: auto;
-    //@include setFlexStyles(space-between);
+    @include setFlexStyles(flex-start);
     //flex-direction: row;
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     flex-flow: wrap;
 
     .filter-item:nth-child(4){
@@ -40,26 +40,33 @@ filter-video {
     }
 
     .filter-item {
+      padding: 0 0.86rem;
       @media (max-width: 320px) {
-        width: 32%;
-        font-size: 0.9rem;
+        width: auto;
+        font-size: 0.88rem;
         letter-spacing: 1.6px;
-
+        margin-right: 1rem;
       }
+      &:last-child, &:nth-child(3n) {
+        margin-right: 0;
+      }
+      margin-right: 1.2rem;
       height: 3.69rem;
       @include setFlexStyles();
-      width: 31%;
+      width: auto;
       //min-width: 27%;
       letter-spacing: 2px;
       font-weight: 700;
-      background: #fff;
-      font-size: 1.1rem;
+      background: #000;
+      border: 1px solid #fff;
+      font-size: 0.89rem;
+      color: white;
       i:first-child {
         margin-left: 5px;
       }
       &.active {
-        color: white;
-        background: #000;
+        background: #fff;
+        color: #000;
         box-sizing: border-box;
         border: 1px solid #fff;
         .flash:after {
@@ -67,7 +74,7 @@ filter-video {
             height: 16px;
             width: 9px;
           }
-          background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
+          background: url(../assets/imgs/flash-black.png) 100% 100% no-repeat;
           display: block;
           content: '';
           height: 18px;
@@ -79,10 +86,10 @@ filter-video {
 
     .filter-item {
       .flash:after {
-        background: url(../assets/imgs/flash-black.png) 100% 100% no-repeat;
+        background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
         content: '';
-        height: 18px;
-        width: 11px;
+        height: 1.4rem;
+        width: 0.9rem;
         background-size: contain;
         display: block;
       }
