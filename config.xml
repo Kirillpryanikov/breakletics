@@ -3,7 +3,7 @@
     <name>Breakletics</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.0.111:8110" />
+    <content original-src="index.html" src="http://192.168.0.111:8113" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -86,6 +86,9 @@
     <allow-navigation href="http://192.168.0.111:8106" />
     <allow-navigation href="http://192.168.0.111:8109" />
     <allow-navigation href="http://192.168.0.111:8110" />
+    <allow-navigation href="http://192.168.0.111:8111" />
+    <allow-navigation href="http://192.168.0.111:8112" />
+    <allow-navigation href="http://192.168.0.111:8113" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />

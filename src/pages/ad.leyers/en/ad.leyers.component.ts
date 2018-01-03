@@ -3,8 +3,7 @@ import {NavController, ViewController} from 'ionic-angular';
 
 @Component({
   selector: 'en-ad-leyers',
-  templateUrl: 'ad.leyers.html',
-  styleUrls: ['/ad.leyers.scss']
+  templateUrl: 'ad.leyers.html'
 })
 export class EnADLeyersComponent implements OnInit {
   @Output() showPlus = new EventEmitter<boolean>();
