@@ -73,6 +73,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     this.language = this.translate.currentLang;
     this.rundStr = this.service.getRundomString(this.translate.currentLang);
+    console.log('this.translate.currentLan ', this.language);
 
   }
 

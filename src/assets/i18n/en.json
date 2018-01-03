@@ -116,7 +116,7 @@
         "OPT_5": "less",
         "OPT_6": "Other"
       },
-      "GO": "Okay, now let’s start!"
+      "GO": "Okay, now let’s start!",
     }
   },
   "TABS": {
@@ -223,7 +223,7 @@
     "SUBTITLE": "become athletic",
     "SUBTITLE_1": "and fit like",
     "SUBTITLE_2": "never before",
-    "PRICE": "1 USD",
+    "PRICE": "0 USD",
     "TIME": "4WEEKS",
     "PRICE_FOOTER": "100% Riskfree",
     "APPLY": "get it now"

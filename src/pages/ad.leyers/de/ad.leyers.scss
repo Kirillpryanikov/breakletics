@@ -7,18 +7,6 @@ $padding-block-handler-submit: 20px 15px 15px 15px;
 
 de-ad-leyers {
   font-family: Roboto;
-  font-weight: bold !important;
-  .top-right,
-  .bottom-left {
-    position: absolute;
-    z-index: -1;
-  }
-  .top-right {
-    top:0;
-    right: 0;
-    width: 10.82rem;
-    z-index: 9;
-  }
   .header-md:after, .header-ios:after {
     background-image: none !important;
     content: '';
@@ -35,39 +23,24 @@ de-ad-leyers {
       margin-left: 5px;
     }
   }
-
   ion-content {
-    background: url("../assets/imgs/dark-bg.jpg");
+    background: url("../assets/imgs/ad-layers-bg.jpg");
     background-position: center;
     background-size: cover;
     height: 100vh;
     @include setFlexStyles();
     color: #fff;
-    text-align: center;
-    span {
-      display: block;
-    }
-    .bottom-left {
-      bottom: 0;
-      left: 0;
-      width: 18.14rem;
-    }
-    .gutschein-wrapper {
-      text-align: center;
-    }
-    .gutschein {
-      width: 57%;
-      height: auto;
-      margin: 5.57rem auto 1.78rem auto;
-    }
     .top-title {
       width: 100%;
       color: #fff;
       font-size: 1.42rem;
+      text-transform: uppercase;
       line-height: 1.62rem;
       text-align: center;
+      font-weight: bold;
     }
     .sub-title {
+      width: 100%;
       font-size: 2.85rem;
       letter-spacing: 2px;
       font-weight: bold;
@@ -78,35 +51,84 @@ de-ad-leyers {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       //padding: 0px 4rem;
-      margin: 0px auto 1.5rem auto;
+      margin: auto;
+      &:first-child {
+        margin-top: 2.14rem;
+      }
     }
-    .banner-list {
-      display: block;
-      clear: both;
-      width: 74%;
-      margin: 1.4rem auto 4.6rem auto;
+    .price-wrapper{
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 6rem;
       text-align: center;
-      @include setFlexStyles(space-between);
-      img {
-        width: 30%;
+      .price-inner {
+        width: fit-content;
+        max-width: 70%;
+        min-width: 54%;
+        margin: auto;
+
+        .handler {
+          //@include setFlexStyles();
+          width: 100%;
+          margin-top: 0.9rem;
+          button {
+            width: 100%;
+            padding: 1.5rem 0;
+            font-size: 1.66rem;
+            letter-spacing: 2px;
+            background-color: #fff;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .price {
+      width: 100%;
+      height: auto;
+      border: 0.42rem solid white;
+      box-sizing: border-box;
+      text-align: justify;
+      padding: 1rem 1rem;
+
+      .title {
+        width: 100%;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: left;
+        @include setFlexStyles();
+        &:first-child {
+          font-size: 7.1rem;
+          font-weight: bold;
+          line-height: 6.1rem;
+        }
+        &:nth-child(2) {
+          letter-spacing: 0.9rem;
+          font-weight: bold;
+          font-size: 3.54rem;
+          margin-left: 0.5rem;
+        }
+        &:nth-child(3) {
+          font-weight:bold;
+          font-size: 1.71rem;
+          letter-spacing: 0.2rem;
+          line-height: 3rem;
+          &:before {
+            content: "";
+            width: 2.14rem;
+            height: 2.14rem;
+            display: inline-block;
+            background: url(../assets/imgs/approved-signal.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 1rem;
+          }
+        }
       }
     }
 
-    .handler {
-      @include setFlexStyles();
-      width: 100%;
-      margin-top: 0.9rem;
-      button {
-        width: 57%;
-        padding: 1.5rem 0;
-        font-size: 1.92rem;
-        letter-spacing: 2px;
-        background-color: #fff;
-        color: #1a1b1b;
-        text-transform: uppercase;
-        font-weight: bold;
-        align-self: center;
-      }
-    }
   }
 }
