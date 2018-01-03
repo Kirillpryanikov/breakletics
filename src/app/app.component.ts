@@ -48,7 +48,7 @@ export class MyApp implements OnInit {
       this.statusBar.styleDefault();
       // this.statusBar.backgroundColorByHexString('#161616');
       this.splashScreen.hide();
-      // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
       this.initTranslate();
       this.isAuth();
@@ -93,7 +93,6 @@ export class MyApp implements OnInit {
           this.rootPage = WelcomePageComponent;
           this.authService.session.reset();
         }
-
       })
       .catch(err => {
         this.authService.session.reset();

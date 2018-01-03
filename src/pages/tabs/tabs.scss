@@ -9,8 +9,8 @@
   .ion-md-#{$arg}-circle-outline:before ,
   .ion-md-#{$arg}-outline:before  {
     content: '';
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background-repeat: no-repeat;
     background-position: 50%;
     background-image: url($val);
@@ -25,9 +25,6 @@
   background: #000 !important;
 }
 
-//.tabs-md .tab-button {
-//  font-size: 1.2em !important;
-//}
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
   -webkit-transform: translate3d(0, 0px, 0);
@@ -39,6 +36,7 @@
   transform: none;
 }
 
+
 page-tabs {
   $tabs-ios-tab-min-height: 56px;
   @include makeIcon(b-home,'../assets/imgs/icon-home.png');
@@ -47,7 +45,20 @@ page-tabs {
   @include makeIcon(b-warmup,'../assets/imgs/icon-warmup.png');
   font-family: "Roboto";
   font-weight: bold;
-  font-size:0.9rem;
+  font-size:0.7em;
   ion-content {
+  }
+
+
+  ion-tabs {
+    .tabbar:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 0.178rem;
+      width: 100%;
+      background: linear-gradient(to right, #e7102b, #12b4e7);
+    }
   }
 }

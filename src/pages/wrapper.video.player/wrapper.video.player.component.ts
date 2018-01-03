@@ -89,6 +89,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   next() {
     if(!this.videoParam.warm_up_url) {
+      this.modalCtrl.create(ADLeyersComponent).present();
       this.close();
       return;
     }

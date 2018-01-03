@@ -48,6 +48,9 @@ video-list {
   }
   font-family: Roboto;
   ion-header {
+    .toolbar-background {
+      background: #000!important;
+    }
     .toolbar-md-dark .toolbar-background-md, .toolbar-background-ios {
       background: #000 !important;
     }

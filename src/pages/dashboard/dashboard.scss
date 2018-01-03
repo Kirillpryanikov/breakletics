@@ -30,10 +30,11 @@ body {
 #dash-header {
 
 }
-.toolbar-background {
-  background: #000!important;
-}
+
 page-dashboard {
+  .toolbar-background {
+    background: #000!important;
+  }
   font-family: Roboto !important;
   font-weight: bold;
   ion-navbar {
@@ -69,8 +70,9 @@ page-dashboard {
   }
 
   ion-content {
-
+    padding-bottom: 56px;
     .container-dashboard {
+
       background-color: $dashboard-background;
       height: 100%;
       .block {
@@ -138,6 +140,7 @@ page-dashboard {
         }
       }
       .block-warm-ups {
+
         width: 100%;
         height: $height-block-3;
         background-color: chocolate;
