@@ -52,6 +52,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(){
     // this.changeTab();
     this.menu.swipeEnable(true);
+    this.events.publish('isOpen');
     this.weightDevice = this.platform.width();
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
@@ -83,11 +84,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
-        console.log('asdfasdf',res);
+        console.log('RES this.user',this.user);
         this.presentGuideModal(this.user);
         this.helper.loading.hide();
       })
       .catch(err => {
+        console.log('Catch this.user',this.user);
         this.user = this.auth.user.get();
         console.log('this.user',this.user);
 
@@ -136,6 +138,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         guide.present();
       });
   }
+
 
   goTo(page){
     switch (page) {

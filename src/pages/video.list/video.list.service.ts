@@ -11,7 +11,6 @@ export class VideoListService {
   constructor(public http: HttpClient) {}
 
   workouts(params): Observable<any> {
-    console.log('workouts :: service', JSON.stringify(params));
     let url = `${ConfigService.CONFIG.url}wp/v2/workouts`;
     return this.http.post(url, params);
   }

@@ -24,10 +24,10 @@
     "PAGE_1": {
       "TITLE": "Dein Geschlecht?",
       "BUTTON_WOMAN": "WEIBLICH",
-      "BUTTON_MAN": "Männer"
+      "BUTTON_MAN": "MÄNNLICH"
     },
     "PAGE_2": {
-      "TITLE": "Und wie heißen du?",
+      "TITLE": "Und wie heißt du?",
       "FIRSTNAME": "Vorname",
       "LASTNAME": "Nachname",
       "MORE": "WEITER"
@@ -88,8 +88,8 @@
     }
   },
   "PAGE_EXTRA": {
-    "TITLE": "Du musst nicht!",
-    "SUBTITLE":"Gründe geben warum der mehr Informatoinen geben soll.",
+    "TITLE": "Wenn du magst...",
+    "SUBTITLE":"... kannst du uns noch etwas mehr über dich verraten. Die Informationen werden vertraulich behandelt, niemals weitergegeben und du würdest uns sehr dabei helfen Breakletics besser zu machen!",
     "BUTTON_1": "Nee, möchte ich jetzt loslegen!",
     "FORM_Q": {
       "AGE": "Geburtstag",
@@ -140,15 +140,15 @@
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN",
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
-    "CRAZY_1": "Crazy XMAS Deal -",
-    "CRAZY_2": "- 5 Workouts FÜR 5 EUR",
+    "CRAZY_1": "1 Monat für 1 EUR 0% Risiko",
+    "CRAZY_2": "",
     "STATIC": "Plusmember",
     "PAY_TITLE_1": "FIT & ATHLETISCH",
     "PAY_TITLE_2": "WERDEN MIT WORKOUTTS,",
     "PAY_TITLE_3": "DIE EINFACH ROCKEN!",
     "TEXT_LI_1": "Erhalte sofort Zugriff auf alle",
-    "TEXT_LI_1_1": "36 Workouts ",
-    "TEXT_LI_1_2": "28 Exercises und 4 Warm Ups/ Cool Downs!",
+    "TEXT_LI_1_1": "24 Workouts ",
+    "TEXT_LI_1_2": "und 48 Exercises!",
     "TEXT_LI_2": "Regelmäßig",
     "TEXT_LI_2_1": "NEUE",
     "TEXT_LI_2_2": "Workouts, Exercises und sogar Features!",
@@ -176,7 +176,7 @@
   "WORKOUTS": {
     "TITLE": "Workouts",
     "SEARCH": "Filtern nach Warm Ups und Cool Downs",
-    "JETZT": "Jetzt 24+ Workouts freischalten"
+    "JETZT": "JETZT 48 EXERCISES FREISCHALTEN"
   },
   "WORKOUTS_FILTER": {
     "TITLE": "Filtern nach Warm Ups und Cool Downs",

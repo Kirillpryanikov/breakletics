@@ -4,10 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { WorkoutService } from './workout.service';
 import { Video } from '../../share/Video';
 
-import {
-  DashboardComponent,
-} from '../index'
-import {HelperService} from "../../share/helper.service";
+import { DashboardComponent } from '../index'
+import { HelperService } from "../../share/helper.service";
 
 @Component({
   selector: 'page-workout',

@@ -71,7 +71,6 @@
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.FIT.TITLE" | translate}}</ion-label>
         <ion-select
           formControlName="how_often_do_you_train_per_week"
-          (ngModelChange)="stpSelect($event, 'PAGE_EXTRA.FORM_Q.FIT.TITLE', 'how_often_do_you_train_per_week', 'countTrain')"
           ngModel>
           <ion-option value="na"></ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_1' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_1" | translate}}</ion-option>
@@ -79,8 +78,6 @@
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_3' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_3" | translate}}</ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_4' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_4" | translate}}</ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_5' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_5" | translate}}</ion-option>
-          <ion-option *ngIf="countTrain" value="{{countTrain}}">{{countTrain}}</ion-option>
-          <ion-option value="other">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_6" | translate}}</ion-option>
         </ion-select>
       </ion-item>
       </ion-list>
