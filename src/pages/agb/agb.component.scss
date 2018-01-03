@@ -3,6 +3,9 @@
 agb-component {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   ion-header {
+    .toolbar-background {
+      background: #000!important;
+    }
     ion-navbar {
       height: $height-header-dashboard;
       background: #000;

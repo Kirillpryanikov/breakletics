@@ -27,7 +27,7 @@
     <ion-row *ngIf="user && user.plusmember < 1">
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_PLUSMEMBER' | translate"></ion-col>
       <ion-col class="col-button">
-        <button class="button button-by">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
+        <button class="button button-by" (click)="pay()">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
       </ion-col>
     </ion-row>
     <!--<ion-row>-->

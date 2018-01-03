@@ -1,6 +1,9 @@
 @import "../../theme/main";
 
 imprint-component {
+  .toolbar-background {
+    background: #000!important;
+  }
   font-family: "Roboto";
   ion-header {
     ion-navbar {

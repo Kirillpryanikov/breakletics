@@ -141,7 +141,7 @@ page-welcome {
       #signin:before {
         content: '';
         width: 50vw;
-        height: 48px;
+        height: 58px;
         position: absolute;
         background: #fff;
         transform: skewX(-11Deg);
@@ -163,10 +163,10 @@ page-welcome {
         width: 50vw;
         height: 48px;
         position: absolute;
-        border: 0.42rem solid white;
-        box-sizing: border-box;
+        border: 4px solid white;
+        //box-sizing: border-box;
         transform: skewX(-11Deg);
-        left: 8px;
+        left: 6px;
       }
       #login {
         height: 100%;
