@@ -81,14 +81,6 @@
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
     <allow-navigation href="*" />
-    <allow-navigation href="http://192.168.0.111:8107" />
-    <allow-navigation href="http://192.168.0.111:8108" />
-    <allow-navigation href="http://192.168.0.111:8106" />
-    <allow-navigation href="http://192.168.0.111:8109" />
-    <allow-navigation href="http://192.168.0.111:8110" />
-    <allow-navigation href="http://192.168.0.111:8111" />
-    <allow-navigation href="http://192.168.0.111:8112" />
-    <allow-navigation href="http://192.168.0.111:8113" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^6.3.0" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
