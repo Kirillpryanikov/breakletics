@@ -18,7 +18,12 @@ export class ExtraQuestionsComponent implements OnInit {
   public user: User;
   public locations;
   protected form: FormGroup;
-  public valueTrain: undefined;
+
+  protected countTrain = '';
+  protected hear = '';
+  protected mission = '';
+  protected location = '';
+
 
   constructor(public navCtrl: NavController,
               private translate: TranslateService,
@@ -48,29 +53,30 @@ export class ExtraQuestionsComponent implements OnInit {
     })
   }
 
-  stpSelect(event) {
+  stpSelect(event, key, fieldForm, param?) {
     if(event === 'other') {
-      let language = this.translate.currentLang;
-      const alert = this.alertCtrl.create({
-        title: language === 'de' ? 'Andere' : 'Other',
-        subTitle: language === 'de' ? 'Wie oft machst du Sport pro Woche?' : 'How often do you train per week?',
-        inputs: [
-          {
-            name: 'quantity',
-            placeholder: language !== 'de' ? 'Quantity times' : 'mal'
-          },
-        ],
-        buttons: [{
-          text: 'OK',
-          handler: data => {
-            this.form.get('how_often_do_you_train_per_week').patchValue(data.quantity);
-            this.valueTrain = data.quantity;
-          }
-        }]
+      this.translate.get(key).subscribe(text => {
+        let language = this.translate.currentLang;
+        const alert = this.alertCtrl.create({
+          title: language === 'de' ? 'Andere' : 'Other',
+          subTitle: text,
+          inputs: [
+            {
+              name: 'quantity'
+            },
+          ],
+          buttons: [{
+            text: 'OK',
+            handler: data => {
+              this.form.get(fieldForm).patchValue(data.quantity);
+              this[param] = data.quantity;
+            }
+          }]
+        });
+        alert.present();
+        this[param] = undefined;
       });
-      alert.present();
     }
-    this.valueTrain = undefined;
 
   }
 
@@ -79,7 +85,6 @@ export class ExtraQuestionsComponent implements OnInit {
     this.user = this.auth.user.get();
     let data = this.form.value;
     data["id"] = this.user['id'];
-
     this.auth.user.update(data).subscribe(responce => {
       this.helper.loading.hide();
     }, err => {

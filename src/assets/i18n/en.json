@@ -113,10 +113,10 @@
         "OPT_2": "4-5 times",
         "OPT_3": "2-3 times",
         "OPT_4": "1-2 times",
-        "OPT_5": "less"
+        "OPT_5": "less",
+        "OPT_6": "Other"
       },
       "GO": "Okay, now let’s start!",
-      "OTHER": "Other"
     }
   },
   "TABS": {
