@@ -1,5 +1,5 @@
-import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
-import {NavController, ViewController} from 'ionic-angular';
+import {Component, OnInit, Input, EventEmitter, Output, ViewChild} from '@angular/core';
+import {NavController, ViewController, Content} from 'ionic-angular';
 
 @Component({
   selector: 'de-plusmember',
@@ -7,6 +7,8 @@ import {NavController, ViewController} from 'ionic-angular';
   styleUrls: ['/de.plusmember.scss']
 })
 export class DePlusmemberComponent implements OnInit {
+  @ViewChild(Content) content: Content;
+
   @Input() testimonials: any[];
   @Input() benefits: any[];
   @Output() goToLink = new EventEmitter<boolean>();
@@ -26,4 +28,7 @@ export class DePlusmemberComponent implements OnInit {
     this.goToLink.emit(link);
   }
 
+  scrollToBottom(){
+    this.content.scrollToBottom(1000)
+  }
 }
