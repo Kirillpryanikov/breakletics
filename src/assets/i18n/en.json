@@ -145,7 +145,7 @@
     "TEXT_LI_3": "Become part of the private facebook group and gain access to",
     "TEXT_LI_3_1": "new videos (exercises and more)!",
     "TEXT_LI_4": "...and much more!",
-    "BTN": "BECOME PLUSMEMBER",
+    "BTN": "BECOME A PLUSMEMBER",
     "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
   },
   "MENU_SIDE": {
@@ -161,7 +161,14 @@
     "BREAKLETICS_SHOP": "BREAKLETICS SHOP",
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "TERMS AND CONDITIONS",
-    "IMPRINT": "IMPRINT"
+    "IMPRINT": "IMPRINT",
+    "CLASS": "KURS FINDEN",
+    "STORE": "BREAKLETICS STORE",
+    "TRAINER": "TRAINER WERDEN",
+    "CLASS_LINK": "http://breakletics.com",
+    "STORE_LINK": "http://breakletics-store.com",
+    "TRAINER_LINK": "http://breakletics.de/trainer-werden",
+    "TRANSFORMATION_LINK": "http://breakletics.com/instructor-training"
   },
   "WORKOUTS": {
     "TITLE": "Workouts",

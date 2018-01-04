@@ -100,6 +100,7 @@ export class MenuSideComponent implements OnInit {
       }
       case 'LOGOUT': {
         this.logout();
+        break;
       }
       default: {
         break;
@@ -112,7 +113,11 @@ export class MenuSideComponent implements OnInit {
     this.nav.setRoot(WelcomePageComponent);
   }
 
-  goToLink(url: string) {
+  goToLink(url: string, lng: boolean) {
+    if(lng){
+      url = this.translate.instant(url);
+      console.log('url :: ', url);
+    }
     const browser = this.iab.create(url, '_system');
   }
 

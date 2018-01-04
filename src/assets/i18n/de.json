@@ -171,7 +171,14 @@
     "BREAKLETICS_SHOP": "BREAKLETICS SHOP",
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "AGB",
-    "IMPRINT": "IMPRESSUM"
+    "IMPRINT": "IMPRESSUM",
+    "CLASS": "KURS FINDEN",
+    "STORE": "BREAKLETICS STORE",
+    "CLASS_LINK": "http://breakletics.de",
+    "STORE_LINK": "http://breakletics-store.com",
+    "TRAINER": "TRAINER WERDEN",
+    "TRAINER_LINK": "http://breakletics.de/trainer-werden",
+    "TRANSFORMATION_LINK": "http://breakletics.de/transformation"
   },
   "WORKOUTS": {
     "TITLE": "Workouts",
