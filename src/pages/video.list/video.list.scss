@@ -72,6 +72,11 @@ video-list {
         letter-spacing: $navbar-title-font-spacing;
         //margin-right: 27px;
       }
+
+      ion-buttons{
+        position: absolute;
+        top: 23%
+      }
     }
 
   }
@@ -142,7 +147,7 @@ video-list {
         background-color: transparent !important;
         box-shadow: none !important;
         -webkit-box-shadow: none !important;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+        border-bottom: 2px solid #8d8e8e;
         padding: 4px 55px 4px 63px !important;
         margin-bottom: 5px;
         line-height: 3rem;
@@ -193,7 +198,7 @@ video-list {
       flex-direction: row;
       @include setFlexStyles(flex-end);
       text-align: center;
-      border-top: 1px solid #1b1b1c;
+      //border-top: 1px solid #1b1b1c;
       border-bottom: 1px solid #1b1b1c;
       box-sizing: border-box;
       background-color: #1b1c1c;

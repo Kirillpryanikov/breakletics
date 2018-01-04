@@ -3,6 +3,9 @@
 settings {
   font-family: "Roboto";
   font-weight: bold;
+  .toolbar-background {
+    background: #000!important;
+  }
   ion-header {
     ion-navbar {
       height: $height-header-dashboard;
@@ -12,7 +15,6 @@ settings {
         color: $navbar-title-font-color;
         font-size: $navbar-title-button_size;
         font-weight: bold;
-
       }
       .title {
         color: $navbar-title-font-color !important;
@@ -60,7 +62,7 @@ settings {
       height: 2.6rem;
       color: #000;
       background-color: #fff;
-      font-size: 1rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
       font-weight: bold;
       min-width: 8.57rem;
@@ -83,5 +85,18 @@ settings {
       }
     }
   }
+  ion-grid{
+    height: 100%  ;
+    background-color: black;
+  }
 
+  ion-grid:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0.178rem;
+    width: 100%;
+    background: linear-gradient(to right, #e7102b, #12b4e7);
+  }
 }

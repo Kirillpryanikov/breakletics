@@ -2,6 +2,18 @@
 
 account {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
+  .toolbar-background {
+    background: #000!important;
+  }
+
+  //.divider {
+  //  position: fixed;
+  //  top: 0;
+  //  right: 0;
+  //  height: 0.247rem;
+  //  width: 100%;
+  //  background: linear-gradient(to right, #e7102b, #12b4e7);
+  //}
 
   ion-header {
     ion-searchbar {
@@ -9,7 +21,6 @@ account {
     }
     ion-navbar {
       height: $height-header-dashboard;
-      background: #000;
       button {
         background: transparent;
         color: $navbar-title-font-color;
@@ -33,9 +44,24 @@ account {
     background: url(../assets/imgs/dark-bg.gif) 50% 50%;
     background-color: #000;
     background-size: cover;
-    ion-item:first-child {
-      margin-top: 2.57rem;
+    form{
+      overflow: hidden;
     }
+
+    ion-item:first-child {
+      padding-top: 2.57rem;
+    }
+
+    ion-item:first-child:before{
+      //content: "";
+      //position: absolute;
+      //top: 0;
+      //right: 0;
+      //height: 0.247rem;
+      //width: 100%;
+      //background: linear-gradient(to right, #e7102b, #12b4e7);
+    }
+
     h2 {
       text-transform: uppercase;
       font-size: 1.42rem;
@@ -73,5 +99,6 @@ account {
         font-weight: bold;
       }
     }
+
   }
 }

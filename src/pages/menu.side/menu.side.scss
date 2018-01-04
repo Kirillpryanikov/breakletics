@@ -12,6 +12,11 @@ menu-side-component {
   ion-content {
     ion-item {
       background-color: transparent !important;
+
+      .item-inner{
+        border-bottom-color: #141414 !important;
+      }
+
     }
     height: 100vh;
     background-color: $dashboard-background;

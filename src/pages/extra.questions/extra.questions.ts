@@ -24,7 +24,6 @@ export class ExtraQuestionsComponent implements OnInit {
   protected mission = '';
   protected location = '';
 
-
   constructor(public navCtrl: NavController,
               private translate: TranslateService,
               private service: ExtraQuestionsService,

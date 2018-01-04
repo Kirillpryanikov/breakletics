@@ -3,7 +3,9 @@
   background: rgba(255, 255, 255, 1) !important;
 }
 page-extra-questions {
-
+  ion-icon{
+    color: whitesmoke;
+  }
   ion-content {
     color: #fff;
     background: url("../assets/imgs/login-bg.jpg");

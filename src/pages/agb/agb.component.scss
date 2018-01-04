@@ -2,6 +2,10 @@
 
 agb-component {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
+
+  .toolbar-background {
+    background: #000!important;
+  }
   ion-header {
     .toolbar-background {
       background: #000!important;

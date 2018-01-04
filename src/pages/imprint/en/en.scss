@@ -1,6 +1,10 @@
 @import "../../../theme/main";
 
 en-imprint {
+  .toolbar-background {
+    background: #000!important;
+  }
+
   font-family: "Roboto", "Helvetica Neue", sans-serif;
 
   ion-header {

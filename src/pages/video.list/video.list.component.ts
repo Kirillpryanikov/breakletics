@@ -1,5 +1,5 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {NavController, ModalController} from 'ionic-angular';
+import {Component, Input, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
+import {NavController, ModalController, Events, MenuController} from 'ionic-angular';
 import {ConfigService} from "../config.service";
 import { Video } from '../../share/Video';
 import { VideoListService } from './video.list.service';
@@ -25,6 +25,7 @@ import {HelperService} from "../../share/helper.service";
 
 export class VideoListComponent implements OnInit {
   @ViewChild('tabContainer') tabContainer: Tabs;
+  @Output() menuOpenHook = new EventEmitter<boolean>();
 
   @Input() videos: Video[];
   @Input() title: string;
@@ -47,11 +48,14 @@ export class VideoListComponent implements OnInit {
               private service: VideoListService,
               private keyboard: Keyboard,
               private authService: AuthorizationService,
-              private helper: HelperService) {}
+              private helper: HelperService,
+              private events: Events,
+              private menuCtrl: MenuController) {}
 
   ngOnInit(){
     this.levels = ConfigService.LEVELS;
     this.user = this.authService.user.get();
+    this.events.publish('isOpen');
   }
 
   getData(req) {
@@ -145,6 +149,12 @@ export class VideoListComponent implements OnInit {
 
     this.selectFilters = undefined;
     this.getData(null);
+  }
+
+  openMenu() {
+    this.events.publish('isOpen');
+    this.menuOpenHook.emit();
+    this.menuCtrl.open();
   }
 
   ngOnDestroy() {

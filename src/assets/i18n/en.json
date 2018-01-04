@@ -245,10 +245,10 @@
   },
   "LOGOUT": "Log out",
   "FORGOT_PAGE": {
-    "TITLE1": "Huch,",
-    "TITLE2": "wie ging das Passwort?",
-    "PLACEHOLDER_EMAIL": "E-Mail Adresse mit der du dich registriert hast",
-    "BUTTON_LOGIN": "neues passwort anfordern",
+    "TITLE1": "Oops,",
+    "TITLE2": "I forgot the password.",
+    "PLACEHOLDER_EMAIL": "Email address used for the registration",
+    "BUTTON_LOGIN": "Request news password",
     "SUCCESS": "Check your email, we sent you a new password!",
     "ERROR": "ERROR"
   }
