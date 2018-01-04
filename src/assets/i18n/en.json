@@ -169,7 +169,7 @@
     "JETZT": "UNLOCK 24+ WORKOUTS NOW"
   },
   "WORKOUTS_FILTER": {
-    "TITLE": "Filter by Warm Up or Cool Down",
+    "TITLE": "Choose difficulty level",
     "BEGINNER": "BEGINNER",
     "ADVANCED": "ADVANCED",
     "EXPERT": "EXPERT",
@@ -180,12 +180,20 @@
     "TOPROCKS":"BL TOPROCKS",
     "FOOTWORKS": "BL FOOTWORKS",
     "POWERMOVES": "BL POWERMOVES",
-    "CRUNCHES": "BL CRUNCHES"
+    "CRUNCHES": "BL CRUNCHES",
+    "PLACEHOLDER": "Filter by difficulty and category ..."
+  },
+  "EXERCISES_FILTER": {
+    "TITLE": "Choose category"
   },
   "WARMUPS": {
     "TITLE": "WARM UPS / COOL DOWNS",
     "WARM_UP": "WARM UP",
-    "COOL_DOWN": "COOL DOWN"
+    "COOL_DOWN": "COOL DOWN",
+    "PLACEHOLDER": "Filter by Warm Up / Cool Down ..."
+  },
+  "WARMUPS_FILTER": {
+    "TITLE": "Choose Warm Up / Cool Down"
   },
   "VIDEO_LIST": {
     "SEARCH": "Exercise search ..."

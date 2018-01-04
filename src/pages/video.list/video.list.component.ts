@@ -33,6 +33,7 @@ export class VideoListComponent implements OnInit {
   @Input() showDuration: boolean;
   @Input() showLevels: boolean;
   @Input() hideBanner: boolean;
+  @Input() placeholder: string;
 
   private vidoeObservable: Subscription;
   private loading: any;

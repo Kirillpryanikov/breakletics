@@ -27,7 +27,7 @@
     </div>
   </div>
   <div *ngIf="category"  class="filters-category">
-    <h2>{{"EXERCISES.TITLE" | translate}}</h2>
+    <h2>{{"EXERCISES_FILTER.TITLE" | translate}}</h2>
     <div class="levels">
       <button class="filter-item" (click)="setFilter('category', 'BL Toprocks')">{{"EXERCISES.TOPROCKS" | translate}}</button>
       <button class="filter-item" (click)="setFilter('category', 'BL Footworks')">{{"EXERCISES.FOOTWORKS" | translate}}</button>
@@ -36,7 +36,7 @@
     </div>
   </div>
   <div *ngIf="warmup" class="filters-category warmup">
-    <h2>{{"WARMUPS.TITLE" | translate}}</h2>
+    <h2>{{"WARMUPS_FILTER.TITLE" | translate}}</h2>
     <div class="levels">
       <button class="filter-item" (click)="setFilter('category', 'Warm up')">{{"WARMUPS.WARM_UP" | translate}}</button>
       <button class="filter-item" (click)="setFilter('category', 'Cool down')">{{"WARMUPS.COOL_DOWN" | translate}}</button>

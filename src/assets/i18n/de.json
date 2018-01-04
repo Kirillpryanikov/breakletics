@@ -175,11 +175,11 @@
   },
   "WORKOUTS": {
     "TITLE": "Workouts",
-    "SEARCH": "Filtern nach Warm Ups und Cool Downs",
+    "SEARCH": "Filtern nach Schwierigkeit ...",
     "JETZT": "JETZT 48 EXERCISES FREISCHALTEN"
   },
   "WORKOUTS_FILTER": {
-    "TITLE": "Filtern nach Warm Ups und Cool Downs",
+    "TITLE": "Schwierigkeit wählen",
     "BEGINNER": "BEGINNER",
     "ADVANCED": "ADVANCED",
     "EXPERT": "EXPERT",
@@ -190,12 +190,20 @@
     "TOPROCKS":"BL TOPROCKS",
     "FOOTWORKS": "BL FOOTWORKS",
     "POWERMOVES": "BL POWERMOVES",
-    "CRUNCHES": "BL CRUNCHES"
+    "CRUNCHES": "BL CRUNCHES",
+    "PLACEHOLDER": "Filtern nach Schwierigkeit und Kategorie ..."
+  },
+  "EXERCISES_FILTER": {
+    "TITLE": "Kategorien wählen"
   },
   "WARMUPS": {
     "TITLE": "WARM UPS / COOL DOWNS",
     "WARM_UP": "WARM UP",
-    "COOL_DOWN": "COOL DOWN"
+    "COOL_DOWN": "COOL DOWN",
+    "PLACEHOLDER": "Filtern nach Warm Up / Cool Down ..."
+  },
+  "WARMUPS_FILTER": {
+    "TITLE": "Wähle Warm Up / Cool Down"
   },
   "VIDEO_LIST": {
     "SEARCH": "Exercise suchen ..."

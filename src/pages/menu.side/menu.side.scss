@@ -12,6 +12,10 @@ menu-side-component {
   ion-content {
     ion-item {
       background-color: transparent !important;
+
+      .item-inner{
+        border-bottom: none;
+      }
     }
     height: 100vh;
     background-color: $dashboard-background;
@@ -47,7 +51,7 @@ menu-side-component {
       .item {
         text-transform: uppercase;
         padding: 10px 0;
-        font-size: 1.58rem;
+        font-size: 1.3rem;
         letter-spacing: 1.5px;
       }
 
