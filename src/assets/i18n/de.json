@@ -140,7 +140,7 @@
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN",
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
-    "CRAZY_1": "1 Monat für 1 EUR 0% Risiko",
+    "CRAZY_1": "1 Monat für 0 EUR 0% Risiko",
     "CRAZY_2": "",
     "STATIC": "Plusmember",
     "PAY_TITLE_1": "FIT & ATHLETISCH",
@@ -234,7 +234,11 @@
     "PRODUCT_PLUSMEMBER": "Du bist kein PlusMember",
     "PRODUCT_BY": "Jetzt kaufen",
     "PRODUCT_DEAL": "X-Mas Deal",
-    "UPDATE_BTN": "AKTUALISIEREN"
+    "UPDATE_BTN": "AKTUALISIEREN",
+    "SUBSCRIBER-1": "Um dein Abo zu kündigen musst du in eine der E-Mails reinschauen, die du von unserem Zahlungsanbieter Digistore24 bekommen hast. Dort klickst du den Link „Eine Übersicht über Ihre Bestellung finden Sie hier.",
+    "SUBSCRIBER-2": "Auf der Übersicht gibt es einen Button mit dem du dein Abo kündigen kannst. Es wird dann nichts mehr von deinem Konto abgebucht und du behälst deinen Zugang noch bis zum Ende des Abrechnungszeitraums.",
+    "SUBSCRIBER-3": "Falls du Probleme hast den Button zu finden um dein Abo selbst zu kündigen, dann schreibe eine E-Mail an info@breakletics.com und wir erledigen das für dich!"
+
   },
   "AGB": {
     "PAGE_TITLE": "AGB"

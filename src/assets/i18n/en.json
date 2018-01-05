@@ -224,7 +224,10 @@
     "PRODUCT_PLUSMEMBER": "You are not a PlusMember",
     "PRODUCT_BY": "Buy now",
     "PRODUCT_DEAL": "X-Mas Deal",
-    "UPDATE_BTN": "UPDATE"
+    "UPDATE_BTN": "UPDATE",
+    "SUBSCRIBER-1": "In order to cancel the subscription, you need to open one of the emails that has been sent to you by our payment provider Digistore24. In this mail you need to click on the link An overview of the order can be found here.",
+    "SUBSCRIBER-2": "On this overview you can find a button. By clicking on it you cancel your subscription. From there on, your account will not be charged again and you keep your access until the end of the billing period.",
+    "SUBSCRIBER-3": "If you have problems canceling your subscription by yourself, please send an email to info@breakletics.com and we will take care of that for you!"
   },
   "AGB": {
     "PAGE_TITLE": "AGB"

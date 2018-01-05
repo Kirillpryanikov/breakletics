@@ -29,7 +29,11 @@
 
       <ion-item no-lines>
         <ion-label floating [innerHTML]="'ACCOUNT.GENDER' | translate"></ion-label>
-        <ion-input type="text" name="gender" [ngModel]="user.gender || ''" (blur)='update(meta)' debounce="2250"></ion-input>
+        <ion-select name="gender" [ngModel]="user.gender">
+          <ion-option value="{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</ion-option>
+          <ion-option value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</ion-option>
+        </ion-select>
+        <!--<ion-input type="text" name="gender" [ngModel]="user.gender || ''" (blur)='update(meta)' debounce="2250"></ion-input>-->
       </ion-item>
 
       <ion-item no-lines>
