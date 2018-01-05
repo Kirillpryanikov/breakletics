@@ -7,6 +7,7 @@ import {ExtraQuestionsService} from "./extra.qustetions.service";
 import {AuthorizationService} from "../../share/authorization.service";
 import {User} from "../../share/User";
 import {HelperService} from "../../share/helper.service";
+import {RegisterPageComponent} from "../register/register";
 
 @Component({
   selector: 'page-extra-questions',
@@ -98,8 +99,8 @@ export class ExtraQuestionsComponent implements OnInit {
     this.navCtrl.setRoot(TabsComponent, {user: this.user});
   }
 
-  showAlert() {
-
+  goTo() {
+    this.navCtrl.setRoot(RegisterPageComponent);
   }
 
   ngOnDestroy() {

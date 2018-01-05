@@ -1,6 +1,6 @@
 export class User {
   id: number;
-  plusmember: string;
+  plusmember: any;
   token: string;
   user_display_name: string;
   first_name: string;

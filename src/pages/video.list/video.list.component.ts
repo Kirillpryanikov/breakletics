@@ -16,6 +16,7 @@ import {User} from "../../share/User";
 import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {TabsComponent} from "../tabs/tabs.component";
 import {HelperService} from "../../share/helper.service";
+import {PlusmemberComponent} from "../plusmember/plusmember.component";
 
 @Component({
   selector: 'video-list',
@@ -155,6 +156,10 @@ export class VideoListComponent implements OnInit {
     this.events.publish('isOpen');
     this.menuOpenHook.emit();
     this.menuCtrl.open();
+  }
+
+  goTo(page?){
+    this.modalCtrl.create(PlusmemberComponent).present();
   }
 
   ngOnDestroy() {

@@ -2,10 +2,22 @@
 .picker-wrapper {
   background: rgba(255, 255, 255, 1) !important;
 }
+
 page-extra-questions {
+  ion-navbar{
+    button {
+      background-color: inherit;
+      font-size: 2.5rem;
+      color: #32db64 !important;
+      margin-left: 4px;
+    }
+  }
+
+
   ion-icon{
     color: whitesmoke;
   }
+
   ion-content {
     color: #fff;
     background: url("../assets/imgs/login-bg.jpg");
@@ -89,10 +101,15 @@ page-extra-questions {
           font-weight: bold;
         }
         .select-text, .datetime-text {
-          color: $white-opacity;
+          color: $guide-color-text;
           background: rgba(255,255,255, .0);
         }
       }
     }
   }
+}
+
+.alert-radio-label{
+  overflow: visible !important;
+  word-wrap: break-word !important;
 }

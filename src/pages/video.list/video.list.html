@@ -60,7 +60,7 @@
       </div>
     </ng-container>
 
-    <div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate" *ngIf="!hideBanner && user && user.plusmember < 1" ></div>
+    <div class="divider-video" [innerHTML]="'WORKOUTS.JETZT' | translate" *ngIf="!hideBanner && user && user.plusmember < 1" (click)="goTo('plusmember')"></div>
     <ng-container *ngFor="let item of videos; let i = index" >
       <div class="private video" *ngIf="user && user.plusmember < item.plusmember"
            [style.background]="'url(' + item.video_img + ')'"

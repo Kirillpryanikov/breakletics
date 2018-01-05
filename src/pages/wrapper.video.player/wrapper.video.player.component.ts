@@ -37,6 +37,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.videoParam = this.navParams.get('video');
     this.statusBar.hide();
     this.user = this.userService.user.get();
+    console.log('this.user ', this.user);
     if(this.videoParam) {
       this.getVideo();
     }
@@ -45,6 +46,12 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   ngOnChanges(changes: SimpleChanges) {
     if(changes.video) {
       this.getVideo();
+    }
+  }
+
+  isAllowPlusmember(){
+    if(this.user && this.user['plusmember'] === 0) {
+      this.modalCtrl.create(ADLeyersComponent).present();
     }
   }
 
@@ -89,7 +96,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   next() {
     if(!this.videoParam.warm_up_url) {
-      this.modalCtrl.create(ADLeyersComponent).present();
+      // this.modalCtrl.create(ADLeyersComponent).present();
+      this.isAllowPlusmember();
       this.close();
       return;
     }
@@ -109,7 +117,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.player.on('ended', (data)=> {
 
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-      this.modalCtrl.create(ADLeyersComponent).present();
+      this.isAllowPlusmember();
+      // this.modalCtrl.create(ADLeyersComponent).present();
       this.close();
     });
   }

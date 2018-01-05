@@ -100,7 +100,7 @@ export class LoginPageComponent implements OnDestroy {
     if(status === 400) {
       msg = 'Check fields';
     } else {
-      msg = 'Not found user'
+      msg = 'User not found'
     }
     if (this.toast) this.toast.dismiss();
     this.toast = this.toastCtrl.create({
