@@ -24,21 +24,29 @@ filter-video {
   .levels.difficultly {
     @include setFlexStyles();
     flex-direction: row;
+    .filter-item{
+      margin-left: 0.932rem;
+      margin-right: 0.93rem;
+    }
   }
+
   .levels {
     width: 90%;
     margin: 4.44vh auto;
     overflow: auto;
-    @include setFlexStyles(flex-start);
+    //@include setFlexStyles(flex-start);
     display: flex;
+    justify-content: space-around;
     flex-flow: wrap;
     @media (max-width: 320px) {
       width: 98%;
     }
     .filter-item {
+      //@include setFlexStyles();
       padding: 0 0.89rem;
-      max-width: 33%;
-      margin: 0 1.1rem 0.5rem  0;
+      padding-top: 0.15rem;
+      max-width: 23%;
+      margin: 0 0.3rem 0.3rem  0;
       height: 3.39rem;
       @include setFlexStyles();
       width: auto;
@@ -47,7 +55,7 @@ filter-video {
       background: #000;
       border: 1px solid #fff;
       //font-size: 0.85rem;
-      font-size: 1.125rem;
+      font-size: 0.825rem;
       color: white;
       @media (max-width: 320px) {
         width: auto;
@@ -55,12 +63,12 @@ filter-video {
         letter-spacing: 1.6px;
         margin: 0 1rem 0.5rem  0;
       }
-      &:last-child {
-        margin: 0 0 0.5rem  0 ;
-      }
-      i:first-child {
-        margin-left: 5px;
-      }
+      //&:last-child {
+      //  margin: 0 0 0.5rem  0 ;
+      //}
+      //i:first-child {
+      //  margin-left: 5px;
+      //}
       &.active {
         background: #fff;
         color: #000;
@@ -92,12 +100,13 @@ filter-video {
       }
     }
   }
-
   .warmup {
     .levels {
       display: flex;
-      justify-content: flex-start;
+      //justify-content: flex-start;
       .filter-item {
+        width: 26% !important;
+        max-width: 50%;
         //margin-right: 15px;
       }
     }

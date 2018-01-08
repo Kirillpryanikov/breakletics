@@ -251,7 +251,7 @@
     "TITLE1": "Oops,",
     "TITLE2": "I forgot the password.",
     "PLACEHOLDER_EMAIL": "Email address used for the registration",
-    "BUTTON_LOGIN": "Request news password",
+    "BUTTON_LOGIN": "Request new password",
     "SUCCESS": "Check your email, we sent you a new password!",
     "ERROR": "ERROR"
   }

@@ -32,6 +32,9 @@ body {
 }
 
 page-dashboard {
+  .bar-button-menutoggle-ios ion-icon,ion-icon {
+    font-size: 2.8rem !important;
+  }
   .toolbar-background {
     background: #000!important;
   }
@@ -49,9 +52,7 @@ page-dashboard {
     }
     background: #000!important;
     height: $height-header-dashboard;
-    .bar-button-menutoggle-ios ion-icon,ion-icon {
-      font-size: 2.8rem !important;
-    }
+
     .plusmember-wrapper {
       min-width: 43px;
     }

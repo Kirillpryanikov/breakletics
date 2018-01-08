@@ -1,6 +1,6 @@
 <ion-header no-border>
   <ion-navbar transparent hideBackButton>
-    <ion-buttons left transparent>
+    <ion-buttons transparent>
       <button (click)="goTo()"><ion-icon name="ios-arrow-round-back"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
@@ -22,7 +22,6 @@
         <ion-label floating for="birthday">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
         <ion-datetime id="birthday" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" formControlName="birthday" ngModel>
         </ion-datetime>
-
       </ion-item>
 
       <ion-item>

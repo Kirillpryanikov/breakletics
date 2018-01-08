@@ -33,6 +33,7 @@ password-restore {
       @include setFlexStyles();
       height: $height-form;
       color: #fff;
+      font-weight: bold;
       .title-login-1 {
         width: 100%;
         font-size: $font-size-em-lg;
@@ -57,8 +58,13 @@ password-restore {
           border: none;
           border-bottom: 1px solid $white-opacity;
           padding: $padding-input-field;
-          background: rgba(1,1,1,0);
-          color: $white-opacity;
+          background: rgba(1, 1, 1, 0);
+          color: #fff;
+          outline: none;
+        }
+
+        .item-input.ng-valid.input-has-value::after{
+          border-bottom-color: transparent;
         }
       }
 
@@ -95,7 +101,7 @@ password-restore {
         width: 100%;
         margin-top: 18%;
         font-size: 1.6rem;
-        text-decoration: underline;
+        //text-decoration: underline;
         span {
           width: 80%;
         }

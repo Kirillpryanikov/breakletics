@@ -75,15 +75,17 @@ video-list {
 
       ion-buttons{
         position: absolute;
-        top: 23%
+        top: 22%
       }
     }
-
   }
 
   ion-content {
     @include slideRightAnimation();
-    background: #1b1c1c;
+    background: url(../assets/imgs/dark-bg.gif) 50% 50%;
+    background-color: #000;
+    background-size: cover;
+    //background: #1b1c1c;
     .sub-header {
       background: #1b1c1c;
       min-height: 5.5rem;

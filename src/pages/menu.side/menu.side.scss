@@ -41,12 +41,21 @@ menu-side-component {
       color: $guide-color-text;
     }
 
+    .item-plusmember{
+      font-size: 1.3rem;
+      letter-spacing: 2.5px;
+    }
+
     .item-menu {
       padding: 0 7.75%;
       //background: $dashboard-background;
       ion-icon {
         width: 20px;
         margin-right: $margin-icon;
+      }
+
+      .item-icon {
+        font-size: 1.475rem;
       }
 
       .item {
