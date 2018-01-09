@@ -19,5 +19,11 @@ page-register{
         font-weight: bold;
       }
     }
+
+    @media (max-width: 320px) {
+      .handler-gender {
+        padding: 14px !important;
+      }
+    }
   }
 }

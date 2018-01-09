@@ -132,4 +132,13 @@ filter-video {
     }
   }
   background: rgba(0,0,0,.9);
+
+  @media (max-width: 320px) {
+    .levels{
+      justify-content: center;
+    }
+    .filter-item {
+      max-width: 26% !important;
+    }
+  }
 }

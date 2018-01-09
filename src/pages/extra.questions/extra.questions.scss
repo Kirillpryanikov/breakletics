@@ -4,7 +4,23 @@
 }
 
 page-extra-questions {
+
+  .header-ios{
+    padding-left: 15px !important;
+
+    ion-navbar {
+      padding: 0 !important;
+
+      ion-buttons{
+        button {
+          padding: 15px 0 0 0 !important;
+        }
+      }
+    }
+  }
+
   ion-navbar{
+    padding: 0 !important;
     button {
       margin-left: 4px;
       background-color: inherit;

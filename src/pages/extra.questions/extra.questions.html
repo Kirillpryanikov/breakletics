@@ -17,7 +17,7 @@
     </div>
 
     <form (ngSubmit)="submit()" [formGroup]="form">
-      <ion-list >
+      <ion-list>
       <ion-item>
         <ion-label floating for="birthday">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
         <ion-datetime id="birthday" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" formControlName="birthday" ngModel>

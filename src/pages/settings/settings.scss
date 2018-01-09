@@ -90,13 +90,13 @@ settings {
     //background-color: black;
   }
 
-  ion-grid:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 0.178rem;
-    width: 100%;
-    background: linear-gradient(to right, #e7102b, #12b4e7);
-  }
+  //ion-grid:after {
+  //  content: "";
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  height: 0.178rem;
+  //  width: 100%;
+  //  background: linear-gradient(to right, #e7102b, #12b4e7);
+  //}
 }

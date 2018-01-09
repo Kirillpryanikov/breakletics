@@ -45,8 +45,15 @@ export class MyApp implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleBlackOpaque();
+      // this.statusBar.styleBlackOpaque();
       // this.splashScreen.hide();
+      if(this.platform.is('ios')){
+        this.statusBar.hide();
+      } else {
+        console.log('this ANDROID ::: ANDROID ');
+        this.statusBar.styleBlackOpaque();
+      }
+
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
       this.initTranslate();

@@ -4,10 +4,10 @@
       <button class="inner-back-button" ion-button navPop icon-only>
         <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
       </button>
-      <!--<button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>-->
     </ion-buttons>
     <div class="title" [innerHTML]="'SETTINGS.PAGE_TITLE' | translate"></div>
   </ion-navbar>
+  <div class="divider"></div>
 </ion-header>
 <ion-content>
   <ion-grid>
@@ -16,7 +16,7 @@
     </ion-row>
     <ion-row >
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.SETTING_SUBTITLE' | translate"></ion-col>
-      <ion-col class="col-button">
+      <ion-col class="col-button">111
         <button class="button" [innerHTML]="'SETTINGS.SETTING_BTN' | translate" (click)="goTo('MY_ACCOUNT')"></button>
       </ion-col>
     </ion-row>

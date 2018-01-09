@@ -6,7 +6,8 @@ $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
 password-restore {
-  font-family: "RobotoCondensesBold";
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  //font-family: "RobotoCondensesBold";
   .header-md:after, .header-ios:after {
     background-image: none !important;
     content: '';
@@ -107,5 +108,10 @@ password-restore {
         }
       }
     }
+  }
+
+  @media (max-width: 320px) {
+    ::-webkit-input-placeholder {font-size: 1.3rem;}
+    :-ms-input-placeholder      {font-size: 1.3rem;}
   }
 }
