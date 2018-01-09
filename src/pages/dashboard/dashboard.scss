@@ -201,7 +201,9 @@ page-dashboard {
           h3 {
             text-align: center;
             font-size: 1.25rem;
+            letter-spacing: 0.1rem;
             padding: 5px 0;
+            text-transform: none !important;
             text-shadow: none !important;
             color: #7d7d7d;
           }

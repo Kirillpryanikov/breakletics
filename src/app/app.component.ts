@@ -50,7 +50,6 @@ export class MyApp implements OnInit {
       if(this.platform.is('ios')){
         this.statusBar.hide();
       } else {
-        console.log('this ANDROID ::: ANDROID ');
         this.statusBar.styleBlackOpaque();
       }
 
@@ -83,8 +82,8 @@ export class MyApp implements OnInit {
      */
     this.globalization.getPreferredLanguage()
       .then(res => {
-        const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
-        // const countryCode = 'de';
+        // const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
+        const countryCode = 'de';
         this.translate.use(countryCode);
       })
       .catch(e => console.log('language app.component err --> ', e));
@@ -95,18 +94,18 @@ export class MyApp implements OnInit {
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = TabsComponent;
-          // this.rootPage = ExtraQuestionsComponent;
+          // this.rootPage = TabsComponent;
+          this.rootPage = ExtraQuestionsComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
-          // this.rootPage = ExtraQuestionsComponent;
+          // this.rootPage = WelcomePageComponent;
+          this.rootPage = ExtraQuestionsComponent;
           this.authService.session.reset();
         }
       })
       .catch(err => {
         this.authService.session.reset();
-        this.rootPage = WelcomePageComponent;
-        // this.rootPage = ExtraQuestionsComponent;
+        // this.rootPage = WelcomePageComponent;
+        this.rootPage = ExtraQuestionsComponent;
       })
   }
 }

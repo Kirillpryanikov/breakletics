@@ -69,6 +69,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.language = this.translate.currentLang;
       this.rundStr = this.service.getRundomString(this.translate.currentLang);
+      this.rundStr = this.rundStr.toLowerCase();
+      let letter = this.rundStr.split('');
+      letter[0] = letter[0].toUpperCase();
+      this.rundStr  = letter.join('');
     },2000);
 
     this.language = this.translate.currentLang;

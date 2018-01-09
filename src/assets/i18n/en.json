@@ -137,9 +137,10 @@
     "PAY_TITLE_1": "BECOME ATHLETIC",
     "PAY_TITLE_2": " LEARN TO MOVE WITH CREATIVE,",
     "PAY_TITLE_3": "KICK-ASS WORKOUTS! ",
-    "TEXT_LI_1": "Get access now to all of our",
-    "TEXT_LI_1_1": "36 Workouts ",
-    "TEXT_LI_1_2": "28 Exercises und 4 Warm Ups/ Cool Downs!",
+    "TEXT_LI_1": "Gain access to all workouts exercises!",
+    "TEXT_LI_2": "",
+    "TEXT_LI_1_1": "",
+    "TEXT_LI_1_2": "",
     "TEXT_LI_2_1": "NEW",
     "TEXT_LI_2_2": "Exercises and Features on a regular basis!",
     "TEXT_LI_3": "Become part of the private facebook group and gain access to",
@@ -172,8 +173,8 @@
   },
   "WORKOUTS": {
     "TITLE": "Workouts",
-    "SEARCH": "Filter by Warm Up or Cool Down",
-    "JETZT": "UNLOCK 24+ WORKOUTS NOW"
+    "SEARCH": "Filter by Difficulty ...",
+    "JETZT": "UNLOCK 48+ WORKOUTS NOW"
   },
   "WORKOUTS_FILTER": {
     "TITLE": "Choose difficulty level",

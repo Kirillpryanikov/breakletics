@@ -37,6 +37,16 @@ page-welcome {
     }
   }
 
+  .content-md {
+    #header {
+      margin-bottom: 0 !important;
+
+      .partner-text {
+        margin-top: 8.2% !important;
+      }
+    }
+  }
+
   #header {
     width: 100%;
     margin-bottom: 8.2%;
