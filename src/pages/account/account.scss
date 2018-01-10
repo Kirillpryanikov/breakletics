@@ -1,7 +1,8 @@
 @import "../../theme/main";
 
 account {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  //font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-family: "RobotoCondensesBold";
   .toolbar-background {
     background: #000!important;
   }
@@ -48,6 +49,7 @@ account {
       overflow: hidden;
     }
 
+
     ion-item:first-child {
       padding-top: 2.57rem;
     }
@@ -77,8 +79,10 @@ account {
       font-size: 1.5rem;
       font-weight: bold;
       color: #fff;
-      padding-bottom: 1.2rem;
+      padding-bottom: 0.2rem;
+      width: 100%;
       border-bottom: 1px solid #8e8e8e
+
     }
     .list-md .item-input:last-child,.list-ios .item-input:last-child {
       border: 0!important;

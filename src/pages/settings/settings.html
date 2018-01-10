@@ -16,20 +16,26 @@
     </ion-row>
     <ion-row >
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.SETTING_SUBTITLE' | translate"></ion-col>
-      <ion-col class="col-button">111
+      <ion-col class="col-button">
         <button class="button" [innerHTML]="'SETTINGS.SETTING_BTN' | translate" (click)="goTo('MY_ACCOUNT')"></button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="title" [innerHTML]="'SETTINGS.PRODUCT_TITLE' | translate"></ion-col>
     </ion-row>
+    <ion-row *ngIf="user && user.plusmember  > 0">
+      <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_PLUSMEMBER' | translate"></ion-col>
+      <ion-col class="col-button">
+        <button class="button button-by bought">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
+      </ion-col>
+    </ion-row>
     <ion-row *ngIf="user && user.plusmember < 1">
       <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_PLUSMEMBER' | translate"></ion-col>
       <ion-col class="col-button">
-        <button class="button button-by bought" (click)="pay()">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
+        <button class="button button-by" (click)="pay()">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="user.plusmember > 0">
       <ion-col>
         <br>
         <br>

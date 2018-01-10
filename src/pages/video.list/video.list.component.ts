@@ -5,7 +5,6 @@ import { Video } from '../../share/Video';
 import { VideoListService } from './video.list.service';
 import { Keyboard } from '@ionic-native/keyboard';
 
-
 import {
   FilterVideoComponent,
   WrapperVideoPlayerComponent

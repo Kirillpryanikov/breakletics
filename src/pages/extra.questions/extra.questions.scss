@@ -4,6 +4,7 @@
 }
 
 page-extra-questions {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
 
   .header-ios{
     padding-left: 15px !important;
@@ -65,6 +66,7 @@ page-extra-questions {
         button {
           @include fullSizeBtn();
           font-weight: bold;
+          letter-spacing: 3px;
         }
       }
       .datetime-md, .datetime-ios {
@@ -111,8 +113,8 @@ page-extra-questions {
         button[type=submit] {
           @include fullSizeBtn();
           margin-top: 13.2%;
-          font-weight: bold;
-          letter-spacing: 0.4rem;
+          font-weight: bold !important;
+          letter-spacing: 0.6rem;
         }
         .select-text, .datetime-text {
           color: $guide-color-text;

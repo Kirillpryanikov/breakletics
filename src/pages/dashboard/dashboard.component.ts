@@ -140,7 +140,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
         guide.onDidDismiss(data => {
           this.isScroll = false;
         });
-        guide.present();
+        setTimeout(()=> {
+          if(this.user && this.user['plusmember'] < 1)
+            guide.present()
+        },500)
       });
   }
 

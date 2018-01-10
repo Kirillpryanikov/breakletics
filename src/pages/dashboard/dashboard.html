@@ -25,12 +25,12 @@
 
 <ion-content>
   <div class="container-dashboard"  [ngClass]="{'no-scroll': isScroll && user && user.plusmember === 0}">
-    <div class="block block-1" *ngIf="video">
+    <div class="block block-1" *ngIf="video" (click)="playVideoModal()">
       <img [src]="video.video_img" width="100%">
-      <ion-icon class="play-button" *ngIf="video.video_url" (click)="playVideoModal()" name="md-play"></ion-icon>
+      <ion-icon class="play-button" *ngIf="video.video_url" name="md-play"></ion-icon>
       <div class="block-1-footer">
         <span>{{'DASHBOARD.WORKOUTS_WEEK' | translate }}</span>
-        <span>{{video.duration}} MIN <img src="assets/imgs/time-icon.png" alt="">
+        <span>{{video.duration}} MIN <img src="assets/imgs/time-icon.svg" alt="">
         </span>
       </div>
     </div>

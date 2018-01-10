@@ -17,7 +17,7 @@
       <ion-item no-lines>
         <h2 [innerHTML]="'ACCOUNT.SUBTITLE' | translate"></h2>
       </ion-item>
-      <ion-item no-lines>
+      <ion-item >
         <ion-label floating [innerHTML]="'ACCOUNT.NAME' | translate"></ion-label>
         <ion-input type="text" [ngModel]="user.first_name || ''" name="first_name" (blur)='update(meta)' debounce="2250"></ion-input>
       </ion-item>

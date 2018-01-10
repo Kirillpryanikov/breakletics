@@ -69,6 +69,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
       showinfo: false
     };
     this.player = new Player(this.iFrameFirst.nativeElement, options);
+
     this.play();
     this.player.on('ended', (data)=> {
       this.next();
