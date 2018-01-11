@@ -1,7 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
-import {ModalController, NavController, ToastController} from 'ionic-angular';
+import { ModalController, NavController, ToastController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { TranslateService } from '@ngx-translate/core';
 
 import {
   TabsComponent,
@@ -30,7 +31,8 @@ export class LoginPageComponent implements OnDestroy {
               private nativeStorage: NativeStorage,
               private helper: HelperService,
               private toastCtrl: ToastController,
-              private modalCtrl: ModalController ) {}
+              private modalCtrl: ModalController,
+              private translate: TranslateService) {}
 
   login(form: NgForm) {
     this.helper.loading.show();
@@ -100,7 +102,7 @@ export class LoginPageComponent implements OnDestroy {
     if(status === 400) {
       msg = 'Check fields';
     } else {
-      msg = 'User not found'
+      msg = this.translate.get('LOGIN_PAGE.NOT_FOUND_USER')['value'];
     }
     if (this.toast) this.toast.dismiss();
     this.toast = this.toastCtrl.create({

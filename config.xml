@@ -98,5 +98,4 @@
     </plugin>
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
     <plugin name="cordova-plugin-google-analytics" spec="^1.8.3" />
-    <allow-navigation href="http://192.168.0.104:8100" />
 </widget>

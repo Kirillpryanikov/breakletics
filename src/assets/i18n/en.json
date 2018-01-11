@@ -10,7 +10,8 @@
     "TITLE_UNDER_BUTTON2": "the general terms and conditions of ",
     "TITLE_UNDER_BUTTON3": "Breakletics",
     "FOOTER_LOGIN1": "I do not have an account and ",
-    "FOOTER_LOGIN2": "want to sign up"
+    "FOOTER_LOGIN2": "want to sign up",
+    "NOT_FOUND_USER": "Email or password not correct"
   },
   "REGISTER": {
     "PAGE_1": {
