@@ -8,12 +8,11 @@ page-welcome {
   font-weight: bold !important;
   video {
     position: absolute;
-    height: 100%;
     top: 0;
     bottom: 0;
     left: 0;
-    //min-width: 100%;
-    //width: 100%;
+    min-width: 100%;
+    width: 100%;
     z-index: -100;
     background: url('../assets/imgs/welcome-bg.jpg') no-repeat;
     background-size: cover;
@@ -37,6 +36,14 @@ page-welcome {
     &::-webkit-media-controls-start-playback-button {
       display: none!important;
       -webkit-appearance: none;
+    }
+  }
+
+  @media (min-height: 865px) {
+    video {
+      height: 100% !important;
+      min-height: 100vh !important;
+      width: auto !important;
     }
   }
 

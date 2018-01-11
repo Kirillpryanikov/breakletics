@@ -22,6 +22,7 @@ agb-component {
       .title {
         color: $navbar-title-font-color !important;
         text-transform: uppercase;
+        font-weight: bold;
         font-size: $navbar-title-font-size;
         @media (max-width: 320px) {
           font-size: 1.4rem;
