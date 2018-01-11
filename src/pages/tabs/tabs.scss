@@ -46,6 +46,7 @@ page-tabs {
   font-family: "Roboto";
   font-weight: bold;
   font-size:0.7em;
+
   ion-content {
   }
 
@@ -59,6 +60,10 @@ page-tabs {
       height: 0.178rem;
       width: 100%;
       background: linear-gradient(to right, #e7102b, #12b4e7);
+    }
+
+    .tab-button-text{
+      display: inline-block !important;
     }
   }
 }

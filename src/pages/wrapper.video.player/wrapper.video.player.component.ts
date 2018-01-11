@@ -130,7 +130,12 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   ngOnDestroy() {
-    this.statusBar.show();
+    if(this.platform.is('ios')){
+      this.statusBar.hide();
+    } else {
+      this.statusBar.show();
+    }
+
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
 }

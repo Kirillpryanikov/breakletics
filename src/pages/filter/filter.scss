@@ -105,8 +105,9 @@ filter-video {
       display: flex;
       //justify-content: flex-start;
       .filter-item {
-        width: 26% !important;
-        max-width: 50%;
+        //width: 26% !important;
+        //max-width: 50%;
+        padding: 0 12px;
         //margin-right: 15px;
       }
     }

@@ -421,6 +421,8 @@ plusmember {
           height: 100%;
           position: relative;
           .right-inner {
+            display: flex;
+            justify-content: center;
             z-index: 2;
             position: absolute;
             height: 100%;
@@ -449,6 +451,15 @@ plusmember {
           bottom: 0px;
           z-index: 0;
         }
+
+        @media (max-width: 320px) {
+          .right{
+            width:23% !important;
+          }
+          &:after{
+            width: 23%!important;
+          }
+        }
       }
       .subtitle-after {
         margin: 3.46rem auto auto auto;
@@ -458,6 +469,5 @@ plusmember {
       }
 
     }
-
   }
 }
