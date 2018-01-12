@@ -2,6 +2,7 @@ import {Component, OnInit } from '@angular/core';
 import {ModalController, App, MenuController, Events} from 'ionic-angular';
 import {InAppBrowser} from '@ionic-native/in-app-browser';
 import {ItemMenuSide} from '../item.menu.side/item.menu.side';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
 
 import {
   SettingsComponent,
@@ -16,7 +17,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {User} from "../../share/User";
 import {AuthorizationService} from "../../share/authorization.service";
 import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
-import {DashbordService} from './../dashboard/dashboard.service';
+import {DashbordService} from '../dashboard/dashboard.service';
 import {Subscription} from "rxjs/Subscription";
 import {TabsComponent} from "../tabs/tabs.component";
 
@@ -37,7 +38,8 @@ export class MenuSideComponent implements OnInit {
               private service: DashbordService,
               public app: App,
               public menu: MenuController,
-              public events: Events) {
+              public events: Events,
+              private safariViewController: SafariViewController) {
     events.subscribe('isOpen', (user) => {
       this.user = this.auth.user.get();
     });
@@ -118,7 +120,21 @@ export class MenuSideComponent implements OnInit {
       url = this.translate.instant(url);
       console.log('url :: ', url);
     }
-    const browser = this.iab.create(url, '_system');
+    // const browser = this.iab.create(url, '_system');
+    this.safariViewController.isAvailable()
+      .then((available: boolean) => {
+        if(available) {
+          this.safariViewController.show({
+            url: url,
+            hidden: false,
+            animated: false,
+            transition: 'curl',
+            enterReaderModeIfAvailable: true
+          })
+        } else {
+          this.iab.create(url, '_system');
+        }
+      })
   }
 
   ngOnDestroy() {

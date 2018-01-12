@@ -11,7 +11,8 @@
     "TITLE_UNDER_BUTTON3": "Breakletics",
     "FOOTER_LOGIN1": "I do not have an account and ",
     "FOOTER_LOGIN2": "want to sign up",
-    "NOT_FOUND_USER": "Email or password not correct"
+    "NOT_FOUND_USER": "Email or password not correct",
+    "NOT_FIELD_ENTER": "Please complete all fields!"
   },
   "REGISTER": {
     "PAGE_1": {
@@ -255,6 +256,6 @@
     "PLACEHOLDER_EMAIL": "Email address used for the registration",
     "BUTTON_LOGIN": "Request new password",
     "SUCCESS": "Check your email, we sent you a new password!",
-    "ERROR": "ERROR"
+    "ERROR": "There is no user registered under this email."
   }
 }

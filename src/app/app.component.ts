@@ -91,6 +91,7 @@ export class MyApp implements OnInit {
 
   isAuth() {
     this.nativeStorage.getItem('user')
+
       .then(res => {
         if(res){
           this.authService.session.start(res);

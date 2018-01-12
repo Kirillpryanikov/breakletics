@@ -75,7 +75,6 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
       this.next();
     });
   }
-
   play() {
     this.player.play();
   }

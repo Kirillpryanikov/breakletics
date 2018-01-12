@@ -100,7 +100,7 @@ export class LoginPageComponent implements OnDestroy {
     let msg: string;
 
     if(status === 400) {
-      msg = 'Check fields';
+      msg = this.translate.get('LOGIN_PAGE.NOT_FIELD_ENTER')['value'];
     } else {
       msg = this.translate.get('LOGIN_PAGE.NOT_FOUND_USER')['value'];
     }

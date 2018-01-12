@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { SafariViewController } from '@ionic-native/safari-view-controller';
 
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -54,6 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
     Globalization,
     ScreenOrientation,
     GoogleAnalytics,
+    SafariViewController,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -30,6 +30,7 @@ export class ExercisesComponent implements OnInit, OnDestroy {
     this.exercisesObservable = this.service.exercises()
       .subscribe(responce => {
         this.exercises = responce;
+        console.log('this.exercises video :: ', this.exercises);
         // this.exercises = this.sortVideos(responce);
         this.helper.loading.hide();
       }, err => {

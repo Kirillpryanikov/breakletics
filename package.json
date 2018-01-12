@@ -27,6 +27,7 @@
     "@ionic-native/keyboard": "^4.4.2",
     "@ionic-native/launch-navigator": "^4.5.2",
     "@ionic-native/native-storage": "^4.4.0",
+    "@ionic-native/safari-view-controller": "^4.5.2",
     "@ionic-native/screen-orientation": "^4.4.2",
     "@ionic-native/splash-screen": "4.4.0",
     "@ionic-native/status-bar": "^4.4.0",
@@ -47,6 +48,7 @@
     "cordova-plugin-inappbrowser": "^1.7.2",
     "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-nativestorage": "^2.2.2",
+    "cordova-plugin-safariviewcontroller": "^1.5.2",
     "cordova-plugin-screen-orientation": "^2.0.2",
     "cordova-plugin-splashscreen": "^4.1.0",
     "cordova-plugin-statusbar": "^2.3.0",
@@ -59,7 +61,6 @@
     "rxjs": "5.5.2",
     "start": "5.1.0",
     "sw-toolbox": "3.6.0",
-    "uk.co.workingedge.phonegap.plugin.launchnavigator": "^4.1.0",
     "zone.js": "0.8.18"
   },
   "devDependencies": {
@@ -81,11 +82,9 @@
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-inappbrowser": {},
-      "uk.co.workingedge.phonegap.plugin.launchnavigator": {
-        "LOCATION_USAGE_DESCRIPTION": "This app requires access to your location for navigation purposes"
-      },
       "com.moust.cordova.videoplayer": {},
-      "cordova-plugin-google-analytics": {}
+      "cordova-plugin-google-analytics": {},
+      "cordova-plugin-safariviewcontroller": {}
     },
     "platforms": [
       "ios",

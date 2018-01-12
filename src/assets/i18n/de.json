@@ -11,7 +11,8 @@
     "TITLE_UNDER_BUTTON3": "von Breakletics",
     "FOOTER_LOGIN1": "Ich habe keinen Account und ",
     "FOOTER_LOGIN2": "möchte mich registrieren",
-    "NOT_FOUND_USER": "E-Mail oder Passwort nicht korrekt"
+    "NOT_FOUND_USER": "E-Mail oder Passwort nicht korrekt",
+    "NOT_FIELD_ENTER": "Bitte fülle alle Felder aus!"
   },
   "FORGOT_PAGE": {
     "TITLE1": "Huch,",
@@ -19,7 +20,7 @@
     "PLACEHOLDER_EMAIL": "E-Mail Adresse mit der du dich registriert hast",
     "BUTTON_LOGIN": "neues passwort anfordern",
     "SUCCESS": "Check deine Mails, wir haben dir ein neues Passwort geschickt!",
-    "ERROR": "ERROR"
+    "ERROR": "Diese E-Mail ist uns nicht bekannt."
   },
   "REGISTER": {
     "PAGE_1": {
