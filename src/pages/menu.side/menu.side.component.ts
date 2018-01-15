@@ -116,12 +116,13 @@ export class MenuSideComponent implements OnInit {
   }
 
   goToLink(url: string, lng: boolean) {
-    console.log('GO TO LINK !!!!');
     if(lng){
       url = this.translate.instant(url);
-      console.log('url :: ', url);
     }
 
+    /**
+     * For IOS app
+     */
     this.safariViewController.isAvailable()
       .then((available: boolean) => {
         if(available) {
@@ -143,7 +144,6 @@ export class MenuSideComponent implements OnInit {
           this.iab.create(url, '_system');
         }
       })
-
   }
 
   ngOnDestroy() {

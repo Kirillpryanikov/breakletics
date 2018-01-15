@@ -29,7 +29,9 @@ export class PlusmemberComponent implements OnInit {
   }
 
   goToLink(url) {
-
+    /**
+     * for IOS app
+     */
     this.safariViewController.isAvailable()
       .then((available: boolean) => {
         if(available) {
