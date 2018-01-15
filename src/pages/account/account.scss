@@ -1,8 +1,9 @@
 @import "../../theme/main";
 
 account {
-  //font-family: "Roboto", "Helvetica Neue", sans-serif;
-  font-family: "RobotoCondensesBold";
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  //font-family: "RobotoCondensesBold";
+  font-weight: bold;
   .toolbar-background {
     background: #000!important;
   }

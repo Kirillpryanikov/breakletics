@@ -1,9 +1,9 @@
 @import "../../../theme/main";
 
 de-agb {
-  //font-family: "Roboto", "Helvetica Neue", sans-serif;
-  font-family: "RobotoCondensesBold";
-
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  //font-family: "RobotoCondensesBold";
+  font-weight: bold;
   ion-header {
     ion-navbar {
       height: $height-header-dashboard;

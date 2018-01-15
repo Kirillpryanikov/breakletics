@@ -74,7 +74,6 @@ export class AuthorizationService {
     reset(){
       this.that._user = {};
       this.that.nativeStorage.setItem('user', '');
-      console.log('SET 2:::::');
     }
   }
 }
