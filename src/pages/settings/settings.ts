@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController, NavParams, ViewController, ModalController} from 'ionic-angular';
+import {NavController, NavParams, ViewController, ModalController, Platform} from 'ionic-angular';
 import {DashboardComponent} from "../index";
 import {AccountComponent} from "../account/account.component";
 import {User} from "../../share/User";
@@ -15,16 +15,22 @@ import {PlusmemberComponent} from "../plusmember/plusmember.component";
 })
 export class SettingsComponent implements OnInit {
   public user: User;
+  public isHideProduct: boolean = false;
+
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
               private viewCtrl: ViewController,
               private auth: AuthorizationService,
               private iab: InAppBrowser,
-              private modalCtrl: ModalController) {}
+              private modalCtrl: ModalController,
+              private platform: Platform) {}
 
   ngOnInit(){
     this.user = this.auth.user.get();
     console.log('this.user', this.user);
+    if(this.platform.is('ios') && this.user.plusmember === 1){
+      this.isHideProduct = true;
+    }
   }
 
   pay() {
