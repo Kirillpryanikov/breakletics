@@ -116,11 +116,12 @@ export class MenuSideComponent implements OnInit {
   }
 
   goToLink(url: string, lng: boolean) {
+    console.log('GO TO LINK !!!!');
     if(lng){
       url = this.translate.instant(url);
       console.log('url :: ', url);
     }
-    // const browser = this.iab.create(url, '_system');
+
     this.safariViewController.isAvailable()
       .then((available: boolean) => {
         if(available) {
@@ -131,10 +132,18 @@ export class MenuSideComponent implements OnInit {
             transition: 'curl',
             enterReaderModeIfAvailable: true
           })
+            .subscribe((result: any) => {
+                if(result.event === 'opened') console.log('Opened');
+                else if(result.event === 'loaded') console.log('Loaded');
+                else if(result.event === 'closed') console.log('Closed');
+              },
+              (error: any) => console.error(error)
+            );
         } else {
           this.iab.create(url, '_system');
         }
       })
+
   }
 
   ngOnDestroy() {
