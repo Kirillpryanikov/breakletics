@@ -32,6 +32,11 @@ body {
 }
 
 page-dashboard {
+
+  div.scroll-content {
+    background: #1b1c1c !important;
+  }
+
   .bar-button-menutoggle-ios ion-icon,ion-icon {
     font-size: 2.8rem !important;
   }

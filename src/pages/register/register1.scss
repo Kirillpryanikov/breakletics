@@ -21,8 +21,9 @@ page-register{
     }
 
     @media (max-width: 320px) {
-      .handler-gender {
+      input, input[type=button], button {
         padding: 14px !important;
+        font-size: 1.4rem;
       }
     }
   }
