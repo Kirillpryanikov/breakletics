@@ -58,8 +58,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   getVideo() {
     // video = [190821442, 242763018];
     let video = this.videoParam.warm_up_url ?
-      this.videoParam.warm_up_url.split('https://vimeo.com/')[1] +'?autoplay=1' :
-      this.videoParam.video_url.split('https://vimeo.com/')[1] +'?autoplay=1'
+      this.videoParam.warm_up_url.split('https://vimeo.com/')[1] :
+      this.videoParam.video_url.split('https://vimeo.com/')[1];
     const options = {
       id: 'https://player.vimeo.com/video/' + video,
       width: this.platform.height(),
@@ -68,6 +68,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
       controls: false,
       showinfo: false
     };
+
     this.player = new Player(this.iFrameFirst.nativeElement, options);
 
     this.play();

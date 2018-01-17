@@ -3,8 +3,9 @@
 $margin-icon: 10px;
 
 menu-side-component {
-  font-family: "Roboto";
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-weight: bold;
+
   .scroll-content {
     background-color: $background-menu-side;
   }
@@ -13,10 +14,14 @@ menu-side-component {
     ion-item {
       background-color: transparent !important;
 
+      span {
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
+        font-weight: bold;
+      }
+
       .item-inner{
         border-bottom-color: #141414 !important;
       }
-
     }
     height: 100vh;
     background-color: $dashboard-background;

@@ -5,7 +5,7 @@
 
 page-extra-questions {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
-
+  font-weight: bold;
   .header-ios{
     padding-left: 15px !important;
 
@@ -64,9 +64,17 @@ page-extra-questions {
           margin-bottom: 9%;
         }
         button {
-          @include fullSizeBtn();
+          //@include fullSizeBtn();
           font-weight: bold;
-          letter-spacing: 3px;
+          border: none;
+          padding: 5% 2rem;
+          background-color: $background-white;
+          //font-family: "Roboto";
+          //font-weight: bold;
+          width: 100%;
+          font-size: 1.6rem;
+          color: $btn-text-color;
+          //letter-spacing: 3px;
         }
       }
       .datetime-md, .datetime-ios {
@@ -84,10 +92,15 @@ page-extra-questions {
         }
         height: 57%;
         .item-block:first-child,
-        .item-block:last-child
-        {
+        .item-block:last-child {
           border-top: 0;
           border-bottom: 0;
+        }
+        ion-select {
+          .select-text {
+            font-family: "Roboto";
+            font-weight: bold;
+          }
         }
         ion-item {
           background: transparent;
@@ -111,10 +124,16 @@ page-extra-questions {
           font-weight: normal;
         }
         button[type=submit] {
-          @include fullSizeBtn();
           margin-top: 13.2%;
-          font-weight: bold !important;
-          letter-spacing: 0.6rem;
+          border: none;
+          padding: 5% 2rem;
+          background-color: $background-white;
+          font-family: "Roboto";
+          font-weight: bold;
+          width: 100%;
+          font-size: 1.6rem;
+          color: $btn-text-color;
+          //letter-spacing: 0.6rem;
         }
         .select-text, .datetime-text {
           color: $guide-color-text;

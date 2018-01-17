@@ -139,17 +139,17 @@
     "PAY_TITLE_1": "BECOME ATHLETIC",
     "PAY_TITLE_2": " LEARN TO MOVE WITH CREATIVE,",
     "PAY_TITLE_3": "KICK-ASS WORKOUTS! ",
-    "TEXT_LI_1": "Gain access to all workouts exercises!",
+    "TEXT_LI_1": "Gain access to all workouts & exercises!",
     "TEXT_LI_2": "",
     "TEXT_LI_1_1": "",
     "TEXT_LI_1_2": "",
-    "TEXT_LI_2_1": "NEW",
-    "TEXT_LI_2_2": "Exercises and Features on a regular basis!",
+    "TEXT_LI_2_1": "NEW Exercises and features",
+    "TEXT_LI_2_2": " on a regular basis!",
     "TEXT_LI_3": "Become part of the private facebook group and gain access to",
     "TEXT_LI_3_1": "new videos (exercises and more)!",
     "TEXT_LI_4": "...and much more!",
     "BTN": "BECOME A PLUSMEMBER",
-    "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
+    "WORKOUTS_WEEK": "WORKOUT OF THE WEEK"
   },
   "MENU_SIDE": {
     "XMAS_DEAL": "XMAS DEAL",
@@ -175,8 +175,8 @@
   },
   "WORKOUTS": {
     "TITLE": "Workouts",
-    "SEARCH": "Filter by Difficulty ...",
-    "JETZT": "UNLOCK 48+ WORKOUTS NOW"
+    "SEARCH": "Filter by difficulty ...",
+    "JETZT": "UNLOCK 12 WORKOUTS NOW"
   },
   "WORKOUTS_FILTER": {
     "TITLE": "Choose difficulty level",
@@ -191,7 +191,8 @@
     "FOOTWORKS": "BL FOOTWORKS",
     "POWERMOVES": "BL POWERMOVES",
     "CRUNCHES": "BL CRUNCHES",
-    "PLACEHOLDER": "Filter by difficulty and category ..."
+    "PLACEHOLDER": "Filter by difficulty and category ...",
+    "JETZT": "UNLOCK 36 EXERCISES NOW"
   },
   "EXERCISES_FILTER": {
     "TITLE": "Choose category"
@@ -200,7 +201,8 @@
     "TITLE": "WARM UPS / COOL DOWNS",
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN",
-    "PLACEHOLDER": "Filter by Warm Up / Cool Down ..."
+    "PLACEHOLDER": "Filter by Warm Up / Cool Down ...",
+    "JETZT": "UNLOCK ALL VIDEOS NOW"
   },
   "WARMUPS_FILTER": {
     "TITLE": "Choose Warm Up / Cool Down"
@@ -224,8 +226,10 @@
     "SETTING_SUBTITLE": "Personal data",
     "SETTING_BTN": "Edit",
     "PRODUCT_TITLE": "Products",
-    "PRODUCT_PLUSMEMBER": "You are not a PlusMember",
-    "PRODUCT_BY": "Buy now",
+    "PRODUCT_PLUSMEMBER": "You are PlusMember",
+    "PRODUCT_PLUSMEMBER_NOT": "You are not a PlusMember",
+    "PRODUCT_BY": "UNLOCKED",
+    "PRODUCT_BY_NOT": "BUY NOW",
     "PRODUCT_DEAL": "X-Mas Deal",
     "UPDATE_BTN": "UPDATE",
     "SUBSCRIBER-1": "In order to cancel the subscription, you need to open one of the emails that has been sent to you by our payment provider Digistore24. In this mail you need to click on the link An overview of the order can be found here.",

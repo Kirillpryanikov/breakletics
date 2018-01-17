@@ -29,12 +29,13 @@ export class VideoListComponent implements OnInit {
 
   @Input() videos: Video[];
   @Input() title: string;
-  @Input('page') page: string;
   @Input() search: boolean;
   @Input() showDuration: boolean;
   @Input() showLevels: boolean;
   @Input() hideBanner: boolean;
   @Input() placeholder: string;
+  @Input('page') page: string;
+  @Input('bannerTitle') bannerTitle: string;
 
   private vidoeObservable: Subscription;
   private loading: any;

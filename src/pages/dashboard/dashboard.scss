@@ -8,7 +8,7 @@ $text-opacity: rgba(255,255,255,.85);
   color: #fff;
   text-transform: uppercase;
   font-size: $font-size-dash;
-  letter-spacing: 1.8px;
+  //letter-spacing: 1.8px;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
@@ -32,6 +32,8 @@ body {
 }
 
 page-dashboard {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: bold;
 
   div.scroll-content {
     background: #1b1c1c !important;
@@ -43,12 +45,11 @@ page-dashboard {
   .toolbar-background {
     background: #000!important;
   }
-  font-family: Roboto !important;
-  font-weight: bold;
+
   ion-navbar {
     img {
       height: 2.8rem;
-      margin-left: 5px;
+      margin-left: 10px;
     }
 
     ion-buttons {
@@ -59,10 +60,10 @@ page-dashboard {
     height: $height-header-dashboard;
 
     .plusmember-wrapper {
-      min-width: 43px;
+      min-width: 48px;
     }
     .plusmember {
-      font-family: Roboto;
+      font-family: "Roboto";
       font-weight: bold;
       color: #000000 !important;
       font-size: 0.72rem;
@@ -71,7 +72,7 @@ page-dashboard {
       background-color: #fff;
       border-radius: 0 !important;
       height: 1.5rem;
-      font-weight: bold;
+      margin-right: 7px;
     }
   }
 
@@ -131,7 +132,7 @@ page-dashboard {
             padding: 0 5px;
             font-size: 0.89rem;
             text-shadow: none;
-            letter-spacing: 1.5px;
+            //letter-spacing: 1.5px;
             @include setFlexStyles();
             flex-direction: row;
             .time-icon, img {
@@ -168,8 +169,8 @@ page-dashboard {
         background: url("../assets/imgs/workouts-bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
-        border-top: 0.18rem solid $bg-color-dash;
-        border-bottom: 0.18rem solid $bg-color-dash;
+        border-top: 1px solid $bg-color-dash;
+        border-bottom: 1px solid $bg-color-dash;
       }
 
       .block-3 {
@@ -184,14 +185,14 @@ page-dashboard {
           background: url("../assets/imgs/exercises-bg.jpg");
           background-repeat: no-repeat;
           background-size: cover;
-          border-right: 0.18rem $bg-color-dash;
+          border-right: 1px $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
           background: url("../assets/imgs/warmup.jpg");
           background-repeat: no-repeat;
           background-size: cover;
-          border-left: 0.18rem solid $bg-color-dash;
+          border-left: 1px solid $bg-color-dash;
         }
       }
       .block-footer {
@@ -206,7 +207,9 @@ page-dashboard {
           h3 {
             text-align: center;
             font-size: 1.25rem;
-            letter-spacing: 0.1rem;
+            font-family: "Roboto";
+            font-weight: bold;
+            //letter-spacing: 0.1rem;
             padding: 5px 0;
             text-transform: none !important;
             text-shadow: none !important;

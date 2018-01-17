@@ -7,15 +7,17 @@ page-welcome {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-weight: bold !important;
   video {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-    min-width: 100%;
-    width: 100%;
+    right: 0;
+    //max-height: 115vh !important;
+    //min-width: 100vw !important;
+    max-width: 115vw;
     z-index: -100;
     background: url('../assets/imgs/welcome-bg.jpg') no-repeat;
-    background-size: cover;
+    //background-size: cover;
     transition: 1s opacity;
     &::-webkit-media-controls-panel {
       display: none!important;
@@ -40,11 +42,11 @@ page-welcome {
   }
 
   @media (min-height: 865px) {
-    video {
-      height: 100% !important;
-      min-height: 100vh !important;
-      width: auto !important;
-    }
+    //video {
+    //  //height: 100% !important;
+    //  max-height: 100vh !important;
+    //  width: auto !important;
+    //}
   }
 
   .content-md {

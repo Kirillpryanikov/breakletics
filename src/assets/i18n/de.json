@@ -142,8 +142,8 @@
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN",
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
-    "CRAZY_1": "1 Monat für 0 EUR 0% Risiko",
-    "CRAZY_2": "",
+    "CRAZY_1": "1 Monat für 0 EUR",
+    "CRAZY_2": " 0% Risiko",
     "STATIC": "Plusmember",
     "PAY_TITLE_1": "FIT & ATHLETISCH",
     "PAY_TITLE_2": "WERDEN MIT WORKOUTS,",
@@ -185,7 +185,7 @@
   "WORKOUTS": {
     "TITLE": "Workouts",
     "SEARCH": "Filtern nach Schwierigkeit ...",
-    "JETZT": "JETZT 24 EXERCISES FREISCHALTEN"
+    "JETZT": "JETZT 24 WORKOUTS FREISCHALTEN"
   },
   "WORKOUTS_FILTER": {
     "TITLE": "Schwierigkeit wählen",
@@ -200,7 +200,8 @@
     "FOOTWORKS": "BL FOOTWORKS",
     "POWERMOVES": "BL POWERMOVES",
     "CRUNCHES": "BL CRUNCHES",
-    "PLACEHOLDER": "Filtern nach Schwierigkeit und Kategorie ..."
+    "PLACEHOLDER": "Filtern nach Schwierigkeit und Kategorie ...",
+    "JETZT": "JETZT 48 EXERCISES FREISCHALTEN"
   },
   "EXERCISES_FILTER": {
     "TITLE": "Kategorien wählen"
@@ -209,7 +210,8 @@
     "TITLE": "WARM UPS / COOL DOWNS",
     "WARM_UP": "WARM UP",
     "COOL_DOWN": "COOL DOWN",
-    "PLACEHOLDER": "Filtern nach Warm Up / Cool Down ..."
+    "PLACEHOLDER": "Filtern nach Warm Up / Cool Down ...",
+    "JETZT": "JETZT ALLE VIDEOS FREISCHALTEN"
   },
   "WARMUPS_FILTER": {
     "TITLE": "Wähle Warm Up / Cool Down"
@@ -233,8 +235,10 @@
     "SETTING_SUBTITLE": "Persönliche Daten",
     "SETTING_BTN": "Bearbeiten",
     "PRODUCT_TITLE": "Produkte",
-    "PRODUCT_PLUSMEMBER": "Du bist kein PlusMember",
-    "PRODUCT_BY": "Jetzt kaufen",
+    "PRODUCT_PLUSMEMBER": "Du bist PlusMember",
+    "PRODUCT_PLUSMEMBER_NOT": "Du bist kein PlusMember",
+    "PRODUCT_BY": "FREIGESCHALTET",
+    "PRODUCT_BY_NOT": "JETZT KAUFEN",
     "PRODUCT_DEAL": "X-Mas Deal",
     "UPDATE_BTN": "AKTUALISIEREN",
     "SUBSCRIBER-1": "Um dein Abo zu kündigen musst du in eine der E-Mails reinschauen, die du von unserem Zahlungsanbieter Digistore24 bekommen hast. Dort klickst du den Link „Eine Übersicht über Ihre Bestellung finden Sie hier.",
