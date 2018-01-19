@@ -47,7 +47,6 @@ export class MenuSideComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.auth.user.get();
-    console.log(this.user);
     this.menu.swipeEnable(false);
     this.nav = this.app.getRootNav();
     this.language = this.translate.currentLang;

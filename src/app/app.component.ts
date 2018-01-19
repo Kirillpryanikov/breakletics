@@ -40,10 +40,10 @@ export class MyApp implements OnInit {
     this.initializeApp();
   }
 
-  ngOnInit(){
-  }
+  ngOnInit(){}
 
   initializeApp() {
+    this.initTranslate();
     this.platform.ready().then(() => {
       // this.statusBar.styleBlackOpaque();
       // this.splashScreen.hide();

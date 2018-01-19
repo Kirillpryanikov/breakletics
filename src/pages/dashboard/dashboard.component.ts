@@ -1,7 +1,9 @@
 import {Component, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
 import {NavController, ModalController, NavParams, Events, Platform, MenuController} from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
 import {TranslateService} from "@ngx-translate/core";
+import {DomSanitizer, SafeScript} from '@angular/platform-browser';
 
 import {
   GuideComponent,
@@ -25,6 +27,7 @@ import {AuthorizationService} from "../../share/authorization.service";
 
 export class DashboardComponent implements OnInit, OnDestroy {
   public user: object;
+  public scriptPixel: SafeScript;
   public video: any;
   public heightDevice: number;
   public weightDevice: number;
@@ -39,13 +42,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
               private translate: TranslateService,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
+              private screenOrientation: ScreenOrientation,
               private helper: HelperService,
               private navParams: NavParams,
               private service: DashbordService,
               private platform: Platform,
               public menuCtrl: MenuController,
               public events: Events,
-              private auth: AuthorizationService
+              private auth: AuthorizationService,
+              private domS: DomSanitizer
               ) {
   }
 
