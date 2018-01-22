@@ -61,13 +61,13 @@ export class AuthorizationService {
   session = {
     that: this,
     start(user){
-      /**
-       * Temporary solution for deploy on Apple Store
-       * FOR IOS app you change field plusmember. Now Plusmember always = 1
-       */
-      if(this.that.platform.is('ios')){
-        user['plusmember'] = 1;
-      }
+      // /**
+      //  * Temporary solution for deploy on Apple Store
+      //  * FOR IOS app you change field plusmember. Now Plusmember always = 1
+      //  */
+      // if(this.that.platform.is('ios')){
+      //   user['plusmember'] = 1;
+      // }
       this.that._user = user;
       this.that.nativeStorage.setItem('user', user);
     },
