@@ -17,22 +17,41 @@
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
 
-  <!--<script>-->
-    <!--!function(f,b,e,v,n,t,s)-->
-    <!--{if(f.fbq)return;n=f.fbq=function(){n.callMethod?-->
-      <!--n.callMethod.apply(n,arguments):n.queue.push(arguments)};-->
-      <!--if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';-->
-      <!--n.queue=[];t=b.createElement(e);t.async=!0;-->
-      <!--t.src=v;s=b.getElementsByTagName(e)[0];-->
-      <!--s.parentNode.insertBefore(t,s)}(window,document,'script',-->
-      <!--'https://connect.facebook.net/en_US/fbevents.js');-->
-    <!--fbq('init', '1367323383376001');-->
-    <!--fbq('track', 'PageView');-->
-    <!--fbq('track', 'ViewContent');-->
-  <!--</script>-->
-  <!--<noscript>-->
-    <!--<img height="1" width="1" src="https://www.facebook.com/tr?id=1367323383376001&ev=PageView&noscript=1"/>-->
-  <!--</noscript>-->
+  <!--Facebook SDK -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1082002398563193',
+        xfbml      : true,
+        version    : 'v2.7'
+      });
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!--Facebook Pixel-->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '476915902464022');
+  </script>
+  <noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=476915902464022&ev=PageView&noscript=1"/>
+  </noscript>
 
   <!-- un-comment this code to enable service worker
   <script>

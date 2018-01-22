@@ -7,6 +7,7 @@ import { Subscription } from "rxjs/Subscription";
 import {HelperService} from "../../share/helper.service";
 import {AgbComponent} from "../index";
 import {WelcomePageComponent} from "../welcome/welcome";
+declare let fbq: Function;
 
 @Component({
   selector: 'page-register',
@@ -54,6 +55,10 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
 
     this.regObservable = this.auth.user.set(data)
       .subscribe(responce => {
+        /**
+         * Facebook analytics
+         */
+        fbq('track', 'CompleteRegistration');
         this.authorization(responce.email, f.value.password, responce);
       }, err => {
         console.log('err register', err);

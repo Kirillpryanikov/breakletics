@@ -38,7 +38,7 @@
     "adb": "^0.2.0",
     "build": "0.1.4",
     "com.moust.cordova.videoplayer": "https://github.com/moust/cordova-plugin-videoplayer.git",
-    "cordova-android": "6.3.0",
+    "cordova-android": "7.0.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-actionsheet": "^2.3.3",
     "cordova-plugin-device": "^1.1.7",
