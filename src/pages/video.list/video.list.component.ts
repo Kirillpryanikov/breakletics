@@ -16,6 +16,7 @@ import {Tabs} from "ionic-angular/navigation/nav-interfaces";
 import {TabsComponent} from "../tabs/tabs.component";
 import {HelperService} from "../../share/helper.service";
 import {PlusmemberComponent} from "../plusmember/plusmember.component";
+import {ADLeyersComponent} from "../ad.leyers/ad.leyers.component";
 
 @Component({
   selector: 'video-list',
@@ -90,7 +91,6 @@ export class VideoListComponent implements OnInit {
           this.navCtrl.setRoot(TabsComponent);
       } else {
           this.navCtrl.parent.select(0);
-
       }
   }
 
@@ -160,6 +160,11 @@ export class VideoListComponent implements OnInit {
 
   goTo(page?){
     this.modalCtrl.create(PlusmemberComponent).present();
+  }
+
+  showAdComponent(){
+    console.log('!!!!!!! showAdComponent !!!!!!!!!!!')
+    this.modalCtrl.create(ADLeyersComponent).present();
   }
 
   ngOnDestroy() {

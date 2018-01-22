@@ -1,7 +1,6 @@
-import {Component, ElementRef, ViewChild, OnChanges, SimpleChanges, Input, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import {Component, ElementRef, ViewChild, OnChanges, SimpleChanges, Input, OnInit, OnDestroy } from '@angular/core';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
-import {Platform, NavParams, ViewController, ModalController, NavController} from 'ionic-angular';
+import {Platform, NavParams, ViewController, ModalController } from 'ionic-angular';
 import Player from '@vimeo/player';
 import { StatusBar } from '@ionic-native/status-bar';
 import {
@@ -21,7 +20,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   @ViewChild('iframe2') iFrameSecond: ElementRef;
   @ViewChild('nextbutton') buttonNext: ElementRef;
 
-  private isPlay = true;
+  private isPlay;
   private player;
   private videoParam;
   public user: User;
@@ -31,12 +30,9 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
               private viewController: ViewController,
               private statusBar: StatusBar,
               private modalCtrl: ModalController,
-              private renderer: Renderer2,
-              private navController: NavController,
               private userService: AuthorizationService) {}
 
   ngOnInit() {
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
     this.videoParam = this.navParams.get('video');
     this.statusBar.hide();
     this.user = this.userService.user.get();
@@ -48,6 +44,10 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
       .subscribe(() => {
         this.close();
       })
+  }
+
+  ionViewWillEnter(){
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -90,7 +90,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     });
   }
 
-  play2(){
+  play(){
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
     const vm = this;
     if(!this.isPlay){
       this.player.ready().then(()=> {
@@ -100,13 +101,9 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
         },1050);
       });
     } else {
-      this.player.pause();
+      this.pause();
       vm.isPlay = false;
     }
-  }
-
-  play() {
-    this.player.play();
   }
 
   getDuration() {
@@ -118,6 +115,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   pause() {
     this.player.pause();
+    this.isAllowPlusmember();
   }
 
   stop() {
@@ -127,6 +125,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   next() {
     if(!this.videoParam.warm_up_url) {
       // this.modalCtrl.create(ADLeyersComponent).present();
+      console.log('Step 3');
       this.isAllowPlusmember();
       this.close();
       return;
@@ -145,9 +144,8 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     this.player = new Player(this.iFrameSecond.nativeElement, options);
     this.play();
     this.player.on('ended', (data)=> {
-
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.isAllowPlusmember();
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       // this.modalCtrl.create(ADLeyersComponent).present();
       this.close();
     });
@@ -155,6 +153,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   close() {
     console.log('close video');
+    this.isAllowPlusmember();
     this.viewController.dismiss();
   }
 
@@ -164,7 +163,6 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
     } else {
       this.statusBar.show();
     }
-
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
 }

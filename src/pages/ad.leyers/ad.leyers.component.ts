@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ModalController, NavController, ViewController} from 'ionic-angular';
+import {ModalController, NavController, ViewController } from 'ionic-angular';
 import {TranslateService} from "@ngx-translate/core";
 import {PlusmemberComponent} from "../plusmember/plusmember.component";
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'ad-leyers',
@@ -14,7 +15,9 @@ export class ADLeyersComponent implements OnInit {
               private viewCtrl: ViewController,
               private translate: TranslateService,
               private modalCtrl: ModalController,
-              ) {}
+              private screenOrientation: ScreenOrientation) {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+  }
 
   ngOnInit(){
     this.language = this.translate.currentLang;
@@ -27,7 +30,7 @@ export class ADLeyersComponent implements OnInit {
     },1000);
   }
 
-  close() {
+  close(){
     this.viewCtrl.dismiss();
   }
 }

@@ -19,8 +19,7 @@ export class PlusmemberComponent implements OnInit {
               private translate: TranslateService,
               private service: PlusmemberService,
               private safariViewController: SafariViewController,
-              private iab: InAppBrowser
-  ) {}
+              private iab: InAppBrowser) {}
 
   ngOnInit(){
     this.language = this.translate.currentLang;
