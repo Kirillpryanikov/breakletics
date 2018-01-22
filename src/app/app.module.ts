@@ -17,6 +17,8 @@ import { MyApp } from './app.component';
 import { PageModule } from '../pages/page.module';
 import {ItemMenuSide} from '../pages/item.menu.side/item.menu.side';
 import {MenuSideComponent} from '../pages/menu.side/menu.side.component';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2Facebook } from 'angulartics2/facebook';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,6 +45,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       },
     }),
+    Angulartics2Module.forRoot([Angulartics2Facebook])
   ],
   bootstrap: [IonicApp],
   entryComponents: [

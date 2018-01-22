@@ -36,6 +36,7 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "@vimeo/player": "^2.2.0",
     "adb": "^0.2.0",
+    "angulartics2": "^4.6.3",
     "build": "0.1.4",
     "com.moust.cordova.videoplayer": "https://github.com/moust/cordova-plugin-videoplayer.git",
     "cordova-android": "6.3.0",

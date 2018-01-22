@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnDestroy, OnInit } from '@angular/core';
 import {ModalController, NavController, Slides, ToastController} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
+import { Angulartics2 } from 'angulartics2';
 import { AuthorizationService } from '../../share/authorization.service';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
@@ -23,7 +24,8 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
               private helper: HelperService,
               private toastCtrl: ToastController,
               private auth: AuthorizationService,
-              private modalCtrl: ModalController) {}
+              private modalCtrl: ModalController,
+              private angulartics2: Angulartics2) {}
 
   ngOnInit(){
     this.slider.lockSwipeToNext(true);
@@ -75,6 +77,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
       .subscribe(res =>{
         this.navCtrl.push(ExtraQuestionsComponent);
         this.helper.loading.hide();
+        this.angulartics2.eventTrack.next({action: 'CompleteRegistration'})
       })
   }
 
