@@ -55,7 +55,7 @@ export class MyApp implements OnInit {
 
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
-      this.initTranslate();
+      // this.initTranslate();
       this.isAuth();
 
       this.ga.startTrackerWithId('UA-63203216-2')

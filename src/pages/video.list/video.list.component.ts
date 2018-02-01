@@ -163,7 +163,6 @@ export class VideoListComponent implements OnInit {
   }
 
   showAdComponent(){
-    console.log('!!!!!!! showAdComponent !!!!!!!!!!!')
     this.modalCtrl.create(ADLeyersComponent).present();
   }
 
