@@ -61,7 +61,7 @@ export class MyApp implements OnInit {
       this.ga.startTrackerWithId('UA-63203216-2')
         .then(() => {
           console.log('Google analytics is ready now');
-          this.ga.trackView('test');
+          this.ga.trackView('pageview');
         })
         .catch(e => console.log('Error starting GoogleAnalytics', e));
     });

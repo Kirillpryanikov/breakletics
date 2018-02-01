@@ -24,7 +24,6 @@ import {AuthorizationService} from "../../share/authorization.service";
   templateUrl: 'dashboard.html',
   styleUrls: ['/dashboard.scss']
 })
-
 export class DashboardComponent implements OnInit, OnDestroy {
   public user: object;
   public scriptPixel: SafeScript;
@@ -61,7 +60,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.weightDevice = this.platform.width();
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
-    this.handlerLoadVideo();
   }
 
   openMenu() {
@@ -95,6 +93,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       .then(res => {
         this.user = res;
         console.log('RES this.user',this.user);
+        this.handlerLoadVideo();
         this.presentGuideModal(this.user);
         this.helper.loading.hide();
       })
@@ -102,14 +101,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
         console.log('Catch this.user',this.user);
         this.user = this.auth.user.get();
         console.log('this.user',this.user);
-
+        this.handlerLoadVideo();
         this.presentGuideModal(this.user);
         this.helper.loading.hide();
-      });
+      })
   }
 
   handlerLoadVideo() {
-    this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
+    this.videoWeekObservable = this.service.videoWeek(this.user['id']).subscribe(res => {
       this.video = res;
     }, err => {
       console.log('err video::: ', err);

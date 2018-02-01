@@ -13,12 +13,12 @@ export class DashbordService {
   public language;
   constructor(public http: HttpClient, private translate: TranslateService) {
     this.language = this.translate.currentLang;
-    console.log('    this.language = this.translate.currentLang;', this.language );
+    console.log('this.language = this.translate.currentLang;', this.language);
   }
 
-  videoWeek(): Observable<any> {
+  videoWeek(userId?: string): Observable<any> {
     if(!this._videoWeek) {
-      this._videoWeek  = this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week`)
+      this._videoWeek  = this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week?user=` + userId)
         .publishReplay(1)
         .refCount();
     }

@@ -52,7 +52,6 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
      * This is necessary. From WORDPERSS
      */
     data.username = f.value.email;
-
     this.regObservable = this.auth.user.set(data)
       .subscribe(responce => {
         /**
