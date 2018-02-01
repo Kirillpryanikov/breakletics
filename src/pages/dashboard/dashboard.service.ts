@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import {TranslateService} from "@ngx-translate/core";
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/publishReplay';
 
 import {ConfigService} from "../config.service";
-import {TranslateService} from "@ngx-translate/core";
 
 @Injectable()
 export class DashbordService {
   _videoWeek: Observable<any> = null;
   public language;
   constructor(public http: HttpClient, private translate: TranslateService) {
-    this.language = this.translate.currentLang;
     console.log('    this.language = this.translate.currentLang;', this.language );
   }
 
   videoWeek(): Observable<any> {
     if(!this._videoWeek) {
-      this._videoWeek  = this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week`)
+      this.language = this.translate.currentLang;
+      this._videoWeek  = this.http.get(`${ConfigService.CONFIG.url}wp/v2/video/week?language=` + this.language)
         .publishReplay(1)
         .refCount();
     }
