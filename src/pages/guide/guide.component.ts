@@ -1,6 +1,7 @@
 import {Component, ViewChild, OnInit} from '@angular/core';
 import {Slides, ViewController, ModalController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { TranslateService } from '@ngx-translate/core';
 import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
 import {AuthorizationService} from "../../share/authorization.service";
 
@@ -21,7 +22,8 @@ export class GuideComponent implements OnInit{
               private nativeStorage: NativeStorage,
               private viewCtrl: ViewController,
               private auth: AuthorizationService,
-              private modalCtrl: ModalController) {}
+              private modalCtrl: ModalController,
+              private translate: TranslateService) {}
 
   public user: object;
 
@@ -49,12 +51,14 @@ export class GuideComponent implements OnInit{
   }
 
   workoutPlusWarmup(){
-    this.playVideoModal({video_url:'https://vimeo.com/247622460'});
+    const url  = this.translate.currentLang === 'de' ? 'https://vimeo.com/247622460' : 'https://vimeo.com/251343673';
+    this.playVideoModal({video_url: url});
     this.guideFinish();
   }
 
   workout(){
-    this.playVideoModal({ video_url: 'https://vimeo.com/247691009'});
+    const url  = this.translate.currentLang === 'de' ? 'https://vimeo.com/247691009' : 'https://vimeo.com/251341239';
+    this.playVideoModal({ video_url: url});
     this.guideFinish();
   }
 

@@ -13,13 +13,13 @@ export class PlusmemberService {
             avatar: "assets/imgs/avatar1.png",
             name : "Jennifer",
             date: "Jennifer aus Wien, 34",
-            description: "Es ist einfach dank verschiedener Levels aber trotzdem intensiv und man sieht Resultate nach kurzer Zeit!"
+            description: "Es ist einfach dank verschiedener Levels, aber trotzdem intensiv und man sieht Resultate nach kurzer Zeit!"
           },
           {
             avatar: "assets/imgs/avatar2.png",
             name : "Larissa",
             date: "aus Berlin, 24",
-            description: "Die effektiven kurzen Trainings passen super zu meinem Tagesrythmus. Ich kann trainieren wann und wo ich will!"
+            description: "Die effektiven kurzen Trainings passen super zu meinem Tagesrhythmus. Ich kann trainieren wann und wo ich will!"
           },
           {
             avatar: "assets/imgs/avatar3.png",
@@ -31,7 +31,7 @@ export class PlusmemberService {
             avatar: "assets/imgs/avatar4.png",
             name : "Henk",
             date: "aus Essen, 17",
-            description: "Mir gefallen besonders die vielen verschiedene Übungen und all die Variationen"
+            description: "Mir gefallen besonders die vielen verschiedenen Übungen und all die Variationen"
           }
       ];
     } else {
