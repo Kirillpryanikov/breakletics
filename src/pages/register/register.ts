@@ -61,7 +61,8 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
         this.authorization(responce.email, f.value.password, responce);
       }, err => {
         console.log('err register', err);
-        this.slider.slideTo(0);
+        this.navCtrl.setRoot(WelcomePageComponent);
+        // this.slider.slideTo(0);
         this.presentToast(err.status);
         this.helper.loading.hide();
 
