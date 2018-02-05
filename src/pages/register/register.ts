@@ -7,6 +7,8 @@ import { Subscription } from "rxjs/Subscription";
 import {HelperService} from "../../share/helper.service";
 import {AgbComponent} from "../index";
 import {WelcomePageComponent} from "../welcome/welcome";
+import {LoginPageComponent} from "../login/login";
+
 declare let fbq: Function;
 
 @Component({
@@ -61,7 +63,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
         this.authorization(responce.email, f.value.password, responce);
       }, err => {
         console.log('err register', err);
-        this.navCtrl.setRoot(WelcomePageComponent);
+        this.navCtrl.setRoot(LoginPageComponent);
         // this.slider.slideTo(0);
         this.presentToast(err.status);
         this.helper.loading.hide();
