@@ -1,10 +1,10 @@
 @import "../../theme/main";
 @import "./guide";
-//.platform-ios {
-//  .header-block {
-//    height: calc(5rem + 14px) !important;
-//  }
-//}
+.platform-ios {
+  .header-block {
+    height: 5rem !important;
+  }
+}
 .platform-android {
   .header-block {
     height: calc(5rem + 6px) !important;
@@ -22,7 +22,6 @@ page-guide {
     height: calc(100% - 70px - 56px);
 
     .header-block {
-      //height: calc(5rem + 6px) !important;
       height: $height-header-dashboard;
       background-color: $guide-background;
     }

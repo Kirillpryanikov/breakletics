@@ -30,9 +30,9 @@
     <div class="filters">
       <i class="filters-icon"></i>
       <div class="filter-items" (click)="getFilters()">
-        <span>{{ selectFilters && selectFilters['list'] ? selectFilters['list'] : placeholder}}</span>
+        <span>{{ selectFilters && selectFilters.levels.length ? selectFilters.levels : placeholder}}</span>
       </div>
-      <ion-icon name="md-close-circle" (click)="clearFilters()" *ngIf="selectFilters && selectFilters['list']"></ion-icon>
+      <ion-icon name="md-close-circle" (click)="clearFilters()" *ngIf="selectFilters && selectFilters.levels.length"></ion-icon>
     </div>
   </div>
   <div class="container-workout">

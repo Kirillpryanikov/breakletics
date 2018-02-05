@@ -31,6 +31,11 @@ body {
 
 }
 
+.statusbar-padding {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+}
+
 page-dashboard {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-weight: bold;

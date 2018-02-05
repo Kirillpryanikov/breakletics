@@ -93,9 +93,6 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
     <plugin name="cordova-plugin-google-analytics" spec="^1.8.3" />
     <plugin name="cordova-plugin-safariviewcontroller" spec="^1.5.2" />
-    <allow-navigation href="http://192.168.0.112:8100" />
-    <allow-navigation href="http://192.168.0.103:8100" />
-    <allow-navigation href="http://192.168.0.103:8101" />
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="6.4.0" />
 </widget>
