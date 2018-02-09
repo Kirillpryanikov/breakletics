@@ -10,6 +10,7 @@ import {WelcomePageComponent} from "../welcome/welcome";
 import {LoginPageComponent} from "../login/login";
 
 declare let fbq: Function;
+declare let FB;
 
 @Component({
   selector: 'page-register',
@@ -59,7 +60,9 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
         /**
          * Facebook analytics
          */
-        fbq('track', 'CompleteRegistration');
+        FB.AppEvents.logEvent(
+          FB.AppEvents.EventNames.COMPLETED_REGISTRATION, null
+        );
         this.authorization(responce.email, f.value.password, responce);
       }, err => {
         console.log('err register', err);
