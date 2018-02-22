@@ -9,6 +9,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 import { ExtraQuestionsComponent } from '../pages/extra.questions/extra.questions'
+import { DeADLeyersComponent } from '../pages/ad.leyers/de/ad.leyers.component'
 
 import {
   WelcomePageComponent,
@@ -95,18 +96,18 @@ export class MyApp implements OnInit {
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          this.rootPage = TabsComponent;
-          // this.rootPage = ExtraQuestionsComponent;
+          // this.rootPage = TabsComponent;
+          this.rootPage = DeADLeyersComponent;
         } else {
-          this.rootPage = WelcomePageComponent;
-          // this.rootPage = ExtraQuestionsComponent;
+          // this.rootPage = WelcomePageComponent;
+          this.rootPage = DeADLeyersComponent;
           this.authService.session.reset();
         }
       })
       .catch(err => {
         this.authService.session.reset();
-        this.rootPage = WelcomePageComponent;
-        // this.rootPage = ExtraQuestionsComponent;
+        this.rootPage = DeADLeyersComponent;
+        // this.rootPage = WelcomePageComponent;
       })
   }
 }

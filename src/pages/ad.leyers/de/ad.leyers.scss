@@ -1,131 +1,147 @@
-//@import "../../../theme/main";
-//
-//de-ad-leyers {
-//  font-family: Roboto;
-//  .header-md:after, .header-ios:after {
-//    background-image: none !important;
-//    content: '';
-//  }
-//  ion-header {
-//    @include setFlexStyles(flex-start);
-//    //height: $height-header;
-//    color: $header-back-color;
-//    ion-icon {
-//      color: $header-back-color;
-//    }
-//    .bar-button-md, .bar-button-ios {
-//      font-size: 1.8rem;
-//      margin-left: 5px;
-//    }
-//  }
-//  ion-content {
-//    background: url("../assets/imgs/ad-layers-bg.jpg");
-//    background-position: center;
-//    background-size: cover;
-//    height: 100vh;
-//    @include setFlexStyles();
-//    color: #fff;
-//    .top-title {
-//      width: 100%;
-//      color: #fff;
-//      font-family: Roboto;
-//      font-size: 1.12rem;
-//      text-transform: uppercase;
-//      line-height: 1.62rem;
-//      text-align: center;
-//      font-weight: bold;
-//      letter-spacing: 2px;
-//    }
-//    .sub-title {
-//      width: 100%;
-//      font-size: 2.85rem;
-//      letter-spacing: 2px;
-//      font-weight: bold;
-//      color: #a4a4a4;
-//      text-align: center;
-//      text-transform: uppercase;
-//      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
-//      -webkit-background-clip: text;
-//      -webkit-text-fill-color: transparent;
-//      //padding: 0px 4rem;
-//      margin: auto;
-//      &:first-child {
-//        margin-top: 2.14rem;
-//      }
-//    }
-//    .price-wrapper{
-//      width: 100%;
-//      height: auto;
-//      margin: 0 auto;
-//      position: absolute;
-//      bottom: 6rem;
-//      text-align: center;
-//      .price-inner {
-//        width: fit-content;
-//        max-width: 65%;
-//        min-width: 34%;
-//        margin: auto;
-//
-//        .handler {
-//          //@include setFlexStyles();
-//          width: 100%;
-//          margin-top: 0.9rem;
-//          button {
-//            width: 100%;
-//            padding: 1.5rem 0;
-//            font-size: 1.66rem;
-//            letter-spacing: 2px;
-//            background-color: #fff;
-//            color: #000;
-//            text-transform: uppercase;
-//            font-weight: bold;
-//          }
-//        }
-//      }
-//    }
-//    .price {
-//      width: auto;
-//      height: auto;
-//      border: 0.42rem solid white;
-//      box-sizing: border-box;
-//      text-align: justify;
-//      padding: 1rem 1rem;
-//
-//      .title {
-//        width: 100%;
-//        text-transform: uppercase;
-//        color: #fff;
-//        text-align: left;
-//        @include setFlexStyles();
-//        &:first-child {
-//          font-size: 8rem;
-//          font-weight: bold;
-//          line-height: 7.1rem;
-//        }
-//        &:nth-child(2) {
-//          letter-spacing: 0.9rem;
-//          font-weight: bold;
-//          font-size: 3rem;
-//          margin-left: 0.5rem;
-//        }
-//        &:nth-child(3) {
-//          font-weight:bold;
-//          font-size: 2.16rem;
-//          letter-spacing: 0.6rem;
-//          line-height: 3rem;
-//          &:before {
-//            content: "";
-//            width: 2.14rem;
-//            height: 2.14rem;
-//            display: inline-block;
-//            background: url(../assets/imgs/approved-signal.png);
-//            background-size: contain;
-//            background-repeat: no-repeat;
-//            margin-right: 1rem;
-//          }
-//        }
-//      }
-//    }
-//
-//  }
-//}
+@import "../../../theme/main";
+
+$height-form: calc(100% - 56px);
+$padding-input-field: 30px 15px 12px 0;
+$padding-block-password-forgotten: 20px 15px 5px 15px;
+$padding-block-handler-submit: 20px 15px 15px 15px;
+
+de-ad-leyers {
+  font-family: Roboto;
+  .header-md:after, .header-ios:after {
+    background-image: none !important;
+    content: '';
+  }
+  ion-header {
+    @include setFlexStyles(flex-start);
+    //height: $height-header;
+    color: $header-back-color;
+    ion-icon {
+      color: $header-back-color;
+    }
+    .bar-button-md, .bar-button-ios {
+      font-size: 1.8rem;
+      margin-left: 5px;
+    }
+  }
+  ion-content {
+    background: url("../assets/imgs/ad-layers-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    @include setFlexStyles();
+    color: #fff;
+    .top-title {
+      width: 100%;
+      color: #fff;
+      font-size: 1.42rem;
+      text-transform: uppercase;
+      line-height: 1.62rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .sub-title {
+      width: 100%;
+      font-size: 2.85rem;
+      letter-spacing: 2px;
+      font-weight: bold;
+      color: #a4a4a4;
+      text-align: center;
+      text-transform: uppercase;
+      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //padding: 0px 4rem;
+      margin: auto;
+      &:first-child {
+        margin-top: 2.14rem;
+      }
+    }
+    .price-wrapper{
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 6rem;
+      text-align: center;
+
+      .title-percent {
+        width: 100%;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: left;
+        @include setFlexStyles();
+
+        font-weight: bold;
+        font-size: 3.71rem;
+        letter-spacing: 0.45rem;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+        &:before {
+          content: "";
+          width: 3.14rem;
+          height: 3.14rem;
+          display: inline-block;
+          background: url(../assets/imgs/approved-signal.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin-right: 1rem;
+        }
+      }
+
+      .price-inner {
+        width: fit-content;
+        max-width: 70%;
+        min-width: 44%;
+        margin: auto;
+
+        .cost{
+
+        }
+
+        .handler {
+          //@include setFlexStyles();
+          width: 100%;
+          margin-top: 0.9rem;
+          button {
+            width: 100%;
+            padding: 1.5rem 0;
+            font-size: 1.66rem;
+            letter-spacing: 2px;
+            background-color: #fff;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .price {
+      width: 100%;
+      height: auto;
+      border: 0.42rem solid white;
+      box-sizing: border-box;
+      text-align: justify;
+      padding: 1rem 1rem;
+
+      .title {
+        width: 100%;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: left;
+        @include setFlexStyles();
+        &:first-child {
+          font-size: 7.1rem;
+          font-weight: bold;
+          line-height: 6.1rem;
+        }
+        &:nth-child(2) {
+          letter-spacing: 0.9rem;
+          font-weight: bold;
+          font-size: 3.54rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+  }
+}
