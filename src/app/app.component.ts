@@ -96,18 +96,18 @@ export class MyApp implements OnInit {
       .then(res => {
         if(res){
           this.authService.session.start(res);
-          // this.rootPage = TabsComponent;
-          this.rootPage = DeADLeyersComponent;
+          this.rootPage = TabsComponent;
+          // this.rootPage = DeADLeyersComponent;
         } else {
-          // this.rootPage = WelcomePageComponent;
-          this.rootPage = DeADLeyersComponent;
+          this.rootPage = WelcomePageComponent;
+          // this.rootPage = DeADLeyersComponent;
           this.authService.session.reset();
         }
       })
       .catch(err => {
         this.authService.session.reset();
-        this.rootPage = DeADLeyersComponent;
-        // this.rootPage = WelcomePageComponent;
+        // this.rootPage = DeADLeyersComponent;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }

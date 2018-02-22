@@ -63,40 +63,11 @@ de-ad-leyers {
       position: absolute;
       bottom: 6rem;
       text-align: center;
-
-      .title-percent {
-        width: 100%;
-        text-transform: uppercase;
-        color: #fff;
-        text-align: left;
-        @include setFlexStyles();
-
-        font-weight: bold;
-        font-size: 3.71rem;
-        letter-spacing: 0.45rem;
-        line-height: 3rem;
-        margin-bottom: 1rem;
-        &:before {
-          content: "";
-          width: 3.14rem;
-          height: 3.14rem;
-          display: inline-block;
-          background: url(../assets/imgs/approved-signal.png);
-          background-size: contain;
-          background-repeat: no-repeat;
-          margin-right: 1rem;
-        }
-      }
-
       .price-inner {
         width: fit-content;
         max-width: 70%;
         min-width: 44%;
         margin: auto;
-
-        .cost{
-
-        }
 
         .handler {
           //@include setFlexStyles();
@@ -139,6 +110,22 @@ de-ad-leyers {
           font-weight: bold;
           font-size: 3.54rem;
           margin-left: 0.5rem;
+        }
+        &:nth-child(3) {
+          font-weight:bold;
+          font-size: 1.71rem;
+          letter-spacing: 0.2rem;
+          line-height: 3rem;
+          &:before {
+            content: "";
+            width: 2.14rem;
+            height: 2.14rem;
+            display: inline-block;
+            background: url(../assets/imgs/approved-signal.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 1rem;
+          }
         }
       }
     }
