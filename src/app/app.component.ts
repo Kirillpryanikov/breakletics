@@ -9,7 +9,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 import { ExtraQuestionsComponent } from '../pages/extra.questions/extra.questions'
-import { DeADLeyersComponent } from '../pages/ad.leyers/de/ad.leyers.component'
+import { EnADLeyersComponent } from '../pages/ad.leyers/en/ad.leyers.component'
 
 import {
   WelcomePageComponent,
@@ -84,7 +84,7 @@ export class MyApp implements OnInit {
     this.globalization.getPreferredLanguage()
       .then(res => {
         const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
-        // const countryCode = 'de';
+        // const countryCode = 'en';
         this.translate.use(countryCode);
       })
       .catch(e => console.log('language app.component err --> ', e));
@@ -97,16 +97,16 @@ export class MyApp implements OnInit {
         if(res){
           this.authService.session.start(res);
           this.rootPage = TabsComponent;
-          // this.rootPage = DeADLeyersComponent;
+          // this.rootPage = EnADLeyersComponent;
         } else {
           this.rootPage = WelcomePageComponent;
-          // this.rootPage = DeADLeyersComponent;
+          // this.rootPage = EnADLeyersComponent;
           this.authService.session.reset();
         }
       })
       .catch(err => {
         this.authService.session.reset();
-        // this.rootPage = DeADLeyersComponent;
+        // this.rootPage = EnADLeyersComponent;
         this.rootPage = WelcomePageComponent;
       })
   }

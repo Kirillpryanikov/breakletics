@@ -1,6 +1,6 @@
 import {Component, ElementRef, ViewChild, OnChanges, SimpleChanges, Input, OnInit, OnDestroy } from '@angular/core';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import {Platform, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { Platform, NavParams, ViewController, ModalController } from 'ionic-angular';
 import Player from '@vimeo/player';
 import { StatusBar } from '@ionic-native/status-bar';
 import {
@@ -115,7 +115,7 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
   pause() {
     this.player.pause();
-    this.isAllowPlusmember();
+    // this.isAllowPlusmember();
   }
 
   stop() {

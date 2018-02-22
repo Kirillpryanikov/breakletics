@@ -24,38 +24,6 @@ de-ad-leyers {
     }
   }
   ion-content {
-    background: url("../assets/imgs/ad-layers-bg.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    @include setFlexStyles();
-    color: #fff;
-    .top-title {
-      width: 100%;
-      color: #fff;
-      font-size: 1.42rem;
-      text-transform: uppercase;
-      line-height: 1.62rem;
-      text-align: center;
-      font-weight: bold;
-    }
-    .sub-title {
-      width: 100%;
-      font-size: 2.85rem;
-      letter-spacing: 2px;
-      font-weight: bold;
-      color: #a4a4a4;
-      text-align: center;
-      text-transform: uppercase;
-      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      //padding: 0px 4rem;
-      margin: auto;
-      &:first-child {
-        margin-top: 2.14rem;
-      }
-    }
     .price-wrapper{
       width: 100%;
       height: auto;
@@ -99,36 +67,57 @@ de-ad-leyers {
         text-transform: uppercase;
         color: #fff;
         text-align: left;
-        @include setFlexStyles();
+        //@include setFlexStyles();
         &:first-child {
-          font-size: 7.1rem;
           font-weight: bold;
-          line-height: 6.1rem;
+          margin-left: 0.5rem;
+          span:nth-child(1){
+            text-transform: lowercase;
+            font-size: 3.64rem;
+            height: 1.7rem;
+          }
+          .cost{
+            font-size: 9.25rem;
+            margin-left: 0.5rem;
+          }
         }
         &:nth-child(2) {
-          letter-spacing: 0.9rem;
+          letter-spacing: 0.55rem;
           font-weight: bold;
-          font-size: 3.54rem;
+          font-size: 2.84rem;
           margin-left: 0.5rem;
         }
         &:nth-child(3) {
+          margin-top: 0.6rem;
           font-weight:bold;
-          font-size: 1.71rem;
+          font-size: 2.3rem;
           letter-spacing: 0.2rem;
-          line-height: 3rem;
+          //line-height: 6.2rem;
+          margin-left: 0.5rem;
+
           &:before {
             content: "";
-            width: 2.14rem;
-            height: 2.14rem;
+            width: 1.9rem;
+            height: 1.9rem;
             display: inline-block;
             background: url(../assets/imgs/approved-signal.png);
             background-size: contain;
             background-repeat: no-repeat;
-            margin-right: 1rem;
+            //margin-right: 1rem;
           }
         }
       }
     }
 
+    .footer {
+      @include setFlexStyles();
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      color: #fff;
+      height: 6rem;
+      bottom: 0;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {NavController, ViewController} from 'ionic-angular';
+import {NavController, ViewController, Platform } from 'ionic-angular';
 
 @Component({
   selector: 'en-ad-leyers',
@@ -10,9 +10,16 @@ export class EnADLeyersComponent implements OnInit {
 
   constructor(public navCtrl: NavController,
               private viewCtrl: ViewController,
+              private platform: Platform
               ) {}
 
   ngOnInit(){
+    const that = this;
+    this.platform.backButton
+      .subscribe(() => {
+        console.log('!!!!!!########!!!!!!!!!! 111');
+        that.close();
+      })
   }
 
   plusmember() {
