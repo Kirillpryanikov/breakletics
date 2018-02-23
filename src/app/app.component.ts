@@ -84,7 +84,7 @@ export class MyApp implements OnInit {
     this.globalization.getPreferredLanguage()
       .then(res => {
         const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
-        // const countryCode = 'en';
+        // const countryCode = 'de';
         this.translate.use(countryCode);
       })
       .catch(e => console.log('language app.component err --> ', e));

@@ -17,7 +17,6 @@ export class EnADLeyersComponent implements OnInit {
     const that = this;
     this.platform.backButton
       .subscribe(() => {
-        console.log('!!!!!!########!!!!!!!!!! 111');
         that.close();
       })
   }

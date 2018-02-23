@@ -42,11 +42,12 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
 
     this.platform.backButton
       .subscribe(() => {
-        this.close();
+        // this.close();
+        console.log(this.viewController.getContent())
       })
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
   }
 
@@ -152,12 +153,13 @@ export class WrapperVideoPlayerComponent implements OnChanges, OnInit, OnDestroy
   }
 
   close() {
-    console.log('close video');
-    this.isAllowPlusmember();
+    // this.isAllowPlusmember();
     this.viewController.dismiss();
   }
 
   ngOnDestroy() {
+    this.isAllowPlusmember();
+
     if(this.platform.is('ios')){
       this.statusBar.hide();
     } else {
