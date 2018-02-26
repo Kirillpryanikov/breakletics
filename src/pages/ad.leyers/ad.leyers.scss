@@ -67,8 +67,17 @@ ad-leyers {
       justify-content: center;
       position: absolute;
       color: #fff;
-      height: 6rem;
+      height: 12.8%;
       bottom: 0;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 0.9em !important;
+
+      .sub-title {
+        font-size: 2.35rem;
+
+      }
     }
   }
 }

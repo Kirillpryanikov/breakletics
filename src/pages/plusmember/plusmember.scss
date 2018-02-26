@@ -351,10 +351,11 @@ plusmember {
         height: 100%;
       }
       .risk {
+        margin-top: 5.5rem;
         font-size: 1.96rem;
         @include setFlexStyles();
         text-transform: uppercase;
-        margin-bottom: 3.21rem;
+        margin-bottom: 1.725rem;
         img {
           width: 2.5rem;
           height: 2.5rem;
@@ -362,9 +363,20 @@ plusmember {
         }
       }
       .price-title {
+        justify-content: center;
         font-size: 7.14rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 16%;
         font-weight: bold;
+        letter-spacing: 4px;
+
+        .sub{
+          margin-left: -4px;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 3.5rem;
+          letter-spacing: 5px;
+
+        }
       }
       .price-subtitle {
         font-size: 1.43rem;
@@ -397,7 +409,7 @@ plusmember {
             width: 38%;
             text-align: left;
             margin: 0 0 0 5.3%;
-            font-size: 1.58rem;
+            font-size: 1.98rem;
             text-transform: uppercase;
           }
           .pre-amount {
@@ -427,15 +439,15 @@ plusmember {
             position: absolute;
             height: 100%;
             width: 100%;
-            display: block;
+            //display: block;
             color: #012c3e;
-            font-size: 2.60rem;
+            font-size: 2em !important;
             font-weight:bold;
             @include setFlexStyles(space-around);
             flex-direction: column;
             margin: auto;
             span:first-child{
-              font-size: 1.0rem;
+              font-size: 1.725rem;
             }
           }
         }
@@ -462,12 +474,15 @@ plusmember {
         }
       }
       .subtitle-after {
-        margin: 3.46rem auto auto auto;
+        margin: 3rem auto auto auto;
         display: block;
         text-align: center;
         font-size: 1rem;
       }
 
+      .subtitle-after:last-child {
+        margin-top: 1.2rem !important;
+      }
     }
   }
 }

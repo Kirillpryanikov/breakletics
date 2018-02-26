@@ -12,8 +12,8 @@
             <div>{{"REGISTER.PAGE_1.TITLE" | translate}}</div>
           </div>
           <div class="handler-gender" padding>
-            <button type="button" name="gender" col-5 (click)="f.value.gender = 'woman'; goNext(); ">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</button>
-            <button type="button" name="gender" col-5 (click)="f.value.gender = 'man'; goNext();">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</button>
+            <button type="button" name="gender" col-5 (click)="goNext(); nameUser.gender = 'woman';">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</button>
+            <button type="button" name="gender" col-5 (click)="goNext(); nameUser.gender = 'man';">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</button>
           </div>
         </div>
       </ion-slide>

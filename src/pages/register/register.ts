@@ -21,7 +21,11 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
   @ViewChild('slider') slider: Slides;
   private toast: any;
   private regObservable: Subscription;
-  protected nameUser = {firstName: '', lastName: ''};
+  protected nameUser = {
+    firstName: '',
+    lastName: '',
+    gender: ''
+  };
 
   constructor(public navCtrl: NavController,
               private helper: HelperService,
@@ -55,6 +59,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy{
      * This is necessary. From WORDPERSS
      */
     data.username = f.value.email;
+    data.gender = this.nameUser.gender;
     this.regObservable = this.auth.user.set(data)
       .subscribe(responce => {
         /**
