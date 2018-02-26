@@ -5,7 +5,6 @@ $padding-input-field: 30px 15px 12px 0;
 $padding-block-password-forgotten: 20px 15px 5px 15px;
 $padding-block-handler-submit: 20px 15px 15px 15px;
 
-
 en-ad-leyers {
   font-family: Roboto;
   ion-content {
@@ -14,7 +13,7 @@ en-ad-leyers {
         .title {
           &:first-child {
             span:nth-child(1){
-              font-size: 1.3em !important;
+              font-size: 2.2em !important;
             }
             .cost{
               font-size: 6.35em !important;
@@ -22,19 +21,21 @@ en-ad-leyers {
           }
           &:nth-child(2) {
             letter-spacing: 1px;
-            font-size: 2em !important;
+            margin-top: 5px !important;
+            font-size: 2.225em !important;
           }
           &:nth-child(3) {
             position: relative;
-            font-size: 1.5em !important;
-            letter-spacing: 0.1em;
-            margin-left: 3.3rem !important;
+            font-size: 1.475em !important;
+            letter-spacing: 3px !important;
+            margin-left: 3rem !important;
 
             &:before {
               content: "";
               position: absolute;
-              width: 1.86rem !important;
-              height: 1.86rem !important;
+              width: 2.3rem !important;
+              height: 2.3rem !important;
+              margin-left: 1rem;
               background: url(../assets/imgs/approved-signal.png);
               background-size: contain;
               background-repeat: no-repeat;
@@ -43,6 +44,7 @@ en-ad-leyers {
         }
       }
     }
+
     .price-wrapper{
       width: 100%;
       height: auto;
@@ -92,33 +94,34 @@ en-ad-leyers {
           margin-bottom: -0.6rem !important;
           span:nth-child(1){
             text-transform: lowercase;
-            font-size: 1.675em;
+            font-size: 2em;
             height: 1.7em;
           }
           .cost{
-            font-size: 7.7em;
+            font-size: 6.5em;
             margin-left: 0.5rem;
           }
         }
         &:nth-child(2) {
           letter-spacing: 0.25em;
           font-weight: bold;
-          font-size: 2.44em;
+          font-size: 2.2em;
           margin-left: 0.5rem;
         }
         &:nth-child(3) {
           position: relative;
           margin-top: 0.4rem;
           font-weight:bold;
-          font-size: 1.6em;
+          font-size: 1.225em;
           letter-spacing: 5px;
           //line-height: 6.2rem;
-          margin-left: 3.3rem;
+          margin-left: 4.5rem;
 
           &:before {
             content: "";
             position: absolute;
-            left: -3rem;
+            margin-top: -3px;
+            left: -4rem;
             width: 2.5rem;
             height: 2.5rem;
             display: inline-block;

@@ -365,7 +365,6 @@ plusmember {
       .price-title {
         justify-content: center;
         font-size: 7.14rem;
-        margin-bottom: 16%;
         font-weight: bold;
         letter-spacing: 4px;
 
@@ -375,7 +374,7 @@ plusmember {
           text-transform: uppercase;
           font-size: 3.5rem;
           letter-spacing: 5px;
-
+          margin-bottom: 16%;
         }
       }
       .price-subtitle {
@@ -421,6 +420,7 @@ plusmember {
           .amount{
             font-size: 2.7rem;
             text-transform: uppercase;
+            margin-left: 15%;
           }
           .amount-after {
             font-size: 1rem;
@@ -429,7 +429,7 @@ plusmember {
           }
         }
         .right {
-          width: 19%;
+          width: 21%;
           height: 100%;
           position: relative;
           .right-inner {
@@ -456,7 +456,7 @@ plusmember {
           position: absolute;
           display: block;
           background: #fff;
-          width: 19%;
+          width: 21%;
           height:100%;
           right: 1px;
           top:0px;
@@ -467,9 +467,21 @@ plusmember {
         @media (max-width: 320px) {
           .right{
             width:23% !important;
+            font-size: 0.875em !important;
           }
           &:after{
             width: 23%!important;
+          }
+
+            .left-inner {
+              span:nth-child(1) {
+                font-size: 1.575rem;
+                width: 44% !important;
+              }
+            }
+
+          .amount {
+            margin-left: 5% !important;
           }
         }
       }

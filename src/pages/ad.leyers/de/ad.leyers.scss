@@ -27,15 +27,16 @@ de-ad-leyers {
           }
           &:nth-child(3) {
             position: relative;
-            font-size: 1.7em !important;
+            font-size: 1.87em !important;
             letter-spacing: 4px !important;
-            margin-left: 4rem !important;
+            margin-left: 3rem !important;
 
             &:before {
               content: "";
               position: absolute;
               width: 2.3rem !important;
               height: 2.3rem !important;
+              margin-left: 1rem;
               background: url(../assets/imgs/approved-signal.png);
               background-size: contain;
               background-repeat: no-repeat;
@@ -44,6 +45,7 @@ de-ad-leyers {
         }
       }
     }
+
     .price-wrapper{
       width: 100%;
       height: auto;

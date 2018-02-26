@@ -35,7 +35,7 @@
             <div class="slider-top">Weaskedourusers:</div>
             <div class="slider-sub-title">„Why do you love Breakletics?“</div>
 
-            <ion-slides class="slider" pager>
+            <ion-slides class="slider"pager>
                 <ion-slide *ngFor="let item of testimonials">
                     <div class="avatar-wrapper" >
                         <div class="avatar"
@@ -68,46 +68,55 @@
       <div class="content-inner">
         <div class="inner-price">
           <div class="risk"><img src="assets/imgs/approved-signal.png" alt="">100% RISKFREE</div>
-          <div class="price-title">0 USD</div>
-          <div class="price-subtitle">for the 1st month, and if you like it, afterwards</div>
+          <div class="price-title">
+            <span>14 DAYS</span>
+            <span class="sub">MONEY BACK</span>
+          </div>
+          <!--<div class="price-subtitle">for the 1st month, and if you like it, afterwards</div>-->
 
           <div class="prices-wrapper">
               <div class="left">
                   <div class="left-inner" (click)="open('https://www.digistore24.com/product/188371')">
-                      <span>Yearly</span>
-                      <span class="pre-amount">89,99 USD</span>
-                      <span class="amount">5.46</span>
+                      <span>12 MONTHS</span>
+                      <span class="pre-amount">
+                        <!--89,99 USD-->
+                      </span>
+                      <span class="amount">7.50</span>
                       <span class="amount-after">USD/<br>Month</span>
                   </div>
               </div>
               <div class="right">
                   <div class="right-inner">
                       <span>Save </span>
-                      <span>-30%*</span>
+                      <span>-48%</span>
                   </div>
               </div>
           </div>
           <div class="prices-wrapper" (click)="open('https://www.digistore24.com/product/188371')">
               <div class="left">
                   <div class="left-inner">
-                      <span>Monthly</span>
-                      <span class="pre-amount"><s>13,99 USD</s></span>
-                      <span class="amount">11,99</span>
+                      <span>1 MONTH</span>
+                      <span class="pre-amount">
+                        <!--<s>13,99 USD</s>-->
+                      </span>
+                      <span class="amount">14.50</span>
                       <span class="amount-after">USD/<br>Month</span>
                   </div>
               </div>
               <div class="right">
                   <div class="right-inner">
-                      <span>Special Price!</span>
+                      <span>Flexible!</span>
                   </div>
               </div>
           </div>
 
           <div class="subtitle-after">
-              <span>Your subscription automatically renews by the chosen period. You can cancel the subscription at any time. The payment is processed by Digistore24.</span>
+              <!--<span>Your subscription automatically renews by the chosen period. You can cancel the subscription at any time. The payment is processed by Digistore24.</span>-->
+              <span>14 days money back guarantee without ifs and buts. Cancel anytime.</span>
           </div>
           <div class="subtitle-after">
-            <span>*Discount applies on the price for the 1st year, for the 2nd year the regular price of 93.60 USD/year applies. You can cancel the subscription at any time.</span>
+            <!--<span>*Discount applies on the price for the 1st year, for the 2nd year the regular price of 93.60 USD/year applies. You can cancel the subscription at any time.</span>-->
+            <span>Your subsription automatically renews by the chosen period. The payment is processed by Digistore24.</span>
           </div>
         </div>
     </div>
