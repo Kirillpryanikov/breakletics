@@ -231,7 +231,8 @@ page-dashboard {
           flex-direction: column;
           @include setFlexStyles();
           h2 {
-            margin: 2px;
+            margin-top: 3% !important;
+            //margin: 2px;
             opacity: 0.8;
             text-align: center;
             @include textTitle();
@@ -245,7 +246,7 @@ page-dashboard {
               text-shadow: none !important;
               margin-top: 2%;
               font-weight: bold;
-
+              letter-spacing: 5px !important;
             }
           }
           .risk {
@@ -263,7 +264,10 @@ page-dashboard {
         height: $height-block-footer;
       }
       //-webkit-background-clip: text;
-
+      .sub-en{
+        font-size: 0.575em !important;
+        text-transform: none;
+      }
     }
   }
   .no-scroll {

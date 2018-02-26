@@ -64,14 +64,19 @@
       </ng-container>
       <ng-container *ngIf="user && user.plusmember < 1">
         <div class="footer-item" *ngIf="language === 'de'" (click)="goTo('plusmember')">
-          <h2>{{'DASHBOARD.CRAZY_1' | translate }}</h2>
           <div class="risk"><img src="assets/imgs/approved-signal.png" alt="">
             {{'DASHBOARD.CRAZY_2' | translate }}
           </div>
+          <h2 style="letter-spacing: 4px">{{'DASHBOARD.CRAZY_1' | translate }}</h2>
+          <span class="sub-en">Schalte jetzt alle Workouts & Exercises frei!</span>
         </div>
         <div class="footer-item en" *ngIf="language !== 'de'" (click)="goTo('plusmember')">
-          <h2>4 weeks for 0 usd</h2>
-          <div class="risk"><img src="assets/imgs/approved-signal.png" alt="">100% RISKFREE</div>
+          <div class="risk">
+            <img src="assets/imgs/approved-signal.png" alt="">
+            100% RISKFREE
+          </div>
+          <h2 style="letter-spacing: 4px">14 days money back</h2>
+          <span class="sub-en">Get access to all workouts & exercises NOW</span>
         </div>
       </ng-container>
     </div>
