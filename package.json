@@ -48,7 +48,7 @@
     "cordova-plugin-google-analytics": "^1.8.3",
     "cordova-plugin-inappbrowser": "^1.7.2",
     "cordova-plugin-ionic-webview": "^1.1.16",
-    "cordova-plugin-nativestorage": "^2.2.2",
+    "cordova-plugin-nativestorage": "^2.3.1",
     "cordova-plugin-safariviewcontroller": "^1.5.2",
     "cordova-plugin-screen-orientation": "^2.0.2",
     "cordova-plugin-splashscreen": "^4.1.0",
@@ -89,8 +89,8 @@
       "cordova-plugin-safariviewcontroller": {}
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }

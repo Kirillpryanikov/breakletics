@@ -94,6 +94,6 @@
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
     <plugin name="cordova-plugin-google-analytics" spec="^1.8.3" />
     <plugin name="cordova-plugin-safariviewcontroller" spec="^1.5.2" />
-    <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="6.4.0" />
+    <engine name="ios" spec="4.5.4" />
 </widget>

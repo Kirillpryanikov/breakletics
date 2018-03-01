@@ -44,10 +44,11 @@ export class MyApp implements OnInit {
   ngOnInit(){}
 
   initializeApp() {
-    this.initTranslate();
     this.platform.ready().then(() => {
       // this.statusBar.styleBlackOpaque();
       // this.splashScreen.hide();
+      this.initTranslate();
+
       if(this.platform.is('ios')){
         this.statusBar.hide();
       } else {
