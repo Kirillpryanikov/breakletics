@@ -2,57 +2,74 @@
   <div class="header">
     <img src="assets/imgs/menu-logo.png" height="30%">
   </div>
-  <ion-list >
-    <ion-item no-padding style="border:0 !important;">
-      <div class="item-menu">
-        <ion-icon name="ios-snow" class="item-red"></ion-icon>
-        <span class="item-red">{{'MENU_SIDE.XMAS_DEAL' | translate}}</span>
-      </div>
-    </ion-item>
-    <ion-item no-padding>
+  <ion-list *ngIf="user">
+    <!--<ion-item no-padding style="border:0 !important;" (click)="goTo('XMAS_DEAL')" *ngIf="user && user.plusmember < 1">-->
+      <!--<div class="item-menu">-->
+        <!--<ion-icon name="ios-snow" class="item-red"></ion-icon>-->
+        <!--<span class="item-red">{{'MENU_SIDE.XMAS_DEAL' | translate}}</span>-->
+      <!--</div>-->
+    <!--</ion-item>-->
+    <ion-item no-padding (click)="goTo('PLUSMEMBER')" *ngIf="user && user.plusmember < 1">
       <div class="item-menu">
         <ion-icon name="md-add" class="item-blue"></ion-icon>
-        <span class="item-blue">{{'MENU_SIDE.PLUSMEMBER' | translate}}</span>
+        <span class="item-blue item-plusmember">{{'MENU_SIDE.PLUSMEMBER' | translate}}</span>
       </div>
     </ion-item>
     <ion-item no-padding no-margin>
-      <div class="item-menu">
-        <div class="item light-text-color">
+      <div class="item-menu" >
+        <div class="item light-text-color" (click)="playVideoWeek()">
           <span>{{'MENU_SIDE.WORKOUT_OF_THE_WEEK' | translate}}</span>
         </div>
-        <div class="item light-text-color">
+        <div class="item light-text-color" (click)="goTo('WorkoutComponent')">
           <span>{{'MENU_SIDE.WORKOUTS' | translate}}</span>
         </div>
-        <div class="item light-text-color">
+        <div class="item light-text-color" (click)="goTo('ExercisesComponent')">
           <span>{{'MENU_SIDE.EXERCISES' | translate}}</span>
         </div>
-        <div class="item light-text-color">
+        <div class="item light-text-color" (click)="goTo('WarmupComponent')">
           <span>{{'MENU_SIDE.WARM_UPS' | translate}}</span>
         </div>
       </div>
     </ion-item>
     <ion-item no-padding no-margin>
       <div class="item-menu dark-text-color">
-        <div class="item dark-text-color">
+        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_TV')" *ngIf="false">
           <span>{{'MENU_SIDE.BREAKLETICS_TV' | translate}}</span>
         </div>
-        <div class="item dark-text-color">
+        <div class="item dark-text-color" (click)="goTo('MY_ACCOUNT')">
           <span>{{'MENU_SIDE.MY_ACCOUNT' | translate}}</span>
         </div>
-        <div class="item dark-text-color">
-          <span>{{'MENU_SIDE.FIND_BREAKLETICS_CLASS' | translate}}</span>
+        <!---->
+        <div class="item dark-text-color" (click)="goToLink('MENU_SIDE.CLASS_LINK', true)">
+          <span>{{'MENU_SIDE.CLASS' | translate}}</span>
         </div>
-        <div class="item dark-text-color">
-          <span>{{'MENU_SIDE.BREAKLETICS_SHOP' | translate}}</span>
+        <div class="item dark-text-color" (click)="goToLink('MENU_SIDE.STORE_LINK', true)">
+          <span>{{'MENU_SIDE.STORE' | translate}}</span>
         </div>
-        <div class="item">
+        <div class="item dark-text-color" (click)="goToLink('MENU_SIDE.TRANSFORMATION_LINK', true)" *ngIf="language === 'de'">
           <span>{{'MENU_SIDE.TRANSFORMATION' | translate}}</span>
         </div>
-        <div class="item dark-text-color">
+        <div class="item dark-text-color" (click)="goToLink('MENU_SIDE.TRAINER_LINK', true)">
+          <span>{{'MENU_SIDE.TRAINER' | translate}}</span>
+        </div>
+        <!---->
+        <!--<div class="item dark-text-color" (click)="goToLink('http://breakletics.com')" *ngIf="language !== 'de'">-->
+          <!--<span>{{'MENU_SIDE.FIND_BREAKLETICS_CLASS' | translate}}</span>-->
+        <!--</div>-->
+        <div class="item dark-text-color" (click)="someMethods('MENU_SIDE.BREAKLETICS_SHOP')" *ngIf="false">
+          <span>{{'MENU_SIDE.BREAKLETICS_SHOP' | translate}}</span>
+        </div>
+        <!--<div class="item" (click)="goToLink('http://breakletics.de/transformation/')" *ngIf="language === 'de'">-->
+          <!--<span>{{'MENU_SIDE.TRANSFORMATION' | translate}}</span>-->
+        <!--</div>-->
+        <div class="item dark-text-color" (click)="goTo('AGB')">
           <span>{{'MENU_SIDE.TERMS_CONDITIONS' | translate}}</span>
         </div>
-        <div class="item">
+        <div class="item" (click)="goTo('IMPRINT')">
           <span>{{'MENU_SIDE.IMPRINT' | translate}}</span>
+        </div>
+        <div class="item" (click)="goTo('LOGOUT')">
+          <span>{{'LOGOUT' | translate}}</span>
         </div>
       </div>
     </ion-item>

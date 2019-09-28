@@ -5,26 +5,120 @@
   justify-content: $param1;
   align-items: $param2;
 }
+@mixin placeholderColor($param: #ada5ab) {
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $param;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $param;
+    opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $param;
+    opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $param;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:    $param;
+  }
 
+  ::placeholder { /* Most modern browsers support this now. */
+    color:    $param;
+  }
+}
 @mixin guideButtonStyle() {
   border: none;
   letter-spacing: 2px;
   padding: 5% 0;
   background-color: $background-white;
-  font-weight: 600;
+  font-weight: bold;
   width: 60%;
   font-size: 1.6rem;
   color: $btn-text-color;
 
 }
-@mixin fullSizeBtn() {
+
+@mixin Agb() {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: $guide-color-text;
+  font-size: 0.89rem;
+  margin-bottom: 14%;
+  u {
+    text-decoration: underline;
+  }
+}
+@mixin fullSizeBtn($param: 100%) {
   border: none;
   letter-spacing: 2px;
-  padding: 5% 0;
+  padding: 5% 2rem;
   background-color: $background-white;
-  font-weight: 600;
-  width: 100%;
+  font-family: "Roboto";
+  font-weight: bold;
+  width: $param;
   font-size: 1.6rem;
   color: $btn-text-color;
 }
 
+@mixin slideRightAnimation() {
+  //@-webkit-keyframes slide-right {
+  //  0% {
+  //    -webkit-transform: translateX(-100px);
+  //    transform: translateX(0);
+  //  }
+  //  100% {
+  //    -webkit-transform: translateX(0px);
+  //    transform: translateX(-100px);
+  //  }
+  //}
+  //@keyframes slide-right {
+  //  0% {
+  //    -webkit-transform: translateX(-100px);
+  //    transform: translateX(-100px);
+  //  }
+  //  100% {
+  //    -webkit-transform: translateX(0px);
+  //    transform: translateX(0px);
+  //  }
+  //}
+}
+
+@mixin slideRight() {
+  //.slide-right {
+  //  -webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  //  animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  //}
+}
+@mixin slideTop() {
+  .slide-top {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+}
+
+@mixin slideUpAnimation() {
+  @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(-100px);
+      transform: translateY(-100px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+  }
+
+}

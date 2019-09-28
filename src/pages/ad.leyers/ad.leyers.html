@@ -1,0 +1,4 @@
+<ion-content>
+  <en-ad-leyers *ngIf="language !== 'de'" (showPlus)="showPlus()"></en-ad-leyers>
+  <de-ad-leyers *ngIf="language === 'de'" (showPlus)="showPlus()"></de-ad-leyers>
+</ion-content>

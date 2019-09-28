@@ -8,48 +8,85 @@ $text-opacity: rgba(255,255,255,.85);
   color: #fff;
   text-transform: uppercase;
   font-size: $font-size-dash;
-  letter-spacing: 1.8px;
+  //letter-spacing: 1.8px;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
 }
+body {
+  background-color: #1b1c1c;
+}
+.inner-back-button .button-inner {
+  padding: 8px;
+}
+.divider {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 0.178rem;
+  width: 100%;
+  background: linear-gradient(to right, #e7102b, #12b4e7);
+}
 #dash-header {
 
 }
+
+.statusbar-padding {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+}
+
 page-dashboard {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+
+  div.scroll-content {
+    background: #1b1c1c !important;
+  }
+
+  .bar-button-menutoggle-ios ion-icon,ion-icon {
+    font-size: 2.8rem !important;
+  }
+  .toolbar-background {
+    background: #000!important;
+  }
+
   ion-navbar {
-    background: #000;
-    height: $height-header-dashboard;
-    .bar-button-menutoggle-ios ion-icon,ion-icon {
-      font-size: 3.8rem !important;
+    img {
+      height: 2.8rem;
+      margin-left: 10px;
     }
 
+    ion-buttons {
+      width: 100%;
+      @include setFlexStyles(space-between);
+    }
+    background: #000!important;
+    height: $height-header-dashboard;
+
+    .plusmember-wrapper {
+      min-width: 48px;
+    }
     .plusmember {
+      font-family: "Roboto";
+      font-weight: bold;
       color: #000000 !important;
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      padding: 4px 7px !important;
+      padding: 0.8rem  !important;
       background-color: #fff;
       border-radius: 0 !important;
-      height: 21px;
-      font-weight: bold;
-      //width: 85px;
-    }
-  }
-  ion-title {
-    text-align: center;
-    img {
-      height: 38px;
-      margin-left: 5px;
+      height: 1.5rem;
+      margin-right: 7px;
     }
   }
 
   ion-content {
-    .container-dashboard{
+    padding-bottom: 56px;
+    .container-dashboard {
+
       background-color: $dashboard-background;
       height: 100%;
-
       .block {
         // NEED REMOVE
         @include setFlexStyles();
@@ -59,66 +96,110 @@ page-dashboard {
       .block-1 {
         position: relative;
         overflow: hidden;
+        width: 100%;
         height: $height-block-1;
         background-color: $bg-color-dash;
-
-        background: url(../assets/imgs/workouts-bg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
 
+        img {
+          //min-height: 100%;
+          min-width: 100%;
+          position: absolute;
+          width: 100%;
+          left: 0;
+        }
         .play-button {
-          font-size: 2.5em;
+          font-size: 6rem !important;
+          color: rgba(255,255,255,.7);
+          text-shadow: 0px 0px 118px rgba(0,0,0,0.7),
+          0px 0px 118px rgba(0,0,0,0.7),
+          0px 0px 118px rgba(0,0,0,0.7);
+          z-index: 22;
         }
 
         .block-1-footer {
-          display: flex;
-          justify-content: space-between;
+          @include setFlexStyles(space-between, flex-end);
+          padding-bottom: 3px;
           width: 100%;
           position: absolute;
-          bottom: 5px;
+          bottom: 0rem;
+          min-height: 4rem;
           box-sizing: border-box;
           font-size: 0.575em;
           left: 0;
+          -moz-box-shadow: inset 0px -17px 17px  rgba(0,0,0,0.5);
+          -webkit-box-shadow: inset 0px -17px 17px  rgba(0,0,0,0.5);
+          box-shadow: inset 0px -17px 17px  rgba(0,0,0,0.5);
+          //background: linear-gradient(rgba(233,233,233,0.2), rgba(26,27,27, 0.7));
           span {
+            font-weight: bold;
             padding: 0 5px;
+            font-size: 0.89rem;
+            text-shadow: none;
+            //letter-spacing: 1.5px;
+            @include setFlexStyles();
+            flex-direction: row;
+            .time-icon, img {
+              width: 1.1rem;
+              height: 1.1rem;
+              margin-left: 5px;
+              margin-bottom: 3px;
+              position: relative;
+              min-width: 10px;
+            }
           }
         }
+      }
+      .block-warm-ups {
+
+        width: 100%;
+        height: $height-block-3;
+        background-color: chocolate;
+        background: url("../assets/imgs/baba-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .block-exercises {
+        width: 100%;
+        height: $height-block-3;
+        background-color: chocolate;
+        background: url("../assets/imgs/man-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       .block-2 {
         height: $height-block-2;
-        background: url(../assets/imgs/workouts-bg.jpg);
+        background: url("../assets/imgs/workouts-bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
-        border-top: 2px solid $bg-color-dash;
-        border-bottom: 2px solid $bg-color-dash;
+        border-top: 1px solid $bg-color-dash;
+        border-bottom: 1px solid $bg-color-dash;
       }
 
       .block-3 {
         height: $height-block-3;
         background-color: white;
-
         .item-block-3 {
           height: 100%;
           float: left;
           box-sizing: border-box;
         }
-
         .item-block-3:nth-child(1) {
-          background: url(../assets/imgs/exercises-bg.jpg);
+          background: url("../assets/imgs/exercises-bg.jpg");
           background-repeat: no-repeat;
           background-size: cover;
-          border-right: 2px $bg-color-dash;
+          border-right: 1px $bg-color-dash;
         }
         .item-block-3:nth-child(2) {
           background-color: chocolate;
-          background: url(../assets/imgs/warmup.jpg);
+          background: url("../assets/imgs/warmup.jpg");
           background-repeat: no-repeat;
           background-size: cover;
-          border-left: 2px solid $bg-color-dash;
+          border-left: 1px solid $bg-color-dash;
         }
       }
-
       .block-footer {
         background-color: $bg-color-dash;
         flex-direction: column;
@@ -129,95 +210,67 @@ page-dashboard {
           top: 0;
           @include setFlexStyles();
           h3 {
+            text-align: center;
             font-size: 1.25rem;
+            font-family: "Roboto";
+            font-weight: bold;
+            //letter-spacing: 0.1rem;
             padding: 5px 0;
+            text-transform: none !important;
             text-shadow: none !important;
             color: #7d7d7d;
           }
         }
         .footer-item {
+          font-family: Roboto;
           height: 69%;
-          background: url(../assets/imgs/foote-bg.jpg);
+          background: url("../assets/imgs/foote-bg.jpg");
           background-size: cover;
           background-position: center;
           width: 100%;
           flex-direction: column;
           @include setFlexStyles();
           h2 {
-            margin: 2px;
+            margin-top: 3% !important;
+            //margin: 2px;
             opacity: 0.8;
             text-align: center;
             @include textTitle();
             text-shadow: none !important;
           }
+          .en {
+            h2 {
+              opacity: 0.8;
+              text-align: center;
+              @include textTitle();
+              text-shadow: none !important;
+              margin-top: 2%;
+              font-weight: bold;
+              letter-spacing: 5px !important;
+            }
+          }
+          .risk {
+            font-size: 1.3rem;
+            @include setFlexStyles();
+            text-transform: uppercase;
+            margin-top: 1%;
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+              margin-right: 0.86rem;
+            }
+          }
         }
         height: $height-block-footer;
       }
       //-webkit-background-clip: text;
-      .pay-block {
-        height: 89vh;
-        background-color: $dashboard-background;
-        width: 100%;
-        flex-direction: column;
-        font-weight: bold;
-        @include setFlexStyles(flex-start);
-        .title {
-          text-transform: uppercase;
-          font-size: $font-size-dash;
-          letter-spacing: 1.8px;
-          color: $text-opacity;
-          -webkit-background-clip: text;
-          width: 100%;
-          text-align: center;
-          margin-top: 4px;
-        }
-        .cliped-title {
-          margin-top: 7.52%;
-          width: 100%;
-          background-color: $dashboard-background;
-          justify-content: flex-start;
-          span {
-            text-transform: uppercase;
-            font-size: $font-size-dash;
-            letter-spacing: 1.8px;
-            background: url(../assets/imgs/foote-bg.jpg);
-            background-size: cover;
-            background-position: center;
-            overflow:hidden;
-            color: rgba(255,255,255,.35);
-            -webkit-background-clip: text;
-            display: block;
-            width: 100%;
-            text-align: center;
-          }
-        }
-        ul {
-          margin-top: 5.65%;
-          margin-bottom: 7.13%;
-          li {
-            letter-spacing: 0.8px;
-            line-height: 1.5rem;
-            font-size: 1.2rem;
-            color:$text-opacity;
-            padding: 1.75% 3.5%;
-            font-weight: normal;
-
-            list-style: none;
-            strong {
-              color: rgba(255,255,255,1);
-            };
-          }
-          li:before {
-            position: absolute;
-            content: "+";
-            display: inline-block;
-            margin-left: -3.5%;
-          }
-        }
-        button {
-          @include fullSizeBtn();
-        }
+      .sub-en{
+        font-size: 0.575em !important;
+        text-transform: none;
       }
     }
+  }
+  .no-scroll {
+    position: fixed;
   }
 }

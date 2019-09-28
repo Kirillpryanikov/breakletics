@@ -1,0 +1,146 @@
+@import "../../theme/main";
+
+filter-video {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  width: 100%;
+  ion-header {
+    ion-navbar {
+      button {
+        background: transparent;
+        ion-icon {
+          color: #fff;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  h2 {
+    margin-top: 17vh;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+  }
+  .levels.difficultly {
+    @include setFlexStyles();
+    flex-direction: row;
+    .filter-item{
+      margin-left: 0.932rem;
+      margin-right: 0.93rem;
+    }
+  }
+
+  .levels {
+    width: 90%;
+    margin: 4.44vh auto;
+    overflow: auto;
+    //@include setFlexStyles(flex-start);
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    @media (max-width: 320px) {
+      width: 98%;
+    }
+    .filter-item {
+      //@include setFlexStyles();
+      padding: 0 0.89rem;
+      padding-top: 0.15rem;
+      max-width: 23%;
+      margin: 0 0.3rem 0.3rem  0;
+      height: 3.39rem;
+      @include setFlexStyles();
+      width: auto;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      background: #000;
+      border: 1px solid #fff;
+      //font-size: 0.85rem;
+      font-size: 0.825rem;
+      color: white;
+      @media (max-width: 320px) {
+        width: auto;
+        font-size: 0.8rem;
+        letter-spacing: 1.6px;
+        margin: 0 1rem 0.5rem  0;
+      }
+      //&:last-child {
+      //  margin: 0 0 0.5rem  0 ;
+      //}
+      //i:first-child {
+      //  margin-left: 5px;
+      //}
+      &.active {
+        background: #fff;
+        color: #000;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        .flash:after {
+          @media (max-width: 320px) {
+            height: 16px;
+            width: 9px;
+          }
+          background: url(../assets/imgs/flash-black.png) 100% 100% no-repeat;
+          display: block;
+          content: '';
+          height: 18px;
+          width: 11px;
+          background-size: contain;
+        }
+      }
+    }
+
+    .filter-item {
+      .flash:after {
+        background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
+        content: '';
+        height: 1.4rem;
+        width: 0.9rem;
+        background-size: contain;
+        display: block;
+      }
+    }
+  }
+  .warmup {
+    .levels {
+      display: flex;
+      .filter-item {
+        padding: 0 12px;
+      }
+    }
+  }
+
+  .go-btn {
+    width: 68.85%;
+    height: 7vh;
+    background-color: #fff;
+    color: #1a1b1b;
+    font-size: 1.6rem;
+    @include setFlexStyles();
+    margin: 12.22vh auto 0 auto;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    span {
+      align-self: center;
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+  }
+  background: rgba(0,0,0,.9);
+
+  @media (max-width: 320px) {
+    .levels{
+      justify-content: center;
+    }
+    .filter-item {
+      max-width: 26% !important;
+    }
+    .warmup {
+      .filter-item {
+        max-width: 40% !important;
+      }
+    }
+  }
+}

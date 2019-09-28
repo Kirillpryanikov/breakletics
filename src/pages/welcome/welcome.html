@@ -1,11 +1,13 @@
-<ion-content text-center>
-  <video poster="assets/imgs/welcome-bg.jpg" id="bgvid" playsinline autoplay muted loop no-border>
+<ion-content>
+  <video poster="assets/imgs/welcome-bg.jpg" id="bgvid" playsinline  webkit-playsinline autoplay muted loop no-border controls="" preload="auto">
     <source src="assets/video/bg-video-sharp.mp4" type="video/mp4">
   </video>
 
-
   <div id="header">
-    <div class="partner-text">{{'WELCOME_PAGE.PARTNER' | translate }}</div>
+    <div class="partner-text">
+      <span>{{'WELCOME_PAGE.PARTNER1' | translate }}</span>
+      <span>{{'WELCOME_PAGE.PARTNER2' | translate }}</span>
+    </div>
     <img src="assets/imgs/adidas-logo.png" id="adidas"/>
   </div>
 
@@ -13,20 +15,24 @@
     <img src="assets/imgs/logo.png" id="logo"/>
     <div class="slider">
       <ion-slides pager>
-
         <ion-slide >
-          <h2 style="margin: 0 8%">"{{'WELCOME_PAGE.SLIDE_TITLE' | translate }}"</h2>
-          <span>{{'WELCOME_PAGE.SLIDE_DESC' | translate }}</span>
+          <h2 style="margin: 0 8%">{{'WELCOME_PAGE.SLIDE1_TITLE' | translate }}</h2>
+          <div class="span-wrapper">
+            <span>{{'WELCOME_PAGE.SLIDE1_DESC' | translate }}<br>{{'WELCOME_PAGE.SLIDE1_DESC2' | translate }}</span>
+          </div>
         </ion-slide>
         <ion-slide >
-          <h2 style="margin: 0 8%">"{{'WELCOME_PAGE.SLIDE_TITLE' | translate }}"</h2>
-          <span>{{'WELCOME_PAGE.SLIDE_DESC' | translate }}</span>
+          <h2 style="margin: 0 8%">{{'WELCOME_PAGE.SLIDE2_TITLE' | translate }}</h2>
+          <div class="span-wrapper">
+            <span>{{'WELCOME_PAGE.SLIDE2_DESC' | translate }}</span>
+          </div>
         </ion-slide>
         <ion-slide >
-          <h2 style="margin: 0 8%">"{{'WELCOME_PAGE.SLIDE_TITLE' | translate }}"</h2>
-          <span>{{'WELCOME_PAGE.SLIDE_DESC' | translate }}</span>
+          <h2 style="margin: 0 8%">{{'WELCOME_PAGE.SLIDE3_TITLE' | translate }}</h2>
+          <div class="span-wrapper">
+            <span>{{'WELCOME_PAGE.SLIDE3_DESC' | translate }}</span>
+          </div>
         </ion-slide>
-
       </ion-slides>
     </div>
     <div id="footer">

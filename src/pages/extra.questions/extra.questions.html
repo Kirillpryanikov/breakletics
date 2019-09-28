@@ -1,9 +1,12 @@
 <ion-header no-border>
-  <ion-navbar transparent>
+  <ion-navbar transparent hideBackButton>
+    <ion-buttons transparent>
+      <button (click)="goTo()"><ion-icon name="ios-arrow-round-back"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content text-center>
+<ion-content text-center >
   <div class="page">
     <div class="title">
       <div>{{"PAGE_EXTRA.TITLE" | translate}}</div>
@@ -13,51 +16,65 @@
       </div>
     </div>
 
-    <form #extra="ngForm" (ngSubmit)="submit(extra)">
-      <ion-list >
+    <form (ngSubmit)="submit()" [formGroup]="form">
+      <ion-list>
       <ion-item>
-        <ion-label floating for="date">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
-        <ion-datetime id="date" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" name="age" [(ngModel)]="extra.value.age">
+        <ion-label floating for="birthday">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
+        <ion-datetime id="birthday" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" formControlName="birthday" ngModel>
         </ion-datetime>
-
       </ion-item>
 
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.LOCATION" | translate}}</ion-label>
-        <ion-select name="location" ngModel>
-          <ion-option value="na"></ion-option>
+        <ion-select
+          formControlName="where_are_you_from"
+          (ngModelChange)="stpSelect($event, 'PAGE_EXTRA.FORM_Q.LOCATION', 'where_are_you_from', 'location')"
+          ngModel>
+          <ion-option *ngIf="location" value="{{location}}">{{location}}</ion-option>
+          <ion-option value='other'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_6" | translate}}</ion-option>
+          <ion-option *ngFor="let item of locations" [innerHTML]="item"></ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.MISSION.TITLE" | translate }}</ion-label>
-        <ion-select name="mission" ngModel>
-          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_1" | translate}}</ion-option>
-          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_2" | translate}}</ion-option>
-          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_3" | translate}}</ion-option>
-          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_4" | translate}}</ion-option>
-          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_5" | translate}}</ion-option>
-          <ion-option>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_6" | translate}}</ion-option>
+        <ion-select
+          formControlName="why_do_you_want_to_do_breakletics"
+          (ngModelChange)="stpSelect($event, 'PAGE_EXTRA.FORM_Q.MISSION.TITLE', 'why_do_you_want_to_do_breakletics', 'mission')"
+          ngModel>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_1" | translate}}'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_1" | translate}}</ion-option>
+
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_2" | translate}}'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_2" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_3" | translate}}'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_3" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_4" | translate}}'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_4" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_5" | translate}}'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_5" | translate}}</ion-option>
+          <ion-option *ngIf="mission" value="{{mission}}">{{mission}}</ion-option>
+          <ion-option value='other'>{{"PAGE_EXTRA.FORM_Q.MISSION.OPT_6" | translate}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.HEAR.TITLE" | translate}}</ion-label>
-        <ion-select name="hear" ngModel>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_1" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_2" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_3" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_4" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_5" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_6" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_7" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_8" | translate}}</ion-option>
-          <ion-option >{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_9" | translate}}</ion-option>
+        <ion-select
+          formControlName="how_did_you_learn_about_breakletics"
+          (ngModelChange)="stpSelect($event, 'PAGE_EXTRA.FORM_Q.HEAR.TITLE', 'how_did_you_learn_about_breakletics', 'hear')"
+          ngModel>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_1" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_1" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_2" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_2" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_4" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_4" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_3" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_3" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_5" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_5" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_6" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_6" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_7" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_7" | translate}}</ion-option>
+          <ion-option value='{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_8" | translate}}'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_8" | translate}}</ion-option>
+          <ion-option *ngIf="hear" value="{{hear}}">{{hear}}</ion-option>
+          <ion-option value='other'>{{"PAGE_EXTRA.FORM_Q.HEAR.OPT_9" | translate}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label floating>{{"PAGE_EXTRA.FORM_Q.FIT.TITLE" | translate}}</ion-label>
-        <ion-select name="fit" ngModel>
-          <ion-option value="na"></ion-option>
+        <ion-select
+          formControlName="how_often_do_you_train_per_week"
+          ngModel>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_1' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_1" | translate}}</ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_2' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_2" | translate}}</ion-option>
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_3' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_3" | translate}}</ion-option>
@@ -65,7 +82,6 @@
           <ion-option value="{{'PAGE_EXTRA.FORM_Q.FIT.OPT_5' | translate}}">{{"PAGE_EXTRA.FORM_Q.FIT.OPT_5" | translate}}</ion-option>
         </ion-select>
       </ion-item>
-
       </ion-list>
       <div>
         <button type="submit" [disabled]="false">{{"PAGE_EXTRA.FORM_Q.GO" | translate}}</button>

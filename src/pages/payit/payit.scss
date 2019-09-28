@@ -1,0 +1,86 @@
+@import "../../theme/main";
+$bg-color-dash: #111111;
+$font-size-dash: 2.14rem;
+$text-opacity: rgba(255,255,255,.85);
+
+@mixin textTitle() {
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: $font-size-dash;
+  letter-spacing: 1.8px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+}
+
+pay-it {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  @include slideUpAnimation();
+  @include slideTop();
+  .pay-block {
+    padding-bottom: 7rem;
+    background-color: $dashboard-background;
+    width: 100%;
+    flex-direction: column;
+    font-weight: bold;
+    @include setFlexStyles(flex-start);
+    .title {
+      text-transform: uppercase;
+      font-size: $font-size-dash;
+      letter-spacing: 1.8px;
+      color: $text-opacity;
+      -webkit-background-clip: text;
+      width: 100%;
+      text-align: center;
+      margin-top: 4px;
+    }
+    .cliped-title {
+      margin-top: 7.52%;
+      width: 100%;
+      background-color: $dashboard-background;
+      justify-content: flex-start;
+      span {
+        text-transform: uppercase;
+        font-size: $font-size-dash;
+        letter-spacing: 1.8px;
+        background: url(../assets/imgs/foote-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        overflow:hidden;
+        color: rgba(255,255,255,.35);
+        -webkit-background-clip: text;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    ul {
+      width: 100%;
+      margin-top: 5.65%;
+      margin-bottom: 7.13%;
+      li {
+        letter-spacing: 0.8px;
+        line-height: 1.5rem;
+        font-size: 1.2rem;
+        color:$text-opacity;
+        padding: 1.75% 3.5%;
+        font-weight: normal;
+
+        list-style: none;
+        strong {
+          color: rgba(255,255,255,1);
+        };
+      }
+      li:before {
+        position: absolute;
+        content: "+";
+        display: inline-block;
+        margin-left: -3.5%;
+      }
+    }
+    button {
+      @include fullSizeBtn(87%);
+    }
+  }
+}

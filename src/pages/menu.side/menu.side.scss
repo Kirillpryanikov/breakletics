@@ -4,13 +4,24 @@ $margin-icon: 10px;
 
 menu-side-component {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+
   .scroll-content {
-    background-color: $dashboard-background;
+    background-color: $background-menu-side;
   }
 
   ion-content {
     ion-item {
       background-color: transparent !important;
+
+      span {
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
+        font-weight: bold;
+      }
+
+      .item-inner{
+        border-bottom-color: #141414 !important;
+      }
     }
     height: 100vh;
     background-color: $dashboard-background;
@@ -35,18 +46,28 @@ menu-side-component {
       color: $guide-color-text;
     }
 
+    .item-plusmember{
+      font-size: 1.3rem;
+      letter-spacing: 2.5px;
+    }
+
     .item-menu {
       padding: 0 7.75%;
       //background: $dashboard-background;
-
       ion-icon {
         width: 20px;
         margin-right: $margin-icon;
       }
 
+      .item-icon {
+        font-size: 1.475rem;
+      }
+
       .item {
+        text-transform: uppercase;
         padding: 10px 0;
-        font-size: 1.58rem;
+        font-size: 1.3rem;
+        letter-spacing: 2.5px;
       }
 
       .item:last-child {

@@ -1,0 +1,60 @@
+@import "../../../theme/main";
+
+de-imprint {
+  .toolbar-background {
+    background: #000!important;
+  }
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+
+  ion-header {
+    ion-navbar {
+      height: $height-header-dashboard;
+      background: #000;
+      button {
+        background: transparent;
+        color: $navbar-title-font-color;
+        font-size: $navbar-title-button_size;
+      }
+      .title {
+        color: $navbar-title-font-color !important;
+        text-transform: uppercase;
+        font-size: $navbar-title-font-size;
+        @media (max-width: 320px) {
+          font-size: 1.4rem;
+        }
+        text-align: center;
+        letter-spacing: $navbar-title-font-spacing;
+        margin-right: 27px;
+      }
+    }
+  }
+  font-size: 1.42rem;
+
+  h2 {
+    text-transform: uppercase;
+    color: #e9e9e9;
+    font-weight: bold;
+    margin-top: 2.21rem;
+    padding: 0 8px;
+    font-size: 1.42rem;
+
+    @media (max-width: 320px) {
+      font-size: 1.2rem;
+    }
+  }
+  span {
+    font-size: 1.42rem;
+    color: #e9e9e9;
+    font-weight: bold;
+    margin-top: 2.21rem;
+    padding: 0 8px;
+
+
+  }
+  p {
+    color: #c2c2c2;
+    margin-top: 2.21rem;
+    padding: 0 8px;
+    font-size: 1.42rem;
+  }
+}

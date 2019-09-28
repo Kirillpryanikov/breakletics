@@ -1,5 +1,15 @@
 @import "../../theme/main";
 @import "./guide";
+.platform-ios {
+  .header-block {
+    height: 5rem !important;
+  }
+}
+.platform-android {
+  .header-block {
+    height: calc(5rem + 6px) !important;
+  }
+}
 
 page-guide {
 

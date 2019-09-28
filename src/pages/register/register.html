@@ -1,8 +1,8 @@
-<ion-header no-border>
-  <ion-navbar transparent>
-  </ion-navbar>
-</ion-header>
+
 <ion-content>
+  <div class="header" padding>
+    <ion-icon (click)="goTo('Welcome')" name="ios-arrow-round-back"></ion-icon>
+  </div>
   <form #f="ngForm" (ngSubmit)="submit(f)">
     <ion-slides pager="true" #slider>
       <ion-slide>
@@ -12,10 +12,8 @@
             <div>{{"REGISTER.PAGE_1.TITLE" | translate}}</div>
           </div>
           <div class="handler-gender" padding>
-            <!--<input type="button" ngModel name="gender" (click)="f.value.gender = 'woman'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_WOMAN' | translate}}">-->
-            <!--<input type="button" ngModel name="gender" (click)="f.value.gender = 'man'; goNext()" col-5 value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">-->
-            <button type="button" name="gender" col-5 (click)="f.value.gender = 'woman'; goNext()">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</button>
-            <button type="button" name="gender" col-5 (click)="f.value.gender = 'man'; goNext()">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</button>
+            <button type="button" name="gender" col-5 (click)="goNext(); nameUser.gender = 'woman';">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</button>
+            <button type="button" name="gender" col-5 (click)="goNext(); nameUser.gender = 'man';">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</button>
           </div>
         </div>
       </ion-slide>
@@ -26,12 +24,13 @@
             <div>{{"REGISTER.PAGE_2.TITLE" | translate}}</div>
           </div>
           <div class="container-fullname">
-            <input type="text" ngModel name="first_name" placeholder="{{'REGISTER.PAGE_2.FIRSTNAME' | translate}}" required>
-            <input type="text" ngModel name="last_name" placeholder="{{'REGISTER.PAGE_2.LASTNAME' | translate}}" required>
+            <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                   [(ngModel)]="nameUser.firstName" name="first_name" placeholder="{{'REGISTER.PAGE_2.FIRSTNAME' | translate}}" required>
+            <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
+                   [(ngModel)]="nameUser.lastName" ngModel name="last_name" placeholder="{{'REGISTER.PAGE_2.LASTNAME' | translate}}" required>
           </div>
           <div class="handler" padding>
             <button type="button" padding col-12 (click)="goNext()">{{'REGISTER.PAGE_2.MORE' | translate}}</button>
-
           </div>
         </div>
       </ion-slide>
@@ -42,13 +41,13 @@
             <div>{{"REGISTER.PAGE_3.TITLE" | translate}}</div>
           </div>
           <div class="container-fullname">
-            <input type="text" ngModel name="email" placeholder="{{'REGISTER.PAGE_3.EMAIL' | translate}}" required>
+            <input type="email" ngModel name="email" placeholder="{{'REGISTER.PAGE_3.EMAIL' | translate}}" required>
             <input type="password" ngModel name="password" placeholder="{{'REGISTER.PAGE_3.PASSWORD' | translate}}" required>
           </div>
           <div class="handler" padding>
             <button type="submit" padding col-12 >{{'REGISTER.PAGE_3.REGISTRATION' | translate}}</button>
           </div>
-          <div class="footer-reg">
+          <div class="footer-reg" (click)="openModal('AGB')">
             <span>
               {{'LOGIN_PAGE.TITLE_UNDER_BUTTON1' | translate}}
             <u>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON2' | translate}}</u>

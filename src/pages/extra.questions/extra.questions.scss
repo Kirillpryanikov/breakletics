@@ -1,17 +1,58 @@
 @import "../../theme/main";
+.picker-wrapper {
+  background: rgba(255, 255, 255, 1) !important;
+}
+
 page-extra-questions {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  .header-ios{
+    padding-left: 15px !important;
+
+    ion-navbar {
+      padding: 0 !important;
+
+      ion-buttons{
+        button {
+          padding: 15px 0 0 0 !important;
+        }
+      }
+    }
+  }
+
+  ion-navbar{
+    padding: 0 !important;
+    button {
+      margin-left: 4px;
+      background-color: inherit;
+      font-size: $font-size-em-md;
+      color: $header-back-color;
+    }
+  }
+
+
+  ion-icon{
+    color: lightgray;
+  }
+
   ion-content {
     color: #fff;
     background: url("../assets/imgs/login-bg.jpg");
     background-position: center;
     background-size: cover;
+    .header {
+      @include setFlexStyles(flex-start);
+      height: $height-header;
+      font-size: $font-size-em-md;
+      color: $header-back-color;
+    }
+
     .page {
       width: 87%;
-      @include setFlexStyles();
-      flex-direction: column;
-      margin: auto;
+      margin:  0 auto 20px auto;
       .title {
         width: 100%;
+        font-weight:bold;
         div:first-child {
           color: $guide-color-text;
           font-size: $font-size-onboarding-lg;
@@ -23,23 +64,43 @@ page-extra-questions {
           margin-bottom: 9%;
         }
         button {
-          @include fullSizeBtn();
+          //@include fullSizeBtn();
+          font-weight: bold;
+          border: none;
+          padding: 5% 2rem;
+          background-color: $background-white;
+          //font-family: "Roboto";
+          //font-weight: bold;
+          width: 100%;
+          font-size: 1.6rem;
+          color: $btn-text-color;
+          //letter-spacing: 3px;
         }
       }
-
+      .datetime-md, .datetime-ios {
+        //padding: 0.98rem 0.57rem 0.98rem 0;
+      }
+        .label-md, .label-ios {
+          //padding: 0.98rem 0.57rem 0.98rem 0;
+        }
       form {
         width: 100%;
         margin-top: 8.7%;
+        background: rgba(255,255,255, .0);
         @media (max-width: 320px) {
           margin-top: 0;
         }
-
         height: 57%;
         .item-block:first-child,
-        .item-block:last-child
-        {
+        .item-block:last-child {
           border-top: 0;
           border-bottom: 0;
+        }
+        ion-select {
+          .select-text {
+            font-family: "Roboto";
+            font-weight: bold;
+          }
         }
         ion-item {
           background: transparent;
@@ -51,10 +112,11 @@ page-extra-questions {
         .item-block .item-inner {
           padding-right: 0px !important;
           margin-top: 0;
+          border-bottom: 1px solid #fff !important;
         }
         .item-block:last-child .item-inner,
         .item-wrapper:last-child .item-block .item-inner:last-child {
-          border-bottom: 0.55px solid #c8c7cc !important;
+          border-bottom: 0.55px solid #fff !important;
         }
 
         ion-label {
@@ -62,13 +124,28 @@ page-extra-questions {
           font-weight: normal;
         }
         button[type=submit] {
-          @include fullSizeBtn();
           margin-top: 13.2%;
+          border: none;
+          padding: 5% 2rem;
+          background-color: $background-white;
+          font-family: "Roboto";
+          font-weight: bold;
+          width: 100%;
+          font-size: 1.6rem;
+          color: $btn-text-color;
+          //letter-spacing: 0.6rem;
         }
         .select-text, .datetime-text {
-          color: $white-opacity;
+          color: $guide-color-text;
+          background: rgba(255,255,255, .0);
+          font-weight: 100;
         }
       }
     }
   }
+}
+
+.alert-radio-label{
+  //overflow: visible !important;
+  white-space: inherit !important;
 }

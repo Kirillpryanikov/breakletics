@@ -1,34 +1,51 @@
-import { Component, ViewChild, OnDestroy } from '@angular/core';
-import { NavController, Slides, LoadingController, ToastController } from 'ionic-angular';
+import { Component, ViewChild, OnDestroy, OnInit } from '@angular/core';
+import {ModalController, NavController, Slides, ToastController} from 'ionic-angular';
 import { NgForm } from '@angular/forms';
-import { RegisterService } from './register.service';
-import { LoginService } from '../login/login.service';
-import { TabsComponent } from '../index';
+import { AuthorizationService } from '../../share/authorization.service';
 import { ExtraQuestionsComponent  } from '../extra.questions/extra.questions';
 import { Subscription } from "rxjs/Subscription";
-import { NativeStorage } from '@ionic-native/native-storage';
+import {HelperService} from "../../share/helper.service";
+import {AgbComponent} from "../index";
+import {WelcomePageComponent} from "../welcome/welcome";
+import {LoginPageComponent} from "../login/login";
+
+declare let fbq: Function;
+declare let FB;
 
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
   styleUrls: ['/register.scss', '/register1.scss', '/register2.scss', '/register3.scss'],
 })
-export class RegisterPageComponent implements OnDestroy{
+export class RegisterPageComponent implements OnInit, OnDestroy{
   @ViewChild('slider') slider: Slides;
-
   private toast: any;
-  private loading: any;
   private regObservable: Subscription;
+  protected nameUser = {
+    firstName: '',
+    lastName: '',
+    gender: ''
+  };
 
   constructor(public navCtrl: NavController,
-              private service: RegisterService,
-              private loadingCtrl: LoadingController,
+              private helper: HelperService,
               private toastCtrl: ToastController,
-              private nativeStorage: NativeStorage,
-              private loginService: LoginService) {}
+              private auth: AuthorizationService,
+              private modalCtrl: ModalController) {}
+
+  ngOnInit(){
+    this.slider.lockSwipeToNext(true);
+  }
 
   goNext() {
-    this.slider.slideNext();
+    this.slider.lockSwipeToNext(false);
+    if(this.slider.getActiveIndex() === 1 && this.nameUser.firstName  && this.nameUser.lastName) {
+      this.slider.slideNext();
+    } else if(this.slider.getActiveIndex() !== 1 ) {
+      this.slider.slideNext();
+    }
+
+    this.slider.lockSwipeToNext(true);
   }
 
   /**
@@ -36,21 +53,29 @@ export class RegisterPageComponent implements OnDestroy{
    * @param {NgForm} f
    */
   submit(f: NgForm) {
-    this.presentLoading();
+    this.helper.loading.show();
     let data = f.value;
     /**
      * This is necessary. From WORDPERSS
      */
     data.username = f.value.email;
-
-    this.regObservable = this.service.registration(data)
+    data.gender = this.nameUser.gender;
+    this.regObservable = this.auth.user.set(data)
       .subscribe(responce => {
+        /**
+         * Facebook analytics
+         */
+        FB.AppEvents.logEvent(
+          FB.AppEvents.EventNames.COMPLETED_REGISTRATION, null
+        );
         this.authorization(responce.email, f.value.password, responce);
       }, err => {
         console.log('err register', err);
-        this.slider.slideTo(0);
+        this.navCtrl.setRoot(LoginPageComponent);
+        // this.slider.slideTo(0);
         this.presentToast(err.status);
-        this.dismissLoading();
+        this.helper.loading.hide();
+
       })
   }
 
@@ -61,32 +86,11 @@ export class RegisterPageComponent implements OnDestroy{
    * @returns {Subscription}
    */
   authorization(username, password, user) {
-    console.log('user step 1: ', user);
-    return this.loginService.login({username, password})
+    return this.auth.login({username, password})
       .subscribe(res =>{
-        this.nativeStorage.setItem('user', res);
-        this.navCtrl.push(ExtraQuestionsComponent, { user: user });
-        this.dismissLoading();
+        this.navCtrl.push(ExtraQuestionsComponent);
+        this.helper.loading.hide();
       })
-  }
-
-  dismissLoading() {
-    if (this.loading) {
-      try {
-        this.loading.dismiss();
-      }
-      catch (exception) {
-        console.log(exception)
-      }
-      this.loading = null;
-    }
-  }
-
-  presentLoading(){
-    if(!this.loading){
-      this.loading = this.loadingCtrl.create({});
-      this.loading.present();
-    }
   }
 
   /**
@@ -110,10 +114,29 @@ export class RegisterPageComponent implements OnDestroy{
     });
     this.toast.present();
   }
+  openModal() {
+    this.modalCtrl.create(AgbComponent).present();
+  }
+  goTo(page:string) {
+    let setPage: any;
+    switch (page) {
+      case 'Welcome': {
+        setPage = WelcomePageComponent;
+        break;
+      }
+      default: {
+        setPage = false;
+      }
+    }
+
+    if(setPage)
+      this.navCtrl.push(setPage);
+  }
 
   ngOnDestroy() {
     if(this.regObservable) {
       this.regObservable.unsubscribe();
     }
+    this.helper.loading.hide();
   }
 }

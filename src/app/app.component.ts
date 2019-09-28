@@ -5,20 +5,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService } from '@ngx-translate/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Globalization } from '@ionic-native/globalization';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
+
+import { ExtraQuestionsComponent } from '../pages/extra.questions/extra.questions'
+import { EnADLeyersComponent } from '../pages/ad.leyers/en/ad.leyers.component'
 
 import {
-  LoginPageComponent,
   WelcomePageComponent,
-  RegisterPageComponent,
-  DashboardComponent,
   TabsComponent,
-  ExtraQuestionsComponent
-} from '../pages/index'
+} from '../pages/index';
+
+import {AuthorizationService} from "../share/authorization.service";
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp implements OnInit{
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any;
@@ -30,19 +33,39 @@ export class MyApp implements OnInit{
               public splashScreen: SplashScreen,
               private translate: TranslateService,
               private nativeStorage: NativeStorage,
-              private globalization: Globalization) {
+              private screenOrientation: ScreenOrientation,
+              private globalization: Globalization,
+              private authService: AuthorizationService,
+              private ga: GoogleAnalytics) {
+    this.platform = platform;
     this.initializeApp();
   }
 
-  ngOnInit(){
-    this.isAuth();
-  }
+  ngOnInit(){}
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      // this.statusBar.styleBlackOpaque();
+      // this.splashScreen.hide();
       this.initTranslate();
+
+      if(this.platform.is('ios')){
+        this.statusBar.hide();
+      } else {
+        this.statusBar.styleBlackOpaque();
+      }
+
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+
+      // this.initTranslate();
+      this.isAuth();
+
+      this.ga.startTrackerWithId('UA-63203216-2')
+        .then(() => {
+          console.log('Google analytics is ready now');
+          this.ga.trackView('pageview');
+        })
+        .catch(e => console.log('Error starting GoogleAnalytics', e));
     });
   }
 
@@ -55,13 +78,14 @@ export class MyApp implements OnInit{
    */
   initTranslate() {
     this.translate.setDefaultLang('de');
-
+    this.translate.use('de');
     /**
      * Get language device
      */
     this.globalization.getPreferredLanguage()
       .then(res => {
         const countryCode = res.value.split('-')[0] !== 'de' ? 'en': 'de';
+        // const countryCode = 'de';
         this.translate.use(countryCode);
       })
       .catch(e => console.log('language app.component err --> ', e));
@@ -69,24 +93,22 @@ export class MyApp implements OnInit{
 
   isAuth() {
     this.nativeStorage.getItem('user')
+
       .then(res => {
-        if(!res){
-          // this.rootPage = RegisterPageComponent;
-          // this.rootPage = WelcomePageComponent;
+        if(res){
+          this.authService.session.start(res);
           this.rootPage = TabsComponent;
+          // this.rootPage = EnADLeyersComponent;
         } else {
-          // this.rootPage = WelcomePageComponent;
           this.rootPage = WelcomePageComponent;
+          // this.rootPage = EnADLeyersComponent;
+          this.authService.session.reset();
         }
       })
       .catch(err => {
-        // this.rootPage = ExtraQuestionsComponent;
-        this.rootPage = TabsComponent;
-        // this.rootPage = TabsComponent;
-        // this.rootPage = RegisterPageComponent
-        // this.rootPage = TabsComponent;
-        // this.rootPage = TabsComponent;
-        console.log('ERR in app.component ', err);
+        this.authService.session.reset();
+        // this.rootPage = EnADLeyersComponent;
+        this.rootPage = WelcomePageComponent;
       })
   }
 }

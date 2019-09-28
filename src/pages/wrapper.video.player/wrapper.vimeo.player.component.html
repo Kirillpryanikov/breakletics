@@ -1,5 +1,16 @@
 <ion-content>
-  <div class="container" #iframe webkitFullscreenElement></div>
+  <div class="container" #iframe2></div>
+  <div class="container" #iframe1></div>
+  <div class="button-toogle" (click)="play()"></div>
+  <div class="wrapper-player" (click)="play()"></div>
+  <div class="wrapper-player-min"></div>
+  <div class="wrapper-player-bottom"></div>
+  <button #nextbutton (click)="next()" *ngIf="videoParam && videoParam.warm_up_url">
+    Tutorial überspringen
+    <ion-icon ios="ios-skip-forward" md="md-skip-forward"></ion-icon>
+  </button>
+
+  <ion-icon class="close" name="ios-arrow-round-back" (click)="close()"></ion-icon>
 </ion-content>
 
 

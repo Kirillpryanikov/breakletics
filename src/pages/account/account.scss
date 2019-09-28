@@ -1,0 +1,109 @@
+@import "../../theme/main";
+
+account {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  //font-family: "RobotoCondensesBold";
+  font-weight: bold;
+  .toolbar-background {
+    background: #000!important;
+  }
+
+  //.divider {
+  //  position: fixed;
+  //  top: 0;
+  //  right: 0;
+  //  height: 0.247rem;
+  //  width: 100%;
+  //  background: linear-gradient(to right, #e7102b, #12b4e7);
+  //}
+
+  ion-header {
+    ion-searchbar {
+      min-height: $height-header-dashboard;
+    }
+    ion-navbar {
+      height: $height-header-dashboard;
+      button {
+        background: transparent;
+        color: $navbar-title-font-color;
+        font-size: $navbar-title-button_size;
+      }
+      .title {
+        color: $navbar-title-font-color !important;
+        text-transform: uppercase;
+        font-size: $navbar-title-font-size;
+        @media (max-width: 320px) {
+          font-size: 1.4rem;
+        }
+        text-align: center;
+        letter-spacing: $navbar-title-font-spacing;
+        margin-right: 27px;
+      }
+    }
+  }
+
+  ion-content {
+    background: url(../assets/imgs/dark-bg.gif) 50% 50%;
+    background-color: #000;
+    background-size: cover;
+    form{
+      overflow: hidden;
+    }
+
+
+    ion-item:first-child {
+      padding-top: 2.57rem;
+    }
+
+    ion-item:first-child:before{
+      //content: "";
+      //position: absolute;
+      //top: 0;
+      //right: 0;
+      //height: 0.247rem;
+      //width: 100%;
+      //background: linear-gradient(to right, #e7102b, #12b4e7);
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.42rem;
+      color: #fff;
+      @media (max-width: 320px) {
+        font-size: 1.2rem;
+      }
+    }
+    ion-label {
+      color: #8e8e8e;
+    }
+    ion-input, .datetime-text, ion-select {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      padding-bottom: 0.2rem;
+      width: 100%;
+      border-bottom: 1px solid #8e8e8e
+
+    }
+    .list-md .item-input:last-child,.list-ios .item-input:last-child {
+      border: 0!important;
+    }
+    .handler {
+      @include setFlexStyles();
+      width: 100%;
+      margin-top: 0.9rem;
+      margin-bottom: 5.9rem;
+      button {
+        width: 80%;
+        padding: 1.5rem 0;
+        font-size: 1.66rem;
+        letter-spacing: 2px;
+        background-color: #fff;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+
+  }
+}

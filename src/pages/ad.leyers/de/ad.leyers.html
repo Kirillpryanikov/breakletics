@@ -1,0 +1,45 @@
+<ion-header transparent>
+  <ion-navbar hideBackButton transparent>
+    <ion-buttons left>
+      <button class="inner-back-button" ion-button (click)="close()" icon-only>
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <span class="top-title">ERHALTE ZUGANG ZU ALLEN</span><br>
+      <span class="top-title">workouts & exercises und</span>
+    </ion-row>
+    <ion-row>
+      <span class="sub-title">Werde</span>
+      <span class="sub-title">athletisch und fit</span>
+      <span class="sub-title">wie nie zuvor</span>
+    </ion-row>
+  </ion-grid>
+
+  <div class="price-wrapper">
+    <div class="price-inner">
+      <div class="price">
+        <div class="title">
+          <span>ab</span>
+          <span class="cost">6,49</span>
+        </div>
+        <div class="title ">EUR/MONAT</div>
+        <div class="title">
+          0% Risiko*
+        </div>
+      </div>
+      <div class="handler">
+        <button type="submit" (click)="plusmember()">Jetzt kaufen</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>*Jederzeit kündbar. 14 Tage Widerrufsrecht ohne Wenn und aber.</span>
+  </div>
+</ion-content>

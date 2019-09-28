@@ -1,0 +1,136 @@
+@import "../../../theme/main";
+
+$height-form: calc(100% - 56px);
+$padding-input-field: 30px 15px 12px 0;
+$padding-block-password-forgotten: 20px 15px 5px 15px;
+$padding-block-handler-submit: 20px 15px 15px 15px;
+
+
+de-ad-leyers {
+  font-family: Roboto;
+  ion-content {
+    @media (max-width: 320px) {
+      .price-wrapper {
+        .title {
+          &:first-child {
+            span:nth-child(1){
+              font-size: 2.2em !important;
+            }
+            .cost{
+              font-size: 6.35em !important;
+            }
+          }
+          &:nth-child(2) {
+            letter-spacing: 1px;
+            margin-top: 5px !important;
+            font-size: 2em !important;
+          }
+          &:nth-child(3) {
+            position: relative;
+            font-size: 1.87em !important;
+            letter-spacing: 4px !important;
+            margin-left: 3rem !important;
+
+            &:before {
+              content: "";
+              position: absolute;
+              width: 2.3rem !important;
+              height: 2.3rem !important;
+              margin-left: 1rem;
+              background: url(../assets/imgs/approved-signal.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+    .price-wrapper{
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 12.8%;
+      text-align: center;
+      .price-inner {
+        width: fit-content;
+        max-width: 70%;
+        min-width: 44%;
+        margin: auto;
+
+        .handler {
+          //@include setFlexStyles();
+          width: 100%;
+          margin-top: 0.9rem;
+          button {
+            width: 100%;
+            padding: 1.5rem 0;
+            font-size: 1.66rem;
+            letter-spacing: 2px;
+            background-color: #fff;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .price {
+      width: 100%;
+      height: auto;
+      border: 0.42rem solid white;
+      box-sizing: border-box;
+      text-align: justify;
+      padding: 0 5px 10px 5px;
+
+      .title {
+        width: 100%;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: left;
+        &:first-child {
+          font-weight: bold;
+          margin-left: 0.5rem;
+          margin-bottom: -0.6rem !important;
+          span:nth-child(1){
+            text-transform: lowercase;
+            font-size: 2em;
+            height: 1.7em;
+          }
+          .cost{
+            font-size: 6.5em;
+            margin-left: 0.5rem;
+          }
+        }
+        &:nth-child(2) {
+          letter-spacing: 0.25em;
+          font-weight: bold;
+          font-size: 2em;
+          margin-left: 0.5rem;
+        }
+        &:nth-child(3) {
+          position: relative;
+          margin-top: 0.4rem;
+          font-weight:bold;
+          font-size: 1.6em;
+          letter-spacing: 6px;
+          //line-height: 6.2rem;
+          margin-left: 4.5rem;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: -4rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-block;
+            background: url(../assets/imgs/approved-signal.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

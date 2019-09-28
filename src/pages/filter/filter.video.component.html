@@ -1,0 +1,49 @@
+<ion-header transparent>
+  <ion-navbar no-border transparent>
+    <ion-buttons end icon-only>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<div #containerFilters>
+  <div *ngIf="levels" class="filters-levels">
+    <h2>{{"WORKOUTS_FILTER.TITLE" | translate}}</h2>
+    <div class="levels difficultly">
+      <button class="filter-item" (click)="setFilter('levels', 'Beginner')">{{"WORKOUTS_FILTER.BEGINNER" | translate}}
+        <i class="flash "></i>
+      </button>
+      <button class="filter-item" (click)="setFilter('levels', 'Advanced')">{{"WORKOUTS_FILTER.ADVANCED" | translate}}
+        <i class="flash "></i>
+        <i class="flash "></i>
+      </button>
+      <button class="filter-item" (click)="setFilter('levels', 'Expert')">{{"WORKOUTS_FILTER.EXPERT" | translate}}
+        <i class="flash "></i>
+        <i class="flash "></i>
+        <i class="flash "></i>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="category"  class="filters-category ">
+    <h2>{{"EXERCISES_FILTER.TITLE" | translate}}</h2>
+    <div class="levels">
+      <button class="filter-item" (click)="setFilter('category', 'BL Toprocks')">{{"EXERCISES.TOPROCKS" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'BL Footworks')">{{"EXERCISES.FOOTWORKS" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'BL Powermoves')">{{ "EXERCISES.POWERMOVES" | translate}}</button>
+      <button class="filter-item" (click)="setFilter('category', 'BL Crunches')">{{"EXERCISES.CRUNCHES" | translate}}</button>
+    </div>
+  </div>
+  <div *ngIf="warmup" class="filters-category warmup">
+    <h2>{{"WARMUPS_FILTER.TITLE" | translate}}</h2>
+    <div class="levels">
+      <button class="filter-item" (click)="setFilter('category', 'Warm up')"> &nbsp;&nbsp;{{"WARMUPS.WARM_UP" | translate}}&nbsp;&nbsp; </button>
+      <button class="filter-item" (click)="setFilter('category', 'Cool down')">{{"WARMUPS.COOL_DOWN" | translate}}</button>
+    </div>
+  </div>
+
+  <button class="go-btn" (click)="aplly()"><span>{{"WORKOUTS_FILTER.GO_BTN" | translate}}</span></button>
+
+</div>
+

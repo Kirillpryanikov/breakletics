@@ -1,0 +1,62 @@
+<ion-header transparent>
+  <ion-navbar color="dark" hideBackButton >
+    <ion-buttons left>
+      <button class="inner-back-button" ion-button navPop icon-only>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <div class="title" [innerHTML]="'SETTINGS.PAGE_TITLE' | translate"></div>
+  </ion-navbar>
+  <div class="divider"></div>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="title" [innerHTML]="'SETTINGS.SETTING_TITLE' | translate"></ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col class="sub-title" [innerHTML]="'SETTINGS.SETTING_SUBTITLE' | translate"></ion-col>
+      <ion-col class="col-button">
+        <button class="button" [innerHTML]="'SETTINGS.SETTING_BTN' | translate" (click)="goTo('MY_ACCOUNT')"></button>
+      </ion-col>
+    </ion-row>
+    <ion-row [ngStyle]="{'display' : isHideProduct ? 'none': ''}">
+      <ion-col class="title" [innerHTML]="'SETTINGS.PRODUCT_TITLE' | translate"></ion-col>
+    </ion-row>
+    <ion-row *ngIf="user && user.plusmember  > 0" [ngStyle]="{'display' : isHideProduct ? 'none': ''}">
+      <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_PLUSMEMBER' | translate"></ion-col>
+      <ion-col class="col-button">
+        <button class="button button-by bought">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="user && user.plusmember < 1">
+      <ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_PLUSMEMBER_NOT' | translate"></ion-col>
+      <ion-col class="col-button">
+        <button class="button button-by" (click)="pay()">{{'SETTINGS.PRODUCT_BY_NOT' | translate}}<ion-icon name="checkmark"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="user.plusmember > 0" [ngStyle]="{'display' : isHideProduct ? 'none': ''}">
+      <ion-col>
+        <br>
+        <br>
+        <br>
+        <p class="sub-title">
+          <span>{{'SETTINGS.SUBSCRIBER-1' | translate}}</span>
+        </p>
+        <p class="sub-title">
+          <span>{{'SETTINGS.SUBSCRIBER-2' | translate}}</span>
+        </p>
+        <p class="sub-title">
+          <span>{{'SETTINGS.SUBSCRIBER-3' | translate}}</span>
+        </p>
+      </ion-col>
+    </ion-row>
+    <!--<ion-row>-->
+      <!--<ion-col class="sub-title" [innerHTML]="'SETTINGS.PRODUCT_DEAL' | translate"></ion-col>-->
+      <!--<ion-col class="col-button ">-->
+        <!--<button class="button " [ngClass]="{'bought': user.plusmember > 0}">{{'SETTINGS.PRODUCT_BY' | translate}}<ion-icon name="checkmark"></ion-icon></button>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,90 @@
+<ion-header transparent>
+  <ion-navbar color="dark">
+    <!--<ion-icon ion-button transparent (click)="openMenu()" name="ios-menu-outline"></ion-icon>-->
+
+    <ion-buttons  left>
+      <button ion-button left (click)="openMenu()" transparent><ion-icon name="ios-menu-outline"></ion-icon></button>
+    </ion-buttons>
+    <!--<ion-buttons left>-->
+      <!--<button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>-->
+    <!--</ion-buttons>-->
+    <!--<ion-buttons left>-->
+      <!--<button ion-button navPop icon-only>-->
+        <!--<ion-icon name="ios-arrow-round-back"></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-buttons>-->
+    <div class="title" [innerHTML]="title"></div>
+    <div class="divider"></div>
+  </ion-navbar>
+</ion-header>
+<ion-content contentTop="200">
+  <div class="sub-header">
+    <ion-searchbar
+      *ngIf="search"
+      (ionInput)="searchByName($event)"
+      debounce="1250"
+      animated="true"
+      (ionCancel)="onCancel($event)"
+      [placeholder]="'VIDEO_LIST.SEARCH' | translate">
+    </ion-searchbar>
+    <div class="filters">
+      <i class="filters-icon"></i>
+      <div class="filter-items" (click)="getFilters()">
+        <span>{{ selectFilters && selectFilters.levels.length ? selectFilters.levels : placeholder}}</span>
+      </div>
+      <ion-icon name="md-close-circle" (click)="clearFilters()" *ngIf="selectFilters && selectFilters.levels.length"></ion-icon>
+    </div>
+  </div>
+  <div class="container-workout">
+    <ng-container *ngFor="let item of videos; let i = index" >
+      <div class="video"  (click)="playVideoModal(item)" *ngIf="user && user.plusmember >= item.plusmember"
+           [style.background]="'url(' + item.video_img + ')'"
+           [style.backgroundSize]="'cover'"
+           [style.backgroundPosition]="'50% 50%'"
+      >
+        <div class="footer">
+          <div class="footer-inner">
+            <span [innerHTML]="item.post_title"></span>
+            <span>
+              <span *ngIf="showDuration">{{item.duration}}MIN <img src="assets/imgs/time-icon.svg" class="time-icon" width="12" height="12" alt="">
+              </span>
+              <span class="level" *ngIf="item.level && showLevels">{{item.level}}
+                <ng-container *ngFor="let l of levels; let i = index;">
+                  <i class="flash" *ngIf="i <= levels.indexOf(item.level)"></i>
+                </ng-container>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <div class="divider-video" [innerHTML]="bannerTitle" *ngIf="!hideBanner && user && user.plusmember < 1" (click)="goTo('plusmember')"></div>
+    <ng-container *ngFor="let item of videos; let i = index" >
+      <div class="private video" *ngIf="user && user.plusmember < item.plusmember"
+           [style.background]="'url(' + item.video_img + ')'"
+           [style.backgroundSize]="'cover'"
+           [style.backgroundPosition]="'50% 50%'"
+           (click)="showAdComponent()"
+      >
+        <div class="footer">
+          <div class="footer-inner">
+            <span [innerHTML]="item.post_title"></span>
+            <span>
+              <span *ngIf="showDuration">{{item.duration}}MIN <img src="assets/imgs/time-icon.svg" class="time-icon" width="12" height="12" alt="">
+              </span>
+              <span class="level" *ngIf="item.level && showLevels">{{item.level}}
+                <ng-container *ngFor="let l of levels; let i = index;">
+                  <i class="flash" *ngIf="i <= levels.indexOf(item.level)"></i>
+                </ng-container>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <pay-it *ngIf="user && user.plusmember < 1"></pay-it>
+
+  </div>
+</ion-content>

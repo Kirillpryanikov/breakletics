@@ -1,0 +1,127 @@
+<ion-content>
+  <div class="container hero">
+    <ion-header transparent>
+      <ion-navbar hideBackButton transparent>
+        <ion-buttons left>
+          <button class="inner-back-button" ion-button icon-only (click)="close()">
+            <ion-icon name="ios-arrow-round-back"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+    <div class="content-inner">
+      <div class="sub-title"><div>werde athletisch</div><div>und fit wie nie zuvor</div></div>
+      <span class="top-title"> mit dem abwechslungsreichsten Workout der Welt!</span>
+
+      <div class="handler">
+        <button type="submit" (click)="scrollToBottom()">zum angebot</button>
+      </div>
+
+      <img src="assets/imgs/arrow.png" alt="" (click)="scrollToBottom()">
+
+    </div>
+      <div class="divider"></div>
+  </div>
+  <div class="container partners">
+      <div class="content-inner">
+        <div class='head-title'>bekannt aus der Presse</div>
+        <div class="banners">
+            <img src="assets/imgs/banners.png" alt="">
+        </div>
+      </div>
+  </div>
+    <div class="container slider-block">
+        <div class="content-inner">
+            <div class="slider-top">Wir haben unsere User gefragt:</div>
+            <div class="slider-sub-title">„Warum machst du Breakletics?“</div>
+
+            <ion-slides class="slider" pager>
+                <ion-slide *ngFor="let item of testimonials">
+                    <div class="avatar-wrapper" >
+                        <div class="avatar"
+                             [style.background]="'url(' + item.avatar + ')'"
+                             [style.backgroundSize]="'cover'"
+                             [style.backgroundPosition]="'center'"
+                             [style.borderRadius]="'50%'"
+                        >
+                        </div>
+                    </div>
+                    <div class="name"><div [innerHTML]="item.name"></div></div>
+                    <div class="date" [innerHTML]="item.date"></div>
+                    <div class="description" [innerHTML]="item.description"></div>
+                </ion-slide>
+            </ion-slides>
+        </div>
+    </div>
+    <div class="container benefits">
+        <div class="content-inner">
+            <div class="benefits-title">5 Gründe jetzt</div>
+            <div class="benefits-subtitle">PlusMember zu werden!</div>
+
+            <div class="benefit" *ngFor="let item of benefits">
+                <div class="benefit-title"><div [innerHTML]="item.title"></div></div>
+                <div class="benefit-subtitle" [innerHTML]="item.description"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container price">
+      <div class="content-inner">
+        <div class="inner-price">
+          <div class="risk">
+            <img src="assets/imgs/approved-signal.png" alt="">
+            0% Risiko
+          </div>
+            <div class="price-title">
+              <span>14 TAGE</span>
+              <span class="sub">geld zurück</span>
+            </div>
+            <!--<div class="price-subtitle">für den 1. Monat und wenn es dir gefällt, danach</div>-->
+
+            <div class="prices-wrapper" (click)="open('https://www.digistore24.com/product/92793')">
+                <div class="left">
+                    <div class="left-inner">
+                        <span>12 MONATE</span>
+                        <span class="pre-amount">
+                          <!--77,88 EUR-->
+                        </span>
+                        <span class="amount">6,49</span>
+                        <span class="amount-after">EUR /<br>Monat</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right-inner">
+                        <span>Spare</span>
+                        <span> -46%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prices-wrapper" (click)="open('https://www.digistore24.com/product/92793')">
+                <div class="left">
+                    <div class="left-inner">
+                        <span>1 MONAT</span>
+                        <span class="pre-amount">
+                          <!--<s>11,99 EUR</s>-->
+                        </span>
+                        <span class="amount">11,99</span>
+                        <span class="amount-after">EUR /<br>Monat</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right-inner">
+                        <span>Flexibel!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subtitle-after">
+                <span>14 Tage Geld zurück ohne Wenn und Aber. Jederzeit kündbar.</span>
+                <!--<span>Abo jederzeit kündbar. </span>-->
+                <!--<span>Die Abrechnung erfolgt über Digistore24.</span>-->
+            </div>
+            <div class="subtitle-after">
+              <span>Dein Abo verlängert sich dann automatisch um den gewählten Zeitraum. Die Abrechnung erfolgt über Digistore24.</span>
+            </div>
+        </div>
+      </div>
+    </div>
+</ion-content>

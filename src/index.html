@@ -14,9 +14,45 @@
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
+
+  <!--Facebook SDK -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1082002398563193',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.12'
+      });
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!--Facebook Pixel-->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){
+      n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '476915902464022');
+  </script>
+  <noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=476915902464022&ev=PageView&noscript=1"/>
+  </noscript>
 
   <!-- un-comment this code to enable service worker
   <script>
@@ -28,11 +64,11 @@
   </script>-->
 
   <link href="build/main.css" rel="stylesheet">
-
 </head>
 <body>
 
-  <!-- Ionic's root component and where the app will load -->
+<!-- Ionic's root component and where the app will load -->
+
   <ion-app></ion-app>
 
   <!-- The polyfills js is generated during the build process -->
@@ -44,6 +80,5 @@
 
   <!-- The main bundle js is generated during the build process -->
   <script src="build/main.js"></script>
-
 </body>
 </html>

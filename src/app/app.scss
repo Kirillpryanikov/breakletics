@@ -1,5 +1,4 @@
-// http://ionicframework.com/docs/theming/
-
+// http://ionicframework.com/docs/themi
 
 // App Global Sass
 // --------------------------------------------------
@@ -14,3 +13,7 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-nav {
+  background: #1b1c1c !important;
+}

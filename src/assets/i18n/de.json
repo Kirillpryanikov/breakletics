@@ -9,16 +9,27 @@
     "TITLE_UNDER_BUTTON1": "Ich akzeptiere die ",
     "TITLE_UNDER_BUTTON2": "AGB ",
     "TITLE_UNDER_BUTTON3": "von Breakletics",
-    "FOOTER_LOGIN": "Ich habe keinen Account und möchte mich registrieren"
+    "FOOTER_LOGIN1": "Ich habe keinen Account und ",
+    "FOOTER_LOGIN2": "möchte mich registrieren",
+    "NOT_FOUND_USER": "E-Mail oder Passwort nicht korrekt",
+    "NOT_FIELD_ENTER": "Bitte fülle alle Felder aus!"
+  },
+  "FORGOT_PAGE": {
+    "TITLE1": "Huch,",
+    "TITLE2": "wie ging das Passwort?",
+    "PLACEHOLDER_EMAIL": "E-Mail Adresse mit der du dich registriert hast",
+    "BUTTON_LOGIN": "neues passwort anfordern",
+    "SUCCESS": "Check deine Mails, wir haben dir ein neues Passwort geschickt!",
+    "ERROR": "Diese E-Mail ist uns nicht bekannt."
   },
   "REGISTER": {
     "PAGE_1": {
       "TITLE": "Dein Geschlecht?",
       "BUTTON_WOMAN": "WEIBLICH",
-      "BUTTON_MAN": "Männer"
+      "BUTTON_MAN": "MÄNNLICH"
     },
     "PAGE_2": {
-      "TITLE": "Und wie heißen du?",
+      "TITLE": "Und wie heißt du?",
       "FIRSTNAME": "Vorname",
       "LASTNAME": "Nachname",
       "MORE": "WEITER"
@@ -32,20 +43,26 @@
     }
   },
   "WELCOME_PAGE": {
-    "SLIDE_TITLE": "Das neue Lieblings-Workout von Lena Gercke",
-    "SLIDE_DESC": "- InStyle uber Breakletis",
+    "SLIDE2_TITLE": "„DAS NEUE LIEBLINGS-WORKOUT VON LENA GERCKE“",
+    "SLIDE2_DESC": "- InStyle über Breakletics",
+    "SLIDE1_TITLE": "NIE MEHR LANGEWEILE BEIM TRAINING",
+    "SLIDE1_DESC": "Mit dem abwechslungsreichsten",
+    "SLIDE1_DESC2": "Workout der Welt",
+    "SLIDE3_TITLE": "JEDER KANN MITMACHEN",
+    "SLIDE3_DESC": "Selbst Anfänger und Grobmotoriker lernen die Moves in Sekunden",
     "REGISTER_BTN": "Loslegen!",
     "LOGIN_BTN": "Login",
-    "PARTNER": "proud partner of"
+    "PARTNER1": "proud",
+    "PARTNER2": "partner of"
   },
   "GUIDE_PAGE": {
     "PAGE_GREETING": {
       "TITLE": "Hey ",
-      "SUBTITLE": "bevor es losgeht eine gaaaaanz kurze Erkärung zu den Grundfunktionen der App!",
+      "SUBTITLE": "bevor es losgeht eine gaaaaanz kurze Erklärung zu den Grundfunktionen der App!",
       "BUTTON": "OKAY, SCHIESS LOS!"
     },
     "PAGE_1": {
-      "TITLE": "Jede Worche gibt es hier ein brandneues (kostenloses) \"Workout der Woche\".",
+      "TITLE": "Jede Woche gibt es hier ein brandneues (kostenloses) \"Workout der Woche\".",
       "BUTTON": "OKAY, VERSTANDEN!",
       "FOOTER_TITLE": "Einführung abbrechen"
     },
@@ -73,8 +90,8 @@
     }
   },
   "PAGE_EXTRA": {
-    "TITLE": "Du musst nicht!",
-    "SUBTITLE":"Gründe geben warum der mehr Informatoinen geben soll.",
+    "TITLE": "Wenn du magst...",
+    "SUBTITLE":"... kannst du uns noch etwas mehr über dich verraten. Die Informationen werden vertraulich behandelt, niemals weitergegeben und du würdest uns sehr dabei helfen Breakletics besser zu machen!",
     "BUTTON_1": "Nee, möchte ich jetzt loslegen!",
     "FORM_Q": {
       "AGE": "Geburtstag",
@@ -106,7 +123,9 @@
         "OPT_2": "4-5 mal",
         "OPT_3": "2-3 mal",
         "OPT_4": "1-2 mal",
-        "OPT_5": "weniger"
+        "OPT_5": "weniger",
+        "OPT_6": "Anders"
+
       },
       "GO": "So, jetzt aber!"
     }
@@ -121,25 +140,25 @@
     "WORKOUTS": "WORKOUTS",
     "EXERCISES": "EXERCISES",
     "WARM_UP": "WARM UP",
+    "COOL_DOWN": "COOL DOWN",
     "ZUMBA": "Nur noch Pumba macht heute noch Zumba.",
-    "CRAZY_1": "Crazy XMAS Deal -",
-    "CRAZY_2": "- 5 Workouts FÜR 5 EUR",
-    "STATIC": "Pluasmember",
+    "CRAZY_1": "14 tage geld zurück",
+    "CRAZY_2": " 0% Risiko",
+    "STATIC": "Plusmember",
     "PAY_TITLE_1": "FIT & ATHLETISCH",
-    "PAY_TITLE_2": "WERDEN MIT WORKOUTTS,",
+    "PAY_TITLE_2": "WERDEN MIT WORKOUTS,",
     "PAY_TITLE_3": "DIE EINFACH ROCKEN!",
     "TEXT_LI_1": "Erhalte sofort Zugriff auf alle",
-    "TEXT_LI_1_1": "36 Workouts ",
-    "TEXT_LI_1_2": "28 Exercises und 4 Warm Ups/ Cool Downs!",
+    "TEXT_LI_1_1": "24 Workouts ",
+    "TEXT_LI_1_2": "und 48 Exercises!",
     "TEXT_LI_2": "Regelmäßig",
     "TEXT_LI_2_1": "NEUE",
     "TEXT_LI_2_2": "Workouts, Exercises und sogar Features!",
-    "TEXT_LI_3": "Werde Teil der geschlossenen Facebook Gruppe und erhalte Zugriff auf",
+    "TEXT_LI_3": "Werde Teil der geschlossenen Facebook Gruppe, wo Petair persönlich neue Videos postet und auf deine Fragen eingeht!",
     "TEXT_LI_3_1": "stetig neue Videos (Exercises und mehr)",
     "TEXT_LI_4": "...und vieles mehr!",
     "BTN": "PLUSMEMBER WERDEN",
-    "WORKOUTS_WEEK": "WORKOUTS OF THE WEEK"
-
+    "WORKOUTS_WEEK": "workout der woche"
   },
   "MENU_SIDE": {
     "XMAS_DEAL": "XMAS DEAL",
@@ -150,10 +169,93 @@
     "WARM_UPS": "WARM UPS / COOL DOWNS",
     "BREAKLETICS_TV": "BREAKLETICS TV",
     "MY_ACCOUNT": "MEIN KONTO",
-    "FIND_BREAKLETICS_CLASS": "BREAKLETICS KURS FINDER",
+    "FIND_BREAKLETICS_CLASS": "KURS FINDEN",
     "BREAKLETICS_SHOP": "BREAKLETICS SHOP",
     "TRANSFORMATION": "TRANSFORMATION",
     "TERMS_CONDITIONS": "AGB",
-    "IMPRINT": "IMPRESSUM"
-  }
+    "IMPRINT": "IMPRESSUM",
+    "CLASS": "KURS FINDEN",
+    "STORE": "BREAKLETICS STORE",
+    "CLASS_LINK": "http://breakletics.de",
+    "STORE_LINK": "http://breakletics-store.com",
+    "TRAINER": "TRAINER WERDEN",
+    "TRAINER_LINK": "http://breakletics.de/trainer-werden",
+    "TRANSFORMATION_LINK": "http://breakletics.de/transformation"
+  },
+  "WORKOUTS": {
+    "TITLE": "Workouts",
+    "SEARCH": "Filtern nach Schwierigkeit ...",
+    "JETZT": "JETZT 24 WORKOUTS FREISCHALTEN"
+  },
+  "WORKOUTS_FILTER": {
+    "TITLE": "Schwierigkeit wählen",
+    "BEGINNER": "BEGINNER",
+    "ADVANCED": "ADVANCED",
+    "EXPERT": "EXPERT",
+    "GO_BTN": "anwenden"
+  },
+  "EXERCISES": {
+    "TITLE": "EXERCISES",
+    "TOPROCKS":"BL TOPROCKS",
+    "FOOTWORKS": "BL FOOTWORKS",
+    "POWERMOVES": "BL POWERMOVES",
+    "CRUNCHES": "BL CRUNCHES",
+    "PLACEHOLDER": "Filtern nach Schwierigkeit und Kategorie ...",
+    "JETZT": "JETZT 48 EXERCISES FREISCHALTEN"
+  },
+  "EXERCISES_FILTER": {
+    "TITLE": "Kategorien wählen"
+  },
+  "WARMUPS": {
+    "TITLE": "WARM UPS / COOL DOWNS",
+    "WARM_UP": "WARM UP",
+    "COOL_DOWN": "COOL DOWN",
+    "PLACEHOLDER": "Filtern nach Warm Up / Cool Down ...",
+    "JETZT": "JETZT ALLE VIDEOS FREISCHALTEN"
+  },
+  "WARMUPS_FILTER": {
+    "TITLE": "Wähle Warm Up / Cool Down"
+  },
+  "VIDEO_LIST": {
+    "SEARCH": "Exercise suchen ..."
+  },
+  "ACCOUNT": {
+    "TITLE": "Persönliche daten",
+    "SUBTITLE": "Persönliche daten",
+    "NAME": "Vorname",
+    "LASTNAME": "Nachname",
+    "GENDER": "Geschlecht",
+    "EMAIL": "E-Mail",
+    "BORN": "Geburtstag",
+    "REGION": "Region"
+  },
+  "SETTINGS": {
+    "PAGE_TITLE": "mein konto",
+    "SETTING_TITLE": "Allgemein",
+    "SETTING_SUBTITLE": "Persönliche Daten",
+    "SETTING_BTN": "Bearbeiten",
+    "PRODUCT_TITLE": "Produkte",
+    "PRODUCT_PLUSMEMBER": "Du bist PlusMember",
+    "PRODUCT_PLUSMEMBER_NOT": "Du bist kein PlusMember",
+    "PRODUCT_BY": "FREIGESCHALTET",
+    "PRODUCT_BY_NOT": "JETZT KAUFEN",
+    "PRODUCT_DEAL": "X-Mas Deal",
+    "UPDATE_BTN": "AKTUALISIEREN",
+    "SUBSCRIBER-1": "Um dein Abo zu kündigen musst du in eine der E-Mails reinschauen, die du von unserem Zahlungsanbieter Digistore24 bekommen hast. Dort klickst du den Link „Eine Übersicht über Ihre Bestellung finden Sie hier.",
+    "SUBSCRIBER-2": "Auf der Übersicht gibt es einen Button mit dem du dein Abo kündigen kannst. Es wird dann nichts mehr von deinem Konto abgebucht und du behälst deinen Zugang noch bis zum Ende des Abrechnungszeitraums.",
+    "SUBSCRIBER-3": "Falls du Probleme hast den Button zu finden um dein Abo selbst zu kündigen, dann schreibe eine E-Mail an info@breakletics.com und wir erledigen das für dich!"
+
+  },
+  "AGB": {
+    "PAGE_TITLE": "AGB"
+  },
+  "IMPRINT": {
+    "PAGE_TITLE": "Impressum"
+  },
+  "AD_LAYERS": {
+    "TITLE": "Breakletics Plusmember Gutschein kaufen",
+    "TITLE_2": "und eine GRATIS Zugabe wählen",
+    "SUBTITLE": "xmas angebote"
+  },
+  "LOGOUT": "ABMELDEN"
 }

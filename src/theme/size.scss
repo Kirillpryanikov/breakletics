@@ -13,8 +13,13 @@ $font-size-onboarding-md: 1.7rem;
 
 //Header
 $height-header: 56px;
-$height-header-dashboard: 70px;
+$height-header-dashboard: 5rem;
+//$height-header-dashboard: 70px;
 $header-back-color: #c2c2c2;
+$navbar-title-font-size: 1.7rem;
+$navbar-title-font-color: #c2c2c2;
+$navbar-title-font-spacing: 0.2rem;
+$navbar-title-button_size: 2.5rem;
 
 //Tabs
 $height-tabs: 56px;
@@ -28,3 +33,5 @@ $height-block-footer: 23.84vh;
 //Menu side
 $header-image: 19.24vh;
 
+$searchbar-ios-input-clear-icon-color: rgba(255,255,255,.6);
+$searchbar-ios-input-search-icon-color: rgba(255,255,255,.6);

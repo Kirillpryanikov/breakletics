@@ -1,0 +1,323 @@
+@import "../../theme/main";
+.platform-ios.platform-cordova {
+@media (max-width: 320px) {
+      .sub-header {
+           // margin-top: 2rem;
+          }
+      }
+
+  }
+video-list {
+  font-family: "Roboto";
+  font-weight: bold;
+
+  ::-webkit-input-placeholder {
+    text-align: center;
+    font-family: Roboto !important;
+    font-weight: bold !important;
+    color: rgba(255,255,255,.6) !important;
+    font-size: 1rem;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+    margin-left: 5px;
+    font-family: Roboto !important;
+    font-weight: bold !important;
+    font-size: 1rem;
+    color: rgba(255,255,255,.6) !important;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;
+    font-size: 1rem;
+    font-family: Roboto !important;
+    font-weight: bold !important;
+    color: rgba(255,255,255,.6) !important;
+  }
+
+  :-ms-input-placeholder {
+    text-align: center;
+    font-size: 1rem;
+    font-family: Roboto !important;
+    font-weight: bold !important;
+    color: rgba(255,255,255,.6) !important;
+  }
+
+  scroll-content {
+    background: #1b1c1c;
+  }
+  font-family: Roboto;
+  ion-header {
+    .toolbar-background {
+      background: #000!important;
+    }
+    .toolbar-md-dark .toolbar-background-md, .toolbar-background-ios {
+      background: #000 !important;
+    }
+    ion-navbar {
+      height: 5rem;
+      button {
+        background: transparent;
+        color: $navbar-title-font-color;
+        font-size: $navbar-title-button_size;
+      }
+      .title {
+        color: $navbar-title-font-color !important;
+        text-transform: uppercase;
+        font-size: $navbar-title-font-size;
+        @media (max-width: 320px) {
+          font-size: 1.4rem;
+        }
+        text-align: center;
+        letter-spacing: $navbar-title-font-spacing;
+        //margin-right: 27px;
+      }
+
+      ion-buttons{
+        position: absolute;
+        top: 22%
+      }
+    }
+  }
+
+  ion-content {
+    @include slideRightAnimation();
+    background: url(../assets/imgs/dark-bg.gif) 50% 50%;
+    background-color: #000;
+    background-size: cover;
+    //background: #1b1c1c;
+    .sub-header {
+      background: #1b1c1c;
+      min-height: 5.5rem;
+      height: auto;
+      //max-height: 144px;
+      padding-bottom: 10px;
+      @media (max-width: 320px) {
+
+        padding-bottom: 5px;
+         min-height: 8.5rem;
+
+      }
+      @include setFlexStyles();
+      flex-direction: column;
+      .filters {
+        @include setFlexStyles(space-between);
+        flex-direction: row;
+        height: 70%;
+        min-height: 38px;
+        border-bottom: 2px solid rgba(255,255,255,.5);
+        color: rgba(255,255,255,.6);
+        font-size: 1.4rem;
+        font-family: Roboto;
+        width: 90%;
+        align-self: center;
+        padding: 8px 0;
+      }
+      .filters-icon {
+        align-self: flex-start;
+        height: 80%;
+      }
+      ion-searchbar {
+        min-height: 3.5rem;
+        padding: 0;
+        width: 90%;
+        font-size: 1rem !important;
+        font-family: Roboto !important;
+        font-weight: bold !important;
+        color: rgba(255,255,255,.6) !important;
+        .searchbar-md .searchbar-search-icon,.searchbar-search-icon {
+          left: 3px;
+          margin-left: 0px !important;
+        }
+        .searchbar-input-container {
+          @include setFlexStyles();
+          padding-left: 0px !important;
+          input {
+            background: transparent !important;
+            -webkit-text-fill-color:rgba(255,255,255,.6);
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -webkit-appearance: none !important;
+            font-size: 1rem;
+          }
+        }
+      }
+      input,.searchbar-md .searchbar-input {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        border-bottom: 2px solid #8d8e8e;
+        padding: 4px 55px 4px 63px !important;
+        margin-bottom: 5px;
+        line-height: 3rem;
+        color: rgba(255,255,255,.5);
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      ion-icon {
+        font-size: 1.7rem;
+      }
+      i {
+        @include setFlexStyles(center, flex-end);
+        width: 30px;
+        height: 15px;
+        align-self: center;
+      }
+      i:after {
+        content: '';
+        width: 30px;
+        height: 15px;
+        background: url(../assets/imgs/filter-results-button.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        display: block;
+        background-size: contain;
+      }
+      .filter-items {
+        text-align: center;
+        width: 100%;
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+    .container-workout {
+      background: #1b1c1c;
+    }
+    .slide-right {
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    .video {
+      @include slideRight();
+      height: 17.1vh;
+      width: 100%;
+      position: relative;
+      flex-direction: row;
+      @include setFlexStyles(flex-end);
+      text-align: center;
+      //border-top: 1px solid #1b1b1c;
+      border-bottom: 1px solid #1b1b1c;
+      box-sizing: border-box;
+      background-color: #1b1c1c;
+      -moz-box-shadow: inset 0px -24px 15px rgba(0,0,0,0.5);
+      -webkit-box-shadow: inset 0px -24px 15px rgba(0,0,0,0.5);
+      box-shadow: inset 0px -24px 15px rgba(0,0,0,0.5);
+    }
+    .private {
+      &:after {
+        content: '';
+        width: 4rem;
+        height: 4.7rem;
+        position: absolute;
+        left: calc(50% - 2rem);
+        top: calc(50% - 2.35rem);
+        background: url("../assets/imgs/lock.png") 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 99;
+        display: block;
+        //opacity: .97;
+      }
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,0.7);
+        z-index: 98;
+        display: block;
+        //opacity: .97;
+      }
+    }
+    .image-wrapper {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .footer {
+      width: 100%;
+      position: absolute;
+      bottom: 2%;
+      box-sizing: border-box;
+      font-size: 1rem;
+      color: #fff;
+      left: 0;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+
+      .footer-inner {
+        width: 100%;
+        padding: 0 0.5rem;
+        @include setFlexStyles(space-between) ;
+      }
+      span {
+        font-weight: bold;
+        font-size: 1rem;
+        text-shadow: none;
+        @include setFlexStyles();
+        flex-direction: row;
+        .time-icon {
+          width: 15px;
+          height: 15px;
+          margin: 0 9px 3px 9px;
+          //&:after {
+            //width: 15px;
+            //height: 15px;
+            //content: '';
+            //display: block;
+            //background-size: cover;
+            //background: url(../assets/imgs/time-icon.svg) no-repeat;
+          //}
+        }
+      }
+    }
+    .levels {
+      @include setFlexStyles();
+      flex-direction: row;
+      position: relative;
+
+    }
+    .flash {
+      &:first-child {
+        margin-left: 5px;
+      }
+      &:after {
+        background: url(../assets/imgs/flash-white.png) 100% 100% no-repeat;
+        content: '';
+        height: 13px;
+        width: 8px;
+        background-size: contain;
+        display: block;
+      }
+    }
+    .divider-video {
+      height: 8.21vh;
+      width: 100%;
+      background: url("../assets/imgs/foote-bg.jpg") 50% 50% no-repeat;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      @include setFlexStyles();
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+  }
+
+  .searchbar-search-icon {
+    background: url(../assets/imgs/icon-search.png) no-repeat !important;
+    background-size: cover !important;
+  }
+}

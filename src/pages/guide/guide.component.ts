@@ -1,7 +1,9 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { NavController, Slides, ViewController, NavParams } from 'ionic-angular';
+import {Component, ViewChild, OnInit} from '@angular/core';
+import {Slides, ViewController, ModalController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import {tryCatch} from "rxjs/util/tryCatch";
+import { TranslateService } from '@ngx-translate/core';
+import {WrapperVideoPlayerComponent} from "../wrapper.video.player/wrapper.video.player.component";
+import {AuthorizationService} from "../../share/authorization.service";
 
 @Component({
   selector: 'page-guide',
@@ -16,21 +18,17 @@ import {tryCatch} from "rxjs/util/tryCatch";
 export class GuideComponent implements OnInit{
   @ViewChild('slider') slider: Slides;
 
-  public firstName: string;
-
-  constructor(private navCtrl: NavController,
+  constructor(
               private nativeStorage: NativeStorage,
               private viewCtrl: ViewController,
-              private navParams: NavParams) {}
+              private auth: AuthorizationService,
+              private modalCtrl: ModalController,
+              private translate: TranslateService) {}
 
   public user: object;
 
   ngOnInit(){
-    this.user = this.navParams.get('user');
-
-    if(this.user) {
-      this.firstName = this.user['user_display_name'].split(' ')[0];
-    }
+    this.user = this.auth.user.get();
   }
 
   ionViewDidEnter() {
@@ -51,4 +49,22 @@ export class GuideComponent implements OnInit{
         this.viewCtrl.dismiss();
       })
   }
+
+  workoutPlusWarmup(){
+    const url  = this.translate.currentLang === 'de' ? 'https://vimeo.com/247622460' : 'https://vimeo.com/251343673';
+    this.playVideoModal({video_url: url});
+    this.guideFinish();
+  }
+
+  workout(){
+    const url  = this.translate.currentLang === 'de' ? 'https://vimeo.com/247691009' : 'https://vimeo.com/251341239';
+    this.playVideoModal({ video_url: url});
+    this.guideFinish();
+  }
+
+  playVideoModal(url) {
+    this.modalCtrl.create(WrapperVideoPlayerComponent, {video: url}).present();
+  }
+
+
 }

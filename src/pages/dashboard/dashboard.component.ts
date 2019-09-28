@@ -1,14 +1,23 @@
-import { Component, OnInit, OnDestroy, Output, Input, EventEmitter } from '@angular/core';
-import { NavController, ModalController, LoadingController, NavParams, Platform } from 'ionic-angular';
+import {Component, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
+import {NavController, ModalController, NavParams, Events, Platform, MenuController} from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { DomSanitizer } from '@angular/platform-browser';
+import {TranslateService} from "@ngx-translate/core";
+import {DomSanitizer, SafeScript} from '@angular/platform-browser';
 
-import { GuideComponent } from '../guide/guide.component';
-import { WelcomePageComponent } from '../welcome/welcome';
+import {
+  GuideComponent,
+  PlusmemberComponent,
+  WrapperVideoPlayerComponent,
+  WorkoutComponent,
+  ExercisesComponent,
+  WarmupComponent
+} from '../';
 import { DashbordService } from './dashboard.service';
-import { WrapperVideoPlayerComponent } from '../wrapper.video.player/wrapper.video.player.component';
-import { VideoWeekInterface } from '../interfaces/VideoWeekInterface';
 import { Subscription } from "rxjs/Subscription";
+import {HelperService} from "../../share/helper.service";
+import {AuthorizationService} from "../../share/authorization.service";
+
 
 @Component({
   selector: 'page-dashboard',
@@ -16,97 +25,166 @@ import { Subscription } from "rxjs/Subscription";
   styleUrls: ['/dashboard.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  private loading: any;
   public user: object;
-  public video: VideoWeekInterface;
+  public scriptPixel: SafeScript;
+  public video: any;
   public heightDevice: number;
   public weightDevice: number;
-  public linkVideo: string;
   private videoWeekObservable: Subscription;
+  public isScroll = false;
+  public rundStr;
+  public language;
+  @Output() menuOpenHook = new EventEmitter<boolean>();
 
   constructor(public navCtrl: NavController,
+              public menu: MenuController,
+              private translate: TranslateService,
               private modalCtrl: ModalController,
               private nativeStorage: NativeStorage,
-              private loadingCtrl: LoadingController,
+              private screenOrientation: ScreenOrientation,
+              private helper: HelperService,
               private navParams: NavParams,
               private service: DashbordService,
               private platform: Platform,
-              private sanitizer: DomSanitizer) {
-
-    this.loading = this.loadingCtrl.create({});
+              public menuCtrl: MenuController,
+              public events: Events,
+              private auth: AuthorizationService,
+              private domS: DomSanitizer
+              ) {
   }
 
   ngOnInit(){
+    // this.changeTab();
+    this.menu.swipeEnable(true);
+    this.events.publish('isOpen');
     this.weightDevice = this.platform.width();
     this.heightDevice = this.platform.height()* 29.5 / 100;
     this.getUser();
-    this.handlerLoadVideo();
+  }
+
+  openMenu() {
+    this.events.publish('isOpen');
+    this.menuOpenHook.emit();
+    this.menuCtrl.open();
+  }
+
+  ngAfterViewInit(){
+    setTimeout(() => {
+      this.language = this.translate.currentLang;
+      this.rundStr = this.service.getRundomString(this.translate.currentLang);
+    },2000);
+
+    // this.language = this.translate.currentLang;
+    // this.rundStr = this.service.getRundomString(this.translate.currentLang);
   }
 
   /**
    * get user from storage
    */
   getUser() {
-    this.user = this.nativeStorage.getItem('user')
+      this.helper.loading.show();
+      this.user = this.nativeStorage.getItem('user')
       .then(res => {
         this.user = res;
-        this.presentGuideModal(this.user)
+        console.log('RES this.user',this.user);
+        this.handlerLoadVideo();
+        this.presentGuideModal(this.user);
+        this.helper.loading.hide();
       })
       .catch(err => {
-        this.user = this.navParams.get('user');
-        this.presentGuideModal(this.user)
-      });
+        console.log('Catch this.user',this.user);
+        this.user = this.auth.user.get();
+        console.log('this.user',this.user);
+        this.handlerLoadVideo();
+        this.presentGuideModal(this.user);
+        this.helper.loading.hide();
+      })
   }
 
   handlerLoadVideo() {
-    this.videoWeekObservable = this.service.videoWeek().subscribe(res => {
+    let lang = this.translate.currentLang;
+    this.videoWeekObservable = this.service.videoWeek(this.user['id'], lang).subscribe(res => {
       this.video = res;
-      // this.linkVideo = 'https://player.vimeo.com/video/242763018';
-      this.linkVideo = '242763018';
-      // this.linkVideo = this.video.video.split('https://vimeo.com/')[1];
     }, err => {
-      console.log('err video', err);
+      console.log('err video::: ', err);
     });
   }
 
-  logout() {
-    this.loading.present();
-
-    this.nativeStorage.remove('user')
-      .then(res => {
-        this.navCtrl.setRoot(WelcomePageComponent);
-        this.loading.dismiss();
-      })
-      .catch(err => {
-        this.loading.dismiss();
-      })
-  }
-
   playVideoModal() {
-    if(this.linkVideo) {
-      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.linkVideo}).present();
+    if(this.video.video_url) {
+      this.modalCtrl.create(WrapperVideoPlayerComponent, {video: this.video}).present();
     }
   }
 
   presentGuideModal(user) {
+    let guide;
     this.nativeStorage.getItem('guide')
       .then(res => {
-        if(!res || res !== this.user['id']){
-          this.modalCtrl.create(GuideComponent, {user: user}).present();
+        if(!res || res !== this.user['id']) {
+          this.isScroll = true;
+          guide = this.modalCtrl.create(GuideComponent);
+          guide.onDidDismiss(data => {
+            this.isScroll = false;
+          });
+          setTimeout(()=> {
+            if(this.user && this.user['plusmember'] < 1)
+              guide.present()
+          },500)
         }
       })
       .catch(err => {
-        this.modalCtrl.create(GuideComponent,{user: user}).present();
-      })
+        console.log('err ', err);
+        this.isScroll = true;
+        guide = this.modalCtrl.create(GuideComponent);
+        guide.onDidDismiss(data => {
+          this.isScroll = false;
+        });
+        setTimeout(()=> {
+          if(this.user && this.user['plusmember'] < 1)
+            guide.present()
+        },500)
+      });
   }
 
-  getGuide() {
-    this.modalCtrl.create(GuideComponent).present();
+
+  goTo(page){
+    switch (page) {
+      case 'WorkoutComponent': {
+        this.goToTab(1);
+        break;
+      }
+      case 'ExercisesComponent': {
+        this.goToTab(2);
+        break;
+      }
+      case 'plusmember': {
+        this.modalCtrl.create(PlusmemberComponent).present();
+        break;
+      }
+      case 'WarmupComponent': {
+        this.goToTab(3);
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+  }
+
+  goToTab(toPage: number) {
+    if(this.navCtrl.parent || this.navCtrl.parent !== null) {
+      this.navCtrl.parent.select(toPage);
+    } else {
+      console.log('it is not a tab');
+    }
   }
 
   ngOnDestroy() {
     if(this.videoWeekObservable) {
       this.videoWeekObservable.unsubscribe();
     }
+    this.menu.close('mainmenu');
+    this.menu.swipeEnable(false);
+    this.helper.loading.hide();
   }
 }

@@ -43,12 +43,15 @@ $padding-subtitle: 20px;
   justify-content: center;
   color: $guide-color-text;
   font-size: 1.28rem;
-  text-decoration: underline;
   margin-bottom: 14%;
+  u {
+    text-decoration: underline;
+  }
 }
 
 page-guide {
-  font-family: "RobotoCondensesBold";
+  font-family: "Roboto";
+  font-weight: bold;
 
   .container-guide {
     height: 100%;
@@ -86,7 +89,7 @@ page-guide {
       padding-top: 30px;
       margin-bottom: 70px;
       button{
-        @include fullSizeBtn();
+        @include fullSizeBtn(auto);
       }
     }
   }

@@ -1,0 +1,15 @@
+<ion-header transparent>
+  <ion-navbar color="dark" hideBackButton >
+    <ion-buttons left>
+      <button class="inner-back-button" ion-button navPop icon-only>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <div class="title" [innerHTML]="'AGB.PAGE_TITLE' | translate"></div>
+  </ion-navbar>
+  <div class="divider"></div>
+</ion-header>
+<ion-content>
+  <en-agb *ngIf="language !== 'de'"></en-agb>
+  <de-agb *ngIf="language === 'de'"></de-agb>
+</ion-content>

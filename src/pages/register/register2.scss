@@ -15,7 +15,7 @@ page-register {
         border-bottom: 1px solid $white-opacity;
         padding: $padding-input-field;
         background: rgba(1,1,1,0);
-        color: $white-opacity;
+        color: #fff;
       }
     }
 
@@ -23,6 +23,7 @@ page-register {
       width: 100%;
       margin-top: $margin-top-button;
       button {
+        font-weight: bold;
         padding: 19px 0;
         font-size: 1.6rem;
         letter-spacing: 2px;

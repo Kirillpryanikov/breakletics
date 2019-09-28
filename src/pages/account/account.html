@@ -1,0 +1,60 @@
+<ion-header transparent>
+  <ion-navbar color="dark" hideBackButton>
+    <ion-buttons left>
+      <button class="inner-back-button" ion-button navPop icon-only>
+        <ion-icon ios="ios-arrow-round-back" md="ios-arrow-round-back"></ion-icon>
+      </button>
+      <!--<button (click)="goToDash()" transparent><ion-icon name="ios-arrow-round-back"></ion-icon></button>-->
+    </ion-buttons>
+    <div class="title" [innerHTML]="'ACCOUNT.TITLE' | translate"></div>
+  </ion-navbar>
+  <div class="divider"></div>
+
+</ion-header>
+<ion-content>
+  <form #meta="ngForm" (ngSubmit)="update(meta)">
+    <ion-list no-lines>
+      <ion-item no-lines>
+        <h2 [innerHTML]="'ACCOUNT.SUBTITLE' | translate"></h2>
+      </ion-item>
+      <ion-item >
+        <ion-label floating [innerHTML]="'ACCOUNT.NAME' | translate"></ion-label>
+        <ion-input type="text" [ngModel]="user.first_name || ''" name="first_name" (blur)='update(meta)' debounce="2250"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label floating [innerHTML]="'ACCOUNT.LASTNAME' | translate"></ion-label>
+        <ion-input type="text" name="last_name" [ngModel]="user.last_name" (blur)='update(meta)' debounce="2250"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label floating [innerHTML]="'ACCOUNT.GENDER' | translate"></ion-label>
+        <ion-select name="gender" [ngModel]="user.gender">
+          <ion-option value="{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}">{{'REGISTER.PAGE_1.BUTTON_WOMAN'| translate}}</ion-option>
+          <ion-option value="{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}">{{'REGISTER.PAGE_1.BUTTON_MAN'| translate}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label floating [innerHTML]="'ACCOUNT.EMAIL' | translate" ></ion-label>
+        <ion-input type="email" [value]="user.user_email || ''" readonly></ion-input>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label floating for="birthday">{{"PAGE_EXTRA.FORM_Q.AGE" | translate}}</ion-label>
+        <ion-datetime (ngModelChange)='update(meta)' id="birthday" displayFormat="DD MMMM YYYY" min="1800" max="2017-10-31" [(ngModel)]="user.birthday" name="birthday">
+        </ion-datetime>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label floating>{{"PAGE_EXTRA.FORM_Q.LOCATION" | translate}}</ion-label>
+        <ion-select name="where_are_you_from" [ngModel]="user.where_are_you_from" (blur)='update(meta)'>
+          <ion-option *ngFor="let item of locations" [innerHTML]="item"></ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+    <!--<div class="handler">-->
+      <!--<button type="submit" [innerHTML]="'SETTINGS.UPDATE_BTN' | translate"></button>-->
+    <!--</div>-->
+  </form>
+</ion-content>

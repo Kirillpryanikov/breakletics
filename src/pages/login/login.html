@@ -1,6 +1,6 @@
 <ion-content text-center>
   <div class="header" padding>
-    <ion-icon (click)="goToWelcome()" name="ios-arrow-round-back"></ion-icon>
+    <ion-icon (click)="goTo('Welcome')" name="ios-arrow-round-back"></ion-icon>
   </div>
 
   <form #f="ngForm" (ngSubmit)="login(f)">
@@ -14,7 +14,7 @@
       <ion-row>
         <div class="container-input">
           <div>
-            <input type="text" ngModel name="email" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_EMAIL' | translate }}" required>
+            <input type="email" ngModel name="email" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_EMAIL' | translate }}" required>
           </div>
           <div>
             <input type="password" ngModel name="password" class="form-control" placeholder="{{'LOGIN_PAGE.PLACEHOLDER_PASSWORD' | translate }}" required>
@@ -23,7 +23,7 @@
       </ion-row>
       <ion-row>
         <div class="password-forgotten">
-          <span>{{'LOGIN_PAGE.BUTTON_PASSWORD_FORGOTTEN' | translate}}</span>
+          <span (click)="goTo('Forgot')">{{'LOGIN_PAGE.BUTTON_PASSWORD_FORGOTTEN' | translate}}</span>
         </div>
       </ion-row>
       <ion-row>
@@ -32,7 +32,7 @@
         </div>
       </ion-row>
       <ion-row>
-        <div class="title-under-btn">
+        <div class="title-under-btn" (click)="openModal()">
           <span>
             {{'LOGIN_PAGE.TITLE_UNDER_BUTTON1' | translate}}
             <u>{{'LOGIN_PAGE.TITLE_UNDER_BUTTON2' | translate}}</u>
@@ -42,7 +42,7 @@
       </ion-row>
       <ion-row>
         <div class="tooter-login">
-          <span>{{'LOGIN_PAGE.FOOTER_LOGIN' | translate}}</span>
+          <span (click)="goTo('SignUp')">{{'LOGIN_PAGE.FOOTER_LOGIN1' | translate}}<br>{{'LOGIN_PAGE.FOOTER_LOGIN2' | translate}}</span>
         </div>
       </ion-row>
     </ion-grid>

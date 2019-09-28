@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { SafariViewController } from '@ionic-native/safari-view-controller';
 
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -11,9 +12,11 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { MyApp } from './app.component';
 import { PageModule } from '../pages/page.module';
+import {ItemMenuSide} from '../pages/item.menu.side/item.menu.side';
+import {MenuSideComponent} from '../pages/menu.side/menu.side.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -21,11 +24,15 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    ItemMenuSide,
+    MenuSideComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      // tabsHideOnSubPages: true
+    }),
     PageModule,
     CommonModule,
     HttpClientModule,
@@ -34,7 +41,7 @@ export function createTranslateLoader(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
-      }
+      },
     }),
   ],
   bootstrap: [IonicApp],
@@ -47,6 +54,8 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     Globalization,
     ScreenOrientation,
+    GoogleAnalytics,
+    SafariViewController,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

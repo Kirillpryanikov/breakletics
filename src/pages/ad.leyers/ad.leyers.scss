@@ -1,0 +1,83 @@
+@import "../../theme/main";
+
+$height-form: calc(100% - 56px);
+$padding-input-field: 30px 15px 12px 0;
+$padding-block-password-forgotten: 20px 15px 5px 15px;
+$padding-block-handler-submit: 20px 15px 15px 15px;
+
+ad-leyers {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  .header-md:after, .header-ios:after {
+    background-image: none !important;
+    content: '';
+  }
+  ion-header {
+    @include setFlexStyles(flex-start);
+    //height: $height-header;
+    color: $header-back-color;
+    ion-icon {
+      color: $header-back-color;
+    }
+    .bar-button-md, .bar-button-ios {
+      font-size: 1.8rem;
+      margin-left: 5px;
+    }
+  }
+  ion-content {
+    background: url("../assets/imgs/ad-layers-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    @include setFlexStyles();
+    color: #fff;
+    .top-title {
+      width: 100%;
+      color: #fff;
+      font-size: 1.42rem;
+      text-transform: uppercase;
+      line-height: 1.62rem;
+      //padding-top: 4px;
+      letter-spacing: 0.2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .sub-title {
+      width: 100%;
+      font-size: 2.85rem;
+      letter-spacing: 0.4rem;
+      font-weight: bold;
+      color: #a4a4a4;
+      text-align: center;
+      text-transform: uppercase;
+      background-image:linear-gradient(90deg,#e7102b, #12b4e7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      //padding: 0px 4rem;
+      margin: auto;
+      &:first-child {
+        margin-top: 2.14rem;
+      }
+    }
+
+
+    .footer {
+      @include setFlexStyles();
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      color: #fff;
+      height: 12.8%;
+      bottom: 0;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 0.9em !important;
+
+      .sub-title {
+        font-size: 2.35rem;
+
+      }
+    }
+  }
+}
